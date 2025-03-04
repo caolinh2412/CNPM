@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\try\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj",
+      "projectUniqueName": "D:\\Đại học\\đồ án cnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj",
       "projectName": "CoffeeShopManagementSystem",
-      "projectPath": "D:\\try\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj",
+      "projectPath": "D:\\Đại học\\đồ án cnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj",
       "packagesPath": "C:\\Users\\THUY_LINH\\.nuget\\packages\\",
-      "outputPath": "D:\\try\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\obj\\",
+      "outputPath": "D:\\Đại học\\đồ án cnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
