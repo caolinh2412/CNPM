@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CoffeeShopManagementSystem
 {
-    public partial class Form2 : Form
+    public partial class SignUpForm : Form
     {
-        public Form2()
+        public SignUpForm()
         {
             InitializeComponent();
         }
@@ -24,10 +24,16 @@ namespace CoffeeShopManagementSystem
 
         private void btnlogin_signup_Click(object sender, EventArgs e)
         {
-            Form1 login = new Form1();
+            SignInForm  login = new SignInForm();
             login.Show();
 
             this.Hide();
+        }
+
+        private void signup_showpass_CheckedChanged(object sender, EventArgs e)
+        {
+            signup_password.PasswordChar = signup_showpass.Checked ? '\0' : '*';
+            signup_cfpassword.PasswordChar = signup_showpass.Checked ? '\0' : '*';
         }
     }
 }

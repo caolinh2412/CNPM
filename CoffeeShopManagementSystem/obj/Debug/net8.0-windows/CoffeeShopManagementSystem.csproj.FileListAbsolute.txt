@@ -35,3 +35,23 @@ D:\try\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8
 D:\try\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.pdb
 D:\try\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.genruntimeconfig.cache
 D:\try\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\ref\CoffeeShopManagementSystem.dll
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\CoffeeShopManagementSystem.exe
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\CoffeeShopManagementSystem.deps.json
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\CoffeeShopManagementSystem.runtimeconfig.json
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\CoffeeShopManagementSystem.dll
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\CoffeeShopManagementSystem.pdb
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.Form1.resources
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.Properties.Resources.resources
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.csproj.GenerateResource.cache
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.AssemblyInfoInputs.cache
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.AssemblyInfo.cs
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.csproj.CoreCompileInputs.cache
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.sourcelink.json
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.dll
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\refint\CoffeeShopManagementSystem.dll
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.pdb
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.genruntimeconfig.cache
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\ref\CoffeeShopManagementSystem.dll
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.SignUpForm.resources
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.SignInForm.resources

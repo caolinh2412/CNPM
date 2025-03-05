@@ -10,10 +10,17 @@ namespace CoffeeShopManagementSystem
         {
             Application.Exit();
         }
-
-        private void btnlgin_signup_Click(object sender, EventArgs e)
+        private void signin_btn_Click(object sender, EventArgs e)
         {
-            Form2 signup = new Form2();
+            SignInForm login = new SignInForm();
+            login.Show();
+
+            this.Hide();
+        }
+
+        private void signup_btn_Click_1(object sender, EventArgs e)
+        {
+            SignUpForm signup = new SignUpForm();
             signup.Show();
 
             this.Hide();
