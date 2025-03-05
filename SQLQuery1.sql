@@ -4,7 +4,6 @@
 	password NVARCHAR(255) NULL,
 	profile_img NVARCHAR(255) NULL,
 	vtri NVARCHAR(50) NULL,
-	status NVARCHAR(50) NULL,
 	date_signup DATE NULL,
 )
 SELECT * FROM users

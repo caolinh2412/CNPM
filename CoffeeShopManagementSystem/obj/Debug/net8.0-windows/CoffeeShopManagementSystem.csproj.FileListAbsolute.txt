@@ -55,3 +55,11 @@ D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagem
 D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\ref\CoffeeShopManagementSystem.dll
 D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.SignUpForm.resources
 D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.SignInForm.resources
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.csproj.AssemblyReference.cache
+D:\Đại học\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeSh.CDBE1410.Up2Date
