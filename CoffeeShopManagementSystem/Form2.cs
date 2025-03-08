@@ -18,9 +18,7 @@ namespace CoffeeShopManagementSystem
         SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\THUY_LINH\Documents\cafeShop.mdf;Integrated Security=True;Connect Timeout=30;Encrypt= False");
         public SignUpForm()
         {
-            InitializeComponent();
-            cbRole.Items.Add("Nhân viên");
-            cbRole.Items.Add("Quản lý");
+            InitializeComponent();            
         }
 
         private void close_2_Click(object sender, EventArgs e)
@@ -101,12 +99,17 @@ namespace CoffeeShopManagementSystem
                                     sqlCommand.Parameters.AddWithValue("@usern", signup_username.Text.Trim());
                                     sqlCommand.Parameters.AddWithValue("@pass", signup_password.Text.Trim());
                                     sqlCommand.Parameters.AddWithValue("@img", "");
-                                    sqlCommand.Parameters.AddWithValue("@vtri", cbRole.Text.Trim());
+                                    sqlCommand.Parameters.AddWithValue("@vtri", "Nhân viên");
                                     sqlCommand.Parameters.AddWithValue("@date", day);
 
                                     sqlCommand.ExecuteNonQuery();
 
                                     MessageBox.Show("đăng ký thành công.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    SignInForm login = new SignInForm();
+                                    login.Show();
+
+                                    this.Hide();
                                 }
                             }
                         }

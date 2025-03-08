@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uVYcxi0cvjU=",
+  "dgSpecHash": "ZM10XU6KkDU=",
   "success": true,
-  "projectFilePath": "D:\\Đại học\\đồ án cnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj",
+  "projectFilePath": "D:\\DH\\đồ án cnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\THUY_LINH\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\THUY_LINH\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

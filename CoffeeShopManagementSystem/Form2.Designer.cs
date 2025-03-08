@@ -42,8 +42,6 @@
             close_2 = new Label();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            label5 = new Label();
-            cbRole = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -65,7 +63,7 @@
             btnlogin_signup.BackColor = Color.FromArgb(63, 29, 18);
             btnlogin_signup.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnlogin_signup.ForeColor = SystemColors.ButtonHighlight;
-            btnlogin_signup.Location = new Point(436, 401);
+            btnlogin_signup.Location = new Point(437, 392);
             btnlogin_signup.Name = "btnlogin_signup";
             btnlogin_signup.Size = new Size(195, 43);
             btnlogin_signup.TabIndex = 21;
@@ -78,7 +76,7 @@
             signUp_btn.BackColor = Color.FromArgb(63, 29, 18);
             signUp_btn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             signUp_btn.ForeColor = SystemColors.ButtonHighlight;
-            signUp_btn.Location = new Point(75, 401);
+            signUp_btn.Location = new Point(76, 392);
             signUp_btn.Name = "signUp_btn";
             signUp_btn.Size = new Size(187, 43);
             signUp_btn.TabIndex = 20;
@@ -92,7 +90,7 @@
             signup_showpass.BackColor = Color.Transparent;
             signup_showpass.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             signup_showpass.ForeColor = Color.FromArgb(63, 29, 18);
-            signup_showpass.Location = new Point(28, 360);
+            signup_showpass.Location = new Point(28, 348);
             signup_showpass.Name = "signup_showpass";
             signup_showpass.Size = new Size(174, 25);
             signup_showpass.TabIndex = 19;
@@ -103,7 +101,7 @@
             // signup_password
             // 
             signup_password.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            signup_password.Location = new Point(28, 259);
+            signup_password.Location = new Point(28, 217);
             signup_password.Name = "signup_password";
             signup_password.PasswordChar = '*';
             signup_password.Size = new Size(290, 34);
@@ -115,7 +113,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(63, 29, 18);
-            label4.Location = new Point(28, 235);
+            label4.Location = new Point(28, 193);
             label4.Name = "label4";
             label4.Size = new Size(104, 21);
             label4.TabIndex = 17;
@@ -144,7 +142,7 @@
             // signup_cfpassword
             // 
             signup_cfpassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            signup_cfpassword.Location = new Point(28, 320);
+            signup_cfpassword.Location = new Point(28, 297);
             signup_cfpassword.Name = "signup_cfpassword";
             signup_cfpassword.PasswordChar = '*';
             signup_cfpassword.Size = new Size(290, 34);
@@ -156,7 +154,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(63, 29, 18);
-            label1.Location = new Point(28, 296);
+            label1.Location = new Point(28, 273);
             label1.Name = "label1";
             label1.Size = new Size(179, 21);
             label1.TabIndex = 22;
@@ -195,33 +193,11 @@
             pictureBox1.TabIndex = 27;
             pictureBox1.TabStop = false;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(63, 29, 18);
-            label5.Location = new Point(28, 180);
-            label5.Name = "label5";
-            label5.Size = new Size(56, 21);
-            label5.TabIndex = 28;
-            label5.Text = "Role:";
-            // 
-            // cbRole
-            // 
-            cbRole.FormattingEnabled = true;
-            cbRole.Location = new Point(28, 204);
-            cbRole.Name = "cbRole";
-            cbRole.Size = new Size(290, 28);
-            cbRole.TabIndex = 29;
-            // 
             // SignUpForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(712, 469);
-            Controls.Add(cbRole);
-            Controls.Add(label5);
             Controls.Add(pictureBox2);
             Controls.Add(close_2);
             Controls.Add(signup_cfpassword);
@@ -259,7 +235,5 @@
         private Label close_2;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Label label5;
-        private ComboBox cbRole;
     }
 }

@@ -7,3 +7,6 @@
 	date_signup DATE NULL,
 )
 SELECT * FROM users
+
+INSERT INTO users (username, password, profile_img, vtri, date_signup)
+VALUES (N'manager1', N'pass123','', N'quản lý', '2024-03-08')
