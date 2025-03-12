@@ -65,42 +65,62 @@ namespace CoffeeShopManagementSystem
                     {
                         connect.Open();
 
-                        String account = "SELECT * FROM users WHERE username = @usern AND password = @pass AND vtri = @vtri";
-
-                        using (SqlCommand sqlCommand = new SqlCommand(account, connect))
+                        if (cbRole.Text == "Nhân viên")
                         {
-                            sqlCommand.Parameters.AddWithValue("@usern", signIn_username.Text.Trim());
-                            sqlCommand.Parameters.AddWithValue("@pass", signIn_password.Text.Trim());
-                            sqlCommand.Parameters.AddWithValue("@vtri", cbRole.Text.Trim());
-
-                            SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
-                            DataTable dataTable = new DataTable();
-                            adapter.Fill(dataTable);
-
-                            if(dataTable.Rows.Count >= 1)
+                            String account = "SELECT * FROM NhanVien WHERE username = @usern AND password = @pass";
+                            using (SqlCommand sqlCommand = new SqlCommand(account, connect))
                             {
-                                MessageBox.Show("Đăng nhập thành công", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                sqlCommand.Parameters.AddWithValue("@usern", signIn_username.Text.Trim());
+                                sqlCommand.Parameters.AddWithValue("@pass", signIn_password.Text.Trim());
 
-                                string role = cbRole.Text.Trim().ToLower();
-                                if (role == "nhân viên")
+                                SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                                DataTable dataTable = new DataTable();
+                                adapter.Fill(dataTable);
+                                if (dataTable.Rows.Count >= 1)
                                 {
-                                    StaffForm staffForm = new StaffForm();
-                                    staffForm.Show();
+                                    MessageBox.Show("Đăng nhập thành công", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    StaffForm staff = new StaffForm();
+                                    staff.Show();
+                                    this.Hide();
                                 }
-                                else if (role == "quản lý")
+                                else
                                 {
-                                    ManagerForm managerForm = new ManagerForm();
-                                    managerForm.Show();
+                                    MessageBox.Show("tên hoặc mật khẩu không đúng.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
-                                this.Hide();
-                            }
-                            else
-                            {
-                                MessageBox.Show("tên hoặc mật khẩu không đúng.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
+                        else if (cbRole.Text == "Quản lý")
+                        {
+                            String account = "SELECT * FROM QuanLy WHERE username = @usern AND password = @pass AND email = @email";
+                            using (SqlCommand sqlCommand = new SqlCommand(account, connect))
+                            {
+                                sqlCommand.Parameters.AddWithValue("@usern", signIn_username.Text.Trim());
+                                sqlCommand.Parameters.AddWithValue("@pass", signIn_password.Text.Trim());
+
+                                SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                                DataTable dataTable = new DataTable();
+                                adapter.Fill(dataTable);
+                                if (dataTable.Rows.Count >= 1)
+                                {
+                                    MessageBox.Show("Đăng nhập thành công", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    ManagerForm manager = new ManagerForm();
+                                    manager.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("tên hoặc mật khẩu không đúng.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng chọn chức vụ", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    catch (Exception ex )
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Không kết nối được." + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }

@@ -93,3 +93,35 @@ D:\DH\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\
 D:\DH\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\ref\CoffeeShopManagementSystem.dll
 D:\DH\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.ManagerForm.resources
 D:\DH\đồ án cnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.StaffForm.resources
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\CoffeeShopManagementSystem.exe
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\CoffeeShopManagementSystem.deps.json
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\CoffeeShopManagementSystem.runtimeconfig.json
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\CoffeeShopManagementSystem.dll
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\CoffeeShopManagementSystem.pdb
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.csproj.AssemblyReference.cache
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.Form1.resources
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.SignUpForm.resources
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.ManagerForm.resources
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.Properties.Resources.resources
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.SignInForm.resources
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.StaffForm.resources
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.csproj.GenerateResource.cache
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.AssemblyInfoInputs.cache
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.AssemblyInfo.cs
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.csproj.CoreCompileInputs.cache
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.sourcelink.json
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeSh.CDBE1410.Up2Date
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.dll
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\refint\CoffeeShopManagementSystem.dll
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.pdb
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.genruntimeconfig.cache
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\ref\CoffeeShopManagementSystem.dll
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.CofirmEmailForm.resources
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.ChangePassForm.resources

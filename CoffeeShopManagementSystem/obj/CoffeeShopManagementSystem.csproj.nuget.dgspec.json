@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DH\\đồ án cnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj": {}
+    "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj": {}
   },
   "projects": {
-    "D:\\DH\\đồ án cnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj": {
+    "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DH\\đồ án cnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj",
+        "projectUniqueName": "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj",
         "projectName": "CoffeeShopManagementSystem",
-        "projectPath": "D:\\DH\\đồ án cnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj",
+        "projectPath": "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem.csproj",
         "packagesPath": "C:\\Users\\THUY_LINH\\.nuget\\packages\\",
-        "outputPath": "D:\\DH\\đồ án cnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\obj\\",
+        "outputPath": "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\CoffeeShopManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
