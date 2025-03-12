@@ -123,5 +123,5 @@ D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\De
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.pdb
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.genruntimeconfig.cache
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\ref\CoffeeShopManagementSystem.dll
-D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.CofirmEmailForm.resources
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.ChangePassForm.resources
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\CoffeeShopManagementSystem\obj\Debug\net8.0-windows\CoffeeShopManagementSystem.ConfirmEmailForm.resources
