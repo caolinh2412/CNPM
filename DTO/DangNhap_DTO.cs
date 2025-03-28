@@ -4,15 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoffeeShopManagementSystem.DTO
+namespace DTO
 {
-    public class NhanVienDTO
+    public class DangNhap_DTO
     {
-        public string Id { get; set; }
-        public string Username { get; set; }
+        public string MaND { get; set; }
+        public string HoVaTen { get; set; }
         public string Email { get; set; }
+        public string SDT { get; set; }
         public string GioiTinh { get; set; }
         public string Password { get; set; }
-        public DateTime? DateSignup { get; set; }
+        public DateTime? NgayDiLam { get; set; }
+        public string MaQL { get; set; }
+
     }
 }

@@ -35,7 +35,7 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             label5 = new Label();
-            signUp_Email = new TextBox();
+            txt_email = new TextBox();
             code = new TextBox();
             label3 = new Label();
             label2 = new Label();
@@ -49,7 +49,7 @@
             // 
             close.AutoSize = true;
             close.BackColor = Color.White;
-            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             close.Location = new Point(871, 9);
             close.Name = "close";
             close.Size = new Size(22, 23);
@@ -60,20 +60,20 @@
             // btnLogIn_signin
             // 
             btnLogIn_signin.BackColor = Color.FromArgb(63, 29, 18);
-            btnLogIn_signin.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogIn_signin.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogIn_signin.ForeColor = SystemColors.ButtonHighlight;
             btnLogIn_signin.Location = new Point(532, 447);
             btnLogIn_signin.Name = "btnLogIn_signin";
             btnLogIn_signin.Size = new Size(325, 43);
             btnLogIn_signin.TabIndex = 42;
-            btnLogIn_signin.Text = "LOG IN";
+            btnLogIn_signin.Text = "ĐĂNG NHẬP";
             btnLogIn_signin.UseVisualStyleBackColor = false;
             btnLogIn_signin.Click += btnLogIn_signin_Click;
             // 
             // btnConfirm
             // 
             btnConfirm.BackColor = Color.FromArgb(63, 29, 18);
-            btnConfirm.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnConfirm.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnConfirm.ForeColor = SystemColors.ButtonHighlight;
             btnConfirm.Location = new Point(234, 447);
             btnConfirm.Name = "btnConfirm";
@@ -108,7 +108,7 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(63, 29, 18);
             label5.Location = new Point(63, 226);
             label5.Name = "label5";
@@ -116,17 +116,17 @@
             label5.TabIndex = 50;
             label5.Text = "Email:";
             // 
-            // signUp_Email
+            // txt_email
             // 
-            signUp_Email.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            signUp_Email.Location = new Point(63, 259);
-            signUp_Email.Name = "signUp_Email";
-            signUp_Email.Size = new Size(325, 34);
-            signUp_Email.TabIndex = 49;
+            txt_email.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_email.Location = new Point(63, 259);
+            txt_email.Name = "txt_email";
+            txt_email.Size = new Size(325, 34);
+            txt_email.TabIndex = 49;
             // 
             // code
             // 
-            code.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            code.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             code.Location = new Point(63, 368);
             code.Name = "code";
             code.Size = new Size(325, 34);
@@ -136,7 +136,7 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(63, 29, 18);
             label3.Location = new Point(63, 344);
             label3.Name = "label3";
@@ -148,7 +148,7 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(63, 29, 18);
             label2.Location = new Point(131, 153);
             label2.Name = "label2";
@@ -160,7 +160,7 @@
             // 
             lblCountdown.AutoSize = true;
             lblCountdown.BackColor = Color.Transparent;
-            lblCountdown.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCountdown.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             lblCountdown.ForeColor = Color.FromArgb(63, 29, 18);
             lblCountdown.Location = new Point(197, 383);
             lblCountdown.Name = "lblCountdown";
@@ -170,7 +170,7 @@
             // btnSendCode
             // 
             btnSendCode.BackColor = Color.FromArgb(63, 29, 18);
-            btnSendCode.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSendCode.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnSendCode.ForeColor = SystemColors.ButtonHighlight;
             btnSendCode.Location = new Point(63, 447);
             btnSendCode.Name = "btnSendCode";
@@ -188,7 +188,7 @@
             Controls.Add(btnSendCode);
             Controls.Add(lblCountdown);
             Controls.Add(label5);
-            Controls.Add(signUp_Email);
+            Controls.Add(txt_email);
             Controls.Add(code);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -214,7 +214,7 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label label5;
-        private TextBox signUp_Email;
+        private TextBox txt_email;
         private TextBox code;
         private Label label3;
         private Label label2;

@@ -197,9 +197,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DAL.csproj",
+      "projectPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\THUY_LINH\\.nuget\\packages\\",
       "outputPath": "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\obj\\",
       "projectStyle": "PackageReference",
@@ -222,8 +222,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DTO.csproj": {
-              "projectPath": "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DTO.csproj"
+            "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DTO.csproj": {
+              "projectPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DTO.csproj"
             }
           }
         }

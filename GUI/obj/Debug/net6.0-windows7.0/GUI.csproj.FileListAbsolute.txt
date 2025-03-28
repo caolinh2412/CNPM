@@ -18,11 +18,9 @@ D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\G
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\CoffeeShopManagementSystem.ChangePassForm.resources
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\CoffeeShopManagementSystem.ConfirmEmailForm.resources
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\CoffeeShopManagementSystem.DashboardForm.resources
-D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\CoffeeShopManagementSystem.Form1.resources
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\CoffeeShopManagementSystem.ManagerForm.resources
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.Properties.Resources.resources
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\CoffeeShopManagementSystem.SignInForm.resources
-D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\CoffeeShopManagementSystem.SignUpForm.resources
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\CoffeeShopManagementSystem.StaffForm.resources
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.csproj.GenerateResource.cache
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.GeneratedMSBuildEditorConfig.editorconfig
@@ -68,3 +66,7 @@ D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\r
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.pdb
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.genruntimeconfig.cache
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\ref\GUI.dll
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.MenuForm.resources
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormQuanLyNV.resources
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormQuanLyHoaDon.resources
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormCaLamViec.resources
