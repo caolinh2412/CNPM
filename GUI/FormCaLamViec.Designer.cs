@@ -28,23 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCaLamViec));
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            label1 = new Label();
+            dtp_NgayLam = new DateTimePicker();
+            label3 = new Label();
+            txt_TenCa = new Guna.UI2.WinForms.Guna2TextBox();
             btnThemCa = new Guna.UI2.WinForms.Guna2Button();
             dgv_CaLam = new Guna.UI2.WinForms.Guna2DataGridView();
+            col_MaCa = new DataGridViewTextBoxColumn();
             col_TenCa = new DataGridViewTextBoxColumn();
             col_NgayLam = new DataGridViewTextBoxColumn();
-            col_save = new DataGridViewImageColumn();
-            xoaCa = new DataGridViewImageColumn();
+            img_xoaCa = new DataGridViewImageColumn();
             label9 = new Label();
+            close = new Label();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_CaLam).BeginInit();
             SuspendLayout();
@@ -53,21 +60,78 @@
             // 
             guna2Panel1.BackColor = Color.FromArgb(248, 247, 239);
             guna2Panel1.BorderRadius = 10;
+            guna2Panel1.Controls.Add(close);
+            guna2Panel1.Controls.Add(label1);
+            guna2Panel1.Controls.Add(dtp_NgayLam);
+            guna2Panel1.Controls.Add(label3);
+            guna2Panel1.Controls.Add(txt_TenCa);
             guna2Panel1.Controls.Add(btnThemCa);
             guna2Panel1.Controls.Add(dgv_CaLam);
             guna2Panel1.Controls.Add(label9);
             guna2Panel1.CustomBorderColor = Color.Black;
-            guna2Panel1.CustomizableEdges = customizableEdges3;
-            guna2Panel1.Location = new Point(12, 12);
+            guna2Panel1.CustomizableEdges = customizableEdges5;
+            guna2Panel1.Dock = DockStyle.Fill;
+            guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel1.Size = new Size(399, 313);
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Panel1.Size = new Size(459, 322);
             guna2Panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Roboto", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(216, 48);
+            label1.Name = "label1";
+            label1.Size = new Size(84, 20);
+            label1.TabIndex = 27;
+            label1.Text = "Ngày làm:";
+            // 
+            // dtp_NgayLam
+            // 
+            dtp_NgayLam.Location = new Point(216, 71);
+            dtp_NgayLam.Name = "dtp_NgayLam";
+            dtp_NgayLam.Size = new Size(223, 27);
+            dtp_NgayLam.TabIndex = 26;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Roboto", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(12, 48);
+            label3.Name = "label3";
+            label3.Size = new Size(62, 20);
+            label3.TabIndex = 25;
+            label3.Text = "Tên ca:";
+            // 
+            // txt_TenCa
+            // 
+            txt_TenCa.BorderColor = Color.FromArgb(63, 29, 18);
+            txt_TenCa.BorderRadius = 10;
+            txt_TenCa.CustomizableEdges = customizableEdges1;
+            txt_TenCa.DefaultText = "";
+            txt_TenCa.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txt_TenCa.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txt_TenCa.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txt_TenCa.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txt_TenCa.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txt_TenCa.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_TenCa.ForeColor = Color.Black;
+            txt_TenCa.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txt_TenCa.Location = new Point(12, 71);
+            txt_TenCa.Name = "txt_TenCa";
+            txt_TenCa.PlaceholderText = "";
+            txt_TenCa.SelectedText = "";
+            txt_TenCa.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txt_TenCa.Size = new Size(146, 27);
+            txt_TenCa.TabIndex = 24;
             // 
             // btnThemCa
             // 
             btnThemCa.BorderRadius = 12;
-            btnThemCa.CustomizableEdges = customizableEdges1;
+            btnThemCa.CustomizableEdges = customizableEdges3;
             btnThemCa.DisabledState.BorderColor = Color.DarkGray;
             btnThemCa.DisabledState.CustomBorderColor = Color.DarkGray;
             btnThemCa.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -75,10 +139,10 @@
             btnThemCa.FillColor = Color.Green;
             btnThemCa.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnThemCa.ForeColor = Color.White;
-            btnThemCa.Location = new Point(262, 3);
+            btnThemCa.Location = new Point(295, 10);
             btnThemCa.Name = "btnThemCa";
-            btnThemCa.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnThemCa.Size = new Size(112, 36);
+            btnThemCa.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnThemCa.Size = new Size(86, 23);
             btnThemCa.TabIndex = 23;
             btnThemCa.Text = "Thêm";
             btnThemCa.Click += btnThemCa_Click;
@@ -88,27 +152,28 @@
             dataGridViewCellStyle1.BackColor = Color.White;
             dgv_CaLam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgv_CaLam.BackgroundColor = Color.FromArgb(248, 247, 239);
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(248, 247, 239);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(63, 29, 18);
             dataGridViewCellStyle2.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(63, 29, 18);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(248, 247, 239);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(63, 29, 18);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgv_CaLam.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgv_CaLam.ColumnHeadersHeight = 20;
             dgv_CaLam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgv_CaLam.Columns.AddRange(new DataGridViewColumn[] { col_TenCa, col_NgayLam, col_save, xoaCa });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(248, 247, 239);
+            dgv_CaLam.Columns.AddRange(new DataGridViewColumn[] { col_MaCa, col_TenCa, col_NgayLam, img_xoaCa });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = Color.FromArgb(63, 29, 18);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(248, 247, 239);
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(63, 29, 18);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgv_CaLam.DefaultCellStyle = dataGridViewCellStyle3;
+            dgv_CaLam.Dock = DockStyle.Bottom;
             dgv_CaLam.GridColor = Color.FromArgb(248, 247, 239);
-            dgv_CaLam.Location = new Point(3, 58);
+            dgv_CaLam.Location = new Point(0, 120);
             dgv_CaLam.Name = "dgv_CaLam";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(248, 247, 239);
@@ -121,7 +186,7 @@
             dgv_CaLam.RowHeadersVisible = false;
             dgv_CaLam.RowHeadersWidth = 51;
             dgv_CaLam.RowTemplate.Height = 29;
-            dgv_CaLam.Size = new Size(393, 252);
+            dgv_CaLam.Size = new Size(459, 202);
             dgv_CaLam.TabIndex = 22;
             dgv_CaLam.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_CaLam.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -145,6 +210,12 @@
             dgv_CaLam.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgv_CaLam.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
+            // col_MaCa
+            // 
+            col_MaCa.HeaderText = "Mã ca";
+            col_MaCa.MinimumWidth = 6;
+            col_MaCa.Name = "col_MaCa";
+            // 
             // col_TenCa
             // 
             col_TenCa.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -159,30 +230,18 @@
             col_NgayLam.HeaderText = "Ngày làm";
             col_NgayLam.MinimumWidth = 6;
             col_NgayLam.Name = "col_NgayLam";
-            col_NgayLam.Width = 145;
+            col_NgayLam.Width = 150;
             // 
-            // col_save
+            // img_xoaCa
             // 
-            col_save.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            col_save.FillWeight = 50F;
-            col_save.HeaderText = "";
-            col_save.Image = (Image)resources.GetObject("col_save.Image");
-            col_save.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            col_save.MinimumWidth = 4;
-            col_save.Name = "col_save";
-            col_save.Resizable = DataGridViewTriState.True;
-            col_save.Width = 50;
-            // 
-            // xoaCa
-            // 
-            xoaCa.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            xoaCa.FillWeight = 50F;
-            xoaCa.HeaderText = "";
-            xoaCa.Image = (Image)resources.GetObject("xoaCa.Image");
-            xoaCa.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            xoaCa.MinimumWidth = 4;
-            xoaCa.Name = "xoaCa";
-            xoaCa.Width = 50;
+            img_xoaCa.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            img_xoaCa.FillWeight = 50F;
+            img_xoaCa.HeaderText = "";
+            img_xoaCa.Image = (Image)resources.GetObject("img_xoaCa.Image");
+            img_xoaCa.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            img_xoaCa.MinimumWidth = 4;
+            img_xoaCa.Name = "img_xoaCa";
+            img_xoaCa.Width = 60;
             // 
             // label9
             // 
@@ -195,12 +254,24 @@
             label9.TabIndex = 21;
             label9.Text = "THÔNG TIN CA LÀM VIỆC";
             // 
+            // close
+            // 
+            close.AutoSize = true;
+            close.BackColor = Color.White;
+            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            close.Location = new Point(425, 9);
+            close.Name = "close";
+            close.Size = new Size(22, 23);
+            close.TabIndex = 39;
+            close.Text = "X";
+            close.Click += close_Click;
+            // 
             // FormCaLamViec
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(423, 337);
+            ClientSize = new Size(459, 322);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormCaLamViec";
@@ -218,9 +289,14 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgv_CaLam;
         private Label label9;
         private Guna.UI2.WinForms.Guna2Button btnThemCa;
+        private Guna.UI2.WinForms.Guna2TextBox txt_TenCa;
+        private Label label3;
+        private Label label1;
+        private DateTimePicker dtp_NgayLam;
+        private DataGridViewTextBoxColumn col_MaCa;
         private DataGridViewTextBoxColumn col_TenCa;
         private DataGridViewTextBoxColumn col_NgayLam;
-        private DataGridViewImageColumn col_save;
-        private DataGridViewImageColumn xoaCa;
+        private DataGridViewImageColumn img_xoaCa;
+        private Label close;
     }
 }

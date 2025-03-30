@@ -187,6 +187,7 @@
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "SignInForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SignInForm";

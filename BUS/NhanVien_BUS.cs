@@ -43,5 +43,17 @@ namespace BUS
         {
             return dal.InsertWorkSchedule(workSchedule);
         }
+        public bool DeleteWorkSchedule(string maLLV)
+        {
+            return dal.DeleteWorkSchedule(maLLV);
+        }
+        public bool UpdateWorkSchedule(CaLam_DTO workSchedule)
+        {
+            return dal.UpdateWorkSchedule(workSchedule);
+        }
+        public int GetEmployeeCount()
+        {
+            return dal.GetEmployeeCount();
+        }
     }
 }

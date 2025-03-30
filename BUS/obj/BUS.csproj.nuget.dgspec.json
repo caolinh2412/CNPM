@@ -11,7 +11,7 @@
         "projectName": "BUS",
         "projectPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\BUS.csproj",
         "packagesPath": "C:\\Users\\THUY_LINH\\.nuget\\packages\\",
-        "outputPath": "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\obj\\",
+        "outputPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -86,7 +86,7 @@
         "projectName": "DAL",
         "projectPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\THUY_LINH\\.nuget\\packages\\",
-        "outputPath": "D:\\DH\\doancnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\obj\\",
+        "outputPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

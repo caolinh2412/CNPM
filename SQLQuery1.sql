@@ -7,13 +7,18 @@ CREATE TABLE NguoiDung (
     HoVaTen NVARCHAR(100) NOT NULL, 
     email NVARCHAR(100) UNIQUE NOT NULL,
     SDT VARCHAR(15) UNIQUE NULL,
-    GioiTinh NVARCHAR(10) CHECK (GioiTinh IN ('Nam', 'Nữ', 'Khác')) NULL,
+    GioiTinh NVARCHAR(10) NULL,
     password NVARCHAR(255) NOT NULL,  
     NgayDiLam DATE NULL,
     MaQL NVARCHAR(50) NULL, 
     FOREIGN KEY (MaQL) REFERENCES NguoiDung(MaND)
 );
 
+INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam, MaQL)
+VALUES 
+    ('NV001', N'Nguyễn Văn A', 'admin@gmail.com', '0123456789', 'Nam', '1234554321', '2023-01-01', NULL), 
+    ('NV002', N'Trần Văn B', 'nv1@gmail.com', '0345678901', 'Nam', 'maoimetqua', '2024-01-01', 'NV001'),  
+    ('NV003', N'Lê Thị C', 'nv2@gmail.com', '0765432109', 'Nữ', 'cuuchiemoi', '2024-02-01', 'NV001');
 
 -- Bảng Menu (Thực đơn)
 CREATE TABLE Menu (
@@ -22,8 +27,10 @@ CREATE TABLE Menu (
     Gia DECIMAL(10,2) NOT NULL CHECK (Gia > 0),
     LoaiMon NVARCHAR(50) NOT NULL,
     TrangThai NVARCHAR(20) DEFAULT 'Còn bán' CHECK (TrangThai IN ('Còn bán', 'Ngừng bán')),
-    HinhAnh NVARCHAR(255) NOT NULL
+    HinhAnh NVARCHAR(255) 
 );
+
+
 
 -- Bảng Nguyên Liệu
 CREATE TABLE NguyenLieu (
@@ -57,12 +64,14 @@ CREATE TABLE ChiTietDonHang (
 
 -- Bảng Lịch Làm Việc
 CREATE TABLE LichLamViec (
-    MaLLV INT IDENTITY(1,1) PRIMARY KEY,
+    MaLLV NVARCHAR(50) PRIMARY KEY,
     MaND NVARCHAR(50) FOREIGN KEY REFERENCES NguoiDung(MaND) ON DELETE CASCADE,
     Ngay DATE NOT NULL,
     CaLam NVARCHAR(50) CHECK (CaLam IN ('Sáng', 'Chiều', 'Tối'))
 );
 
+ALTER TABLE LichLamViec
+DROP COLUMN MaLLV;
 -- Bảng Doanh Thu
 CREATE TABLE DoanhThu (
     MaDT INT IDENTITY(1,1) PRIMARY KEY,
@@ -70,29 +79,12 @@ CREATE TABLE DoanhThu (
     TongSoDon INT NOT NULL CHECK (TongSoDon >= 0),
     TongTien DECIMAL(10,2) NOT NULL CHECK (TongTien >= 0)
 );
--- Thêm lịch làm việc cho người dùng 'ND001'
-INSERT INTO LichLamViec (MaND, Ngay, CaLam) VALUES ('NV001', '2023-10-26', 'Sáng');
-INSERT INTO LichLamViec (MaND, Ngay, CaLam) VALUES ('NV001', '2023-10-26', 'Chiều');
-INSERT INTO LichLamViec (MaND, Ngay, CaLam) VALUES ('NV001', '2023-10-27', 'Tối');
+INSERT INTO LichLamViec (MaLLV, MaND, Ngay, CaLam) VALUES
+('LLV001', 'NV002', '2024-10-26', N'Sáng'),
+('LLV002', 'NV002', '2024-10-26', N'Chiều'),
+('LLV003', 'NV003', '2024-10-27', N'Tối'),
+('LLV004', 'NV003', '2024-10-28', N'Chiều');
 
--- Thêm lịch làm việc cho người dùng 'ND002'
-INSERT INTO LichLamViec (MaND, Ngay, CaLam) VALUES ('NV002', '2023-10-27', 'Sáng');
-INSERT INTO LichLamViec (MaND, Ngay, CaLam) VALUES ('NV002', '2023-10-28', 'Chiều');
-
--- Thêm lịch làm việc cho người dùng 'ND003'
-INSERT INTO LichLamViec (MaND, Ngay, CaLam) VALUES ('NV003', '2023-10-28', 'Tối');
-INSERT INTO LichLamViec (MaND, Ngay, CaLam) VALUES ('NV003', '2023-10-29', 'Sáng');
-INSERT INTO LichLamViec (MaND, Ngay, CaLam) VALUES ('NV003', '2023-10-29', 'Chiều');
-DELETE FROM NguoiDung;
-
--- Thêm dữ liệu vào bảng Quản lý
-INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam, MaQL)
-VALUES 
-    ('QL001', 'Nguyễn Văn A', 'admin@gmail.com', '0123456789', 'Nam', '1234554321', '2023-01-01', NULL),
-    ('NV001', 'Trần Văn B', 'nv1@gmail.com', '0345678901', 'Nam','maoimetqua', '2024-01-01', 'QL001'),
-    ('NV002', 'Lê Thị C', 'nv2@gmail.com', '0765432109', 'Nữ','cuuchiemoi', '2024-02-01', 'QL001');
-INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam, MaQL)
-VALUES 	('NV003', 'tran thi tu', 'caolinh14789@gmail.com', '0465432109', 'Nữ','12345678', '2024-02-01', 'QL001');
 GO
 SELECT * FROM NguoiDung
 go
@@ -144,3 +136,63 @@ BEGIN
     VALUES 
         (@NewMaND, @HoVaTen, @email, @SDT, @GioiTinh, @password, @NgayDiLam, @MaQL);
 END;
+
+
+CREATE PROCEDURE GenerateMaLLV 
+AS
+BEGIN
+    DECLARE @MaLLV NVARCHAR(50);
+    DECLARE @Count INT;
+
+    -- Đếm số lượng bản ghi hiện có trong bảng LichLamViec
+    SELECT @Count = COUNT(*) + 1 FROM LichLamViec;
+
+    -- Tạo mã lịch làm việc theo định dạng 'LLV' + số thứ tự
+    SET @MaLLV = 'LLV' + RIGHT('000' + CAST(@Count AS NVARCHAR), 3);
+
+    -- Trả về mã lịch làm việc
+    SELECT @MaLLV;
+END;
+
+
+
+-- Thức uống cà phê
+INSERT INTO Menu (TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
+VALUES (N'Cà phê đen', 20000, N'Cà phê', N'Còn bán', NULL);
+
+INSERT INTO Menu (TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
+VALUES (N'Cà phê sữa', 25000, N'Cà phê', N'Còn bán', NULL);
+
+INSERT INTO Menu (TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
+VALUES (N'Bạc xỉu', 30000, N'Cà phê', N'Còn bán', NULL);
+
+-- Thức uống trà sữa
+INSERT INTO Menu (TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
+VALUES (N'Trá sữa truyền thống', 35000, N'Trá sữa', N'Còn bán', NULL);
+
+INSERT INTO Menu (TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
+VALUES (N'Trá sữa matcha', 40000, N'Trà sữa', N'Còn bán', NULL);
+
+INSERT INTO Menu (TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
+VALUES (N'Trá sữa socola', 40000, N'Trà sữa', N'Còn bán', NULL);
+
+-- Thức uống nước ép
+INSERT INTO Menu (TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
+VALUES (N'Nước ép cam', 30000, N'Nước ép', N'Còn bán', NULL);
+
+INSERT INTO Menu (TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
+VALUES (N'Nước ép dưa hấu', 30000, N'Nước ép', N'Còn bán', NULL);
+
+-- Thức uống sinh tố
+INSERT INTO Menu (TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
+VALUES (N'Sinh tố bơ', 40000, N'Sinh tố', N'Còn bán', NULL);
+
+INSERT INTO Menu (TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
+VALUES (N'Sinh tố xoài', 40000, N'Sinh tố', N'Còn bán', NULL);
+
+INSERT INTO Menu (TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
+VALUES (N'Sinh tố dâu', 40000, N'Sinh tố', N'Còn bán', NULL);
+
+select * from Menu
+
+DROP table Menu

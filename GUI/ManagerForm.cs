@@ -38,5 +38,12 @@ namespace CoffeeShopManagementSystem
         {
             ShowUserControl(new FormQuanLyNV());
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            SignInForm signInForm = new SignInForm();
+            signInForm.Show();
+        }
     }
 }

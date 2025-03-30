@@ -40,7 +40,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
-            btnLogIn_signin = new Button();
+            btnLogOut = new Button();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
@@ -56,7 +56,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(63, 29, 18);
-            panel1.Controls.Add(btnLogIn_signin);
+            panel1.Controls.Add(btnLogOut);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(guna2Button5);
@@ -70,17 +70,18 @@
             panel1.Size = new Size(216, 656);
             panel1.TabIndex = 0;
             // 
-            // btnLogIn_signin
+            // btnLogOut
             // 
-            btnLogIn_signin.BackColor = Color.FromArgb(63, 29, 18);
-            btnLogIn_signin.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLogIn_signin.ForeColor = SystemColors.ButtonHighlight;
-            btnLogIn_signin.Location = new Point(42, 590);
-            btnLogIn_signin.Name = "btnLogIn_signin";
-            btnLogIn_signin.Size = new Size(143, 33);
-            btnLogIn_signin.TabIndex = 36;
-            btnLogIn_signin.Text = "LOG OUT";
-            btnLogIn_signin.UseVisualStyleBackColor = false;
+            btnLogOut.BackColor = Color.FromArgb(63, 29, 18);
+            btnLogOut.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogOut.ForeColor = SystemColors.ButtonHighlight;
+            btnLogOut.Location = new Point(42, 593);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Size = new Size(143, 33);
+            btnLogOut.TabIndex = 36;
+            btnLogOut.Text = "LOG OUT";
+            btnLogOut.UseVisualStyleBackColor = false;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // label1
             // 
@@ -123,10 +124,10 @@
             guna2Button5.Image = (Image)resources.GetObject("guna2Button5.Image");
             guna2Button5.ImageAlign = HorizontalAlignment.Left;
             guna2Button5.ImageOffset = new Point(10, 0);
-            guna2Button5.Location = new Point(26, 479);
+            guna2Button5.Location = new Point(12, 480);
             guna2Button5.Name = "guna2Button5";
             guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button5.Size = new Size(190, 59);
+            guna2Button5.Size = new Size(204, 59);
             guna2Button5.TabIndex = 4;
             guna2Button5.Text = "Inventory";
             guna2Button5.TextAlign = HorizontalAlignment.Left;
@@ -152,10 +153,10 @@
             guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");
             guna2Button4.ImageAlign = HorizontalAlignment.Left;
             guna2Button4.ImageOffset = new Point(10, 0);
-            guna2Button4.Location = new Point(26, 398);
+            guna2Button4.Location = new Point(12, 403);
             guna2Button4.Name = "guna2Button4";
             guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button4.Size = new Size(190, 59);
+            guna2Button4.Size = new Size(204, 59);
             guna2Button4.TabIndex = 3;
             guna2Button4.Text = "Order";
             guna2Button4.TextAlign = HorizontalAlignment.Left;
@@ -181,10 +182,10 @@
             guna2Button3.Image = (Image)resources.GetObject("guna2Button3.Image");
             guna2Button3.ImageAlign = HorizontalAlignment.Left;
             guna2Button3.ImageOffset = new Point(10, 0);
-            guna2Button3.Location = new Point(29, 322);
+            guna2Button3.Location = new Point(12, 322);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button3.Size = new Size(187, 59);
+            guna2Button3.Size = new Size(204, 59);
             guna2Button3.TabIndex = 2;
             guna2Button3.Text = "Employee";
             guna2Button3.TextAlign = HorizontalAlignment.Left;
@@ -211,10 +212,10 @@
             btnDanhMuc.Image = (Image)resources.GetObject("btnDanhMuc.Image");
             btnDanhMuc.ImageAlign = HorizontalAlignment.Left;
             btnDanhMuc.ImageOffset = new Point(10, 0);
-            btnDanhMuc.Location = new Point(26, 242);
+            btnDanhMuc.Location = new Point(12, 242);
             btnDanhMuc.Name = "btnDanhMuc";
             btnDanhMuc.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnDanhMuc.Size = new Size(190, 59);
+            btnDanhMuc.Size = new Size(204, 59);
             btnDanhMuc.TabIndex = 1;
             btnDanhMuc.Text = "Menu";
             btnDanhMuc.TextAlign = HorizontalAlignment.Left;
@@ -242,10 +243,10 @@
             btnTrangChu.Image = (Image)resources.GetObject("btnTrangChu.Image");
             btnTrangChu.ImageAlign = HorizontalAlignment.Left;
             btnTrangChu.ImageOffset = new Point(10, 0);
-            btnTrangChu.Location = new Point(26, 161);
+            btnTrangChu.Location = new Point(12, 162);
             btnTrangChu.Name = "btnTrangChu";
             btnTrangChu.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnTrangChu.Size = new Size(190, 59);
+            btnTrangChu.Size = new Size(204, 59);
             btnTrangChu.TabIndex = 0;
             btnTrangChu.Text = "Home";
             btnTrangChu.TextAlign = HorizontalAlignment.Left;
@@ -287,7 +288,7 @@
         private Guna.UI2.WinForms.Guna2Button btnDanhMuc;
         private PictureBox pictureBox1;
         private Label label1;
-        private Button btnLogIn_signin;
+        private Button btnLogOut;
         private Panel panelMain;
     }
 }

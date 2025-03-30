@@ -70,3 +70,6 @@ D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\G
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormQuanLyNV.resources
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormQuanLyHoaDon.resources
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormCaLamViec.resources
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormThemMon.resources
+D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormDatHang.resources
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormMon.resources

@@ -18,7 +18,7 @@ namespace DAL
             string maxCode = "NV000";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT MAX(MaND) FROM NguoiDung WHERE MaND LIKE 'NV%'";
+                string query = "SELECT MAX(MaND) FROM NguoiDung";
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
                 var result = command.ExecuteScalar();
@@ -42,7 +42,7 @@ namespace DAL
                         connection.Open();
                     }
 
-                    string query = "SELECT MaND, HoVaTen, GioiTinh, email, SDT, NgayDiLam FROM NguoiDung WHERE MaND LIKE 'NV%'";
+                    string query = "SELECT MaND, HoVaTen, GioiTinh, email, SDT, NgayDiLam FROM NguoiDung WHERE MaQL IS NOT NULL";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -185,7 +185,7 @@ namespace DAL
                     {
                         CaLam_DTO caLam = new CaLam_DTO
                         {
-                            MaLLV = Convert.ToInt32(reader["MaLLV"]),
+                            MaLLV = reader["MaLLV"].ToString(),
                             MaND = reader["MaND"].ToString(),
                             Ngay = Convert.ToDateTime(reader["Ngay"]),
                             CaLam = reader["CaLam"].ToString()
@@ -196,12 +196,57 @@ namespace DAL
             }
             return workSchedule;
         }
+        private string GenerateMaLLV()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT ISNULL(MAX(CAST(SUBSTRING(MaLLV, 4, LEN(MaLLV) - 3) AS INT)), 0) + 1 FROM LichLamViec";
+                SqlCommand command = new SqlCommand(query, connection);
+                int maxNumber = (int)command.ExecuteScalar();
+                return "LLV" + maxNumber.ToString("D3"); 
+            }
+        }
+
         public bool InsertWorkSchedule(CaLam_DTO workSchedule)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO LichLamViec (MaND, Ngay, CaLam) VALUES (@MaND, @Ngay, @CaLam)";
+                connection.Open();
+
+                string maLLV = GenerateMaLLV();
+
+                string query = "INSERT INTO LichLamViec (MaLLV, MaND, Ngay, CaLam) VALUES (@MaLLV, @MaND, @Ngay, @CaLam)";
                 SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@MaLLV", maLLV);
+                command.Parameters.AddWithValue("@MaND", workSchedule.MaND);
+                command.Parameters.AddWithValue("@Ngay", workSchedule.Ngay);
+                command.Parameters.AddWithValue("@CaLam", workSchedule.CaLam);
+                int result = command.ExecuteNonQuery();
+                return result > 0;
+            }
+        }
+
+        public bool DeleteWorkSchedule(string maLLV)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM LichLamViec WHERE MaLLV = @MaLLV";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaLLV", maLLV);
+
+                conn.Open();
+                int result = cmd.ExecuteNonQuery();
+                return result > 0;
+            }
+        }
+        public bool UpdateWorkSchedule(CaLam_DTO workSchedule)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "UPDATE LichLamViec SET MaND = @MaND, Ngay = @Ngay, CaLam = @CaLam WHERE MaLLV = @MaLLV";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@MaLLV", workSchedule.MaLLV);
                 command.Parameters.AddWithValue("@MaND", workSchedule.MaND);
                 command.Parameters.AddWithValue("@Ngay", workSchedule.Ngay);
                 command.Parameters.AddWithValue("@CaLam", workSchedule.CaLam);
@@ -209,6 +254,18 @@ namespace DAL
                 int result = command.ExecuteNonQuery();
                 return result > 0;
             }
+        }
+        public int GetEmployeeCount()
+        {
+            int count = 0;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM NguoiDung WHERE MaQL IS NOT NULL";
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                count = (int)command.ExecuteScalar();
+            }
+            return count;
         }
     }
 }
