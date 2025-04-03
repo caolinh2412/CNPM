@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using BUS;
 using DTO;
+using GUI;
 
 namespace CoffeeShopManagementSystem
 {
@@ -41,6 +42,7 @@ namespace CoffeeShopManagementSystem
                 DangNhap_DTO user = dangNhapBus.DangNhap(email, password);
                 if (user != null)
                 {
+                    Session.Login(user);
                     MessageBox.Show("Đăng nhập thành công!");
                     if (string.IsNullOrEmpty(user.MaQL))
                     {

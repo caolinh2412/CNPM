@@ -3,60 +3,184 @@
   "WorkspaceRootPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formdathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formquanlykho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formquanlykho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7135AF9-49D3-4903-9B61-DA9A8EEAB510}|DAL\\DAL.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\dal\\chitietdonhang_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7135AF9-49D3-4903-9B61-DA9A8EEAB510}|DAL\\DAL.csproj|solutionrelative:dal\\chitietdonhang_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD9D05EA-8BE0-4D12-B229-8E73B98C1D86}|BUS\\BUS.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\bus\\chitietdonhang_bus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD9D05EA-8BE0-4D12-B229-8E73B98C1D86}|BUS\\BUS.csproj|solutionrelative:bus\\chitietdonhang_bus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\formdathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formdathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formquanlynv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formquanlynv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\signinform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\signinform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formquanlyhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formquanlyhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formdathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formdathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formquanlyhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\formquanlyhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formquanlyhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DD9D05EA-8BE0-4D12-B229-8E73B98C1D86}|BUS\\BUS.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\bus\\donhangbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD9D05EA-8BE0-4D12-B229-8E73B98C1D86}|BUS\\BUS.csproj|solutionrelative:bus\\donhangbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formthemmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formthemmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C7135AF9-49D3-4903-9B61-DA9A8EEAB510}|DAL\\DAL.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\dal\\donhangdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7135AF9-49D3-4903-9B61-DA9A8EEAB510}|DAL\\DAL.csproj|solutionrelative:dal\\donhangdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C7135AF9-49D3-4903-9B61-DA9A8EEAB510}|DAL\\DAL.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\dal\\nhanvien_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7135AF9-49D3-4903-9B61-DA9A8EEAB510}|DAL\\DAL.csproj|solutionrelative:dal\\nhanvien_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formquanlynv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formquanlynv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{400006BF-F88F-49DC-8682-008170CCB02E}|DTO\\DTO.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\dto\\donhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{400006BF-F88F-49DC-8682-008170CCB02E}|DTO\\DTO.csproj|solutionrelative:dto\\donhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formdathang.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formdathang.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\signinform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\signinform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\signinform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\signinform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\signinform.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\signinform.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\signinform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\signinform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formdathang.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formdathang.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\formmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formchonsl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formchonsl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\formchonsl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formchonsl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7135AF9-49D3-4903-9B61-DA9A8EEAB510}|DAL\\DAL.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\dal\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7135AF9-49D3-4903-9B61-DA9A8EEAB510}|DAL\\DAL.csproj|solutionrelative:dal\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{400006BF-F88F-49DC-8682-008170CCB02E}|DTO\\DTO.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\dto\\chitietdonhang_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{400006BF-F88F-49DC-8682-008170CCB02E}|DTO\\DTO.csproj|solutionrelative:dto\\chitietdonhang_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formthemmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formthemmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{400006BF-F88F-49DC-8682-008170CCB02E}|DTO\\DTO.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\dto\\thucdon_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{400006BF-F88F-49DC-8682-008170CCB02E}|DTO\\DTO.csproj|solutionrelative:dto\\thucdon_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7135AF9-49D3-4903-9B61-DA9A8EEAB510}|DAL\\DAL.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\dal\\thucdon_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7135AF9-49D3-4903-9B61-DA9A8EEAB510}|DAL\\DAL.csproj|solutionrelative:dal\\thucdon_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD9D05EA-8BE0-4D12-B229-8E73B98C1D86}|BUS\\BUS.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\bus\\thucdon_bus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD9D05EA-8BE0-4D12-B229-8E73B98C1D86}|BUS\\BUS.csproj|solutionrelative:bus\\thucdon_bus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{400006BF-F88F-49DC-8682-008170CCB02E}|DTO\\DTO.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\dto\\dangnhap_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{400006BF-F88F-49DC-8682-008170CCB02E}|DTO\\DTO.csproj|solutionrelative:dto\\dangnhap_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\formthemmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formthemmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\formcalamviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formcalamviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\confirmemailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\confirmemailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\managerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formchonsl.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formchonsl.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\gui\\changepassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\changepassform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD9D05EA-8BE0-4D12-B229-8E73B98C1D86}|BUS\\BUS.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\bus\\nhanvien_bus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD9D05EA-8BE0-4D12-B229-8E73B98C1D86}|BUS\\BUS.csproj|solutionrelative:bus\\nhanvien_bus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD9D05EA-8BE0-4D12-B229-8E73B98C1D86}|BUS\\BUS.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\bus\\dangnhap_bus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD9D05EA-8BE0-4D12-B229-8E73B98C1D86}|BUS\\BUS.csproj|solutionrelative:bus\\dangnhap_bus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\staffform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\staffform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|d:\\dh\\doancnpm\\cnpm\\coffeeshopmanagementsystem\\gui\\formmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36600325-0560-EFB1-C079-4E957C39FC52}|GUI\\GUI.csproj|solutionrelative:gui\\formmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,184 +190,551 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormDatHang.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormDatHang.cs",
+              "RelativeDocumentMoniker": "GUI\\FormDatHang.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormDatHang.cs",
+              "RelativeToolTip": "GUI\\FormDatHang.cs",
+              "ViewState": "AgIAAAABAAAAAAAAAAAIwCABAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T09:33:07.177Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormQuanLyHoaDon.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormQuanLyHoaDon.cs",
+              "RelativeDocumentMoniker": "GUI\\FormQuanLyHoaDon.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormQuanLyHoaDon.cs",
+              "RelativeToolTip": "GUI\\FormQuanLyHoaDon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T06:50:56.657Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormQuanLyKho.cs [Design]",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormQuanLyKho.cs",
+              "RelativeDocumentMoniker": "GUI\\FormQuanLyKho.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormQuanLyKho.cs [Design]",
+              "RelativeToolTip": "GUI\\FormQuanLyKho.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T00:24:21.781Z",
+              "EditorCaption": " [Design]"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SignInForm.cs [Design]",
-              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\SignInForm.cs",
-              "RelativeDocumentMoniker": "GUI\\SignInForm.cs",
-              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\SignInForm.cs [Design]",
-              "RelativeToolTip": "GUI\\SignInForm.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "ChiTietDonHang_DAL.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\ChiTietDonHang_DAL.cs",
+              "RelativeDocumentMoniker": "DAL\\ChiTietDonHang_DAL.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\ChiTietDonHang_DAL.cs",
+              "RelativeToolTip": "DAL\\ChiTietDonHang_DAL.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBgAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T10:02:46.81Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-30T15:30:21.864Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MenuForm.cs [Design]",
-              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\MenuForm.cs",
-              "RelativeDocumentMoniker": "GUI\\MenuForm.cs",
-              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\MenuForm.cs [Design]",
-              "RelativeToolTip": "GUI\\MenuForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T08:56:13.575Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "FormDatHang.cs [Design]",
               "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormDatHang.cs",
               "RelativeDocumentMoniker": "GUI\\FormDatHang.cs",
               "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormDatHang.cs [Design]",
               "RelativeToolTip": "GUI\\FormDatHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T08:53:58.744Z",
+              "WhenOpened": "2025-04-02T04:59:12.866Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormQuanLyNV.cs [Design]",
-              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormQuanLyNV.cs",
-              "RelativeDocumentMoniker": "GUI\\FormQuanLyNV.cs",
-              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormQuanLyNV.cs [Design]",
-              "RelativeToolTip": "GUI\\FormQuanLyNV.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "ChiTietDonHang_BUS.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\ChiTietDonHang_BUS.cs",
+              "RelativeDocumentMoniker": "BUS\\ChiTietDonHang_BUS.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\ChiTietDonHang_BUS.cs",
+              "RelativeToolTip": "BUS\\ChiTietDonHang_BUS.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwB4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T10:02:38.064Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormDatHang.cs",
-              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormDatHang.cs",
-              "RelativeDocumentMoniker": "GUI\\FormDatHang.cs",
-              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormDatHang.cs",
-              "RelativeToolTip": "GUI\\FormDatHang.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAIAwwDYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T09:33:07.177Z",
+              "WhenOpened": "2025-03-30T15:31:43.843Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "FormQuanLyHoaDon.cs [Design]",
               "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormQuanLyHoaDon.cs",
               "RelativeDocumentMoniker": "GUI\\FormQuanLyHoaDon.cs",
               "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormQuanLyHoaDon.cs [Design]",
               "RelativeToolTip": "GUI\\FormQuanLyHoaDon.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T10:02:39.825Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-02T06:23:33.992Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
+              "Title": "DonHangBUS.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\DonHangBUS.cs",
+              "RelativeDocumentMoniker": "BUS\\DonHangBUS.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\DonHangBUS.cs",
+              "RelativeToolTip": "BUS\\DonHangBUS.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T15:03:59.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DonHangDAL.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DonHangDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\DonHangDAL.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DonHangDAL.cs",
+              "RelativeToolTip": "DAL\\DonHangDAL.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T15:05:12.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FormQuanLyNV.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormQuanLyNV.cs",
+              "RelativeDocumentMoniker": "GUI\\FormQuanLyNV.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormQuanLyNV.cs",
+              "RelativeToolTip": "GUI\\FormQuanLyNV.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAgwGoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T04:38:54.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormMon.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormMon.cs",
+              "RelativeDocumentMoniker": "GUI\\FormMon.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormMon.cs",
+              "RelativeToolTip": "GUI\\FormMon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T18:12:10.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NhanVien_DAL.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\NhanVien_DAL.cs",
+              "RelativeDocumentMoniker": "DAL\\NhanVien_DAL.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\NhanVien_DAL.cs",
+              "RelativeToolTip": "DAL\\NhanVien_DAL.cs",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T07:07:50.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DonHangDTO.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DonHangDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\DonHangDTO.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DonHangDTO.cs",
+              "RelativeToolTip": "DTO\\DonHangDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:47:18.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SignInForm.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\SignInForm.cs",
+              "RelativeDocumentMoniker": "GUI\\SignInForm.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\SignInForm.cs",
+              "RelativeToolTip": "GUI\\SignInForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T16:31:56.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FormDatHang.Designer.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormDatHang.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\FormDatHang.Designer.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormDatHang.Designer.cs",
+              "RelativeToolTip": "GUI\\FormDatHang.Designer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAhwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T04:55:51.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SignInForm.Designer.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\SignInForm.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\SignInForm.Designer.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\SignInForm.Designer.cs",
+              "RelativeToolTip": "GUI\\SignInForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T05:00:53.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SignInForm.resx",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\SignInForm.resx",
+              "RelativeDocumentMoniker": "GUI\\SignInForm.resx",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\SignInForm.resx",
+              "RelativeToolTip": "GUI\\SignInForm.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-04-02T05:01:12.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FormDatHang.resx",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormDatHang.resx",
+              "RelativeDocumentMoniker": "GUI\\FormDatHang.resx",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormDatHang.resx",
+              "RelativeToolTip": "GUI\\FormDatHang.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-04-02T04:58:04.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\Program.cs",
+              "RelativeDocumentMoniker": "GUI\\Program.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\Program.cs",
+              "RelativeToolTip": "GUI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T03:38:11.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SignInForm.cs [Design]",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\SignInForm.cs",
+              "RelativeDocumentMoniker": "GUI\\SignInForm.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\SignInForm.cs [Design]",
+              "RelativeToolTip": "GUI\\SignInForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T10:02:46.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "FormMon.cs [Design]",
               "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormMon.cs",
               "RelativeDocumentMoniker": "GUI\\FormMon.cs",
               "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormMon.cs [Design]",
               "RelativeToolTip": "GUI\\FormMon.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T08:59:45.401Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-31T15:24:10.061Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FormThemMon.cs [Design]",
-              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormThemMon.cs",
-              "RelativeDocumentMoniker": "GUI\\FormThemMon.cs",
-              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormThemMon.cs [Design]",
-              "RelativeToolTip": "GUI\\FormThemMon.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T10:02:36.387Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ManagerForm.cs [Design]",
-              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ManagerForm.cs",
-              "RelativeDocumentMoniker": "GUI\\ManagerForm.cs",
-              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ManagerForm.cs [Design]",
-              "RelativeToolTip": "GUI\\ManagerForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T09:51:35.899Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "StaffForm.cs [Design]",
-              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\StaffForm.cs",
-              "RelativeDocumentMoniker": "GUI\\StaffForm.cs",
-              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\StaffForm.cs [Design]",
-              "RelativeToolTip": "GUI\\StaffForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T09:49:56.371Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "StaffForm.Designer.cs",
-              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\StaffForm.Designer.cs",
-              "RelativeDocumentMoniker": "GUI\\StaffForm.Designer.cs",
-              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\StaffForm.Designer.cs",
-              "RelativeToolTip": "GUI\\StaffForm.Designer.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAwwEoAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T09:49:29.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ManagerForm.cs",
-              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ManagerForm.cs",
-              "RelativeDocumentMoniker": "GUI\\ManagerForm.cs",
-              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ManagerForm.cs",
-              "RelativeToolTip": "GUI\\ManagerForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T09:42:41.691Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "StaffForm.cs",
               "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\StaffForm.cs",
               "RelativeDocumentMoniker": "GUI\\StaffForm.cs",
               "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\StaffForm.cs",
               "RelativeToolTip": "GUI\\StaffForm.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAIAwwCYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAApwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T09:42:09.654Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FormMon.cs",
-              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormMon.cs",
-              "RelativeDocumentMoniker": "GUI\\FormMon.cs",
-              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormMon.cs",
-              "RelativeToolTip": "GUI\\FormMon.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAuwCQAAAANAAAAAAAAAA==",
+              "DocumentIndex": 22,
+              "Title": "MenuForm.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\MenuForm.cs",
+              "RelativeDocumentMoniker": "GUI\\MenuForm.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\MenuForm.cs",
+              "RelativeToolTip": "GUI\\MenuForm.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAhwCAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T09:08:50.347Z",
+              "WhenOpened": "2025-03-30T14:33:59.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FormChonSL.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormChonSL.cs",
+              "RelativeDocumentMoniker": "GUI\\FormChonSL.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormChonSL.cs",
+              "RelativeToolTip": "GUI\\FormChonSL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T02:54:22.653Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Session.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\Session.cs",
+              "RelativeDocumentMoniker": "GUI\\Session.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\Session.cs",
+              "RelativeToolTip": "GUI\\Session.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T16:30:53.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "FormChonSL.cs [Design]",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormChonSL.cs",
+              "RelativeDocumentMoniker": "GUI\\FormChonSL.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormChonSL.cs [Design]",
+              "RelativeToolTip": "GUI\\FormChonSL.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T13:59:16.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ChiTietDonHang_DTO.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\ChiTietDonHang_DTO.cs",
+              "RelativeDocumentMoniker": "DTO\\ChiTietDonHang_DTO.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\ChiTietDonHang_DTO.cs",
+              "RelativeToolTip": "DTO\\ChiTietDonHang_DTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:49:50.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Connection.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\Connection.cs",
+              "RelativeDocumentMoniker": "DAL\\Connection.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\Connection.cs",
+              "RelativeToolTip": "DAL\\Connection.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T17:03:45.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ThucDon_DTO.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\ThucDon_DTO.cs",
+              "RelativeDocumentMoniker": "DTO\\ThucDon_DTO.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\ThucDon_DTO.cs",
+              "RelativeToolTip": "DTO\\ThucDon_DTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:19:58.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "FormThemMon.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormThemMon.cs",
+              "RelativeDocumentMoniker": "GUI\\FormThemMon.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormThemMon.cs",
+              "RelativeToolTip": "GUI\\FormThemMon.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwF4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:24:49.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ThucDon_DAL.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\ThucDon_DAL.cs",
+              "RelativeDocumentMoniker": "DAL\\ThucDon_DAL.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\ThucDon_DAL.cs",
+              "RelativeToolTip": "DAL\\ThucDon_DAL.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T09:50:39.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ThucDon_BUS.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\ThucDon_BUS.cs",
+              "RelativeDocumentMoniker": "BUS\\ThucDon_BUS.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\ThucDon_BUS.cs",
+              "RelativeToolTip": "BUS\\ThucDon_BUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:28:35.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "DangNhap_DTO.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DangNhap_DTO.cs",
+              "RelativeDocumentMoniker": "DTO\\DangNhap_DTO.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DangNhap_DTO.cs",
+              "RelativeToolTip": "DTO\\DangNhap_DTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T15:19:24.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "FormThemMon.cs [Design]",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormThemMon.cs",
+              "RelativeDocumentMoniker": "GUI\\FormThemMon.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormThemMon.cs [Design]",
+              "RelativeToolTip": "GUI\\FormThemMon.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T10:02:36.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "FormCaLamViec.cs [Design]",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormCaLamViec.cs",
+              "RelativeDocumentMoniker": "GUI\\FormCaLamViec.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormCaLamViec.cs [Design]",
+              "RelativeToolTip": "GUI\\FormCaLamViec.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T07:11:12.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ManagerForm.cs [Design]",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ManagerForm.cs",
+              "RelativeDocumentMoniker": "GUI\\ManagerForm.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ManagerForm.cs [Design]",
+              "RelativeToolTip": "GUI\\ManagerForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T09:51:35.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "DashboardForm.cs [Design]",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\DashboardForm.cs",
+              "RelativeDocumentMoniker": "GUI\\DashboardForm.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\DashboardForm.cs [Design]",
+              "RelativeToolTip": "GUI\\DashboardForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T07:06:50.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ConfirmEmailForm.cs [Design]",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ConfirmEmailForm.cs",
+              "RelativeDocumentMoniker": "GUI\\ConfirmEmailForm.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ConfirmEmailForm.cs [Design]",
+              "RelativeToolTip": "GUI\\ConfirmEmailForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T07:11:10.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ManagerForm.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ManagerForm.cs",
+              "RelativeDocumentMoniker": "GUI\\ManagerForm.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ManagerForm.cs",
+              "RelativeToolTip": "GUI\\ManagerForm.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAnwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T09:42:41.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "StaffForm.cs [Design]",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\StaffForm.cs",
+              "RelativeDocumentMoniker": "GUI\\StaffForm.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\StaffForm.cs [Design]",
+              "RelativeToolTip": "GUI\\StaffForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T09:49:56.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "FormChonSL.Designer.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormChonSL.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\FormChonSL.Designer.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\FormChonSL.Designer.cs",
+              "RelativeToolTip": "GUI\\FormChonSL.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T07:11:16.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ChangePassForm.cs [Design]",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ChangePassForm.cs",
+              "RelativeDocumentMoniker": "GUI\\ChangePassForm.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\ChangePassForm.cs [Design]",
+              "RelativeToolTip": "GUI\\ChangePassForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T07:11:08.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "NhanVien_BUS.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\NhanVien_BUS.cs",
+              "RelativeDocumentMoniker": "BUS\\NhanVien_BUS.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\NhanVien_BUS.cs",
+              "RelativeToolTip": "BUS\\NhanVien_BUS.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T15:15:44.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "DangNhap_BUS.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\DangNhap_BUS.cs",
+              "RelativeDocumentMoniker": "BUS\\DangNhap_BUS.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\DangNhap_BUS.cs",
+              "RelativeToolTip": "BUS\\DangNhap_BUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T06:07:50.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "StaffForm.Designer.cs",
+              "DocumentMoniker": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\StaffForm.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\StaffForm.Designer.cs",
+              "ToolTip": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\StaffForm.Designer.cs",
+              "RelativeToolTip": "GUI\\StaffForm.Designer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAwwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T09:49:29.892Z"
             }
           ]
         }

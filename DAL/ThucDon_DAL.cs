@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.SqlClient;
 using DTO;
 
 namespace DAL
@@ -6,6 +7,7 @@ namespace DAL
     public class ThucDon_DAL
     {
         private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
+        public string maMonMoi;
 
         public List<ThucDon_DTO> GetMenuItemsByCategory(string category)
         {
@@ -22,7 +24,7 @@ namespace DAL
                     {
                         ThucDon_DTO item = new ThucDon_DTO
                         {
-                            MaMon = Convert.ToInt32(reader["MaMon"]),
+                            MaMon = reader["MaMon"].ToString(),
                             TenMon = reader["TenMon"]?.ToString() ?? string.Empty,
                             Gia = Convert.ToDecimal(reader["Gia"]),
                             LoaiMon = reader["LoaiMon"]?.ToString() ?? string.Empty,
@@ -50,7 +52,7 @@ namespace DAL
                     {
                         ThucDon_DTO item = new ThucDon_DTO
                         {
-                            MaMon = Convert.ToInt32(reader["MaMon"]),
+                            MaMon = reader["MaMon"].ToString(),
                             TenMon = reader["TenMon"]?.ToString() ?? string.Empty,
                             Gia = Convert.ToDecimal(reader["Gia"]),
                             LoaiMon = reader["LoaiMon"]?.ToString() ?? string.Empty,
@@ -65,20 +67,38 @@ namespace DAL
         }
         public bool ThemMonMoi(ThucDon_DTO mon)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                string query = "INSERT INTO Menu(TenMon, Gia, LoaiMon, TrangThai, HinhAnh) " +
-                               "VALUES (@TenMon, @Gia, @LoaiMon, @TrangThai, @HinhAnh)";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@TenMon", mon.TenMon);
-                cmd.Parameters.AddWithValue("@Gia", mon.Gia);
-                cmd.Parameters.AddWithValue("@LoaiMon", mon.LoaiMon);
-                cmd.Parameters.AddWithValue("@TrangThai", mon.TrangThai);
-                cmd.Parameters.AddWithValue("@HinhAnh", mon.HinhAnh);
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string procedureName = "ThemMon";
+                    SqlCommand cmd = new SqlCommand(procedureName, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                conn.Open();
-                int rowsAffected = cmd.ExecuteNonQuery();
-                return rowsAffected > 0;
+                    cmd.Parameters.AddWithValue("@LoaiMon", mon.LoaiMon);
+                    cmd.Parameters.AddWithValue("@TenMon", mon.TenMon);
+                    cmd.Parameters.AddWithValue("@Gia", mon.Gia);
+                    cmd.Parameters.AddWithValue("@HinhAnh", mon.HinhAnh);
+
+                    SqlParameter maMonParam = new SqlParameter("@MaMon", SqlDbType.NVarChar, 10);
+                    maMonParam.Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(maMonParam);
+
+                    conn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        maMonMoi = maMonParam.Value.ToString();
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {            
+                Console.WriteLine("Lỗi: " + ex.Message);
+                return false;
             }
         }
         public bool XoaMon(string maMon)

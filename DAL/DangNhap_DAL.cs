@@ -11,9 +11,10 @@ namespace DAL
 {
     public class DangNhap_DAL
     {
+        private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
         public DangNhap_DTO KiemTraDangNhap(string email, string matKhau)
         {
-            using (SqlConnection cn = new SqlConnection(@"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;"))
+            using (SqlConnection cn = new SqlConnection(connectionString))
             {
                 cn.Open();
                 using (SqlCommand cmd = new SqlCommand("DangNhap", cn))
@@ -45,32 +46,28 @@ namespace DAL
 
         public bool KiemTraEmailTonTai(string email)
         {
-            using (SqlConnection cn = new SqlConnection(@"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;"))
+            using (SqlConnection cn = new SqlConnection(connectionString))
             {
                 cn.Open();
-                string query = "SELECT COUNT(*) FROM NguoiDung WHERE email = @Email";
-
-                using (SqlCommand cmd = new SqlCommand(query, cn))
+                using (SqlCommand cmd = new SqlCommand("KiemTraEmailTonTai", cn))
                 {
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@Email", email));
-
                     var result = cmd.ExecuteScalar();
-                    return result != null && (int)result > 0; 
+                    return result != null && (int)result > 0;
                 }
             }
         }
         public bool ResetPassword(string email, string newPassword)
         {
-            using (SqlConnection cn = new SqlConnection(@"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;"))
+            using (SqlConnection cn = new SqlConnection(connectionString))
             {
                 cn.Open();
-                string query = "UPDATE NguoiDung SET password = @Password WHERE email = @Email";
-
-                using (SqlCommand cmd = new SqlCommand(query, cn))
+                using (SqlCommand cmd = new SqlCommand("ResetPassword", cn))
                 {
-                    cmd.Parameters.Add(new SqlParameter("@Password", newPassword));
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@Email", email));
-
+                    cmd.Parameters.Add(new SqlParameter("@Password", newPassword));
                     int rowsAffected = cmd.ExecuteNonQuery();
                     return rowsAffected > 0;
                 }

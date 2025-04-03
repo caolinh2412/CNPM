@@ -76,6 +76,7 @@
             label2 = new Label();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             dgv_dsNV = new Guna.UI2.WinForms.Guna2DataGridView();
+            label9 = new Label();
             col_maNV = new DataGridViewTextBoxColumn();
             col_HoTen = new DataGridViewTextBoxColumn();
             col_GioiTinh = new DataGridViewTextBoxColumn();
@@ -84,7 +85,6 @@
             col_NgayDiLam = new DataGridViewTextBoxColumn();
             dgedit = new DataGridViewImageColumn();
             dgdelete = new DataGridViewImageColumn();
-            label9 = new Label();
             guna2Panel1.SuspendLayout();
             guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_dsNV).BeginInit();
@@ -125,7 +125,7 @@
             guna2Panel1.Location = new Point(14, 53);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Panel1.Size = new Size(995, 215);
+            guna2Panel1.Size = new Size(1036, 215);
             guna2Panel1.TabIndex = 2;
             // 
             // btnHuy
@@ -139,7 +139,7 @@
             btnHuy.FillColor = Color.Black;
             btnHuy.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnHuy.ForeColor = Color.White;
-            btnHuy.Location = new Point(761, 167);
+            btnHuy.Location = new Point(765, 167);
             btnHuy.Name = "btnHuy";
             btnHuy.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnHuy.Size = new Size(112, 36);
@@ -225,7 +225,7 @@
             txt_GioiTinh.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txt_GioiTinh.ForeColor = Color.Black;
             txt_GioiTinh.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt_GioiTinh.Location = new Point(145, 121);
+            txt_GioiTinh.Location = new Point(168, 121);
             txt_GioiTinh.Name = "txt_GioiTinh";
             txt_GioiTinh.PlaceholderText = "";
             txt_GioiTinh.SelectedText = "";
@@ -247,7 +247,7 @@
             txt_sdt.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txt_sdt.ForeColor = Color.Black;
             txt_sdt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt_sdt.Location = new Point(675, 73);
+            txt_sdt.Location = new Point(679, 73);
             txt_sdt.Name = "txt_sdt";
             txt_sdt.PlaceholderText = "";
             txt_sdt.SelectedText = "";
@@ -269,7 +269,7 @@
             txt_email.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txt_email.ForeColor = Color.Black;
             txt_email.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt_email.Location = new Point(675, 32);
+            txt_email.Location = new Point(679, 32);
             txt_email.Name = "txt_email";
             txt_email.PlaceholderText = "";
             txt_email.SelectedText = "";
@@ -291,7 +291,7 @@
             txt_Ten.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Ten.ForeColor = Color.Black;
             txt_Ten.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt_Ten.Location = new Point(145, 80);
+            txt_Ten.Location = new Point(168, 80);
             txt_Ten.Name = "txt_Ten";
             txt_Ten.PlaceholderText = "";
             txt_Ten.SelectedText = "";
@@ -313,7 +313,7 @@
             txt_MaNV.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txt_MaNV.ForeColor = Color.Black;
             txt_MaNV.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt_MaNV.Location = new Point(145, 39);
+            txt_MaNV.Location = new Point(168, 39);
             txt_MaNV.Name = "txt_MaNV";
             txt_MaNV.PlaceholderText = "";
             txt_MaNV.SelectedText = "";
@@ -326,7 +326,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Roboto", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(23, 128);
+            label8.Location = new Point(51, 128);
             label8.Name = "label8";
             label8.Size = new Size(75, 20);
             label8.TabIndex = 9;
@@ -370,7 +370,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Roboto", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(23, 87);
+            label4.Location = new Point(51, 87);
             label4.Name = "label4";
             label4.Size = new Size(84, 20);
             label4.TabIndex = 5;
@@ -381,7 +381,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Roboto", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(23, 46);
+            label3.Location = new Point(51, 46);
             label3.Name = "label3";
             label3.Size = new Size(111, 20);
             label3.TabIndex = 4;
@@ -408,10 +408,10 @@
             guna2CustomGradientPanel1.FillColor2 = Color.FromArgb(248, 247, 239);
             guna2CustomGradientPanel1.FillColor3 = Color.FromArgb(248, 247, 239);
             guna2CustomGradientPanel1.FillColor4 = Color.FromArgb(248, 247, 239);
-            guna2CustomGradientPanel1.Location = new Point(14, 293);
+            guna2CustomGradientPanel1.Location = new Point(17, 293);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2CustomGradientPanel1.Size = new Size(995, 349);
+            guna2CustomGradientPanel1.Size = new Size(1033, 412);
             guna2CustomGradientPanel1.TabIndex = 3;
             // 
             // dgv_dsNV
@@ -452,7 +452,7 @@
             dgv_dsNV.RowHeadersVisible = false;
             dgv_dsNV.RowHeadersWidth = 51;
             dgv_dsNV.RowTemplate.Height = 29;
-            dgv_dsNV.Size = new Size(989, 302);
+            dgv_dsNV.Size = new Size(1027, 368);
             dgv_dsNV.TabIndex = 23;
             dgv_dsNV.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_dsNV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -476,6 +476,17 @@
             dgv_dsNV.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgv_dsNV.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.FromArgb(63, 29, 18);
+            label9.Location = new Point(3, 19);
+            label9.Name = "label9";
+            label9.Size = new Size(194, 22);
+            label9.TabIndex = 20;
+            label9.Text = "Danh sách nhân viên";
+            // 
             // col_maNV
             // 
             col_maNV.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -490,7 +501,7 @@
             col_HoTen.HeaderText = "Họ và tên";
             col_HoTen.MinimumWidth = 6;
             col_HoTen.Name = "col_HoTen";
-            col_HoTen.Width = 150;
+            col_HoTen.Width = 160;
             // 
             // col_GioiTinh
             // 
@@ -506,7 +517,7 @@
             col_email.HeaderText = "Email";
             col_email.MinimumWidth = 6;
             col_email.Name = "col_email";
-            col_email.Width = 150;
+            col_email.Width = 160;
             // 
             // col_sdt
             // 
@@ -544,17 +555,6 @@
             dgdelete.Name = "dgdelete";
             dgdelete.Width = 70;
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.FromArgb(63, 29, 18);
-            label9.Location = new Point(3, 19);
-            label9.Name = "label9";
-            label9.Size = new Size(194, 22);
-            label9.TabIndex = 20;
-            label9.Text = "Danh sách nhân viên";
-            // 
             // FormQuanLyNV
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -563,7 +563,7 @@
             Controls.Add(guna2Panel1);
             Controls.Add(label1);
             Name = "FormQuanLyNV";
-            Size = new Size(1028, 656);
+            Size = new Size(1087, 730);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             guna2CustomGradientPanel1.ResumeLayout(false);

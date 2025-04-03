@@ -39,18 +39,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label7 = new Label();
             cb_loaiMon = new Guna.UI2.WinForms.Guna2ComboBox();
             flp_ThucDon = new FlowLayoutPanel();
-            formMon1 = new FormMon();
-            formMon2 = new FormMon();
-            formMon3 = new FormMon();
-            formMon4 = new FormMon();
-            formMon5 = new FormMon();
-            panel1 = new Panel();
-            label16 = new Label();
-            label15 = new Label();
-            label14 = new Label();
+            pnl_HoaDon = new Panel();
+            lb_MaHD = new Label();
+            lb_ThuNgan = new Label();
+            lb_ThoiGian = new Label();
+            lb_TongSL = new Label();
             label3 = new Label();
             label13 = new Label();
             label12 = new Label();
@@ -60,20 +58,20 @@
             label8 = new Label();
             label6 = new Label();
             label5 = new Label();
-            label4 = new Label();
-            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            lb_TongTien = new Label();
+            dgv_ChiTietHD = new Guna.UI2.WinForms.Guna2DataGridView();
             col_TenMon = new DataGridViewTextBoxColumn();
             col_SoLuong = new DataGridViewTextBoxColumn();
             col_DonGia = new DataGridViewTextBoxColumn();
             col_ThanhTien = new DataGridViewTextBoxColumn();
             label2 = new Label();
             label9 = new Label();
-            btnThem = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            flp_ThucDon.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
+            btn_In = new Guna.UI2.WinForms.Guna2Button();
+            btn_XoaMon = new Guna.UI2.WinForms.Guna2Button();
+            btn_Huy = new Guna.UI2.WinForms.Guna2Button();
+            btnLuu = new Guna.UI2.WinForms.Guna2Button();
+            pnl_HoaDon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv_ChiTietHD).BeginInit();
             SuspendLayout();
             // 
             // label7
@@ -110,136 +108,84 @@
             // 
             flp_ThucDon.AutoScroll = true;
             flp_ThucDon.BackColor = Color.FromArgb(248, 247, 239);
-            flp_ThucDon.Controls.Add(formMon1);
-            flp_ThucDon.Controls.Add(formMon2);
-            flp_ThucDon.Controls.Add(formMon3);
-            flp_ThucDon.Controls.Add(formMon4);
-            flp_ThucDon.Controls.Add(formMon5);
+            flp_ThucDon.BorderStyle = BorderStyle.FixedSingle;
             flp_ThucDon.Location = new Point(18, 71);
+            flp_ThucDon.Margin = new Padding(7);
             flp_ThucDon.Name = "flp_ThucDon";
-            flp_ThucDon.Size = new Size(557, 564);
+            flp_ThucDon.Padding = new Padding(20);
+            flp_ThucDon.Size = new Size(543, 641);
             flp_ThucDon.TabIndex = 30;
             // 
-            // formMon1
+            // pnl_HoaDon
             // 
-            formMon1.AutoValidate = AutoValidate.EnableAllowFocusChange;
-            formMon1.BackColor = SystemColors.ButtonHighlight;
-            formMon1.BorderStyle = BorderStyle.FixedSingle;
-            formMon1.Location = new Point(3, 3);
-            formMon1.MaximumSize = new Size(153, 165);
-            formMon1.MinimumSize = new Size(153, 165);
-            formMon1.Name = "formMon1";
-            formMon1.Size = new Size(153, 165);
-            formMon1.TabIndex = 0;
+            pnl_HoaDon.BackColor = Color.FromArgb(248, 247, 239);
+            pnl_HoaDon.BorderStyle = BorderStyle.FixedSingle;
+            pnl_HoaDon.Controls.Add(lb_MaHD);
+            pnl_HoaDon.Controls.Add(lb_ThuNgan);
+            pnl_HoaDon.Controls.Add(lb_ThoiGian);
+            pnl_HoaDon.Controls.Add(lb_TongSL);
+            pnl_HoaDon.Controls.Add(label3);
+            pnl_HoaDon.Controls.Add(label13);
+            pnl_HoaDon.Controls.Add(label12);
+            pnl_HoaDon.Controls.Add(label11);
+            pnl_HoaDon.Controls.Add(label1);
+            pnl_HoaDon.Controls.Add(label10);
+            pnl_HoaDon.Controls.Add(label8);
+            pnl_HoaDon.Controls.Add(label6);
+            pnl_HoaDon.Controls.Add(label5);
+            pnl_HoaDon.Controls.Add(lb_TongTien);
+            pnl_HoaDon.Controls.Add(dgv_ChiTietHD);
+            pnl_HoaDon.Controls.Add(label2);
+            pnl_HoaDon.Controls.Add(label9);
+            pnl_HoaDon.Location = new Point(613, 71);
+            pnl_HoaDon.Name = "pnl_HoaDon";
+            pnl_HoaDon.Size = new Size(430, 586);
+            pnl_HoaDon.TabIndex = 31;
             // 
-            // formMon2
+            // lb_MaHD
             // 
-            formMon2.AutoValidate = AutoValidate.EnableAllowFocusChange;
-            formMon2.BackColor = SystemColors.ButtonHighlight;
-            formMon2.BorderStyle = BorderStyle.FixedSingle;
-            formMon2.Location = new Point(162, 3);
-            formMon2.MaximumSize = new Size(153, 165);
-            formMon2.MinimumSize = new Size(153, 165);
-            formMon2.Name = "formMon2";
-            formMon2.Size = new Size(153, 165);
-            formMon2.TabIndex = 1;
+            lb_MaHD.AutoSize = true;
+            lb_MaHD.Location = new Point(202, 90);
+            lb_MaHD.Name = "lb_MaHD";
+            lb_MaHD.Size = new Size(58, 20);
+            lb_MaHD.TabIndex = 46;
+            lb_MaHD.Text = "label17";
             // 
-            // formMon3
+            // lb_ThuNgan
             // 
-            formMon3.AutoValidate = AutoValidate.EnableAllowFocusChange;
-            formMon3.BackColor = SystemColors.ButtonHighlight;
-            formMon3.BorderStyle = BorderStyle.FixedSingle;
-            formMon3.Location = new Point(321, 3);
-            formMon3.MaximumSize = new Size(153, 165);
-            formMon3.MinimumSize = new Size(153, 165);
-            formMon3.Name = "formMon3";
-            formMon3.Size = new Size(153, 165);
-            formMon3.TabIndex = 2;
+            lb_ThuNgan.AutoSize = true;
+            lb_ThuNgan.Location = new Point(101, 175);
+            lb_ThuNgan.Name = "lb_ThuNgan";
+            lb_ThuNgan.Size = new Size(58, 20);
+            lb_ThuNgan.TabIndex = 45;
+            lb_ThuNgan.Text = "label16";
             // 
-            // formMon4
+            // lb_ThoiGian
             // 
-            formMon4.AutoValidate = AutoValidate.EnablePreventFocusChange;
-            formMon4.BackColor = SystemColors.ButtonHighlight;
-            formMon4.BorderStyle = BorderStyle.FixedSingle;
-            formMon4.Location = new Point(3, 174);
-            formMon4.MaximumSize = new Size(153, 165);
-            formMon4.MinimumSize = new Size(153, 165);
-            formMon4.Name = "formMon4";
-            formMon4.Size = new Size(153, 165);
-            formMon4.TabIndex = 3;
+            lb_ThoiGian.AutoSize = true;
+            lb_ThoiGian.Location = new Point(101, 141);
+            lb_ThoiGian.Name = "lb_ThoiGian";
+            lb_ThoiGian.Size = new Size(58, 20);
+            lb_ThoiGian.TabIndex = 44;
+            lb_ThoiGian.Text = "label15";
             // 
-            // formMon5
+            // lb_TongSL
             // 
-            formMon5.AutoValidate = AutoValidate.EnablePreventFocusChange;
-            formMon5.BackColor = SystemColors.ButtonHighlight;
-            formMon5.BorderStyle = BorderStyle.FixedSingle;
-            formMon5.Location = new Point(162, 174);
-            formMon5.MaximumSize = new Size(153, 165);
-            formMon5.MinimumSize = new Size(153, 165);
-            formMon5.Name = "formMon5";
-            formMon5.Size = new Size(153, 165);
-            formMon5.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(248, 247, 239);
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(label16);
-            panel1.Controls.Add(label15);
-            panel1.Controls.Add(label14);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label13);
-            panel1.Controls.Add(label12);
-            panel1.Controls.Add(label11);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(guna2DataGridView1);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label9);
-            panel1.Location = new Point(595, 71);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(412, 520);
-            panel1.TabIndex = 31;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(101, 175);
-            label16.Name = "label16";
-            label16.Size = new Size(58, 20);
-            label16.TabIndex = 45;
-            label16.Text = "label16";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(101, 141);
-            label15.Name = "label15";
-            label15.Size = new Size(58, 20);
-            label15.TabIndex = 44;
-            label15.Text = "label15";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.ForeColor = Color.Black;
-            label14.Location = new Point(358, 456);
-            label14.Name = "label14";
-            label14.Size = new Size(20, 22);
-            label14.TabIndex = 43;
-            label14.Text = "0";
+            lb_TongSL.AutoSize = true;
+            lb_TongSL.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lb_TongSL.ForeColor = Color.Black;
+            lb_TongSL.Location = new Point(380, 512);
+            lb_TongSL.Name = "lb_TongSL";
+            lb_TongSL.Size = new Size(20, 22);
+            lb_TongSL.TabIndex = 43;
+            lb_TongSL.Text = "0";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(63, 29, 18);
-            label3.Location = new Point(13, 456);
+            label3.Location = new Point(13, 516);
             label3.Name = "label3";
             label3.Size = new Size(122, 18);
             label3.TabIndex = 42;
@@ -250,7 +196,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.FromArgb(63, 29, 18);
-            label13.Location = new Point(13, 493);
+            label13.Location = new Point(13, 554);
             label13.Name = "label13";
             label13.Size = new Size(84, 18);
             label13.TabIndex = 41;
@@ -283,7 +229,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Roboto", 9F, FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(267, 141);
+            label1.Location = new Point(276, 141);
             label1.Name = "label1";
             label1.Size = new Size(124, 18);
             label1.TabIndex = 38;
@@ -294,7 +240,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Roboto", 9F, FontStyle.Italic, GraphicsUnit.Point);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(178, 92);
+            label10.Location = new Point(166, 92);
             label10.Name = "label10";
             label10.Size = new Size(30, 18);
             label10.TabIndex = 37;
@@ -333,23 +279,22 @@
             label5.TabIndex = 34;
             label5.Text = "558/4 Phạm Văn Đồng, p12, Bình Thạnh";
             // 
-            // label4
+            // lb_TongTien
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.ForestGreen;
-            label4.Location = new Point(358, 493);
-            label4.Name = "label4";
-            label4.Size = new Size(33, 22);
-            label4.TabIndex = 33;
-            label4.Text = "0đ";
-            label4.Click += label4_Click;
+            lb_TongTien.AutoSize = true;
+            lb_TongTien.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lb_TongTien.ForeColor = Color.ForestGreen;
+            lb_TongTien.Location = new Point(332, 550);
+            lb_TongTien.Name = "lb_TongTien";
+            lb_TongTien.Size = new Size(30, 22);
+            lb_TongTien.TabIndex = 33;
+            lb_TongTien.Text = "    ";
             // 
-            // guna2DataGridView1
+            // dgv_ChiTietHD
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            guna2DataGridView1.BackgroundColor = Color.FromArgb(248, 247, 239);
+            dgv_ChiTietHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgv_ChiTietHD.BackgroundColor = Color.FromArgb(248, 247, 239);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(248, 247, 239);
             dataGridViewCellStyle2.Font = new Font("Roboto", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -357,47 +302,47 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(248, 247, 239);
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            guna2DataGridView1.ColumnHeadersHeight = 102;
-            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.Columns.AddRange(new DataGridViewColumn[] { col_TenMon, col_SoLuong, col_DonGia, col_ThanhTien });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgv_ChiTietHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgv_ChiTietHD.ColumnHeadersHeight = 30;
+            dgv_ChiTietHD.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgv_ChiTietHD.Columns.AddRange(new DataGridViewColumn[] { col_TenMon, col_SoLuong, col_DonGia, col_ThanhTien });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(248, 247, 239);
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(248, 247, 239);
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(2, 198);
-            guna2DataGridView1.Name = "guna2DataGridView1";
-            guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.RowHeadersWidth = 51;
-            guna2DataGridView1.RowTemplate.Height = 29;
-            guna2DataGridView1.Size = new Size(407, 226);
-            guna2DataGridView1.TabIndex = 33;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.BackColor = Color.FromArgb(248, 247, 239);
-            guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 102;
-            guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 29;
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgv_ChiTietHD.DefaultCellStyle = dataGridViewCellStyle3;
+            dgv_ChiTietHD.GridColor = Color.FromArgb(231, 229, 255);
+            dgv_ChiTietHD.Location = new Point(4, 231);
+            dgv_ChiTietHD.Name = "dgv_ChiTietHD";
+            dgv_ChiTietHD.RowHeadersVisible = false;
+            dgv_ChiTietHD.RowHeadersWidth = 51;
+            dgv_ChiTietHD.RowTemplate.Height = 29;
+            dgv_ChiTietHD.Size = new Size(420, 222);
+            dgv_ChiTietHD.TabIndex = 33;
+            dgv_ChiTietHD.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgv_ChiTietHD.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgv_ChiTietHD.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgv_ChiTietHD.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgv_ChiTietHD.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgv_ChiTietHD.ThemeStyle.BackColor = Color.FromArgb(248, 247, 239);
+            dgv_ChiTietHD.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgv_ChiTietHD.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgv_ChiTietHD.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgv_ChiTietHD.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dgv_ChiTietHD.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgv_ChiTietHD.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgv_ChiTietHD.ThemeStyle.HeaderStyle.Height = 30;
+            dgv_ChiTietHD.ThemeStyle.ReadOnly = false;
+            dgv_ChiTietHD.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgv_ChiTietHD.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv_ChiTietHD.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dgv_ChiTietHD.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgv_ChiTietHD.ThemeStyle.RowsStyle.Height = 29;
+            dgv_ChiTietHD.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgv_ChiTietHD.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // col_TenMon
             // 
@@ -406,7 +351,7 @@
             col_TenMon.HeaderText = "Tên món";
             col_TenMon.MinimumWidth = 6;
             col_TenMon.Name = "col_TenMon";
-            col_TenMon.Width = 110;
+            col_TenMon.Width = 115;
             // 
             // col_SoLuong
             // 
@@ -450,83 +395,104 @@
             label9.AutoSize = true;
             label9.Font = new Font("Arial Rounded MT Bold", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(63, 29, 18);
-            label9.Location = new Point(111, 19);
+            label9.Location = new Point(120, 17);
             label9.Name = "label9";
             label9.Size = new Size(195, 32);
             label9.TabIndex = 21;
             label9.Text = "COFFEE 24/7";
             // 
-            // btnThem
+            // btn_In
             // 
-            btnThem.BorderRadius = 12;
-            btnThem.CustomizableEdges = customizableEdges3;
-            btnThem.DisabledState.BorderColor = Color.DarkGray;
-            btnThem.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnThem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnThem.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnThem.FillColor = Color.Green;
-            btnThem.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnThem.ForeColor = Color.White;
-            btnThem.Location = new Point(598, 599);
-            btnThem.Name = "btnThem";
-            btnThem.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnThem.Size = new Size(406, 36);
-            btnThem.TabIndex = 44;
-            btnThem.Text = "In hóa đơn";
+            btn_In.BorderRadius = 12;
+            btn_In.CustomizableEdges = customizableEdges3;
+            btn_In.DisabledState.BorderColor = Color.DarkGray;
+            btn_In.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_In.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_In.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_In.FillColor = Color.Green;
+            btn_In.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_In.ForeColor = Color.White;
+            btn_In.Location = new Point(618, 676);
+            btn_In.Name = "btn_In";
+            btn_In.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btn_In.Size = new Size(420, 36);
+            btn_In.TabIndex = 44;
+            btn_In.Text = "In hóa đơn";
+            btn_In.Click += btn_In_Click;
             // 
-            // guna2Button1
+            // btn_XoaMon
             // 
-            guna2Button1.BorderRadius = 12;
-            guna2Button1.CustomizableEdges = customizableEdges5;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(63, 29, 18);
-            guna2Button1.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(595, 15);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button1.Size = new Size(192, 36);
-            guna2Button1.TabIndex = 45;
-            guna2Button1.Text = "Xóa";
+            btn_XoaMon.BorderRadius = 12;
+            btn_XoaMon.CustomizableEdges = customizableEdges5;
+            btn_XoaMon.DisabledState.BorderColor = Color.DarkGray;
+            btn_XoaMon.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_XoaMon.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_XoaMon.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_XoaMon.FillColor = Color.FromArgb(63, 29, 18);
+            btn_XoaMon.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_XoaMon.ForeColor = Color.White;
+            btn_XoaMon.Location = new Point(613, 15);
+            btn_XoaMon.Name = "btn_XoaMon";
+            btn_XoaMon.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btn_XoaMon.Size = new Size(182, 36);
+            btn_XoaMon.TabIndex = 45;
+            btn_XoaMon.Text = "Xóa";
+            btn_XoaMon.Click += btn_XoaMon_Click;
             // 
-            // guna2Button2
+            // btn_Huy
             // 
-            guna2Button2.BorderRadius = 12;
-            guna2Button2.CustomizableEdges = customizableEdges7;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.FromArgb(63, 29, 18);
-            guna2Button2.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(819, 15);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button2.Size = new Size(188, 36);
-            guna2Button2.TabIndex = 46;
-            guna2Button2.Text = "Hủy";
+            btn_Huy.BorderRadius = 12;
+            btn_Huy.CustomizableEdges = customizableEdges7;
+            btn_Huy.DisabledState.BorderColor = Color.DarkGray;
+            btn_Huy.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_Huy.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_Huy.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_Huy.FillColor = Color.FromArgb(63, 29, 18);
+            btn_Huy.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Huy.ForeColor = Color.White;
+            btn_Huy.Location = new Point(855, 15);
+            btn_Huy.Name = "btn_Huy";
+            btn_Huy.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btn_Huy.Size = new Size(188, 36);
+            btn_Huy.TabIndex = 46;
+            btn_Huy.Text = "Hủy";
+            btn_Huy.Click += btn_Huy_Click;
+            // 
+            // btnLuu
+            // 
+            btnLuu.BorderRadius = 12;
+            btnLuu.CustomizableEdges = customizableEdges9;
+            btnLuu.DisabledState.BorderColor = Color.DarkGray;
+            btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLuu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLuu.FillColor = Color.DarkRed;
+            btnLuu.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLuu.ForeColor = Color.White;
+            btnLuu.Location = new Point(379, 15);
+            btnLuu.Name = "btnLuu";
+            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnLuu.Size = new Size(182, 36);
+            btnLuu.TabIndex = 46;
+            btnLuu.Text = "Xóa bộ lọc";
             // 
             // FormDatHang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(guna2Button2);
-            Controls.Add(guna2Button1);
-            Controls.Add(btnThem);
-            Controls.Add(panel1);
+            Controls.Add(btnLuu);
+            Controls.Add(btn_Huy);
+            Controls.Add(btn_XoaMon);
+            Controls.Add(btn_In);
+            Controls.Add(pnl_HoaDon);
             Controls.Add(flp_ThucDon);
             Controls.Add(cb_loaiMon);
             Controls.Add(label7);
             Name = "FormDatHang";
-            Size = new Size(1028, 656);
-            flp_ThucDon.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
+            Size = new Size(1087, 730);
+            pnl_HoaDon.ResumeLayout(false);
+            pnl_HoaDon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv_ChiTietHD).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -535,20 +501,12 @@
         private Label label7;
         private Guna.UI2.WinForms.Guna2ComboBox cb_loaiMon;
         private FlowLayoutPanel flp_ThucDon;
-        private Panel panel1;
-        private FormMon formMon1;
-        private FormMon formMon2;
-        private FormMon formMon3;
-        private FormMon formMon4;
+        private Panel pnl_HoaDon;
         private FormMon formMon5;
         private Label label9;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Label label4;
-        private DataGridViewTextBoxColumn col_TenMon;
-        private DataGridViewTextBoxColumn col_SoLuong;
-        private DataGridViewTextBoxColumn col_DonGia;
-        private DataGridViewTextBoxColumn col_ThanhTien;
+        private Guna.UI2.WinForms.Guna2DataGridView dgv_ChiTietHD;
+        private Label lb_TongTien;
         private Label label6;
         private Label label5;
         private Label label8;
@@ -558,11 +516,17 @@
         private Label label11;
         private Label label3;
         private Label label13;
-        private Label label14;
-        private Guna.UI2.WinForms.Guna2Button btnThem;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Label label16;
-        private Label label15;
+        private Label lb_TongSL;
+        private Guna.UI2.WinForms.Guna2Button btn_In;
+        private Guna.UI2.WinForms.Guna2Button btn_XoaMon;
+        private Guna.UI2.WinForms.Guna2Button btn_Huy;
+        private Label lb_ThuNgan;
+        private Label lb_ThoiGian;
+        private Guna.UI2.WinForms.Guna2Button btnLuu;
+        private Label lb_MaHD;
+        private DataGridViewTextBoxColumn col_TenMon;
+        private DataGridViewTextBoxColumn col_SoLuong;
+        private DataGridViewTextBoxColumn col_DonGia;
+        private DataGridViewTextBoxColumn col_ThanhTien;
     }
 }

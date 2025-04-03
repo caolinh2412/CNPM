@@ -55,7 +55,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Roboto", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(63, 29, 18);
-            label1.Location = new Point(20, 17);
+            label1.Location = new Point(40, 17);
             label1.Name = "label1";
             label1.Size = new Size(334, 34);
             label1.TabIndex = 0;
@@ -66,7 +66,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(63, 29, 18);
-            label7.Location = new Point(29, 88);
+            label7.Location = new Point(39, 88);
             label7.Name = "label7";
             label7.Size = new Size(104, 22);
             label7.TabIndex = 15;
@@ -85,7 +85,7 @@
             cb_LoaiMon.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cb_LoaiMon.ForeColor = Color.FromArgb(63, 29, 18);
             cb_LoaiMon.ItemHeight = 30;
-            cb_LoaiMon.Location = new Point(139, 74);
+            cb_LoaiMon.Location = new Point(149, 74);
             cb_LoaiMon.Name = "cb_LoaiMon";
             cb_LoaiMon.ShadowDecoration.CustomizableEdges = customizableEdges2;
             cb_LoaiMon.Size = new Size(225, 36);
@@ -95,17 +95,17 @@
             // 
             dataGridView1.BackgroundColor = Color.FromArgb(248, 247, 239);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(20, 137);
+            dataGridView1.Location = new Point(39, 137);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(985, 498);
+            dataGridView1.Size = new Size(1013, 565);
             dataGridView1.TabIndex = 16;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(933, 64);
+            pictureBox1.Location = new Point(986, 64);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(56, 55);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -137,12 +137,12 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgv_DanhMuc.DefaultCellStyle = dataGridViewCellStyle3;
             dgv_DanhMuc.GridColor = Color.FromArgb(231, 229, 255);
-            dgv_DanhMuc.Location = new Point(20, 137);
+            dgv_DanhMuc.Location = new Point(39, 137);
             dgv_DanhMuc.Name = "dgv_DanhMuc";
             dgv_DanhMuc.RowHeadersVisible = false;
             dgv_DanhMuc.RowHeadersWidth = 51;
             dgv_DanhMuc.RowTemplate.Height = 29;
-            dgv_DanhMuc.Size = new Size(985, 498);
+            dgv_DanhMuc.Size = new Size(1013, 565);
             dgv_DanhMuc.TabIndex = 18;
             dgv_DanhMuc.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_DanhMuc.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -215,7 +215,7 @@
             Controls.Add(label7);
             Controls.Add(label1);
             Name = "MenuForm";
-            Size = new Size(1028, 656);
+            Size = new Size(1087, 730);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_DanhMuc).EndInit();

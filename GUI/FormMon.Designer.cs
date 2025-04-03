@@ -44,7 +44,8 @@
             panel1.Controls.Add(txt_TenMon);
             panel1.Controls.Add(img_Mon);
             panel1.ForeColor = SystemColors.ButtonHighlight;
-            panel1.Location = new Point(-2, 0);
+            panel1.Location = new Point(-1, -1);
+            panel1.Margin = new Padding(0);
             panel1.MaximumSize = new Size(153, 165);
             panel1.MinimumSize = new Size(153, 165);
             panel1.Name = "panel1";
@@ -53,13 +54,13 @@
             // 
             // txt_TenMon
             // 
-            txt_TenMon.AutoSize = true;
             txt_TenMon.ForeColor = SystemColors.ActiveCaptionText;
-            txt_TenMon.Location = new Point(39, 132);
+            txt_TenMon.Location = new Point(24, 122);
             txt_TenMon.Name = "txt_TenMon";
-            txt_TenMon.Size = new Size(66, 20);
+            txt_TenMon.Size = new Size(100, 36);
             txt_TenMon.TabIndex = 1;
             txt_TenMon.Text = "Tên món";
+            txt_TenMon.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // img_Mon
             // 
@@ -79,12 +80,13 @@
             BackColor = SystemColors.ButtonHighlight;
             BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panel1);
+            Margin = new Padding(5);
             MaximumSize = new Size(153, 165);
             MinimumSize = new Size(153, 165);
             Name = "FormMon";
+            Padding = new Padding(5);
             Size = new Size(151, 163);
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)img_Mon).EndInit();
             ResumeLayout(false);
             PerformLayout();

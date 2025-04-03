@@ -8,7 +8,7 @@ namespace DTO
 {
     public class ThucDon_DTO
     {
-        public int MaMon { get; set; }
+        public string  MaMon { get; set; }
         public string TenMon { get; set; }
         public decimal Gia { get; set; }
         public string LoaiMon { get; set; }

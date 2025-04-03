@@ -59,7 +59,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(216, 656);
+            panel1.Size = new Size(216, 730);
             panel1.TabIndex = 1;
             // 
             // btnLogOut
@@ -101,7 +101,7 @@
             guna2Button4.AutoRoundedCorners = true;
             guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             guna2Button4.CheckedState.FillColor = Color.Tan;
-            guna2Button4.CheckedState.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button4.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button4.CheckedState.Image = (Image)resources.GetObject("resource.Image");
             customizableEdges13.BottomRight = false;
             customizableEdges13.TopRight = false;
@@ -131,7 +131,7 @@
             guna2Button3.AutoRoundedCorners = true;
             guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             guna2Button3.CheckedState.FillColor = Color.Tan;
-            guna2Button3.CheckedState.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2Button3.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button3.CheckedState.Image = (Image)resources.GetObject("resource.Image1");
             customizableEdges15.BottomRight = false;
             customizableEdges15.TopRight = false;
@@ -161,7 +161,7 @@
             btnTrangChu.BackColor = Color.FromArgb(63, 29, 18);
             btnTrangChu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btnTrangChu.CheckedState.FillColor = Color.Tan;
-            btnTrangChu.CheckedState.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTrangChu.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnTrangChu.CheckedState.Image = (Image)resources.GetObject("resource.Image2");
             customizableEdges17.BottomRight = false;
             customizableEdges17.TopRight = false;
@@ -190,14 +190,14 @@
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(216, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1028, 656);
+            panelMain.Size = new Size(1087, 730);
             panelMain.TabIndex = 2;
             // 
             // StaffForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1244, 656);
+            ClientSize = new Size(1303, 730);
             Controls.Add(panelMain);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;

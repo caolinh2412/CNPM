@@ -42,9 +42,10 @@ namespace DAL
                         connection.Open();
                     }
 
-                    string query = "SELECT MaND, HoVaTen, GioiTinh, email, SDT, NgayDiLam FROM NguoiDung WHERE MaQL IS NOT NULL";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    string procedure = "GetAllEmployees";
+                    using (SqlCommand command = new SqlCommand(procedure, connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
@@ -83,8 +84,9 @@ namespace DAL
             {
                 try
                 {
-                    string query = "DELETE FROM NguoiDung WHERE MaND = @MaND";
-                    SqlCommand command = new SqlCommand(query, connection);
+                    string procedure = "DeleteEmployee";
+                    SqlCommand command = new SqlCommand(procedure, connection);
+                    command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@MaND", maNV);
                     connection.Open();
                     int result = command.ExecuteNonQuery();
@@ -110,8 +112,9 @@ namespace DAL
             {
                 try
                 {
-                    string query = "UPDATE NguoiDung SET HoVaTen = @HoVaTen, GioiTinh = @GioiTinh, email = @Email, SDT = @SDT, NgayDiLam = @NgayDiLam WHERE MaND = @MaND";
-                    SqlCommand command = new SqlCommand(query, connection);
+                    string procedure = "UpdateEmployee";
+                    SqlCommand command = new SqlCommand(procedure, connection);
+                    command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@MaND", employee.MaND);
                     command.Parameters.AddWithValue("@HoVaTen", employee.HoVaTen);
                     command.Parameters.AddWithValue("@GioiTinh", employee.GioiTinh);
@@ -142,16 +145,17 @@ namespace DAL
             {
                 try
                 {
-                    string defaultPassword = "CafeShop" + employee.MaND;
-                    string query = "INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam) VALUES (@MaND, @HoVaTen, @Email, @SDT, @GioiTinh, @Password, @NgayDiLam)";
+                    string query = "InsertEmployee";
                     SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@MaND", employee.MaND);
+                    command.CommandType = CommandType.StoredProcedure; 
+
+                  
                     command.Parameters.AddWithValue("@HoVaTen", employee.HoVaTen);
                     command.Parameters.AddWithValue("@Email", employee.Email);
                     command.Parameters.AddWithValue("@SDT", employee.SDT);
                     command.Parameters.AddWithValue("@GioiTinh", employee.GioiTinh);
-                    command.Parameters.AddWithValue("@Password", defaultPassword);
                     command.Parameters.AddWithValue("@NgayDiLam", employee.NgayDiLam);
+
                     connection.Open();
                     int result = command.ExecuteNonQuery();
                     return result > 0;
@@ -196,76 +200,127 @@ namespace DAL
             }
             return workSchedule;
         }
-        private string GenerateMaLLV()
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = "SELECT ISNULL(MAX(CAST(SUBSTRING(MaLLV, 4, LEN(MaLLV) - 3) AS INT)), 0) + 1 FROM LichLamViec";
-                SqlCommand command = new SqlCommand(query, connection);
-                int maxNumber = (int)command.ExecuteScalar();
-                return "LLV" + maxNumber.ToString("D3"); 
-            }
-        }
-
         public bool InsertWorkSchedule(CaLam_DTO workSchedule)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
+                try
+                {
+                    string query = "InsertWorkSchedule"; 
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.CommandType = CommandType.StoredProcedure; 
 
-                string maLLV = GenerateMaLLV();
+                    command.Parameters.AddWithValue("@MaND", workSchedule.MaND);
+                    command.Parameters.AddWithValue("@Ngay", workSchedule.Ngay);
+                    command.Parameters.AddWithValue("@CaLam", workSchedule.CaLam);
 
-                string query = "INSERT INTO LichLamViec (MaLLV, MaND, Ngay, CaLam) VALUES (@MaLLV, @MaND, @Ngay, @CaLam)";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaLLV", maLLV);
-                command.Parameters.AddWithValue("@MaND", workSchedule.MaND);
-                command.Parameters.AddWithValue("@Ngay", workSchedule.Ngay);
-                command.Parameters.AddWithValue("@CaLam", workSchedule.CaLam);
-                int result = command.ExecuteNonQuery();
-                return result > 0;
+                    connection.Open();
+                    int result = command.ExecuteNonQuery();
+                    return result > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                finally
+                {
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
             }
         }
-
         public bool DeleteWorkSchedule(string maLLV)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "DELETE FROM LichLamViec WHERE MaLLV = @MaLLV";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@MaLLV", maLLV);
+                try
+                {
+                    string query = "DeleteWorkSchedule"; // Tên stored procedure
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.CommandType = CommandType.StoredProcedure; // Chỉ định đây là stored procedure
+                    cmd.Parameters.AddWithValue("@MaLLV", maLLV);
 
-                conn.Open();
-                int result = cmd.ExecuteNonQuery();
-                return result > 0;
+                    conn.Open();
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                finally
+                {
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
+                }
             }
         }
         public bool UpdateWorkSchedule(CaLam_DTO workSchedule)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "UPDATE LichLamViec SET MaND = @MaND, Ngay = @Ngay, CaLam = @CaLam WHERE MaLLV = @MaLLV";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaLLV", workSchedule.MaLLV);
-                command.Parameters.AddWithValue("@MaND", workSchedule.MaND);
-                command.Parameters.AddWithValue("@Ngay", workSchedule.Ngay);
-                command.Parameters.AddWithValue("@CaLam", workSchedule.CaLam);
-                connection.Open();
-                int result = command.ExecuteNonQuery();
-                return result > 0;
+                try
+                {
+                    string query = "CapNhatLichLamViec"; 
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.CommandType = CommandType.StoredProcedure; 
+              
+                    command.Parameters.AddWithValue("@MaLLV", workSchedule.MaLLV);
+                    command.Parameters.AddWithValue("@MaND", workSchedule.MaND);
+                    command.Parameters.AddWithValue("@Ngay", workSchedule.Ngay);
+                    command.Parameters.AddWithValue("@CaLam", workSchedule.CaLam);
+
+                    connection.Open();
+                    int result = command.ExecuteNonQuery();
+                    return result > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                finally
+                {
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
             }
         }
         public int GetEmployeeCount()
         {
-            int count = 0;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT COUNT(*) FROM NguoiDung WHERE MaQL IS NOT NULL";
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
-                count = (int)command.ExecuteScalar();
+                try
+                {
+                    string query = "DemNv"; 
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.CommandType = CommandType.StoredProcedure; 
+
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    return count;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return 0;
+                }
+                finally
+                {
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
             }
-            return count;
         }
     }
 }

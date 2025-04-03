@@ -45,5 +45,10 @@ namespace CoffeeShopManagementSystem
             SignInForm signInForm = new SignInForm();
             signInForm.Show();
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            ShowUserControl(new FormQuanLyHoaDon());
+        }
     }
 }
