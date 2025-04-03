@@ -4,16 +4,17 @@ using DTO;
 using DAL;
 using System.ComponentModel;
 using System.Data;
+using System.Windows.Forms;
 
 namespace CoffeeShopManagementSystem.BUS
 {
-    public class DonHangBUS
+    public class DonHang_BUS
     {
-        private readonly DonHangDAL _donHangDAL;
+        private readonly DonHang_DAL _donHangDAL;
 
-        public DonHangBUS()
+        public DonHang_BUS()
         {
-            _donHangDAL = new DonHangDAL();
+            _donHangDAL = new DonHang_DAL();
         }
 
         public DataTable LayDanhSachDonHang()
@@ -47,6 +48,11 @@ namespace CoffeeShopManagementSystem.BUS
         public string GetNextMaDH()
         {
             return _donHangDAL.GetNextMaDH();
+        }
+        public void CapNhatSoLuongTonKho(string maDH)
+        {
+
+            _donHangDAL.CapNhatSoLuongTonKho(maDH);
         }
     }
 }

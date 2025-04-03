@@ -50,5 +50,10 @@ namespace CoffeeShopManagementSystem
         {
             ShowUserControl(new FormQuanLyHoaDon());
         }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            ShowUserControl(new FormQuanLyKho());
+        }
     }
 }

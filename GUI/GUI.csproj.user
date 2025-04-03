@@ -16,6 +16,9 @@
     <Compile Update="FormChonSL.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormChonSLDonvi.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormDatHang.cs">
       <SubType>UserControl</SubType>
     </Compile>

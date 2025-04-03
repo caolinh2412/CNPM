@@ -15,7 +15,7 @@ namespace GUI
 {
     public partial class FormQuanLyHoaDon: UserControl
     {
-        private DonHangBUS donHangBUS = new DonHangBUS();
+        private DonHang_BUS donHangBUS = new DonHang_BUS();
         private ChiTietDonHang_BUS chiTietDonHangBUS = new ChiTietDonHang_BUS();
 
         public FormQuanLyHoaDon()

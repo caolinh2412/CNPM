@@ -74,3 +74,5 @@ D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\G
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormDatHang.resources
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormMon.resources
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormChonSL.resources
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormQuanLyKho.resources
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net6.0-windows7.0\GUI.FormChonSLDonvi.resources

@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace DAL
 {
-    public class DonHangDAL
+    public class DonHang_DAL
     {
         private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
       
@@ -149,6 +149,31 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("Lỗi khi lấy mã đơn hàng tiếp theo: " + ex.Message);
+            }
+        }
+        public void CapNhatSoLuongTonKho(string maDH)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_CapNhatSoLuongTonKho", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@MaDH", maDH);
+
+                        cmd.ExecuteNonQuery(); 
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {        
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi không xác định khi cập nhật tồn kho: " + ex.Message);
             }
         }
     }

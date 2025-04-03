@@ -75,7 +75,7 @@
             btnLogOut.BackColor = Color.FromArgb(63, 29, 18);
             btnLogOut.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogOut.ForeColor = SystemColors.ButtonHighlight;
-            btnLogOut.Location = new Point(29, 637);
+            btnLogOut.Location = new Point(29, 668);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(143, 33);
             btnLogOut.TabIndex = 36;
@@ -132,6 +132,7 @@
             guna2Button5.Text = "Inventory";
             guna2Button5.TextAlign = HorizontalAlignment.Left;
             guna2Button5.TextOffset = new Point(20, 0);
+            guna2Button5.Click += guna2Button5_Click;
             // 
             // guna2Button4
             // 

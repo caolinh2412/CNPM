@@ -76,7 +76,6 @@
             label2 = new Label();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             dgv_dsNV = new Guna.UI2.WinForms.Guna2DataGridView();
-            label9 = new Label();
             col_maNV = new DataGridViewTextBoxColumn();
             col_HoTen = new DataGridViewTextBoxColumn();
             col_GioiTinh = new DataGridViewTextBoxColumn();
@@ -85,6 +84,7 @@
             col_NgayDiLam = new DataGridViewTextBoxColumn();
             dgedit = new DataGridViewImageColumn();
             dgdelete = new DataGridViewImageColumn();
+            label9 = new Label();
             guna2Panel1.SuspendLayout();
             guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_dsNV).BeginInit();
@@ -476,17 +476,6 @@
             dgv_dsNV.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgv_dsNV.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.FromArgb(63, 29, 18);
-            label9.Location = new Point(3, 19);
-            label9.Name = "label9";
-            label9.Size = new Size(194, 22);
-            label9.TabIndex = 20;
-            label9.Text = "Danh sách nhân viên";
-            // 
             // col_maNV
             // 
             col_maNV.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -554,6 +543,17 @@
             dgdelete.MinimumWidth = 6;
             dgdelete.Name = "dgdelete";
             dgdelete.Width = 70;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.FromArgb(63, 29, 18);
+            label9.Location = new Point(3, 19);
+            label9.Name = "label9";
+            label9.Size = new Size(194, 22);
+            label9.TabIndex = 20;
+            label9.Text = "Danh sách nhân viên";
             // 
             // FormQuanLyNV
             // 

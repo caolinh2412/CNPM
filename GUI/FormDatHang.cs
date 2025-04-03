@@ -21,7 +21,7 @@ namespace GUI
     {
         private ThucDon_BUS thucDonBUS;
         private List<FormMon> danhSachMon;
-        private DonHangBUS donHangBUS;
+        private DonHang_BUS donHangBUS;
         private ChiTietDonHang_BUS chiTietBus;
         private BindingList<ChiTietDonHang_DTO> chiTietDonHangs;
         private decimal tongTien;
@@ -35,7 +35,7 @@ namespace GUI
             InitializeComponent();
             thucDonBUS = new ThucDon_BUS();
             danhSachMon = new List<FormMon>();
-            donHangBUS = new DonHangBUS();
+            donHangBUS = new DonHang_BUS();
             chiTietDonHangs = new BindingList<ChiTietDonHang_DTO>();
             chiTietBus = new ChiTietDonHang_BUS();
             TaiDanhSachMon();
@@ -182,6 +182,7 @@ namespace GUI
 
                 if (donHangBUS.ThemDonHangVaChiTiet(donHang, chiTietDonHangs, out maDH))
                 {
+
                     DonHangDTO savedDonHang = donHangBUS.GetDonHangById(maDH);
                     tongTien = savedDonHang.TongTien;
                     if (this.Controls.Find("lb_TongTien", true).FirstOrDefault() is Label lbTongTien)
@@ -192,6 +193,7 @@ namespace GUI
                     MessageBox.Show($"Đã in hóa đơn thành công! Mã đơn hàng: {maDH}",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     lb_MaHD.Text = donHangBUS.GetNextMaDH();
+                    donHangBUS.CapNhatSoLuongTonKho(maDH);
                     ResetForm();
                 }
                 else

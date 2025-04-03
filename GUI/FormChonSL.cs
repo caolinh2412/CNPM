@@ -44,5 +44,10 @@ namespace GUI
         {
             Close();
         }
+
+        private void txt_MaNV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
