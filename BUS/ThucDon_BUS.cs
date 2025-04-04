@@ -33,5 +33,13 @@ namespace BUS
         {
             return dal.GetTongSoMon();
         }
+        public ThucDon_DTO GetMonById(string maMon)
+        {
+            return dal.GetMonById(maMon);
+        }
+        public bool UpdateMon(ThucDon_DTO mon)
+        {
+            return dal.UpdateMon(mon);
+        }
     }
 }

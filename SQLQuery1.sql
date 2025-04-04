@@ -290,6 +290,46 @@ BEGIN
     END CATCH
 END;
 
+--lấy món theo mã món
+CREATE PROCEDURE getMonById
+    @MaMon NVARCHAR(10)
+AS
+BEGIN
+    SELECT 
+        MaMon,
+        TenMon,
+        Gia,
+        LoaiMon,
+        TrangThai,
+        HinhAnh
+    FROM Menu
+    WHERE MaMon = @MaMon;
+END;
+
+--Chỉnh sửa món
+CREATE PROCEDURE UpdateMon
+    @MaMon NVARCHAR(10),
+    @TenMon NVARCHAR(50),
+    @Gia DECIMAL(10,2),
+    @LoaiMon NVARCHAR(50),
+    @TrangThai NVARCHAR(20),
+    @HinhAnh NVARCHAR(255)
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM Menu WHERE MaMon = @MaMon)
+    BEGIN
+        UPDATE Menu
+        SET 
+            TenMon = @TenMon,
+            Gia = @Gia,
+            LoaiMon = @LoaiMon,
+            TrangThai = @TrangThai,
+            HinhAnh = @HinhAnh
+        WHERE MaMon = @MaMon;
+    END
+END
+
+
 --Tính tổng số món
 CREATE PROCEDURE sp_TinhTongSoMonTrongMenu
 AS

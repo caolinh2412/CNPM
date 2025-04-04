@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,9 @@ namespace GUI
 {
     public partial class FormThemMon : Form
     {
+        private ThucDon_DTO monDangSua = null;
+        private ThucDon_BUS bus = new ThucDon_BUS();
+
         public FormThemMon()
         {
             InitializeComponent();
@@ -77,15 +82,33 @@ namespace GUI
             };
 
             BUS.ThucDon_BUS bus = new BUS.ThucDon_BUS();
-            bool result = bus.ThemMonMoi(thucDon);
-            if (result)
+            bool result;
+            if (monDangSua == null) 
             {
-                MessageBox.Show("Thêm món thành công!");
-                ResetFields();
+                result = bus.ThemMonMoi(thucDon);
+                if (result)
+                {
+                    MessageBox.Show("Thêm món thành công!");
+                    ResetFields();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm món thất bại!");
+                }
             }
-            else
+            else // Trường hợp CHỈNH SỬA
             {
-                MessageBox.Show("Thêm món thất bại!");
+                thucDon.MaMon = monDangSua.MaMon;
+                result = bus.UpdateMon(thucDon);
+                if (result)
+                {
+                    MessageBox.Show("Cập nhật món thành công!");
+                    this.Close(); // Đóng form sau khi chỉnh sửa thành công
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật món thất bại!");
+                }
             }
         }
         private void ResetFields()
@@ -94,6 +117,23 @@ namespace GUI
             txt_GiaMon.Text = "";
             cb_loaiMon.SelectedIndex = -1; 
             pic_Mon.Image = null;
+        }
+        public void LoadMon(ThucDon_DTO mon)
+        {
+            monDangSua = mon; 
+            txt_TenMon.Text = mon.TenMon;
+            txt_GiaMon.Text = mon.Gia.ToString();
+            cb_loaiMon.SelectedItem = mon.LoaiMon;
+
+            if (!string.IsNullOrEmpty(mon.HinhAnh) && System.IO.File.Exists(mon.HinhAnh))
+            {
+                pic_Mon.Image = Image.FromFile(mon.HinhAnh);
+                pic_Mon.ImageLocation = mon.HinhAnh;
+            }
+            else
+            {
+                pic_Mon.Image = null;
+            }
         }
     }
 }

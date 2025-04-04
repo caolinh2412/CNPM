@@ -138,5 +138,47 @@ namespace DAL
                 throw new Exception("Lỗi không xác định khi lấy tổng số món trong menu: " + ex.Message);
             }
         }
+        public ThucDon_DTO GetMonById(string maMon)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("getMonById", conn) { CommandType = CommandType.StoredProcedure };
+                cmd.Parameters.AddWithValue("@MaMon", maMon);
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new ThucDon_DTO
+                        {
+                            MaMon = reader["MaMon"].ToString(),
+                            TenMon = reader["TenMon"].ToString(),
+                            Gia = Convert.ToDecimal(reader["Gia"]),
+                            LoaiMon = reader["LoaiMon"].ToString(),
+                            TrangThai = reader["TrangThai"].ToString(),
+                            HinhAnh = reader["HinhAnh"].ToString()
+                        };
+                    }
+                }
+            }
+            return null;
+        }
+        public bool UpdateMon(ThucDon_DTO mon)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("UpdateMon", conn) { CommandType = CommandType.StoredProcedure };
+                cmd.Parameters.AddWithValue("@MaMon", mon.MaMon);
+                cmd.Parameters.AddWithValue("@TenMon", mon.TenMon);
+                cmd.Parameters.AddWithValue("@Gia", mon.Gia);
+                cmd.Parameters.AddWithValue("@LoaiMon", mon.LoaiMon);
+                cmd.Parameters.AddWithValue("@TrangThai", mon.TrangThai);
+                cmd.Parameters.AddWithValue("@HinhAnh", mon.HinhAnh);
+                conn.Open();
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
     }
 }

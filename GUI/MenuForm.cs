@@ -51,7 +51,7 @@ namespace GUI
             dgv_DanhMuc.Columns["col_TenMon"].DataPropertyName = "TenMon";
             dgv_DanhMuc.Columns["col_GiaBan"].DataPropertyName = "Gia";
             dgv_DanhMuc.Columns["col_GiaBan"].DefaultCellStyle.Format = "N0";
-           
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -79,6 +79,22 @@ namespace GUI
                     {
                         MessageBox.Show("Xóa món thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+            }
+            else if (e.ColumnIndex == dgv_DanhMuc.Columns["img_edit"].Index)
+            {
+                DataGridViewRow selectedRow = dgv_DanhMuc.Rows[e.RowIndex];
+                string maMon = selectedRow.Cells["col_MaMon"].Value.ToString(); 
+
+                ThucDon_DTO mon = bus.GetMonById(maMon);
+
+                if (mon != null)
+                {
+                    FormThemMon formThemMon = new FormThemMon();
+                    formThemMon.LoadMon(mon); 
+                    formThemMon.ShowDialog();
+
+                    LoadMenuItems(cb_LoaiMon.SelectedItem.ToString());
                 }
             }
         }
