@@ -67,7 +67,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(216, 730);
+            panel1.Size = new Size(260, 735);
             panel1.TabIndex = 0;
             // 
             // btnLogOut
@@ -75,7 +75,7 @@
             btnLogOut.BackColor = Color.FromArgb(63, 29, 18);
             btnLogOut.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogOut.ForeColor = SystemColors.ButtonHighlight;
-            btnLogOut.Location = new Point(29, 668);
+            btnLogOut.Location = new Point(51, 671);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(143, 33);
             btnLogOut.TabIndex = 36;
@@ -88,7 +88,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Underline, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(64, 118);
+            label1.Location = new Point(89, 118);
             label1.Name = "label1";
             label1.Size = new Size(83, 27);
             label1.TabIndex = 6;
@@ -97,7 +97,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(42, 12);
+            pictureBox1.Location = new Point(64, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(130, 103);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -124,10 +124,10 @@
             guna2Button5.Image = (Image)resources.GetObject("guna2Button5.Image");
             guna2Button5.ImageAlign = HorizontalAlignment.Left;
             guna2Button5.ImageOffset = new Point(10, 0);
-            guna2Button5.Location = new Point(12, 516);
+            guna2Button5.Location = new Point(30, 516);
             guna2Button5.Name = "guna2Button5";
             guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button5.Size = new Size(204, 59);
+            guna2Button5.Size = new Size(227, 59);
             guna2Button5.TabIndex = 4;
             guna2Button5.Text = "Inventory";
             guna2Button5.TextAlign = HorizontalAlignment.Left;
@@ -154,10 +154,10 @@
             guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");
             guna2Button4.ImageAlign = HorizontalAlignment.Left;
             guna2Button4.ImageOffset = new Point(10, 0);
-            guna2Button4.Location = new Point(12, 433);
+            guna2Button4.Location = new Point(30, 433);
             guna2Button4.Name = "guna2Button4";
             guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button4.Size = new Size(204, 59);
+            guna2Button4.Size = new Size(230, 59);
             guna2Button4.TabIndex = 3;
             guna2Button4.Text = "Order";
             guna2Button4.TextAlign = HorizontalAlignment.Left;
@@ -184,10 +184,10 @@
             guna2Button3.Image = (Image)resources.GetObject("guna2Button3.Image");
             guna2Button3.ImageAlign = HorizontalAlignment.Left;
             guna2Button3.ImageOffset = new Point(10, 0);
-            guna2Button3.Location = new Point(12, 354);
+            guna2Button3.Location = new Point(30, 354);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button3.Size = new Size(204, 59);
+            guna2Button3.Size = new Size(227, 59);
             guna2Button3.TabIndex = 2;
             guna2Button3.Text = "Employee";
             guna2Button3.TextAlign = HorizontalAlignment.Left;
@@ -214,10 +214,10 @@
             btnDanhMuc.Image = (Image)resources.GetObject("btnDanhMuc.Image");
             btnDanhMuc.ImageAlign = HorizontalAlignment.Left;
             btnDanhMuc.ImageOffset = new Point(10, 0);
-            btnDanhMuc.Location = new Point(12, 271);
+            btnDanhMuc.Location = new Point(30, 271);
             btnDanhMuc.Name = "btnDanhMuc";
             btnDanhMuc.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnDanhMuc.Size = new Size(204, 59);
+            btnDanhMuc.Size = new Size(230, 59);
             btnDanhMuc.TabIndex = 1;
             btnDanhMuc.Text = "Menu";
             btnDanhMuc.TextAlign = HorizontalAlignment.Left;
@@ -245,10 +245,10 @@
             btnTrangChu.Image = (Image)resources.GetObject("btnTrangChu.Image");
             btnTrangChu.ImageAlign = HorizontalAlignment.Left;
             btnTrangChu.ImageOffset = new Point(10, 0);
-            btnTrangChu.Location = new Point(12, 196);
+            btnTrangChu.Location = new Point(30, 196);
             btnTrangChu.Name = "btnTrangChu";
             btnTrangChu.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnTrangChu.Size = new Size(204, 59);
+            btnTrangChu.Size = new Size(227, 59);
             btnTrangChu.TabIndex = 0;
             btnTrangChu.Text = "Home";
             btnTrangChu.TextAlign = HorizontalAlignment.Left;
@@ -257,17 +257,19 @@
             // 
             // panelMain
             // 
+            panelMain.AutoSize = true;
+            panelMain.BackColor = Color.White;
             panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(216, 0);
+            panelMain.Location = new Point(260, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1087, 730);
+            panelMain.Size = new Size(1088, 735);
             panelMain.TabIndex = 1;
             // 
             // ManagerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1303, 730);
+            ClientSize = new Size(1348, 735);
             Controls.Add(panelMain);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -278,6 +280,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -54,5 +54,17 @@ namespace CoffeeShopManagementSystem.BUS
 
             _donHangDAL.CapNhatSoLuongTonKho(maDH);
         }
+        public int GetTongDH()
+        {
+            return _donHangDAL.GetTongDH();
+        }
+        public decimal GetTongDoanhThu(DateTime ngay)
+        {
+            return _donHangDAL.GetTongDoanhThu(ngay);
+        }
+        public Dictionary<int, decimal> GetDoanhThuTheoThang(int nam)
+        {          
+            return _donHangDAL.GetDoanhThuTheoThang(nam);
+        }
     }
 }

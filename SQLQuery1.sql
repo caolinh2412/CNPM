@@ -14,23 +14,6 @@ CREATE TABLE NguoiDung (
     FOREIGN KEY (MaQL) REFERENCES NguoiDung(MaND)
 );
 
--- Nhập dữ liệu cho quản lý (MaQL là NULL)
-INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam, MaQL)
-VALUES
-('QL001', N'Nguyễn Văn A', 'admin@example.com', '0901234567', N'Nam', '1234554321', '2023-01-01', NULL);
-
--- Nhập dữ liệu cho nhân viên (MaQL tham chiếu đến quản lý)
-INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam, MaQL)
-VALUES
-('NV001', N'Lê Văn C', 'levanc@example.com', '0923456789', N'Nam', 'pass789', '2023-03-01', 'QL001'),
-('NV002', N'Phạm Thị D', 'phamthid@example.com', '0934567890', N'Nữ', 'pass1011', '2023-04-10', 'QL001'),
-('NV003', N'Hoàng Văn E', 'hoangvane@example.com', '0945678901', N'Nam', 'pass1213', '2023-05-20', 'QL001'),
-('NV004', N'Vũ Thị F', 'vuthif@example.com', '0956789012', N'Nữ', 'pass1415', '2023-06-30', 'QL001');
-
-UPDATE NguoiDung
-SET email = 'vuthif@gmail.com'
-WHERE MaND = 'NV004';
-
 -- Bảng Menu (Thực đơn)
 CREATE TABLE Menu (
     MaMon NVARCHAR(10) PRIMARY KEY,
@@ -40,7 +23,7 @@ CREATE TABLE Menu (
     TrangThai NVARCHAR(20) DEFAULT 'Còn bán' CHECK (TrangThai IN ('Còn bán', 'Ngừng bán')),
     HinhAnh NVARCHAR(255)
 );
-USE CafeShop
+
 -- Bảng Nguyên Liệu
 CREATE TABLE NguyenLieu (
     MaNL NVARCHAR(50) PRIMARY KEY,
@@ -52,8 +35,6 @@ CREATE TABLE NguyenLieu (
     SDT VARCHAR(15) NOT NULL
 );
 
-DROP TABLE NguyenLieu
-USE CafeShop;
 -- Bảng Đơn Hàng
 CREATE TABLE DonHang (
     MaDH NVARCHAR(50) PRIMARY KEY,
@@ -63,7 +44,6 @@ CREATE TABLE DonHang (
 );
 
 -- Bảng Chi Tiết Đơn Hàng
-
 CREATE TABLE ChiTietDonHang (
     MaCTDH NVARCHAR(10) PRIMARY KEY,
     MaDH  NVARCHAR(50) FOREIGN KEY REFERENCES DonHang(MaDH) ON DELETE CASCADE,
@@ -74,8 +54,7 @@ CREATE TABLE ChiTietDonHang (
     ThanhTien AS (SoLuong * Gia) PERSISTED
 );
 
-DROP TABLE ChiTietDonHang
-DROP TABLE DonHang 
+
 -- Bảng Lịch Làm Việc
 CREATE TABLE LichLamViec (
     MaLLV NVARCHAR(50) PRIMARY KEY,
@@ -92,6 +71,7 @@ CREATE TABLE DoanhThu (
     TongTien DECIMAL(10,2) NOT NULL CHECK (TongTien >= 0)
 );
 
+--Bảng công thức món 
 CREATE TABLE CongThuc (
     MaCT NVARCHAR(10) PRIMARY KEY, 
     MaMon NVARCHAR(10) FOREIGN KEY REFERENCES Menu(MaMon), 
@@ -100,15 +80,6 @@ CREATE TABLE CongThuc (
     DonViTinh NVARCHAR(10) NOT NULL 
 );
 
-INSERT INTO LichLamViec (MaLLV, MaND, Ngay, CaLam) VALUES
-('LLV001', 'NV002', '2024-10-26', N'Sáng'),
-('LLV002', 'NV002', '2024-10-26', N'Chiều'),
-('LLV003', 'NV003', '2024-10-27', N'Tối'),
-('LLV004', 'NV003', '2024-10-28', N'Chiều');
-
-GO
-
-go
 -- Thủ tục đăng nhập
 CREATE PROCEDURE DangNhap (@email NVARCHAR(100), @password NVARCHAR(255))
 AS
@@ -125,8 +96,7 @@ BEGIN
 END;
  
 
-GO
-
+--Kiểm tra email có tồn tại không
 CREATE PROCEDURE KiemTraEmailTonTai
     @Email VARCHAR(100)
 AS
@@ -134,6 +104,7 @@ BEGIN
     SELECT COUNT(*) FROM NguoiDung WHERE Email = @Email
 END
 
+--đổi lại mật khẩu
 CREATE PROCEDURE ResetPassword
     @Email VARCHAR(100),
     @Password VARCHAR(100)
@@ -142,6 +113,7 @@ BEGIN
     UPDATE NguoiDung SET Password = @Password WHERE Email = @Email
 END
 
+--Lấy thông tin tất cả nhân viên 
 CREATE PROCEDURE GetAllEmployees
 AS
 BEGIN
@@ -150,6 +122,7 @@ BEGIN
     WHERE MaQL IS NOT NULL;
 END
 
+--Xóa nhân viên
 CREATE PROCEDURE DeleteEmployee
     @MaND VARCHAR(10)
 AS
@@ -158,6 +131,7 @@ BEGIN
     WHERE MaND = @MaND;
 END
 
+--Chỉnh sửa lại thông tin nhân viên 
 CREATE PROCEDURE UpdateEmployee
     @MaND VARCHAR(10),
     @HoVaTen NVARCHAR(100),
@@ -176,7 +150,7 @@ BEGIN
     WHERE MaND = @MaND;
 END
 
-
+--Thêm nhân viên vào bảng
 CREATE PROCEDURE InsertEmployee 
     @HoVaTen NVARCHAR(100),
     @email NVARCHAR(100),
@@ -187,31 +161,28 @@ AS
 BEGIN
     DECLARE @NewMaND NVARCHAR(50);
     DECLARE @DefaultPassword NVARCHAR(255);
-    DECLARE @MaQL NVARCHAR(50) = 'NV001';  -- Mã quản lý cố định
+    DECLARE @MaQL NVARCHAR(50) = 'QL001';  
 
-    -- Tạo mã nhân viên mới (bắt đầu bằng 'NV')
     IF NOT EXISTS (SELECT 1 FROM NguoiDung WHERE MaND LIKE 'NV%')
     BEGIN
         SET @NewMaND = 'NV001';
     END
     ELSE
     BEGIN
-        -- Lấy mã lớn nhất và tăng thêm 1
         SELECT @NewMaND = 'NV' + RIGHT('000' + CAST(CAST(SUBSTRING(MAX(MaND), 3, 3) AS INT) + 1 AS NVARCHAR(3)), 3)
         FROM NguoiDung 
         WHERE MaND LIKE 'NV%';
     END
 
-    -- Tạo mật khẩu tự động: CafeShop + MaND
     SET @DefaultPassword = 'CafeShop' + @NewMaND;
 
-    -- Thêm người dùng vào bảng NguoiDung với MaQL cố định là 'QL001'
     INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam, MaQL)
     VALUES 
         (@NewMaND, @HoVaTen, @email, @SDT, @GioiTinh, @DefaultPassword, @NgayDiLam, @MaQL);
 END;
 
 
+--Thêm lịch làm việc 
 CREATE PROCEDURE InsertWorkSchedule
     @MaND NVARCHAR(50),
     @Ngay DATE,
@@ -220,7 +191,6 @@ AS
 BEGIN
     DECLARE @NewMaLLV NVARCHAR(50);
 
-    -- Tạo mã MaLLV mới
     IF NOT EXISTS (SELECT 1 FROM LichLamViec WHERE MaLLV LIKE 'LLV%')
     BEGIN
         SET @NewMaLLV = 'LLV001';
@@ -231,11 +201,11 @@ BEGIN
 		FROM LichLamViec 
 		WHERE MaLLV LIKE 'LLV%';
     END
-    -- Thêm bản ghi vào bảng LichLamViec
     INSERT INTO LichLamViec (MaLLV, MaND, Ngay, CaLam)
     VALUES (@NewMaLLV, @MaND, @Ngay, @CaLam);
 END;
 
+--Tạo lịch làm việc 
 CREATE PROCEDURE DeleteWorkSchedule
     @MaLLV NVARCHAR(50)
 AS
@@ -244,6 +214,7 @@ BEGIN
     WHERE MaLLV = @MaLLV;
 END;
 
+--Cập nhật lịch làm việc
 CREATE PROCEDURE CapNhatLichLamViec
     @MaLLV NVARCHAR(50),
     @MaND NVARCHAR(50),
@@ -258,6 +229,7 @@ BEGIN
     WHERE MaLLV = @MaLLV;
 END;
 
+--Đếm nhân viên
 CREATE PROCEDURE DemNv
 AS
 BEGIN
@@ -268,18 +240,17 @@ END;
 
  -- Thêm món
 CREATE PROCEDURE ThemMon 
-    @LoaiMon NVARCHAR(50),  -- Loại món (Ví dụ: Cà phê, Trà sữa, ...)
-    @TenMon NVARCHAR(100),  -- Tên món
-    @Gia DECIMAL(10,2),     -- Giá món
-    @HinhAnh NVARCHAR(255), -- Hình ảnh của món
-    @MaMon NVARCHAR(10) OUTPUT  -- Mã món được trả về
+    @LoaiMon NVARCHAR(50),  
+    @TenMon NVARCHAR(100), 
+    @Gia DECIMAL(10,2),    
+    @HinhAnh NVARCHAR(255),
+    @MaMon NVARCHAR(10) OUTPUT  
 AS
 BEGIN
     DECLARE @MaMonMoi NVARCHAR(10);
     DECLARE @SoThuTu INT;
     DECLARE @Prefix NVARCHAR(2);
 
-    -- Lấy tiền tố dựa trên LoaiMon
     SET @Prefix = CASE 
                       WHEN @LoaiMon = 'Cà phê' THEN 'CF'
                       WHEN @LoaiMon = 'Trà sữa' THEN 'TS'
@@ -291,14 +262,12 @@ BEGIN
                       ELSE 'KH'
                   END;
 
-    -- Lấy MaMon lớn nhất hiện có với hậu tố là số
     SELECT @MaMonMoi = MAX(MaMon) 
     FROM Menu
     WHERE MaMon LIKE @Prefix + '%'
     AND LEN(MaMon) >= 3
     AND ISNUMERIC(SUBSTRING(MaMon, 3, LEN(MaMon) - 2)) = 1;
 
-    -- Xác định số thứ tự tiếp theo
     IF @MaMonMoi IS NULL
     BEGIN
         SET @SoThuTu = 1;
@@ -308,26 +277,30 @@ BEGIN
         SET @SoThuTu = CAST(SUBSTRING(@MaMonMoi, 3, LEN(@MaMonMoi) - 2) AS INT) + 1;
     END
 
-    -- Tạo MaMon mới từ số thứ tự, đệm số 0 để đủ 4 chữ số
     SET @MaMonMoi = @Prefix + RIGHT('0000' + CAST(@SoThuTu AS NVARCHAR), 4);
 
-    -- Thêm món mới vào bảng Menu
     BEGIN TRY
         INSERT INTO Menu (MaMon, TenMon, Gia, LoaiMon, TrangThai, HinhAnh)
         VALUES (@MaMonMoi, @TenMon, @Gia, @LoaiMon, 'Còn bán', @HinhAnh);
 
-        -- Trả về mã món mới
         SET @MaMon = @MaMonMoi;
     END TRY
     BEGIN CATCH
-        THROW;  -- Ném lỗi để ứng dụng xử lý
+        THROW;  
     END CATCH
 END;
 
+--Tính tổng số món
+CREATE PROCEDURE sp_TinhTongSoMonTrongMenu
+AS
+BEGIN
+    SELECT COUNT(*) 
+    FROM Menu;
+END;
 
--- Điều chỉnh TYPE để khớp với bảng
+-- Thêm đơn hàng và chi tiết đơn hàng 
 CREATE TYPE ChiTietDonHangType AS TABLE (	
-    MaMon NVARCHAR(10),  -- Khớp với MaMon trong ChiTietDonHang
+    MaMon NVARCHAR(10),  
     TenMon NVARCHAR(100),
     SoLuong INT,
     Gia DECIMAL(10,2)
@@ -344,22 +317,18 @@ BEGIN
     BEGIN TRY
         BEGIN TRANSACTION;
 
-        -- Tạo MaDH tự động (DH001, DH002, ...)
         DECLARE @NextMaDH INT;
         SELECT @NextMaDH = ISNULL(MAX(CAST(SUBSTRING(MaDH, 3, LEN(MaDH) - 2) AS INT)), 0) + 1
         FROM DonHang;
         SET @MaDH = 'DH' + RIGHT('000' + CAST(@NextMaDH AS NVARCHAR(3)), 3);
 
-        -- Tính tổng tiền từ chi tiết đơn hàng
         DECLARE @TongTien DECIMAL(18,2);
         SELECT @TongTien = SUM(SoLuong * Gia)
         FROM @ChiTietDonHang;
 
-        -- Thêm vào bảng DonHang
         INSERT INTO DonHang (MaDH, NgayDat, MaND, TongTien)
         VALUES (@MaDH, @NgayDat, @MaND, @TongTien);
 
-        -- Thêm chi tiết đơn hàng với MaCTDH tự động tăng
         DECLARE @MaxChiTietID INT;
         SELECT @MaxChiTietID = ISNULL(MAX(CAST(SUBSTRING(MaCTDH, 3, LEN(MaCTDH) - 2) AS INT)), 0)
         FROM ChiTietDonHang;
@@ -381,6 +350,7 @@ BEGIN
     END CATCH;
 END;
 
+--Lấy mã đơn hàng tiếp theo 
 CREATE  PROCEDURE sp_LayMaDonHangTiepTheo
     @MaDH NVARCHAR(50) OUTPUT
 AS
@@ -390,25 +360,22 @@ BEGIN
     DECLARE @LastMaDH NVARCHAR(50);
     DECLARE @Number INT;
 
-    -- Truy vấn mã đơn hàng cuối cùng
     SELECT TOP 1 @LastMaDH = MaDH
     FROM DonHang
     ORDER BY MaDH DESC;
 
-    -- Nếu không có đơn hàng nào, trả về "DH0001"
     IF @LastMaDH IS NULL
     BEGIN
         SET @MaDH = 'DH001';
     END
     ELSE
     BEGIN
-        -- Tách số thứ tự từ mã cuối cùng (bỏ "DH")
         SET @Number = CAST(SUBSTRING(@LastMaDH, 3, LEN(@LastMaDH)) AS INT) + 1;
-
-        -- Định dạng lại mã mới: "DH" + số thứ tự (4 chữ số)
         SET @MaDH = 'DH' + RIGHT('000' + CAST(@Number AS NVARCHAR(3)), 3);
     END
 END
+
+
 --Lấy toàn bộ đơn hàng 
 CREATE PROCEDURE sp_GetAllDonHang
 AS
@@ -423,6 +390,7 @@ BEGIN
     INNER JOIN NguoiDung nd ON dh.MaND = nd.MaND
 END
 
+--Lấy chi tiết đơn hàng theo mã đơn hàng 
 CREATE PROCEDURE sp_LayCTHDTheoMaDH
     @MaDH nvarchar(50) 
 AS
@@ -444,14 +412,54 @@ BEGIN
     WHERE 
         ctdh.MaDH = @MaDH;
 END
+--TOP 3 
+CREATE PROCEDURE sp_GetTop3MonBanChay
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        TenMon,
+        SUM(SoLuong) AS TongSoLuong
+    INTO #MonBanChay
+    FROM ChiTietDonHang
+    GROUP BY TenMon;
+
+    SELECT TOP 3
+        TenMon,
+        TongSoLuong
+    FROM #MonBanChay
+    ORDER BY TongSoLuong DESC;
+
+    DROP TABLE #MonBanChay;
+END
+
+--Tổng số khách
+CREATE PROCEDURE sp_TongSoKhach
+AS
+BEGIN
+    SELECT COUNT(*) 
+    FROM DonHang;
+END;
+
+--Tính doanh thu trong ngày 
+CREATE PROCEDURE sp_TinhDoanhThuTrongNgay
+    @Ngay DATE
+AS
+BEGIN
+    SELECT ISNULL(SUM(TongTien), 0) AS DoanhThu
+    FROM DonHang
+    WHERE CAST(NgayDat AS DATE) = @Ngay;
+END;
 
 --KHO NGUYÊN LIỆU 
+--Lấy nguyên liệu
 CREATE PROCEDURE GetAllKho
 AS
 BEGIN
     SELECT * FROM NguyenLieu;
 END
-
+---xóa nguyên liệu 
 CREATE PROCEDURE DeleteNguyenLieu
     @MaNL VARCHAR(50)
 AS
@@ -460,7 +468,7 @@ BEGIN
     WHERE MaNL = @MaNL;
 END
 
-DROP PROCEDURE DeleteNguyeLieu
+--chỉnh sửa nguyên liệu 
 CREATE PROCEDURE UpdateNguyenLieu
     @MaNL NVARCHAR(50),
     @TenNL NVARCHAR(100),
@@ -484,6 +492,7 @@ BEGIN
     WHERE MaNL = @MaNL;
 END
 
+--Thêm nguyên liệu 
 CREATE PROCEDURE ThemNguyenLieu
     @TenNL NVARCHAR(100),
     @SoLuongTon INT,
@@ -494,56 +503,42 @@ CREATE PROCEDURE ThemNguyenLieu
 AS
 BEGIN
     DECLARE @MaNL NVARCHAR(50);
-
-    -- Lấy mã lớn nhất hiện tại trong bảng NguyenLieu
     SELECT @MaNL = MAX(MaNL)
     FROM NguyenLieu;
 
     IF @MaNL IS NULL
-    BEGIN
-        -- Nếu bảng chưa có dữ liệu thì bắt đầu từ NL01
+    BEGIN       
         SET @MaNL = 'NL01';
     END
     ELSE
     BEGIN
-        -- Tách phần số ra từ mã hiện tại và tăng lên 1
         DECLARE @SoThuTu INT;
         SET @SoThuTu = CAST(SUBSTRING(@MaNL, 3, LEN(@MaNL) - 2) AS INT) + 1;
 
-        -- Tạo mã mới dạng NL01, NL02, ...
         SET @MaNL = 'NL' + RIGHT('00' + CAST(@SoThuTu AS NVARCHAR), 2);
     END
-
-    -- Thêm nguyên liệu mới vào bảng NguyenLieu
     INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
     VALUES (@MaNL, @TenNL, @SoLuongTon, @DonViTinh, @NgayNhap, @TenNCC, @SDT);
 END
 
+--Lấy mã nguyên liệu tiếp theo 
 CREATE PROCEDURE GetNextMaNL
 AS
 BEGIN
     DECLARE @NextMaNL NVARCHAR(50);
-    
-    -- Lấy mã lớn nhất hiện tại
     SELECT @NextMaNL = MAX(MaNL)
     FROM NguyenLieu;
 
-    -- Nếu bảng rỗng, bắt đầu từ 'NL01'
     IF @NextMaNL IS NULL
     BEGIN
         SET @NextMaNL = 'NL01';
     END
     ELSE
-    BEGIN
-        -- Tách số phía sau 'NL' và tăng lên 1
+    BEGIN        
         DECLARE @NumberPart INT;
-        SET @NumberPart = CAST(SUBSTRING(@NextMaNL, 3, LEN(@NextMaNL) - 2) AS INT) + 1;
-
-        -- Ghép lại với tiền tố 'NL' và thêm các số 0 nếu cần
+        SET @NumberPart = CAST(SUBSTRING(@NextMaNL, 3, LEN(@NextMaNL) - 2) AS INT) + 1;      
         SET @NextMaNL = 'NL' + RIGHT('00' + CAST(@NumberPart AS NVARCHAR), 2);
     END
-
-    -- Trả về kết quả
     SELECT @NextMaNL AS MaNL;
 END;
 
@@ -565,7 +560,7 @@ BEGIN
     WHERE 
         CT.MaMon = @MaMon;
 END
-
+--Thêm công thức 
 CREATE PROCEDURE sp_ThemCongThuc
     @MaMon NVARCHAR(10),
     @MaNL NVARCHAR(10),
@@ -577,50 +572,41 @@ BEGIN
     DECLARE @MaxMaCT NVARCHAR(10)
     DECLARE @Number INT
 
-    -- Lấy mã MaCT lớn nhất hiện có
     SELECT @MaxMaCT = MAX(MaCT) FROM CongThuc
 
-    -- Nếu chưa có mã nào, bắt đầu từ CT001
     IF @MaxMaCT IS NULL
         SET @MaCT = 'CT001'
     ELSE
-    BEGIN
-        -- Lấy phần số từ MaCT lớn nhất (bỏ "CT")
+    BEGIN       
         SET @Number = CAST(SUBSTRING(@MaxMaCT, 3, LEN(@MaxMaCT) - 2) AS INT)
-        -- Tăng số lên 1
         SET @Number = @Number + 1
-        -- Định dạng lại thành CTxxx (ví dụ: CT002)
         SET @MaCT = 'CT' + RIGHT('000' + CAST(@Number AS NVARCHAR(3)), 3)
     END
 
-    -- Chèn bản ghi mới với MaCT vừa tạo
     INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh)
     VALUES (@MaCT, @MaMon, @MaNL, @SoLuong, @DonViTinh)
 END
 
+--Xóa công thức 
 CREATE PROCEDURE sp_DeleteCongThuc
     @MaCT NVARCHAR(50)
 AS
 BEGIN
-    -- Xóa công thức theo mã công thức
     DELETE FROM CongThuc WHERE MaCT = @MaCT;
 END;
 
+--Cập nhật số lượng tồn kho 
 CREATE PROCEDURE sp_CapNhatSoLuongTonKho
-    @MaDH NVARCHAR(50) -- Mã đơn hàng cần xử lý
+    @MaDH NVARCHAR(50) 
 AS
 BEGIN
     BEGIN TRY
-        -- Bắt đầu giao dịch để đảm bảo tính toàn vẹn dữ liệu
         BEGIN TRANSACTION;
 
-        -- Tạo bảng tạm để lưu tổng số lượng nguyên liệu cần trừ
         CREATE TABLE #TempNguyenLieu (
             MaNL NVARCHAR(50),
             SoLuongCanTru INT
         );
-
-        -- Tính tổng số lượng nguyên liệu cần dùng dựa trên đơn hàng
         INSERT INTO #TempNguyenLieu (MaNL, SoLuongCanTru)
         SELECT 
             ct.MaNL,
@@ -630,7 +616,6 @@ BEGIN
         WHERE ctdh.MaDH = @MaDH
         GROUP BY ct.MaNL;
 
-        -- Kiểm tra xem số lượng tồn kho có đủ để trừ không
         IF EXISTS (
             SELECT 1
             FROM #TempNguyenLieu tmp
@@ -638,26 +623,21 @@ BEGIN
             WHERE nl.SoLuongTon < tmp.SoLuongCanTru
         )
         BEGIN
-            -- Nếu không đủ tồn kho, rollback và báo lỗi
             ROLLBACK TRANSACTION;
             RAISERROR ('Không đủ số lượng tồn kho để thanh toán đơn hàng!', 16, 1);
             RETURN;
         END
 
-        -- Cập nhật số lượng tồn kho trong bảng NguyenLieu
         UPDATE nl
         SET nl.SoLuongTon = nl.SoLuongTon - tmp.SoLuongCanTru
         FROM NguyenLieu nl
         INNER JOIN #TempNguyenLieu tmp ON nl.MaNL = tmp.MaNL;
 
-        -- Xóa bảng tạm
         DROP TABLE #TempNguyenLieu;
 
-        -- Commit giao dịch nếu thành công
         COMMIT TRANSACTION;
     END TRY
     BEGIN CATCH
-        -- Nếu có lỗi, rollback và báo lỗi
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
         
@@ -665,6 +645,51 @@ BEGIN
         RAISERROR (@ErrorMessage, 16, 1);
     END CATCH
 END
+
+CREATE PROCEDURE sp_GetDoanhThuTheoThang
+    @Nam INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        ThangList.Thang,
+        ISNULL(SUM(D.TongTien), 0) AS DoanhThu
+    FROM 
+    (
+        SELECT 1 AS Thang UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION 
+        SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION 
+        SELECT 9 UNION SELECT 10 UNION SELECT 11 UNION SELECT 12
+    ) AS ThangList
+    LEFT JOIN DonHang D ON MONTH(D.NgayDat) = ThangList.Thang AND YEAR(D.NgayDat) = @Nam
+    GROUP BY ThangList.Thang
+    ORDER BY ThangList.Thang;
+END
+
+
+
+--NHẬP THÔNG TIN THỬ NGHIỆM 
+
+-- Nhập dữ liệu cho quản lý (MaQL là NULL)
+INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam, MaQL)
+VALUES
+('QL001', N'Nguyễn Văn A', 'admin@example.com', '0901234567', N'Nam', '1234554321', '2023-01-01', NULL);
+
+-- Nhập dữ liệu cho nhân viên (MaQL tham chiếu đến quản lý)
+INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam, MaQL)
+VALUES
+('NV001', N'Lê Văn C', 'levanc@example.com', '0923456789', N'Nam', 'pass789', '2023-03-01', 'QL001'),
+('NV002', N'Phạm Thị D', 'phamthid@example.com', '0934567890', N'Nữ', 'pass1011', '2023-04-10', 'QL001'),
+('NV003', N'Hoàng Văn E', 'hoangvane@example.com', '0945678901', N'Nam', 'pass1213', '2023-05-20', 'QL001'),
+('NV004', N'Vũ Thị F', 'vuthif@example.com', '0956789012', N'Nữ', 'pass1415', '2023-06-30', 'QL001');
+
+
+INSERT INTO LichLamViec (MaLLV, MaND, Ngay, CaLam) VALUES
+('LLV001', 'NV002', '2024-10-26', N'Sáng'),
+('LLV002', 'NV002', '2024-10-26', N'Chiều'),
+('LLV003', 'NV003', '2024-10-27', N'Tối'),
+('LLV004', 'NV003', '2024-10-28', N'Chiều');
+
 -- Thêm món Cà phê sữa đá
 INSERT INTO Menu (MaMon, TenMon, Gia, LoaiMon, HinhAnh)
 VALUES ('CF0001', N'Cà phê sữa đá', 25000, N'Cà phê', 'cafesua.jpg');
@@ -768,7 +793,6 @@ INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SD
 VALUES ('NL22', N'Siro đào', 50000, N'ml', '2025-04-02', N'Công ty Siro ABC', '0906789012');
 
 
-
 -- Cà phê sữa đá (CF0001)
 INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT001', 'CF0001', 'NL01', 50, 'gram'); -- Bột cà phê
 INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT002', 'CF0001', 'NL02', 30, 'ml');   -- Sữa đặc
@@ -791,12 +815,12 @@ INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT012', 'S
 
 -- Trà đào cam sả (T0001)
 INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT013', 'T0001', 'NL04', 5, 'gram');   -- Trà đen
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT014', 'T0001', 'NL11', 200, 'ml');   -- Nước cam
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT015', 'T0001', 'NL19', 50, 'gram');  -- Đào tươi
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT016', 'T0001', 'NL20', 5, 'gram');   -- Sả
+INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT014', 'T0001', 'NL18', 200, 'ml');   -- Nước cam
+INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT015', 'T0001', 'NL19', 100, 'gram'); -- Đào tươi
+INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT016', 'T0001', 'NL20', 1, 'cây');    -- Sả
 
 -- Đá xay socola (DX0001)
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT017', 'DX0001', 'NL14', 50, 'gram'); -- Bột cacao
+INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT017', 'DX0001', 'NL17', 50, 'gram'); -- Bột cacao
 INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT018', 'DX0001', 'NL05', 150, 'ml');  -- Sữa tươi
 INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT019', 'DX0001', 'NL03', 100, 'gram');-- Đá
 
@@ -808,6 +832,7 @@ INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT023', 'B
 INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT024', 'BN0001', 'NL04', 20, 'gram'); -- Bột cacao
 
 -- Trà sữa matcha (TS0002)
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT025', 'TS0002', 'NL17', 5, 'gram');  -- Bột matcha
+INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT025', 'TS0002', 'NL11', 5, 'gram');  -- Bột matcha
 INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT026', 'TS0002', 'NL05', 150, 'ml');  -- Sữa tươi
 INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT027', 'TS0002', 'NL07', 50, 'gram'); -- Trân châu
+

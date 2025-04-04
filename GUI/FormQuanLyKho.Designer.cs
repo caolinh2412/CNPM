@@ -94,6 +94,9 @@
             col_sdt = new DataGridViewTextBoxColumn();
             col_del = new DataGridViewImageColumn();
             tabPage2 = new TabPage();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
             dgv_TenMon = new Guna.UI2.WinForms.Guna2DataGridView();
             col_MaMon = new DataGridViewTextBoxColumn();
             col_TenMon = new DataGridViewTextBoxColumn();
@@ -123,10 +126,10 @@
             tb_control.Controls.Add(tabPage2);
             tb_control.Dock = DockStyle.Bottom;
             tb_control.ItemSize = new Size(180, 40);
-            tb_control.Location = new Point(0, 53);
+            tb_control.Location = new Point(0, 37);
             tb_control.Name = "tb_control";
             tb_control.SelectedIndex = 0;
-            tb_control.Size = new Size(1087, 677);
+            tb_control.Size = new Size(1087, 693);
             tb_control.TabButtonHoverState.BorderColor = Color.Empty;
             tb_control.TabButtonHoverState.FillColor = Color.Black;
             tb_control.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -154,7 +157,7 @@
             tabPage1.Location = new Point(4, 44);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1079, 629);
+            tabPage1.Size = new Size(1079, 645);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Kho";
             tabPage1.UseVisualStyleBackColor = true;
@@ -162,6 +165,9 @@
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.FromArgb(248, 247, 239);
+            guna2Panel1.BorderColor = Color.Black;
+            guna2Panel1.BorderRadius = 10;
+            guna2Panel1.BorderThickness = 1;
             guna2Panel1.Controls.Add(txt_DonVi);
             guna2Panel1.Controls.Add(btnHuy);
             guna2Panel1.Controls.Add(btnLuu);
@@ -181,10 +187,10 @@
             guna2Panel1.Controls.Add(label3);
             guna2Panel1.Controls.Add(label2);
             guna2Panel1.CustomizableEdges = customizableEdges21;
-            guna2Panel1.Location = new Point(17, 6);
+            guna2Panel1.Location = new Point(32, 6);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2Panel1.Size = new Size(1039, 209);
+            guna2Panel1.Size = new Size(1005, 209);
             guna2Panel1.TabIndex = 3;
             // 
             // txt_DonVi
@@ -239,7 +245,7 @@
             btnLuu.FillColor = Color.Sienna;
             btnLuu.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnLuu.ForeColor = Color.White;
-            btnLuu.Location = new Point(537, 167);
+            btnLuu.Location = new Point(552, 167);
             btnLuu.Name = "btnLuu";
             btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnLuu.Size = new Size(112, 36);
@@ -277,7 +283,7 @@
             btnThem.FillColor = Color.Green;
             btnThem.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnThem.ForeColor = Color.White;
-            btnThem.Location = new Point(145, 167);
+            btnThem.Location = new Point(168, 167);
             btnThem.Name = "btnThem";
             btnThem.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnThem.Size = new Size(112, 36);
@@ -287,7 +293,7 @@
             // 
             // dtp_NgayNhap
             // 
-            dtp_NgayNhap.Location = new Point(718, 116);
+            dtp_NgayNhap.Location = new Point(722, 121);
             dtp_NgayNhap.Name = "dtp_NgayNhap";
             dtp_NgayNhap.Size = new Size(250, 27);
             dtp_NgayNhap.TabIndex = 15;
@@ -328,7 +334,7 @@
             txt_sdt.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txt_sdt.ForeColor = Color.Black;
             txt_sdt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt_sdt.Location = new Point(718, 73);
+            txt_sdt.Location = new Point(718, 80);
             txt_sdt.Name = "txt_sdt";
             txt_sdt.PlaceholderText = "";
             txt_sdt.SelectedText = "";
@@ -350,7 +356,7 @@
             txt_NCC.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txt_NCC.ForeColor = Color.Black;
             txt_NCC.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt_NCC.Location = new Point(718, 32);
+            txt_NCC.Location = new Point(718, 39);
             txt_NCC.Name = "txt_NCC";
             txt_NCC.PlaceholderText = "";
             txt_NCC.SelectedText = "";
@@ -418,7 +424,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Roboto", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(570, 121);
+            label7.Location = new Point(571, 121);
             label7.Name = "label7";
             label7.Size = new Size(93, 20);
             label7.TabIndex = 8;
@@ -429,7 +435,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Roboto", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(570, 80);
+            label6.Location = new Point(571, 87);
             label6.Name = "label6";
             label6.Size = new Size(111, 20);
             label6.TabIndex = 7;
@@ -473,7 +479,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(63, 29, 18);
-            label2.Location = new Point(3, 14);
+            label2.Location = new Point(3, 7);
             label2.Name = "label2";
             label2.Size = new Size(267, 22);
             label2.TabIndex = 3;
@@ -486,7 +492,7 @@
             dgv_Kho.BorderStyle = BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(63, 29, 18);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(63, 29, 18);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -504,12 +510,12 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgv_Kho.DefaultCellStyle = dataGridViewCellStyle3;
             dgv_Kho.GridColor = Color.FromArgb(231, 229, 255);
-            dgv_Kho.Location = new Point(17, 233);
+            dgv_Kho.Location = new Point(32, 241);
             dgv_Kho.Name = "dgv_Kho";
             dgv_Kho.RowHeadersVisible = false;
             dgv_Kho.RowHeadersWidth = 51;
             dgv_Kho.RowTemplate.Height = 29;
-            dgv_Kho.Size = new Size(1056, 375);
+            dgv_Kho.Size = new Size(1005, 384);
             dgv_Kho.TabIndex = 0;
             dgv_Kho.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_Kho.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -590,16 +596,52 @@
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.FromArgb(248, 247, 239);
+            tabPage2.Controls.Add(label11);
+            tabPage2.Controls.Add(label10);
+            tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(dgv_TenMon);
             tabPage2.Controls.Add(dgv_CongThuc);
             tabPage2.Controls.Add(dgv_NL);
             tabPage2.Location = new Point(4, 44);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1079, 629);
+            tabPage2.Size = new Size(1079, 645);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Công thức";
-            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.ForeColor = Color.FromArgb(63, 29, 18);
+            label11.Location = new Point(37, 16);
+            label11.Name = "label11";
+            label11.Size = new Size(119, 28);
+            label11.TabIndex = 5;
+            label11.Text = "Thực đơn";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.FromArgb(63, 29, 18);
+            label10.Location = new Point(577, 13);
+            label10.Name = "label10";
+            label10.Size = new Size(144, 28);
+            label10.TabIndex = 4;
+            label10.Text = "Nguyên liệu";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.FromArgb(63, 29, 18);
+            label9.Location = new Point(37, 272);
+            label9.Name = "label9";
+            label9.Size = new Size(221, 28);
+            label9.TabIndex = 3;
+            label9.Text = "Chi tiết công thức ";
             // 
             // dgv_TenMon
             // 
@@ -627,12 +669,12 @@
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
             dgv_TenMon.DefaultCellStyle = dataGridViewCellStyle6;
             dgv_TenMon.GridColor = Color.FromArgb(231, 229, 255);
-            dgv_TenMon.Location = new Point(0, 0);
+            dgv_TenMon.Location = new Point(37, 47);
             dgv_TenMon.Name = "dgv_TenMon";
             dgv_TenMon.RowHeadersVisible = false;
             dgv_TenMon.RowHeadersWidth = 51;
             dgv_TenMon.RowTemplate.Height = 29;
-            dgv_TenMon.Size = new Size(157, 611);
+            dgv_TenMon.Size = new Size(494, 211);
             dgv_TenMon.TabIndex = 2;
             dgv_TenMon.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_TenMon.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -693,13 +735,13 @@
             dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
             dgv_CongThuc.DefaultCellStyle = dataGridViewCellStyle9;
             dgv_CongThuc.GridColor = Color.FromArgb(231, 229, 255);
-            dgv_CongThuc.Location = new Point(187, 0);
+            dgv_CongThuc.Location = new Point(37, 303);
             dgv_CongThuc.Name = "dgv_CongThuc";
             dgv_CongThuc.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgv_CongThuc.RowHeadersVisible = false;
             dgv_CongThuc.RowHeadersWidth = 51;
             dgv_CongThuc.RowTemplate.Height = 29;
-            dgv_CongThuc.Size = new Size(552, 611);
+            dgv_CongThuc.Size = new Size(1007, 320);
             dgv_CongThuc.TabIndex = 1;
             dgv_CongThuc.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_CongThuc.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -725,38 +767,27 @@
             // 
             // col_maCT
             // 
-            col_maCT.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            col_maCT.Frozen = true;
             col_maCT.HeaderText = "Mã công thức";
             col_maCT.MinimumWidth = 6;
             col_maCT.Name = "col_maCT";
-            col_maCT.Width = 125;
             // 
             // col_NL
             // 
-            col_NL.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            col_NL.Frozen = true;
             col_NL.HeaderText = "Tên nguyên liệu";
             col_NL.MinimumWidth = 6;
             col_NL.Name = "col_NL";
-            col_NL.Width = 123;
             // 
             // col_soluong
             // 
-            col_soluong.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            col_soluong.Frozen = true;
             col_soluong.HeaderText = "Số lượng";
             col_soluong.MinimumWidth = 6;
             col_soluong.Name = "col_soluong";
-            col_soluong.Width = 125;
             // 
             // col_donvi
             // 
-            col_donvi.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             col_donvi.HeaderText = "Đơn vị tính";
             col_donvi.MinimumWidth = 6;
             col_donvi.Name = "col_donvi";
-            col_donvi.Width = 125;
             // 
             // col_delete
             // 
@@ -794,13 +825,13 @@
             dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
             dgv_NL.DefaultCellStyle = dataGridViewCellStyle12;
             dgv_NL.GridColor = Color.FromArgb(231, 229, 255);
-            dgv_NL.Location = new Point(771, 0);
+            dgv_NL.Location = new Point(561, 44);
             dgv_NL.Name = "dgv_NL";
             dgv_NL.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgv_NL.RowHeadersVisible = false;
             dgv_NL.RowHeadersWidth = 51;
             dgv_NL.RowTemplate.Height = 29;
-            dgv_NL.Size = new Size(308, 611);
+            dgv_NL.Size = new Size(483, 214);
             dgv_NL.TabIndex = 0;
             dgv_NL.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_NL.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -826,26 +857,22 @@
             // 
             // col_MNL
             // 
-            col_MNL.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             col_MNL.HeaderText = "Mã nguyên liệu";
             col_MNL.MinimumWidth = 6;
             col_MNL.Name = "col_MNL";
-            col_MNL.Width = 153;
             // 
             // col_TNL
             // 
-            col_TNL.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             col_TNL.HeaderText = "Tên nguyên liệu";
             col_TNL.MinimumWidth = 6;
             col_TNL.Name = "col_TNL";
-            col_TNL.Width = 154;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Roboto", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(63, 29, 18);
-            label1.Location = new Point(21, 16);
+            label1.Location = new Point(21, 0);
             label1.Name = "label1";
             label1.Size = new Size(394, 34);
             label1.TabIndex = 2;
@@ -855,6 +882,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             Controls.Add(label1);
             Controls.Add(tb_control);
             Name = "FormQuanLyKho";
@@ -865,6 +893,7 @@
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_Kho).EndInit();
             tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_TenMon).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_CongThuc).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_NL).EndInit();
@@ -909,10 +938,13 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgv_CongThuc;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_NL;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_TenMon;
-        private DataGridViewTextBoxColumn col_MNL;
-        private DataGridViewTextBoxColumn col_TNL;
         private DataGridViewTextBoxColumn col_MaMon;
         private DataGridViewTextBoxColumn col_TenMon;
+        private Label label9;
+        private Label label11;
+        private Label label10;
+        private DataGridViewTextBoxColumn col_MNL;
+        private DataGridViewTextBoxColumn col_TNL;
         private DataGridViewTextBoxColumn col_maCT;
         private DataGridViewTextBoxColumn col_NL;
         private DataGridViewTextBoxColumn col_soluong;

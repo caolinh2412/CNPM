@@ -114,5 +114,29 @@ namespace DAL
                 }
             }
         }
+        public int GetTongSoMon()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_TinhTongSoMonTrongMenu", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        object result = cmd.ExecuteScalar();
+                        return result != null ? Convert.ToInt32(result) : 0;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi không xác định khi lấy tổng số món trong menu: " + ex.Message);
+            }
+        }
     }
 }

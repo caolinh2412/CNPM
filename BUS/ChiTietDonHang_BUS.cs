@@ -85,5 +85,10 @@ namespace BUS
             tongTienMoi = chiTietDonHangs.Sum(x => x.ThanhTien); 
             return false;
         }
+        public List<ChiTietDonHang_DTO> GetTop3MonBanChay()
+        {
+            ChiTietDonHang_DAL dal = new ChiTietDonHang_DAL();
+            return dal.GetTop3MonBanChay();
+        }
     }
 }

@@ -102,5 +102,36 @@ namespace DAL
                 return false;
             }
         }
+        public List<ChiTietDonHang_DTO> GetTop3MonBanChay()
+        {
+            List<ChiTietDonHang_DTO> result = new List<ChiTietDonHang_DTO>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_GetTop3MonBanChay", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                result.Add(new ChiTietDonHang_DTO
+                                {
+                                    TenMon = reader.GetString(0), 
+                                    SoLuong = reader.GetInt32(1) 
+                                });
+                            }
+                        }
+                    }
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy top 3 món bán chạy: " + ex.Message);
+            }
+        }
     }
 }

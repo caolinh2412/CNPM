@@ -49,6 +49,7 @@ namespace CoffeeShopManagementSystem
                         // Navigate to manager form
                         ManagerForm managerForm = new ManagerForm();
                         managerForm.Show();
+                        managerForm.ShowDashboardOnSignIn();
                     }
                     else
                     {

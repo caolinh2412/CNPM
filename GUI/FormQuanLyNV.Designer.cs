@@ -95,7 +95,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Roboto", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(63, 29, 18);
-            label1.Location = new Point(14, 16);
+            label1.Location = new Point(32, 16);
             label1.Name = "label1";
             label1.Size = new Size(297, 34);
             label1.TabIndex = 1;
@@ -104,6 +104,9 @@
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.FromArgb(248, 247, 239);
+            guna2Panel1.BorderColor = Color.Black;
+            guna2Panel1.BorderRadius = 10;
+            guna2Panel1.BorderThickness = 1;
             guna2Panel1.Controls.Add(btnHuy);
             guna2Panel1.Controls.Add(btnLuu);
             guna2Panel1.Controls.Add(btnSua);
@@ -122,10 +125,10 @@
             guna2Panel1.Controls.Add(label3);
             guna2Panel1.Controls.Add(label2);
             guna2Panel1.CustomizableEdges = customizableEdges19;
-            guna2Panel1.Location = new Point(14, 53);
+            guna2Panel1.Location = new Point(29, 53);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Panel1.Size = new Size(1036, 215);
+            guna2Panel1.Size = new Size(1033, 215);
             guna2Panel1.TabIndex = 2;
             // 
             // btnHuy
@@ -401,6 +404,9 @@
             // guna2CustomGradientPanel1
             // 
             guna2CustomGradientPanel1.BackColor = Color.FromArgb(248, 247, 239);
+            guna2CustomGradientPanel1.BorderColor = Color.Black;
+            guna2CustomGradientPanel1.BorderRadius = 10;
+            guna2CustomGradientPanel1.BorderThickness = 1;
             guna2CustomGradientPanel1.Controls.Add(dgv_dsNV);
             guna2CustomGradientPanel1.Controls.Add(label9);
             guna2CustomGradientPanel1.CustomizableEdges = customizableEdges21;
@@ -408,10 +414,10 @@
             guna2CustomGradientPanel1.FillColor2 = Color.FromArgb(248, 247, 239);
             guna2CustomGradientPanel1.FillColor3 = Color.FromArgb(248, 247, 239);
             guna2CustomGradientPanel1.FillColor4 = Color.FromArgb(248, 247, 239);
-            guna2CustomGradientPanel1.Location = new Point(17, 293);
+            guna2CustomGradientPanel1.Location = new Point(29, 292);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2CustomGradientPanel1.Size = new Size(1033, 412);
+            guna2CustomGradientPanel1.Size = new Size(1033, 421);
             guna2CustomGradientPanel1.TabIndex = 3;
             // 
             // dgv_dsNV
@@ -439,7 +445,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgv_dsNV.DefaultCellStyle = dataGridViewCellStyle3;
             dgv_dsNV.GridColor = Color.FromArgb(248, 247, 239);
-            dgv_dsNV.Location = new Point(3, 44);
+            dgv_dsNV.Location = new Point(3, 35);
             dgv_dsNV.Name = "dgv_dsNV";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
@@ -452,7 +458,7 @@
             dgv_dsNV.RowHeadersVisible = false;
             dgv_dsNV.RowHeadersWidth = 51;
             dgv_dsNV.RowTemplate.Height = 29;
-            dgv_dsNV.Size = new Size(1027, 368);
+            dgv_dsNV.Size = new Size(1027, 372);
             dgv_dsNV.TabIndex = 23;
             dgv_dsNV.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_dsNV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -514,7 +520,7 @@
             col_sdt.HeaderText = "SĐT";
             col_sdt.MinimumWidth = 6;
             col_sdt.Name = "col_sdt";
-            col_sdt.Width = 130;
+            col_sdt.Width = 133;
             // 
             // col_NgayDiLam
             // 
@@ -549,7 +555,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(63, 29, 18);
-            label9.Location = new Point(3, 19);
+            label9.Location = new Point(3, 10);
             label9.Name = "label9";
             label9.Size = new Size(194, 22);
             label9.TabIndex = 20;
@@ -559,6 +565,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             Controls.Add(guna2CustomGradientPanel1);
             Controls.Add(guna2Panel1);
             Controls.Add(label1);

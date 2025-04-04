@@ -55,5 +55,9 @@ namespace CoffeeShopManagementSystem
         {
             ShowUserControl(new FormQuanLyKho());
         }
+        public void ShowDashboardOnSignIn()
+        {
+            btnTrangChu.PerformClick();
+        }
     }
 }

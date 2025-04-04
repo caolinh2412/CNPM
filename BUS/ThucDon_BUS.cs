@@ -29,5 +29,9 @@ namespace BUS
         {         
             return dal.XoaMon(maMon);
         }
+        public int GetTongSoMon()
+        {
+            return dal.GetTongSoMon();
+        }
     }
 }

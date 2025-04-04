@@ -176,5 +176,84 @@ namespace DAL
                 throw new Exception("Lỗi không xác định khi cập nhật tồn kho: " + ex.Message);
             }
         }
+        public int GetTongDH()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_TongSoKhach", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        object result = cmd.ExecuteScalar();
+                        return result != null ? Convert.ToInt32(result) : 0;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi không xác định khi lấy tổng số hóa đơn: " + ex.Message);
+            }
+        }
+        public decimal GetTongDoanhThu(DateTime ngay)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_TinhDoanhThuTrongNgay", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Ngay", ngay);
+                        object result = cmd.ExecuteScalar();
+                        return result != null ? Convert.ToDecimal(result) : 0;
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi không xác định khi lấy doanh thu trong ngày: " + ex.Message);
+            }
+        }
+        public Dictionary<int, decimal> GetDoanhThuTheoThang(int nam)
+        {
+            Dictionary<int, decimal> doanhThuTheoThang = new Dictionary<int, decimal>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_GetDoanhThuTheoThang", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Nam", nam);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                int thang = reader.GetInt32(0); 
+                                decimal doanhThu = reader.GetDecimal(1); 
+                                doanhThuTheoThang[thang] = doanhThu;
+                            }
+                        }
+                    }
+                }
+                return doanhThuTheoThang;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy doanh thu theo tháng: " + ex.Message);
+            }
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace DAL
             string maxCode = "NV000";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT MAX(MaND) FROM NguoiDung";
+                string query = "SELECT MAX(MaND) FROM NguoiDung WHERE MaND LIKE 'NV%'";
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
                 var result = command.ExecuteScalar();

@@ -39,8 +39,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label7 = new Label();
             cb_loaiMon = new Guna.UI2.WinForms.Guna2ComboBox();
             flp_ThucDon = new FlowLayoutPanel();
@@ -69,7 +67,6 @@
             btn_In = new Guna.UI2.WinForms.Guna2Button();
             btn_XoaMon = new Guna.UI2.WinForms.Guna2Button();
             btn_Huy = new Guna.UI2.WinForms.Guna2Button();
-            btnLuu = new Guna.UI2.WinForms.Guna2Button();
             pnl_HoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_ChiTietHD).BeginInit();
             SuspendLayout();
@@ -458,29 +455,10 @@
             btn_Huy.Text = "Hủy";
             btn_Huy.Click += btn_Huy_Click;
             // 
-            // btnLuu
-            // 
-            btnLuu.BorderRadius = 12;
-            btnLuu.CustomizableEdges = customizableEdges9;
-            btnLuu.DisabledState.BorderColor = Color.DarkGray;
-            btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnLuu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLuu.FillColor = Color.DarkRed;
-            btnLuu.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLuu.ForeColor = Color.White;
-            btnLuu.Location = new Point(379, 15);
-            btnLuu.Name = "btnLuu";
-            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnLuu.Size = new Size(182, 36);
-            btnLuu.TabIndex = 46;
-            btnLuu.Text = "Xóa bộ lọc";
-            // 
             // FormDatHang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnLuu);
             Controls.Add(btn_Huy);
             Controls.Add(btn_XoaMon);
             Controls.Add(btn_In);
@@ -489,7 +467,7 @@
             Controls.Add(cb_loaiMon);
             Controls.Add(label7);
             Name = "FormDatHang";
-            Size = new Size(1087, 730);
+            Size = new Size(1087, 735);
             pnl_HoaDon.ResumeLayout(false);
             pnl_HoaDon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_ChiTietHD).EndInit();
@@ -522,7 +500,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_Huy;
         private Label lb_ThuNgan;
         private Label lb_ThoiGian;
-        private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Label lb_MaHD;
         private DataGridViewTextBoxColumn col_TenMon;
         private DataGridViewTextBoxColumn col_SoLuong;
