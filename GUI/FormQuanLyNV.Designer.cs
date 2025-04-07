@@ -446,7 +446,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgv_dsNV.DefaultCellStyle = dataGridViewCellStyle3;
             dgv_dsNV.GridColor = Color.FromArgb(248, 247, 239);
-            dgv_dsNV.Location = new Point(0, 46);
+            dgv_dsNV.Location = new Point(3, 46);
             dgv_dsNV.Name = "dgv_dsNV";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
@@ -459,7 +459,7 @@
             dgv_dsNV.RowHeadersVisible = false;
             dgv_dsNV.RowHeadersWidth = 51;
             dgv_dsNV.RowTemplate.Height = 29;
-            dgv_dsNV.Size = new Size(1027, 372);
+            dgv_dsNV.Size = new Size(1024, 372);
             dgv_dsNV.TabIndex = 23;
             dgv_dsNV.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_dsNV.ThemeStyle.AlternatingRowsStyle.Font = null;

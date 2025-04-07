@@ -34,5 +34,9 @@ namespace CoffeeShopManagementSystem
             FormDangNhap signInForm = new FormDangNhap();
             signInForm.Show();
         }
+        public void DathangOnSignIn()
+        {
+            guna2Button4.PerformClick();
+        }
     }
 }

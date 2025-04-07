@@ -56,6 +56,8 @@ namespace CoffeeShopManagementSystem
                         // Navigate to staff form
                         FormNhanVien staffForm = new FormNhanVien();
                         staffForm.Show();
+                        staffForm.DathangOnSignIn();
+
                     }
                     this.Hide();
                 }

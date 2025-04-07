@@ -790,16 +790,19 @@ END;
 
 --Cập nhật số lượng tồn kho 
 CREATE PROCEDURE sp_CapNhatSoLuongTonKho
-    @MaDH NVARCHAR(50) 
+    @MaDH NVARCHAR(50)
 AS
 BEGIN
     BEGIN TRY
         BEGIN TRANSACTION;
 
+        -- Tạo bảng tạm với kiểu dữ liệu chính xác
         CREATE TABLE #TempNguyenLieu (
             MaNL NVARCHAR(50),
-            SoLuongCanTru INT
+            SoLuongCanTru DECIMAL(18, 2)
         );
+
+        -- Tính tổng số lượng cần trừ dựa theo công thức và chi tiết đơn hàng
         INSERT INTO #TempNguyenLieu (MaNL, SoLuongCanTru)
         SELECT 
             ct.MaNL,
@@ -809,6 +812,7 @@ BEGIN
         WHERE ctdh.MaDH = @MaDH
         GROUP BY ct.MaNL;
 
+        -- Kiểm tra tồn kho có đủ không
         IF EXISTS (
             SELECT 1
             FROM #TempNguyenLieu tmp
@@ -817,15 +821,17 @@ BEGIN
         )
         BEGIN
             ROLLBACK TRANSACTION;
-            RAISERROR ('Không đủ số lượng tồn kho để thanh toán đơn hàng!', 16, 1);
+            RAISERROR (N'Không đủ số lượng tồn kho để thanh toán đơn hàng!', 16, 1);
             RETURN;
         END
 
+        -- Trừ tồn kho
         UPDATE nl
         SET nl.SoLuongTon = nl.SoLuongTon - tmp.SoLuongCanTru
         FROM NguyenLieu nl
         INNER JOIN #TempNguyenLieu tmp ON nl.MaNL = tmp.MaNL;
 
+        -- Dọn dẹp bảng tạm
         DROP TABLE #TempNguyenLieu;
 
         COMMIT TRANSACTION;
@@ -833,11 +839,12 @@ BEGIN
     BEGIN CATCH
         IF @@TRANCOUNT > 0
             ROLLBACK TRANSACTION;
-        
+
         DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
         RAISERROR (@ErrorMessage, 16, 1);
     END CATCH
 END
+
 
 CREATE PROCEDURE sp_GetDoanhThuTheoThang
     @Nam INT

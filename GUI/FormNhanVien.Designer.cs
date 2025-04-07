@@ -33,15 +33,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnLogOut = new Button();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
             panelMain = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -55,7 +52,6 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(guna2Button4);
             panel1.Controls.Add(guna2Button3);
-            panel1.Controls.Add(btnTrangChu);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -67,7 +63,7 @@
             btnLogOut.BackColor = Color.FromArgb(63, 29, 18);
             btnLogOut.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogOut.ForeColor = SystemColors.ButtonHighlight;
-            btnLogOut.Location = new Point(55, 662);
+            btnLogOut.Location = new Point(68, 662);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(143, 33);
             btnLogOut.TabIndex = 36;
@@ -116,7 +112,7 @@
             guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");
             guna2Button4.ImageAlign = HorizontalAlignment.Left;
             guna2Button4.ImageOffset = new Point(10, 0);
-            guna2Button4.Location = new Point(22, 292);
+            guna2Button4.Location = new Point(22, 229);
             guna2Button4.Name = "guna2Button4";
             guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button4.Size = new Size(248, 59);
@@ -146,7 +142,7 @@
             guna2Button3.Image = (Image)resources.GetObject("guna2Button3.Image");
             guna2Button3.ImageAlign = HorizontalAlignment.Left;
             guna2Button3.ImageOffset = new Point(10, 0);
-            guna2Button3.Location = new Point(22, 397);
+            guna2Button3.Location = new Point(22, 315);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button3.Size = new Size(248, 59);
@@ -154,36 +150,6 @@
             guna2Button3.Text = "Lịch làm việc";
             guna2Button3.TextAlign = HorizontalAlignment.Left;
             guna2Button3.TextOffset = new Point(20, 0);
-            // 
-            // btnTrangChu
-            // 
-            btnTrangChu.AutoRoundedCorners = true;
-            btnTrangChu.BackColor = Color.FromArgb(63, 29, 18);
-            btnTrangChu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btnTrangChu.CheckedState.FillColor = Color.Tan;
-            btnTrangChu.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTrangChu.CheckedState.Image = (Image)resources.GetObject("resource.Image2");
-            customizableEdges5.BottomRight = false;
-            customizableEdges5.TopRight = false;
-            btnTrangChu.CustomizableEdges = customizableEdges5;
-            btnTrangChu.DisabledState.BorderColor = Color.DarkGray;
-            btnTrangChu.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTrangChu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTrangChu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTrangChu.FillColor = Color.Transparent;
-            btnTrangChu.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTrangChu.ForeColor = SystemColors.Window;
-            btnTrangChu.Image = (Image)resources.GetObject("btnTrangChu.Image");
-            btnTrangChu.ImageAlign = HorizontalAlignment.Left;
-            btnTrangChu.ImageOffset = new Point(10, 0);
-            btnTrangChu.Location = new Point(22, 201);
-            btnTrangChu.Name = "btnTrangChu";
-            btnTrangChu.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnTrangChu.Size = new Size(245, 59);
-            btnTrangChu.TabIndex = 0;
-            btnTrangChu.Text = "Trang chủ";
-            btnTrangChu.TextAlign = HorizontalAlignment.Left;
-            btnTrangChu.TextOffset = new Point(20, 0);
             // 
             // panelMain
             // 
@@ -193,7 +159,7 @@
             panelMain.Size = new Size(1087, 735);
             panelMain.TabIndex = 2;
             // 
-            // StaffForm
+            // FormNhanVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -201,7 +167,7 @@
             Controls.Add(panelMain);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "StaffForm";
+            Name = "FormNhanVien";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StaffForm";
             panel1.ResumeLayout(false);
@@ -218,7 +184,6 @@
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button btnTrangChu;
         private Panel panelMain;
     }
 }

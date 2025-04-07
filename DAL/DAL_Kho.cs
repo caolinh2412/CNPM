@@ -37,7 +37,7 @@ namespace DAL
                                 {
                                     MaNL = reader["MaNL"].ToString(),
                                     TenNL = reader["TenNL"].ToString(),
-                                    SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
+                                    SoLuongTon = reader.GetDecimal(reader.GetOrdinal("SoLuongTon")),
                                     DonViTinh = reader["DonViTinh"].ToString(),
                                     NgayNhap = Convert.ToDateTime(reader["NgayNhap"]),
                                     TenNCC = reader["TenNCC"].ToString(),
