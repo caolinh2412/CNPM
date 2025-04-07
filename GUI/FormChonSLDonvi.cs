@@ -12,7 +12,7 @@ namespace GUI
 {
     public partial class FormChonSLDonvi : Form
     {
-        public int SoLuong { get; private set; }
+        public decimal SoLuong { get; private set; }
         public string DonVi { get; private set; }
         public FormChonSLDonvi()
         {
@@ -21,7 +21,7 @@ namespace GUI
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txt_SoLuong.Text, out int soLuong) && !string.IsNullOrWhiteSpace(txt_DV.Text))
+            if (decimal.TryParse(txt_SoLuong.Text, out decimal soLuong) && !string.IsNullOrWhiteSpace(txt_DV.Text))
             {
                 SoLuong = soLuong;
                 DonVi = txt_DV.Text;

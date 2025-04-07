@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class FormQuanLyNV : UserControl
     {
-        private NhanVien_BUS bus = new NhanVien_BUS();
+        private BUS_NhanVien bus = new BUS_NhanVien();
         private bool isEditMode = false;
         public FormQuanLyNV()
         {
@@ -72,7 +72,7 @@ namespace GUI
 
         private void LoadEmployeeData()
         {
-            List<DangNhap_DTO> employees = bus.GetAllEmployees();
+            List<DTO_DangNhap> employees = bus.GetAllEmployees();
             dgv_dsNV.DataSource = employees;
         }
 
@@ -86,8 +86,9 @@ namespace GUI
             dgv_dsNV.Columns["col_email"].DataPropertyName = "Email";
             dgv_dsNV.Columns["col_sdt"].DataPropertyName = "SDT";
             dgv_dsNV.Columns["col_NgayDiLam"].DataPropertyName = "NgayDiLam";
+            dgv_dsNV.Columns["col_TrangThai"].DataPropertyName = "TrangThai";
 
-            
+
             dgv_dsNV.CellClick += dgv_dsNV_CellClick;
         }
         private void dgv_dsNV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -97,17 +98,17 @@ namespace GUI
                 DataGridViewRow selectedRow = dgv_dsNV.Rows[e.RowIndex];
                 string maNV = selectedRow.Cells["col_maNV"].Value.ToString();
 
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn điều chỉnh hoạt động nhân viên này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if (bus.DeleteEmployee(maNV))
+                    if (bus.TatHD(maNV))
                     {
-                        MessageBox.Show("Xóa nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Điều chỉnh hoạt động nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadEmployeeData();
                     }
                     else
                     {
-                        MessageBox.Show("Xóa nhân viên thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Điều chỉnh thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -173,7 +174,7 @@ namespace GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            DangNhap_DTO employee = new DangNhap_DTO
+            DTO_DangNhap employee = new DTO_DangNhap
             {
                 MaND = txt_MaNV.Text,
                 HoVaTen = txt_Ten.Text,

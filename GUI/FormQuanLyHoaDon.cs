@@ -10,19 +10,22 @@ using System.Windows.Forms;
 using DAL;
 using BUS;
 using CoffeeShopManagementSystem.BUS;
+using Guna.Charts.WinForms;
 
 namespace GUI
 {
-    public partial class FormQuanLyHoaDon: UserControl
+    public partial class FormQuanLyHoaDon : UserControl
     {
-        private DonHang_BUS donHangBUS = new DonHang_BUS();
-        private ChiTietDonHang_BUS chiTietDonHangBUS = new ChiTietDonHang_BUS();
+        private BUS_DonHang donHangBUS = new BUS_DonHang();
+        private BUS_ChiTietDonHang chiTietDonHangBUS = new BUS_ChiTietDonHang();
 
         public FormQuanLyHoaDon()
         {
             InitializeComponent();
             KhoiTaoDataGridView();
             TaiDanhSachHoaDon();
+            LoadMonthlyRevenueGunaChart();
+            LoadTop3MonBanChayPieChart();
             dgv_DonHang.CellClick += dgv_DonHang_CellClick;
             this.Load += FormQuanLyHoaDon_Load;
 
@@ -95,6 +98,7 @@ namespace GUI
             dgv_DonHang.Columns["col_NhanVien"].DataPropertyName = "HoVaTen";
             dgv_DonHang.Columns["col_Ngay"].DataPropertyName = "NgayDat";
             dgv_DonHang.Columns["col_TongTien"].DataPropertyName = "TongTien";
+            dgv_DonHang.Columns["col_PhuongThuc"].DataPropertyName = "PhuongThuc";
 
             dgv_CTDH.AutoGenerateColumns = false;
             dgv_CTDH.Columns["col_TenMon"].DataPropertyName = "TenMon";
@@ -114,6 +118,74 @@ namespace GUI
             {
                 string maDH = dgv_DonHang.Rows[e.RowIndex].Cells["col_MaHD"].Value.ToString();
                 dgv_CTDH.DataSource = chiTietDonHangBUS.LayChiTietDonHangTheoMaDH(maDH);
+            }
+        }
+        private void LoadMonthlyRevenueGunaChart()
+        {
+            try
+            {
+                int namHienTai = DateTime.Today.Year;
+                var doanhThuTheoThang = donHangBUS.GetDoanhThuTheoThang(namHienTai);
+
+                // Xóa dữ liệu cũ trong GunaChart
+                gunaChart_dtThang.Datasets.Clear();
+
+                // Tạo dataset cho biểu đồ cột
+                var dataset = new GunaBarDataset();
+                dataset.Label = "Doanh Thu (VNĐ)";
+
+                // Thêm dữ liệu vào dataset
+                foreach (var item in doanhThuTheoThang.OrderBy(x => x.Key))
+                {
+                    dataset.DataPoints.Add(new LPoint { Label = $"Tháng {item.Key}", Y = (double)item.Value });
+                }
+
+                // Thêm dataset vào GunaChart
+                gunaChart_dtThang.Datasets.Add(dataset);
+
+                // Cập nhật biểu đồ
+                gunaChart_dtThang.Update();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi vẽ biểu đồ doanh thu theo tháng: {ex.Message}");
+            }
+        }
+        private void LoadTop3MonBanChayPieChart()
+        {
+            try
+            {
+                // Lấy dữ liệu top 3 món bán chạy
+                var top3MonBanChay = chiTietDonHangBUS.GetTop3MonBanChay();
+
+                // Xóa dữ liệu cũ trong biểu đồ
+                gunaChart_Mon.Datasets.Clear();
+
+                // Tạo LPointCollection để lưu các điểm dữ liệu
+                LPointCollection dataPoints = new LPointCollection();
+
+                // Thêm các món vào LPointCollection
+                foreach (var mon in top3MonBanChay)
+                {
+                    dataPoints.Add(new LPoint { Label = mon.TenMon, Y = mon.SoLuong });
+                }
+
+                // Tạo dataset cho biểu đồ tròn
+                var dataset = new GunaPieDataset
+                {
+                    DataPoints = dataPoints
+                };
+
+                // Thêm dataset vào biểu đồ
+                gunaChart_Mon.Datasets.Add(dataset);
+
+                // Cập nhật biểu đồ
+                gunaChart_Mon.Update();
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị lỗi nếu có
+                MessageBox.Show($"Lỗi khi vẽ biểu đồ top 3 món bán chạy: {ex.Message}");
             }
         }
     }

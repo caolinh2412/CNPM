@@ -14,8 +14,8 @@ namespace GUI
 {
     public partial class FormThemMon : Form
     {
-        private ThucDon_DTO monDangSua = null;
-        private ThucDon_BUS bus = new ThucDon_BUS();
+        private DTO_ThucDon monDangSua = null;
+        private BUS_DanhMuc bus1 = new BUS_DanhMuc();
 
         public FormThemMon()
         {
@@ -25,16 +25,13 @@ namespace GUI
 
         private void LoadLoaiMon()
         {
-            cb_loaiMon.Items.AddRange(new string[]
-            {
-                "Cà phê",
-                "Trà sữa",
-                "Nước ép",
-                "Sinh tố",
-                "Trà",
-                "Đá xay",
-                "Bánh ngọt"
-            });
+            List<DTO_DanhMuc> loaiMonList = bus1.LayDanhSachTenDanhMuc();
+
+            cb_loaiMon.Items.Clear();
+            cb_loaiMon.DataSource = loaiMonList;
+            cb_loaiMon.DisplayMember = "TenDM"; 
+            cb_loaiMon.ValueMember = "MaDM";     
+            cb_loaiMon.SelectedIndex = 0;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -57,11 +54,11 @@ namespace GUI
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            string tenMon = txt_TenMon.Text.Trim();            
-            string loaiMon = cb_loaiMon.SelectedItem?.ToString();
+            string tenMon = txt_TenMon.Text.Trim();
+            string maDanhMuc = cb_loaiMon.SelectedValue?.ToString();
             string hinhAnh = pic_Mon.ImageLocation ?? "";
 
-            if (string.IsNullOrEmpty(tenMon) || string.IsNullOrEmpty(loaiMon))
+            if (string.IsNullOrEmpty(tenMon) || string.IsNullOrEmpty(maDanhMuc))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ tên món và loại món!");
                 return;
@@ -71,17 +68,17 @@ namespace GUI
             {
                 MessageBox.Show("Giá món không hợp lệ!");
                 return;
-            }
+            }      
 
-            DTO.ThucDon_DTO thucDon = new DTO.ThucDon_DTO
+            DTO.DTO_ThucDon thucDon = new DTO.DTO_ThucDon
             {
-                TenMon = tenMon,
-                LoaiMon = loaiMon,
+                TenMon = tenMon,              
                 Gia = gia,
-                HinhAnh = hinhAnh
+                HinhAnh = hinhAnh,
+                MaDM = maDanhMuc
             };
 
-            BUS.ThucDon_BUS bus = new BUS.ThucDon_BUS();
+            BUS_ThucDon bus = new BUS_ThucDon();
             bool result;
             if (monDangSua == null) 
             {
@@ -96,14 +93,15 @@ namespace GUI
                     MessageBox.Show("Thêm món thất bại!");
                 }
             }
-            else // Trường hợp CHỈNH SỬA
+            else 
             {
                 thucDon.MaMon = monDangSua.MaMon;
                 result = bus.UpdateMon(thucDon);
                 if (result)
                 {
                     MessageBox.Show("Cập nhật món thành công!");
-                    this.Close(); // Đóng form sau khi chỉnh sửa thành công
+                    this.Close();
+                    ResetFields();
                 }
                 else
                 {
@@ -118,21 +116,29 @@ namespace GUI
             cb_loaiMon.SelectedIndex = -1; 
             pic_Mon.Image = null;
         }
-        public void LoadMon(ThucDon_DTO mon)
+        public void LoadMon(DTO_ThucDon mon)
         {
-            monDangSua = mon; 
-            txt_TenMon.Text = mon.TenMon;
-            txt_GiaMon.Text = mon.Gia.ToString();
-            cb_loaiMon.SelectedItem = mon.LoaiMon;
+            try
+            {
+                monDangSua = mon;
+                txt_TenMon.Text = mon.TenMon;
+                txt_GiaMon.Text = mon.Gia.ToString("N0");
+                cb_loaiMon.SelectedValue = mon.MaDM; 
 
-            if (!string.IsNullOrEmpty(mon.HinhAnh) && System.IO.File.Exists(mon.HinhAnh))
-            {
-                pic_Mon.Image = Image.FromFile(mon.HinhAnh);
-                pic_Mon.ImageLocation = mon.HinhAnh;
+                if (!string.IsNullOrEmpty(mon.HinhAnh) && System.IO.File.Exists(mon.HinhAnh))
+                {
+                    pic_Mon.Image = Image.FromFile(mon.HinhAnh);
+                    pic_Mon.ImageLocation = mon.HinhAnh;
+                }
+                else
+                {
+                    pic_Mon.Image = null;
+                    pic_Mon.ImageLocation = null;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                pic_Mon.Image = null;
+                MessageBox.Show($"Lỗi khi tải thông tin món: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

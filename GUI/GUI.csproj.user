@@ -4,10 +4,16 @@
     <Compile Update="DashboardForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ChangePassForm.cs">
+    <Compile Update="FormThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ConfirmEmailForm.cs">
+    <Compile Update="FormThemDanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FromChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormConfirmEmail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormCaLamViec.cs">
@@ -37,16 +43,16 @@
     <Compile Update="FormThemMon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ManagerForm.cs">
+    <Compile Update="FormQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MenuForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="SignInForm.cs">
+    <Compile Update="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="StaffForm.cs">
+    <Compile Update="FormNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

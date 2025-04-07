@@ -39,6 +39,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label7 = new Label();
             cb_loaiMon = new Guna.UI2.WinForms.Guna2ComboBox();
             flp_ThucDon = new FlowLayoutPanel();
@@ -67,6 +69,7 @@
             btn_In = new Guna.UI2.WinForms.Guna2Button();
             btn_XoaMon = new Guna.UI2.WinForms.Guna2Button();
             btn_Huy = new Guna.UI2.WinForms.Guna2Button();
+            btn_ChuyenKhoan = new Guna.UI2.WinForms.Guna2Button();
             pnl_HoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_ChiTietHD).BeginInit();
             SuspendLayout();
@@ -76,7 +79,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(63, 29, 18);
-            label7.Location = new Point(18, 29);
+            label7.Location = new Point(18, 39);
             label7.Name = "label7";
             label7.Size = new Size(92, 22);
             label7.TabIndex = 16;
@@ -95,7 +98,7 @@
             cb_loaiMon.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cb_loaiMon.ForeColor = Color.FromArgb(63, 29, 18);
             cb_loaiMon.ItemHeight = 30;
-            cb_loaiMon.Location = new Point(116, 15);
+            cb_loaiMon.Location = new Point(116, 25);
             cb_loaiMon.Name = "cb_loaiMon";
             cb_loaiMon.ShadowDecoration.CustomizableEdges = customizableEdges2;
             cb_loaiMon.Size = new Size(236, 36);
@@ -110,12 +113,12 @@
             flp_ThucDon.Margin = new Padding(7);
             flp_ThucDon.Name = "flp_ThucDon";
             flp_ThucDon.Padding = new Padding(20);
-            flp_ThucDon.Size = new Size(543, 641);
+            flp_ThucDon.Size = new Size(563, 641);
             flp_ThucDon.TabIndex = 30;
             // 
             // pnl_HoaDon
             // 
-            pnl_HoaDon.BackColor = Color.FromArgb(248, 247, 239);
+            pnl_HoaDon.BackColor = Color.White;
             pnl_HoaDon.BorderStyle = BorderStyle.FixedSingle;
             pnl_HoaDon.Controls.Add(lb_MaHD);
             pnl_HoaDon.Controls.Add(lb_ThuNgan);
@@ -136,7 +139,7 @@
             pnl_HoaDon.Controls.Add(label9);
             pnl_HoaDon.Location = new Point(613, 71);
             pnl_HoaDon.Name = "pnl_HoaDon";
-            pnl_HoaDon.Size = new Size(430, 586);
+            pnl_HoaDon.Size = new Size(430, 587);
             pnl_HoaDon.TabIndex = 31;
             // 
             // lb_MaHD
@@ -171,7 +174,7 @@
             lb_TongSL.AutoSize = true;
             lb_TongSL.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             lb_TongSL.ForeColor = Color.Black;
-            lb_TongSL.Location = new Point(380, 512);
+            lb_TongSL.Location = new Point(389, 516);
             lb_TongSL.Name = "lb_TongSL";
             lb_TongSL.Size = new Size(20, 22);
             lb_TongSL.TabIndex = 43;
@@ -281,22 +284,21 @@
             lb_TongTien.AutoSize = true;
             lb_TongTien.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             lb_TongTien.ForeColor = Color.ForestGreen;
-            lb_TongTien.Location = new Point(332, 550);
+            lb_TongTien.Location = new Point(325, 551);
             lb_TongTien.Name = "lb_TongTien";
-            lb_TongTien.Size = new Size(30, 22);
+            lb_TongTien.Size = new Size(40, 22);
             lb_TongTien.TabIndex = 33;
-            lb_TongTien.Text = "    ";
+            lb_TongTien.Text = "      ";
             // 
             // dgv_ChiTietHD
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
             dgv_ChiTietHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgv_ChiTietHD.BackgroundColor = Color.FromArgb(248, 247, 239);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(248, 247, 239);
+            dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Roboto", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(248, 247, 239);
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgv_ChiTietHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -304,10 +306,10 @@
             dgv_ChiTietHD.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgv_ChiTietHD.Columns.AddRange(new DataGridViewColumn[] { col_TenMon, col_SoLuong, col_DonGia, col_ThanhTien });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(248, 247, 239);
+            dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(248, 247, 239);
+            dataGridViewCellStyle3.SelectionBackColor = Color.White;
             dataGridViewCellStyle3.SelectionForeColor = Color.Black;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgv_ChiTietHD.DefaultCellStyle = dataGridViewCellStyle3;
@@ -317,14 +319,14 @@
             dgv_ChiTietHD.RowHeadersVisible = false;
             dgv_ChiTietHD.RowHeadersWidth = 51;
             dgv_ChiTietHD.RowTemplate.Height = 29;
-            dgv_ChiTietHD.Size = new Size(420, 222);
+            dgv_ChiTietHD.Size = new Size(425, 222);
             dgv_ChiTietHD.TabIndex = 33;
             dgv_ChiTietHD.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_ChiTietHD.ThemeStyle.AlternatingRowsStyle.Font = null;
             dgv_ChiTietHD.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
             dgv_ChiTietHD.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
             dgv_ChiTietHD.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dgv_ChiTietHD.ThemeStyle.BackColor = Color.FromArgb(248, 247, 239);
+            dgv_ChiTietHD.ThemeStyle.BackColor = Color.White;
             dgv_ChiTietHD.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
             dgv_ChiTietHD.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             dgv_ChiTietHD.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -400,7 +402,6 @@
             // 
             // btn_In
             // 
-            btn_In.BorderRadius = 12;
             btn_In.CustomizableEdges = customizableEdges3;
             btn_In.DisabledState.BorderColor = Color.DarkGray;
             btn_In.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -409,12 +410,12 @@
             btn_In.FillColor = Color.Green;
             btn_In.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_In.ForeColor = Color.White;
-            btn_In.Location = new Point(618, 676);
+            btn_In.Location = new Point(839, 676);
             btn_In.Name = "btn_In";
             btn_In.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btn_In.Size = new Size(420, 36);
+            btn_In.Size = new Size(204, 36);
             btn_In.TabIndex = 44;
-            btn_In.Text = "In hóa đơn";
+            btn_In.Text = "Xuất hóa đơn";
             btn_In.Click += btn_In_Click;
             // 
             // btn_XoaMon
@@ -428,10 +429,10 @@
             btn_XoaMon.FillColor = Color.FromArgb(63, 29, 18);
             btn_XoaMon.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_XoaMon.ForeColor = Color.White;
-            btn_XoaMon.Location = new Point(613, 15);
+            btn_XoaMon.Location = new Point(890, 25);
             btn_XoaMon.Name = "btn_XoaMon";
             btn_XoaMon.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btn_XoaMon.Size = new Size(182, 36);
+            btn_XoaMon.Size = new Size(63, 36);
             btn_XoaMon.TabIndex = 45;
             btn_XoaMon.Text = "Xóa";
             btn_XoaMon.Click += btn_XoaMon_Click;
@@ -447,25 +448,44 @@
             btn_Huy.FillColor = Color.FromArgb(63, 29, 18);
             btn_Huy.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Huy.ForeColor = Color.White;
-            btn_Huy.Location = new Point(855, 15);
+            btn_Huy.Location = new Point(975, 25);
             btn_Huy.Name = "btn_Huy";
             btn_Huy.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btn_Huy.Size = new Size(188, 36);
+            btn_Huy.Size = new Size(68, 36);
             btn_Huy.TabIndex = 46;
             btn_Huy.Text = "Hủy";
             btn_Huy.Click += btn_Huy_Click;
+            // 
+            // btn_ChuyenKhoan
+            // 
+            btn_ChuyenKhoan.CustomizableEdges = customizableEdges9;
+            btn_ChuyenKhoan.DisabledState.BorderColor = Color.DarkGray;
+            btn_ChuyenKhoan.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_ChuyenKhoan.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_ChuyenKhoan.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_ChuyenKhoan.FillColor = Color.Red;
+            btn_ChuyenKhoan.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_ChuyenKhoan.ForeColor = Color.White;
+            btn_ChuyenKhoan.Location = new Point(613, 676);
+            btn_ChuyenKhoan.Name = "btn_ChuyenKhoan";
+            btn_ChuyenKhoan.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btn_ChuyenKhoan.Size = new Size(211, 36);
+            btn_ChuyenKhoan.TabIndex = 47;
+            btn_ChuyenKhoan.Text = "Thanh toán";
+            btn_ChuyenKhoan.Click += btn_ChuyenKhoan_Click;
             // 
             // FormDatHang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btn_ChuyenKhoan);
             Controls.Add(btn_Huy);
             Controls.Add(btn_XoaMon);
-            Controls.Add(btn_In);
             Controls.Add(pnl_HoaDon);
             Controls.Add(flp_ThucDon);
             Controls.Add(cb_loaiMon);
             Controls.Add(label7);
+            Controls.Add(btn_In);
             Name = "FormDatHang";
             Size = new Size(1087, 735);
             pnl_HoaDon.ResumeLayout(false);
@@ -505,5 +525,6 @@
         private DataGridViewTextBoxColumn col_SoLuong;
         private DataGridViewTextBoxColumn col_DonGia;
         private DataGridViewTextBoxColumn col_ThanhTien;
+        private Guna.UI2.WinForms.Guna2Button btn_ChuyenKhoan;
     }
 }

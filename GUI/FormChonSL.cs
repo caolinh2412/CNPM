@@ -18,7 +18,7 @@ namespace GUI
             InitializeComponent();
             txt_MaNV.KeyPress += Txt_MaNV_KeyPress;
         }
-        public event Action<ThucDon_DTO, int> OnChonMon;
+        public event Action<DTO_ThucDon, int> OnChonMon;
         private void Txt_MaNV_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

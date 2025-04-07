@@ -82,6 +82,7 @@
             col_email = new DataGridViewTextBoxColumn();
             col_sdt = new DataGridViewTextBoxColumn();
             col_NgayDiLam = new DataGridViewTextBoxColumn();
+            col_TrangThai = new DataGridViewTextBoxColumn();
             dgedit = new DataGridViewImageColumn();
             dgdelete = new DataGridViewImageColumn();
             label9 = new Label();
@@ -435,7 +436,7 @@
             dgv_dsNV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgv_dsNV.ColumnHeadersHeight = 42;
             dgv_dsNV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgv_dsNV.Columns.AddRange(new DataGridViewColumn[] { col_maNV, col_HoTen, col_GioiTinh, col_email, col_sdt, col_NgayDiLam, dgedit, dgdelete });
+            dgv_dsNV.Columns.AddRange(new DataGridViewColumn[] { col_maNV, col_HoTen, col_GioiTinh, col_email, col_sdt, col_NgayDiLam, col_TrangThai, dgedit, dgdelete });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -445,7 +446,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgv_dsNV.DefaultCellStyle = dataGridViewCellStyle3;
             dgv_dsNV.GridColor = Color.FromArgb(248, 247, 239);
-            dgv_dsNV.Location = new Point(3, 35);
+            dgv_dsNV.Location = new Point(0, 46);
             dgv_dsNV.Name = "dgv_dsNV";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
@@ -488,7 +489,7 @@
             col_maNV.HeaderText = "Mã nhân viên";
             col_maNV.MinimumWidth = 6;
             col_maNV.Name = "col_maNV";
-            col_maNV.Width = 150;
+            col_maNV.Width = 125;
             // 
             // col_HoTen
             // 
@@ -496,7 +497,7 @@
             col_HoTen.HeaderText = "Họ và tên";
             col_HoTen.MinimumWidth = 6;
             col_HoTen.Name = "col_HoTen";
-            col_HoTen.Width = 160;
+            col_HoTen.Width = 130;
             // 
             // col_GioiTinh
             // 
@@ -504,7 +505,7 @@
             col_GioiTinh.HeaderText = "Giới tính";
             col_GioiTinh.MinimumWidth = 6;
             col_GioiTinh.Name = "col_GioiTinh";
-            col_GioiTinh.Width = 125;
+            col_GioiTinh.Width = 120;
             // 
             // col_email
             // 
@@ -528,7 +529,15 @@
             col_NgayDiLam.HeaderText = "Ngày vào làm";
             col_NgayDiLam.MinimumWidth = 6;
             col_NgayDiLam.Name = "col_NgayDiLam";
-            col_NgayDiLam.Width = 150;
+            col_NgayDiLam.Width = 140;
+            // 
+            // col_TrangThai
+            // 
+            col_TrangThai.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            col_TrangThai.HeaderText = "Trạng Thái";
+            col_TrangThai.MinimumWidth = 6;
+            col_TrangThai.Name = "col_TrangThai";
+            col_TrangThai.Width = 125;
             // 
             // dgedit
             // 
@@ -538,7 +547,7 @@
             dgedit.ImageLayout = DataGridViewImageCellLayout.Zoom;
             dgedit.MinimumWidth = 6;
             dgedit.Name = "dgedit";
-            dgedit.Width = 70;
+            dgedit.Width = 50;
             // 
             // dgdelete
             // 
@@ -548,7 +557,7 @@
             dgdelete.ImageLayout = DataGridViewImageCellLayout.Zoom;
             dgdelete.MinimumWidth = 6;
             dgdelete.Name = "dgdelete";
-            dgdelete.Width = 70;
+            dgdelete.Width = 50;
             // 
             // label9
             // 
@@ -611,6 +620,7 @@
         private DataGridViewTextBoxColumn col_email;
         private DataGridViewTextBoxColumn col_sdt;
         private DataGridViewTextBoxColumn col_NgayDiLam;
+        private DataGridViewTextBoxColumn col_TrangThai;
         private DataGridViewImageColumn dgedit;
         private DataGridViewImageColumn dgdelete;
     }

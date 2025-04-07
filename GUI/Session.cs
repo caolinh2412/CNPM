@@ -4,9 +4,9 @@ namespace GUI
 {
     public static class Session
     {
-        public static DangNhap_DTO CurrentUser { get; set; }
+        public static DTO_DangNhap CurrentUser { get; set; }
 
-        public static void Login(DangNhap_DTO user)
+        public static void Login(DTO_DangNhap user)
         {
             CurrentUser = user;
         }

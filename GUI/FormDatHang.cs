@@ -19,25 +19,27 @@ namespace GUI
 {
     public partial class FormDatHang : UserControl
     {
-        private ThucDon_BUS thucDonBUS;
+        private BUS_ThucDon thucDonBUS;
+        private BUS_DanhMuc danhMucBUS;
         private List<FormMon> danhSachMon;
-        private DonHang_BUS donHangBUS;
-        private ChiTietDonHang_BUS chiTietBus;
-        private BindingList<ChiTietDonHang_DTO> chiTietDonHangs;
+        private BUS_DonHang donHangBUS;
+        private BUS_ChiTietDonHang chiTietBus;
+        private BindingList<DTO_ChiTietDonHang> chiTietDonHangs;
         private decimal tongTien;
-        public event Action<ThucDon_DTO, int> OnMonDuocChon;
+        public event Action<DTO_ThucDon, int> OnMonDuocChon;
         private Bitmap memoryimg;
         private PrintDocument printDocument1;
-        private PrintPreviewDialog printPreviewDialog1; 
+        private PrintPreviewDialog printPreviewDialog1;
 
         public FormDatHang()
         {
             InitializeComponent();
-            thucDonBUS = new ThucDon_BUS();
+            thucDonBUS = new BUS_ThucDon();
             danhSachMon = new List<FormMon>();
-            donHangBUS = new DonHang_BUS();
-            chiTietDonHangs = new BindingList<ChiTietDonHang_DTO>();
-            chiTietBus = new ChiTietDonHang_BUS();
+            donHangBUS = new BUS_DonHang();
+            danhMucBUS = new BUS_DanhMuc();
+            chiTietDonHangs = new BindingList<DTO_ChiTietDonHang>();
+            chiTietBus = new BUS_ChiTietDonHang();
             TaiDanhSachMon();
             HienThiThongTinHeThong();
             KhoiTaoComboBoxDanhMuc();
@@ -48,21 +50,33 @@ namespace GUI
             printPreviewDialog1 = new PrintPreviewDialog();
 
         }
+      
         private void KhoiTaoComboBoxDanhMuc()
         {
+            List<DTO_DanhMuc> loaiMonList = danhMucBUS.LayDanhSachTenDanhMuc();
 
-            List<string> danhMuc = new List<string> { "Tất cả", "Cà phê", "Trà sữa", "Nước ép", "Sinh tố", "Trà", "Đá xay", "Bánh ngọt" };
+            loaiMonList.Insert(0, new DTO_DanhMuc { MaDM = null, TenDM = "Tất cả" });
 
-            cb_loaiMon.DataSource = danhMuc;
+            cb_loaiMon.DisplayMember = "TenDM";
+            cb_loaiMon.ValueMember = "MaDM";
+            cb_loaiMon.DataSource = loaiMonList;
             cb_loaiMon.SelectedIndex = 0;
 
-            cb_loaiMon.SelectedIndexChanged += Cbo_DanhMuc_ThayDoiLuaChon;
-        }
+            LocThucDonTheoDanhMuc(null); // Load initial data
 
-        private void Cbo_DanhMuc_ThayDoiLuaChon(object sender, EventArgs e)
-        {
-            string danhMucDaChon = cb_loaiMon.SelectedItem.ToString();
-            LocThucDonTheoDanhMuc(danhMucDaChon);
+            cb_loaiMon.SelectedIndexChanged += (sender, e) =>
+            {
+                var selectedValue = cb_loaiMon.SelectedValue;
+
+                if (selectedValue == null || selectedValue == DBNull.Value)
+                {
+                    LocThucDonTheoDanhMuc(null);
+                }
+                else
+                {
+                    LocThucDonTheoDanhMuc(selectedValue.ToString());
+                }
+            };
         }
 
         private void LocThucDonTheoDanhMuc(string danhMuc)
@@ -74,8 +88,8 @@ namespace GUI
             danhSachMon.Clear();
             flp_ThucDon.Controls.Clear();
 
-            List<ThucDon_DTO> danhSachMonLoc;
-            if (danhMuc == "Tất cả")
+            List<DTO_ThucDon> danhSachMonLoc;
+            if (danhMuc == null)
             {
                 danhSachMonLoc = thucDonBUS.GetAllMenuItems();
             }
@@ -109,15 +123,13 @@ namespace GUI
             // Kiểm tra xem chỉ số hàng được nhấp có hợp lệ không (bỏ qua nhấp vào tiêu đề, có RowIndex = -1)
             if (e.RowIndex >= 0 && dgv_ChiTietHD.Rows.Count > 0 && e.RowIndex < dgv_ChiTietHD.Rows.Count)
             {
-                // Chọn hàng được nhấp một cách lập trình
                 dgv_ChiTietHD.ClearSelection();
                 dgv_ChiTietHD.Rows[e.RowIndex].Selected = true;
 
                 // Truy cập dữ liệu của hàng được chọn
                 var selectedRow = dgv_ChiTietHD.Rows[e.RowIndex];
-                var selectedItem = (ChiTietDonHang_DTO)selectedRow.DataBoundItem;
+                var selectedItem = (DTO_ChiTietDonHang)selectedRow.DataBoundItem;
 
-                // Tùy chọn: Hiển thị chi tiết mục được chọn (để gỡ lỗi hoặc phản hồi cho người dùng)
                 MessageBox.Show($"Bạn đã chọn món: {selectedItem.TenMon}, Số lượng: {selectedItem.SoLuong}, Thành tiền: {selectedItem.ThanhTien}",
                     "Thông tin món", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -130,7 +142,7 @@ namespace GUI
             }
             danhSachMon.Clear();
 
-            List<ThucDon_DTO> danhSachMonTuDB = thucDonBUS.GetAllMenuItems();
+            List<DTO_ThucDon> danhSachMonTuDB = thucDonBUS.GetAllMenuItems();
 
             foreach (var mon in danhSachMonTuDB)
             {
@@ -163,49 +175,22 @@ namespace GUI
 
         private void btn_In_Click(object sender, EventArgs e)
         {
-            try
+             if (chiTietDonHangs.Count == 0)
             {
-                if (chiTietDonHangs.Count == 0)
-                {
-                    MessageBox.Show("Chưa có món nào được chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                if (string.IsNullOrEmpty(Session.GetCurrentUserID()))
-                {
-                    MessageBox.Show("Không thể xác định người dùng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                DonHangDTO donHang = donHangBUS.TaoDonHang(Session.GetCurrentUserID());
-                string maDH;
-
-                if (donHangBUS.ThemDonHangVaChiTiet(donHang, chiTietDonHangs, out maDH))
-                {
-
-                    DonHangDTO savedDonHang = donHangBUS.GetDonHangById(maDH);
-                    tongTien = savedDonHang.TongTien;
-                    if (this.Controls.Find("lb_TongTien", true).FirstOrDefault() is Label lbTongTien)
-                    {
-                        lbTongTien.Text = tongTien.ToString("N0") + "đ";
-                    }
-                    Print(pnl_HoaDon);
-                    MessageBox.Show($"Đã in hóa đơn thành công! Mã đơn hàng: {maDH}",
-                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    lb_MaHD.Text = donHangBUS.GetNextMaDH();
-                    donHangBUS.CapNhatSoLuongTonKho(maDH);
-                    ResetForm();
-                }
-                else
-                {
-                    throw new Exception("Không thể lưu đơn hàng vào cơ sở dữ liệu!");
-                }
+                MessageBox.Show("Chưa có món nào được chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            catch (Exception ex)
+
+            if (string.IsNullOrEmpty(Session.GetCurrentUserID()))
             {
-                Debug.WriteLine($"Error in btn_In_Click: {ex.Message}");
-                MessageBox.Show($"Lỗi khi lưu đơn hàng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thể xác định người dùng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            Print(pnl_HoaDon);
+            MessageBox.Show($"Đã in hóa đơn thành công!",
+                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lb_MaHD.Text = donHangBUS.GetNextMaDH();
+            ResetForm();
         }
         private void CapNhatTongSoLuong()
         {
@@ -215,11 +200,12 @@ namespace GUI
                 lbTongSL.Text = tongSoLuong.ToString();
             }
         }
+       
 
         private void ResetForm()
         {
             chiTietDonHangs.Clear();
-            tongTien = 0;           
+            tongTien = 0;
             if (this.Controls.Find("lb_TongTien", true).FirstOrDefault() is Label lbTongTien)
             {
                 lbTongTien.Text = "0";
@@ -227,15 +213,19 @@ namespace GUI
             CapNhatTongSoLuong();
         }
 
-        private void ThemChiTietDonHang(ThucDon_DTO mon, int soLuong)
+        private void ThemChiTietDonHang(DTO_ThucDon mon, int soLuong)
         {
             chiTietBus.ThemChiTietDonHang(chiTietDonHangs, mon, soLuong);
             tongTien = chiTietDonHangs.Sum(x => x.ThanhTien);
             if (this.Controls.Find("lb_TongTien", true).FirstOrDefault() is Label lbTongTien)
             {
-                lbTongTien.Text = tongTien.ToString("N0") + "đ";
+                lbTongTien.Text = tongTien.ToString("N0") + "VND";
             }
             CapNhatTongSoLuong();
+        }
+        public decimal TongTien
+        {
+            get { return tongTien; }
         }
 
         private void btn_XoaMon_Click(object sender, EventArgs e)
@@ -247,7 +237,7 @@ namespace GUI
                 tongTien = chiTietDonHangs.Sum(x => x.ThanhTien);
                 if (this.Controls.Find("lb_TongTien", true).FirstOrDefault() is Label lbTongTien)
                 {
-                    lbTongTien.Text = tongTien.ToString("N0") + "đ";
+                    lbTongTien.Text = tongTien.ToString("N0") + "VND";
                 }
                 CapNhatTongSoLuong();
             }
@@ -279,7 +269,6 @@ namespace GUI
         }
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            PrinterSettings ps = new PrinterSettings();
             int pageWidth = e.PageBounds.Width;
             int pageHeight = e.PageBounds.Height;
 
@@ -287,5 +276,52 @@ namespace GUI
             e.Graphics.DrawImage(memoryimg, new Rectangle(0, 0, pageWidth, pageHeight));
         }
 
+        private void btn_ChuyenKhoan_Click(object sender, EventArgs e)
+        {
+            FormThanhToan thanhtoan = new FormThanhToan(this);
+            thanhtoan.ShowDialog();
+            if (!thanhtoan.DaThanhToan)
+            {
+                MessageBox.Show("Bạn chưa thực hiện thanh toán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            try
+            {
+                if (chiTietDonHangs.Count == 0)
+                {
+                    MessageBox.Show("Chưa có món nào được chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(Session.GetCurrentUserID()))
+                {
+                    MessageBox.Show("Không thể xác định người dùng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                DTO_DonHang donHang = donHangBUS.TaoDonHang(Session.GetCurrentUserID());
+                string maDH;
+                donHang.PhuongThuc = thanhtoan.PhuongThucThanhToan;
+                if (donHangBUS.ThemDonHangVaChiTiet(donHang, chiTietDonHangs, out maDH))
+                {
+
+                    DTO_DonHang savedDonHang = donHangBUS.GetDonHangById(maDH);
+                    tongTien = savedDonHang.TongTien;
+                    if (this.Controls.Find("lb_TongTien", true).FirstOrDefault() is Label lbTongTien)
+                    {
+                        lbTongTien.Text = tongTien.ToString("N0") + "đ";
+                    }                                                   
+                    donHangBUS.CapNhatSoLuongTonKho(maDH);                
+                }
+                else
+                {
+                    throw new Exception("Không thể lưu đơn hàng vào cơ sở dữ liệu!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lưu đơn hàng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

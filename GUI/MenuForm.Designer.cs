@@ -40,6 +40,7 @@
             dataGridView1 = new DataGridView();
             pictureBox1 = new PictureBox();
             dgv_DanhMuc = new Guna.UI2.WinForms.Guna2DataGridView();
+            pic_ThemDanhMuc = new PictureBox();
             col_MaMon = new DataGridViewTextBoxColumn();
             col_TenMon = new DataGridViewTextBoxColumn();
             col_GiaBan = new DataGridViewTextBoxColumn();
@@ -48,6 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgv_DanhMuc).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_ThemDanhMuc).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -66,7 +68,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(63, 29, 18);
-            label7.Location = new Point(39, 88);
+            label7.Location = new Point(40, 88);
             label7.Name = "label7";
             label7.Size = new Size(104, 22);
             label7.TabIndex = 15;
@@ -85,7 +87,7 @@
             cb_LoaiMon.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cb_LoaiMon.ForeColor = Color.FromArgb(63, 29, 18);
             cb_LoaiMon.ItemHeight = 30;
-            cb_LoaiMon.Location = new Point(149, 74);
+            cb_LoaiMon.Location = new Point(163, 74);
             cb_LoaiMon.Name = "cb_LoaiMon";
             cb_LoaiMon.ShadowDecoration.CustomizableEdges = customizableEdges2;
             cb_LoaiMon.Size = new Size(225, 36);
@@ -105,7 +107,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(986, 64);
+            pictureBox1.Location = new Point(996, 55);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(56, 55);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -167,6 +169,17 @@
             dgv_DanhMuc.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgv_DanhMuc.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
+            // pic_ThemDanhMuc
+            // 
+            pic_ThemDanhMuc.Image = (Image)resources.GetObject("pic_ThemDanhMuc.Image");
+            pic_ThemDanhMuc.Location = new Point(912, 55);
+            pic_ThemDanhMuc.Name = "pic_ThemDanhMuc";
+            pic_ThemDanhMuc.Size = new Size(56, 55);
+            pic_ThemDanhMuc.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic_ThemDanhMuc.TabIndex = 19;
+            pic_ThemDanhMuc.TabStop = false;
+            pic_ThemDanhMuc.Click += pic_ThemDanhMuc_Click;
+            // 
             // col_MaMon
             // 
             col_MaMon.HeaderText = "Mã món";
@@ -209,6 +222,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pic_ThemDanhMuc);
             Controls.Add(dgv_DanhMuc);
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);
@@ -220,6 +234,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_DanhMuc).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_ThemDanhMuc).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,6 +247,7 @@
         private DataGridView dataGridView1;
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_DanhMuc;
+        private PictureBox pic_ThemDanhMuc;
         private DataGridViewTextBoxColumn col_MaMon;
         private DataGridViewTextBoxColumn col_TenMon;
         private DataGridViewTextBoxColumn col_GiaBan;

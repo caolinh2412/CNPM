@@ -31,3 +31,5 @@ D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\BUS\obj\Debug\net6.0-windows\refi
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\BUS\obj\Debug\net6.0-windows\BUS.pdb
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\BUS\obj\Debug\net6.0-windows\BUS.genruntimeconfig.cache
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\BUS\obj\Debug\net6.0-windows\ref\BUS.dll
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\BUS\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\BUS\bin\Debug\net6.0-windows\QRCoder.dll

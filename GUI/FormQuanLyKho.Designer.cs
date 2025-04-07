@@ -459,9 +459,9 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(37, 87);
             label4.Name = "label4";
-            label4.Size = new Size(84, 20);
+            label4.Size = new Size(128, 20);
             label4.TabIndex = 5;
-            label4.Text = "Họ và tên:";
+            label4.Text = "Tên nguyên liệu:";
             // 
             // label3
             // 

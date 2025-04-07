@@ -9,7 +9,7 @@ namespace GUI
     public partial class FormCaLamViec : Form
     {
         private string maNV;
-        private NhanVien_BUS bus = new NhanVien_BUS();
+        private BUS_NhanVien bus = new BUS_NhanVien();
         private bool isEditMode = false;
         private int selectedRowIndex = -1;
 
@@ -35,7 +35,7 @@ namespace GUI
 
         private void LoadWorkSchedule()
         {
-            List<CaLam_DTO> workSchedule = bus.GetWorkScheduleByEmployeeId(maNV);
+            List<DTO_CaLam> workSchedule = bus.GetWorkScheduleByEmployeeId(maNV);
             dgv_CaLam.DataSource = workSchedule;
         }
 
@@ -87,7 +87,7 @@ namespace GUI
                 DataGridViewRow selectedRow = dgv_CaLam.Rows[selectedRowIndex];
                 string maLLV = selectedRow.Cells["col_MaCa"].Value.ToString();
 
-                CaLam_DTO updatedWorkSchedule = new CaLam_DTO
+                DTO_CaLam updatedWorkSchedule = new DTO_CaLam
                 {
                     MaLLV = maLLV,
                     MaND = maNV,
@@ -108,7 +108,7 @@ namespace GUI
             }
             else
             {
-                CaLam_DTO newWorkSchedule = new CaLam_DTO
+                DTO_CaLam newWorkSchedule = new DTO_CaLam
                 {
                     MaND = maNV,
                     CaLam = txt_TenCa.Text,

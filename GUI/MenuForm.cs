@@ -15,7 +15,8 @@ namespace GUI
 {
     public partial class MenuForm : UserControl
     {
-        private ThucDon_BUS bus = new ThucDon_BUS();
+        private BUS_ThucDon bus = new BUS_ThucDon();
+        private BUS_DanhMuc busDanhMuc = new BUS_DanhMuc();
         public MenuForm()
         {
             InitializeComponent();
@@ -25,18 +26,36 @@ namespace GUI
 
         private void InitializeCategoryComboBox()
         {
-            List<string> categories = new List<string> { "Tất cả", "Cà phê", "Trà sữa", "Nước ép", "Sinh tố", "Trà", "Đá xay", "Bánh ngọt" };
-            cb_LoaiMon.DataSource = categories;
+            List<DTO_DanhMuc> loaiMonList = busDanhMuc.LayDanhSachTenDanhMuc();
+
+            loaiMonList.Insert(0, new DTO_DanhMuc { MaDM = null, TenDM = "Tất cả" });
+
+            cb_LoaiMon.DisplayMember = "TenDM";
+            cb_LoaiMon.ValueMember = "MaDM";
+            cb_LoaiMon.DataSource = loaiMonList;
             cb_LoaiMon.SelectedIndex = 0;
-            LoadMenuItems(cb_LoaiMon.SelectedItem.ToString());
-            cb_LoaiMon.SelectedIndexChanged += (sender, e) => LoadMenuItems(cb_LoaiMon.SelectedItem.ToString());
+
+            LoadMenuItems(null);
+
+            cb_LoaiMon.SelectedIndexChanged += (sender, e) =>
+            {
+                var selectedValue = cb_LoaiMon.SelectedValue;
+
+                if (selectedValue == null || selectedValue == DBNull.Value)
+                {
+                    LoadMenuItems(null);
+                }
+                else
+                {
+                    LoadMenuItems(selectedValue.ToString());
+                }
+            };
         }
 
         private void LoadMenuItems(string category)
         {
-            List<ThucDon_DTO> menuItems;
-            menuItems = bus.GetAllMenuItems();
-            if (category == "Tất cả")
+            List<DTO_ThucDon> menuItems;
+            if (string.IsNullOrEmpty(category))
             {
                 menuItems = bus.GetAllMenuItems();
             }
@@ -59,6 +78,11 @@ namespace GUI
 
             FormThemMon themMon = new FormThemMon();
             themMon.Show();
+            themMon.FormClosed += (s, args) =>
+            {
+                var selectedValue = cb_LoaiMon.SelectedValue;
+                LoadMenuItems(selectedValue?.ToString());
+            };
         }
         private void dgv_dsNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -73,7 +97,7 @@ namespace GUI
                     if (bus.XoaMon(maMon))
                     {
                         MessageBox.Show("Xóa món thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadMenuItems(cb_LoaiMon.SelectedItem.ToString());
+                        ReloadMenu();
                     }
                     else
                     {
@@ -84,18 +108,35 @@ namespace GUI
             else if (e.ColumnIndex == dgv_DanhMuc.Columns["img_edit"].Index)
             {
                 DataGridViewRow selectedRow = dgv_DanhMuc.Rows[e.RowIndex];
-                string maMon = selectedRow.Cells["col_MaMon"].Value.ToString(); 
+                string maMon = selectedRow.Cells["col_MaMon"].Value.ToString();
 
-                ThucDon_DTO mon = bus.GetMonById(maMon);
+                DTO_ThucDon mon = bus.GetMonById(maMon);
 
                 if (mon != null)
                 {
                     FormThemMon formThemMon = new FormThemMon();
-                    formThemMon.LoadMon(mon); 
+                    formThemMon.LoadMon(mon);
                     formThemMon.ShowDialog();
 
-                    LoadMenuItems(cb_LoaiMon.SelectedItem.ToString());
+                    ReloadMenu();
                 }
+            }
+        }
+        private void ReloadMenu()
+        {
+            var selectedValue = cb_LoaiMon.SelectedValue;
+            LoadMenuItems(selectedValue?.ToString());
+            InitializeCategoryComboBox();
+        }
+
+        private void pic_ThemDanhMuc_Click(object sender, EventArgs e)
+        {
+            FormThemDanhMuc formThemDanhMuc = new FormThemDanhMuc();
+            formThemDanhMuc.ShowDialog();
+            if (formThemDanhMuc.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show("Thêm danh mục thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InitializeCategoryComboBox();
             }
         }
     }

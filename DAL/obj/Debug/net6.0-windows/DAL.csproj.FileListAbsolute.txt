@@ -26,3 +26,5 @@ D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\DAL\obj\Debug\net6.0-windows\refi
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\DAL\obj\Debug\net6.0-windows\DAL.pdb
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\DAL\obj\Debug\net6.0-windows\DAL.genruntimeconfig.cache
 D:\DH\doancnpm\CNPM\CoffeeShopManagementSystem\DAL\obj\Debug\net6.0-windows\ref\DAL.dll
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\QRCoder.dll

@@ -13,8 +13,8 @@ namespace GUI
 {
     public partial class FormMon : UserControl
     {
-        private ThucDon_DTO thongTinMon;
-        public event Action<ThucDon_DTO, int> OnMonSelected;
+        private DTO_ThucDon thongTinMon;
+        public event Action<DTO_ThucDon, int> OnMonSelected;
         public FormMon()
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace GUI
             }
         }
 
-        public void SetThongTinMon(ThucDon_DTO mon)
+        public void SetThongTinMon(DTO_ThucDon mon)
         {
             string tenMon = mon.TenMon;
             if (tenMon.Length > 10)
@@ -64,7 +64,7 @@ namespace GUI
             }
         }
 
-        public ThucDon_DTO LayThongTinMon()
+        public DTO_ThucDon LayThongTinMon()
         {
             return thongTinMon;
         }    

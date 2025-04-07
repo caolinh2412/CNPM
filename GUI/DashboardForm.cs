@@ -15,10 +15,10 @@ namespace CoffeeShopManagementSystem
 {
     public partial class DashboardForm : UserControl
     {
-        private NhanVien_BUS bus = new NhanVien_BUS();
-        private DonHang_BUS donHangBUS = new DonHang_BUS();
-        private ThucDon_BUS thucDonBUS = new ThucDon_BUS();
-        private ChiTietDonHang_BUS chiTietDonHangBUS = new ChiTietDonHang_BUS();
+        private BUS_NhanVien bus = new BUS_NhanVien();
+        private BUS_DonHang donHangBUS = new BUS_DonHang();
+        private BUS_ThucDon thucDonBUS = new BUS_ThucDon();
+        private BUS_ChiTietDonHang chiTietDonHangBUS = new BUS_ChiTietDonHang();
 
         public DashboardForm()
         {
@@ -27,8 +27,8 @@ namespace CoffeeShopManagementSystem
             LoadOrderCount();
             LoadDailyRevenue();
             LoadTotalMenuItemCount();
-            LoadMonthlyRevenueGunaChart();
-            LoadTop3MonBanChayPieChart();
+            //LoadMonthlyRevenueGunaChart();
+            //LoadTop3MonBanChayPieChart();
         }
 
         private void LoadEmployeeCount()
@@ -72,75 +72,6 @@ namespace CoffeeShopManagementSystem
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-        }
-        private void LoadMonthlyRevenueGunaChart()
-        {
-            try
-            {
-                int namHienTai = DateTime.Today.Year; 
-                var doanhThuTheoThang = donHangBUS.GetDoanhThuTheoThang(namHienTai);
-
-                // Xóa dữ liệu cũ trong GunaChart
-                gunaChart_dtThang.Datasets.Clear();
-
-                // Tạo dataset cho biểu đồ cột
-                var dataset = new GunaBarDataset();
-                dataset.Label = "Doanh Thu (VNĐ)";
-
-                // Thêm dữ liệu vào dataset
-                foreach (var item in doanhThuTheoThang.OrderBy(x => x.Key))
-                {
-                    dataset.DataPoints.Add(new LPoint { Label = $"Tháng {item.Key}", Y = (double)item.Value });
-                }
-
-                // Thêm dataset vào GunaChart
-                gunaChart_dtThang.Datasets.Add(dataset);
-
-                // Cập nhật biểu đồ
-                gunaChart_dtThang.Update();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi vẽ biểu đồ doanh thu theo tháng: {ex.Message}");
-            }
-        }
-        private void LoadTop3MonBanChayPieChart()
-        {
-            try
-            {
-                // Lấy dữ liệu top 3 món bán chạy
-                var top3MonBanChay = chiTietDonHangBUS.GetTop3MonBanChay();
-
-                // Xóa dữ liệu cũ trong biểu đồ
-                gunaChart_Mon.Datasets.Clear();
-
-                // Tạo LPointCollection để lưu các điểm dữ liệu
-                LPointCollection dataPoints = new LPointCollection();
-
-                // Thêm các món vào LPointCollection
-                foreach (var mon in top3MonBanChay)
-                {
-                    dataPoints.Add(new LPoint { Label = mon.TenMon, Y = mon.SoLuong });
-                }
-
-                // Tạo dataset cho biểu đồ tròn
-                var dataset = new GunaPieDataset
-                {
-                    Label = "Top 3 Món Bán Chạy",
-                    DataPoints = dataPoints
-                };
-
-                // Thêm dataset vào biểu đồ
-                gunaChart_Mon.Datasets.Add(dataset);
-              
-                // Cập nhật biểu đồ
-                gunaChart_Mon.Update();
-            }
-            catch (Exception ex)
-            {
-                // Hiển thị lỗi nếu có
-                MessageBox.Show($"Lỗi khi vẽ biểu đồ top 3 món bán chạy: {ex.Message}");
-            }
         }
     }
 }

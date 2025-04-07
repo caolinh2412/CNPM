@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThemMon));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pic_Mon = new PictureBox();
             btn_ChonAnh = new Button();
             label9 = new Label();
@@ -129,7 +129,7 @@
             // 
             txt_TenMon.BorderColor = Color.FromArgb(63, 29, 18);
             txt_TenMon.BorderRadius = 10;
-            txt_TenMon.CustomizableEdges = customizableEdges1;
+            txt_TenMon.CustomizableEdges = customizableEdges11;
             txt_TenMon.DefaultText = "";
             txt_TenMon.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txt_TenMon.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -143,7 +143,7 @@
             txt_TenMon.Name = "txt_TenMon";
             txt_TenMon.PlaceholderText = "";
             txt_TenMon.SelectedText = "";
-            txt_TenMon.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txt_TenMon.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txt_TenMon.Size = new Size(236, 37);
             txt_TenMon.TabIndex = 25;
             // 
@@ -152,7 +152,7 @@
             cb_loaiMon.BackColor = Color.Transparent;
             cb_loaiMon.BorderColor = Color.FromArgb(63, 29, 18);
             cb_loaiMon.BorderRadius = 10;
-            cb_loaiMon.CustomizableEdges = customizableEdges3;
+            cb_loaiMon.CustomizableEdges = customizableEdges13;
             cb_loaiMon.DrawMode = DrawMode.OwnerDrawFixed;
             cb_loaiMon.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_loaiMon.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -162,7 +162,7 @@
             cb_loaiMon.ItemHeight = 30;
             cb_loaiMon.Location = new Point(31, 260);
             cb_loaiMon.Name = "cb_loaiMon";
-            cb_loaiMon.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            cb_loaiMon.ShadowDecoration.CustomizableEdges = customizableEdges14;
             cb_loaiMon.Size = new Size(236, 36);
             cb_loaiMon.TabIndex = 27;
             // 
@@ -182,7 +182,7 @@
             // guna2Button1
             // 
             guna2Button1.BorderRadius = 12;
-            guna2Button1.CustomizableEdges = customizableEdges5;
+            guna2Button1.CustomizableEdges = customizableEdges15;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -192,7 +192,7 @@
             guna2Button1.ForeColor = Color.FromArgb(63, 29, 18);
             guna2Button1.Location = new Point(378, 12);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2Button1.Size = new Size(86, 29);
             guna2Button1.TabIndex = 30;
             guna2Button1.Text = "Thoát";
@@ -201,7 +201,7 @@
             // btn_Luu
             // 
             btn_Luu.BorderRadius = 12;
-            btn_Luu.CustomizableEdges = customizableEdges7;
+            btn_Luu.CustomizableEdges = customizableEdges17;
             btn_Luu.DisabledState.BorderColor = Color.DarkGray;
             btn_Luu.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_Luu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -211,7 +211,7 @@
             btn_Luu.ForeColor = Color.FromArgb(63, 29, 18);
             btn_Luu.Location = new Point(272, 12);
             btn_Luu.Name = "btn_Luu";
-            btn_Luu.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btn_Luu.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btn_Luu.Size = new Size(86, 29);
             btn_Luu.TabIndex = 25;
             btn_Luu.Text = "Lưu";
@@ -230,7 +230,7 @@
             // 
             txt_GiaMon.BorderColor = Color.FromArgb(63, 29, 18);
             txt_GiaMon.BorderRadius = 10;
-            txt_GiaMon.CustomizableEdges = customizableEdges9;
+            txt_GiaMon.CustomizableEdges = customizableEdges19;
             txt_GiaMon.DefaultText = "";
             txt_GiaMon.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txt_GiaMon.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -244,7 +244,7 @@
             txt_GiaMon.Name = "txt_GiaMon";
             txt_GiaMon.PlaceholderText = "";
             txt_GiaMon.SelectedText = "";
-            txt_GiaMon.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txt_GiaMon.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txt_GiaMon.Size = new Size(236, 37);
             txt_GiaMon.TabIndex = 29;
             // 

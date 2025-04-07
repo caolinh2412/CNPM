@@ -14,10 +14,10 @@ namespace GUI
 {
     public partial class FormQuanLyKho : UserControl
     {
-        private Kho_BUS bus = new Kho_BUS();
-        private ThucDon_BUS bus1 = new ThucDon_BUS();
+        private BUS_Kho bus = new BUS_Kho();
+        private BUS_ThucDon bus1 = new BUS_ThucDon();
         private bool isEditMode = false;
-        private CongThuc_BUS bus2 = new CongThuc_BUS();
+        private BUS_CongThuc bus2 = new BUS_CongThuc();
         public FormQuanLyKho()
         {
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace GUI
 
         private void LoadKhoData()
         {
-            List<Kho_DTO> nguyenLieu = bus.GetAllNguyenLieu();
+            List<DTO_Kho> nguyenLieu = bus.GetAllNguyenLieu();
             dgv_Kho.DataSource = nguyenLieu;
             dgv_NL.DataSource = nguyenLieu;
         }
@@ -105,7 +105,7 @@ namespace GUI
                 DataGridViewRow selectedRow = dgv_Kho.SelectedRows[0];
                 txt_MaNL.Text = selectedRow.Cells["col_MaNL"].Value.ToString();
                 txt_Ten.Text = selectedRow.Cells["col_TenNL"].Value.ToString();
-                txt_TonKho.Text = Convert.ToInt32(selectedRow.Cells["col_TonKho"].Value).ToString();
+                txt_TonKho.Text = Convert.ToDecimal(selectedRow.Cells["col_TonKho"].Value).ToString();
                 txt_DonVi.Text = selectedRow.Cells["col_dvt"].Value.ToString();
                 txt_sdt.Text = selectedRow.Cells["col_sdt"].Value.ToString();
                 dtp_NgayNhap.Value = DateTime.Parse(selectedRow.Cells["col_Ngay"].Value.ToString());
@@ -159,7 +159,7 @@ namespace GUI
 
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
-            Kho_DTO nguyeLieu = new Kho_DTO
+            DTO_Kho nguyeLieu = new DTO_Kho
             {
                 MaNL = txt_MaNL.Text,
                 TenNL = txt_Ten.Text,
@@ -181,12 +181,12 @@ namespace GUI
 
             if (success)
             {
-                MessageBox.Show("Lưu nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Lưu nguyên liệu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadKhoData();
             }
             else
             {
-                MessageBox.Show("Lưu nhân viên thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lưu nguyên liệu thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             txt_Ten.Enabled = false;
@@ -224,7 +224,7 @@ namespace GUI
         }
         private void DanhSachMon()
         {
-            List<ThucDon_DTO> mon = bus1.GetAllMenuItems();
+            List<DTO_ThucDon> mon = bus1.GetAllMenuItems();
             
             dgv_TenMon.AutoGenerateColumns = false;
             dgv_TenMon.DataSource = mon;
@@ -270,7 +270,7 @@ namespace GUI
                 {
                     if (form.ShowDialog() == DialogResult.OK)
                     {
-                        CongThuc_DTO congThuc = new CongThuc_DTO
+                        DTO_CongThuc congThuc = new DTO_CongThuc
                         {
                             MaMon = maMon,
                             MaNL = maNL,
