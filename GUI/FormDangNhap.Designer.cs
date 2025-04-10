@@ -69,13 +69,13 @@
             // btnLogIn_signin
             // 
             btnLogIn_signin.BackColor = Color.FromArgb(63, 29, 18);
-            btnLogIn_signin.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogIn_signin.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogIn_signin.ForeColor = SystemColors.ButtonHighlight;
             btnLogIn_signin.Location = new Point(61, 417);
             btnLogIn_signin.Name = "btnLogIn_signin";
             btnLogIn_signin.Size = new Size(315, 43);
-            btnLogIn_signin.TabIndex = 35;
-            btnLogIn_signin.Text = "LOG IN";
+            btnLogIn_signin.TabIndex = 4;
+            btnLogIn_signin.Text = "ĐĂNG NHẬP";
             btnLogIn_signin.UseVisualStyleBackColor = false;
             btnLogIn_signin.Click += btnLogIn_signin_Click;
             // 
@@ -83,13 +83,13 @@
             // 
             signIn_showpass.AutoSize = true;
             signIn_showpass.BackColor = Color.Transparent;
-            signIn_showpass.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            signIn_showpass.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             signIn_showpass.ForeColor = Color.FromArgb(63, 29, 18);
             signIn_showpass.Location = new Point(65, 375);
             signIn_showpass.Name = "signIn_showpass";
-            signIn_showpass.Size = new Size(174, 25);
-            signIn_showpass.TabIndex = 33;
-            signIn_showpass.Text = "Show Password";
+            signIn_showpass.Size = new Size(148, 26);
+            signIn_showpass.TabIndex = 3;
+            signIn_showpass.Text = "Hiện mật khẩu";
             signIn_showpass.UseVisualStyleBackColor = false;
             signIn_showpass.CheckedChanged += signIn_showpass_CheckedChanged;
             // 
@@ -100,19 +100,19 @@
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(315, 34);
-            txtPassword.TabIndex = 32;
+            txtPassword.TabIndex = 1;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(63, 29, 18);
             label4.Location = new Point(65, 282);
             label4.Name = "label4";
-            label4.Size = new Size(104, 21);
+            label4.Size = new Size(98, 22);
             label4.TabIndex = 31;
-            label4.Text = "Password:";
+            label4.Text = "Mật khẩu:";
             // 
             // txtEmail
             // 
@@ -120,7 +120,7 @@
             txtEmail.Location = new Point(65, 198);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(315, 34);
-            txtEmail.TabIndex = 30;
+            txtEmail.TabIndex = 0;
             // 
             // label3
             // 
@@ -140,7 +140,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Roboto", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(63, 29, 18);
-            label2.Location = new Point(131, 103);
+            label2.Location = new Point(136, 103);
             label2.Name = "label2";
             label2.Size = new Size(183, 34);
             label2.TabIndex = 28;
@@ -161,13 +161,13 @@
             // 
             fg_Pass.AutoSize = true;
             fg_Pass.BackColor = Color.Transparent;
-            fg_Pass.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
+            fg_Pass.Font = new Font("Roboto", 10.8F, FontStyle.Underline, GraphicsUnit.Point);
             fg_Pass.ForeColor = Color.FromArgb(63, 29, 18);
-            fg_Pass.Location = new Point(131, 483);
+            fg_Pass.Location = new Point(152, 485);
             fg_Pass.Name = "fg_Pass";
-            fg_Pass.Size = new Size(171, 21);
-            fg_Pass.TabIndex = 43;
-            fg_Pass.Text = "Forgot Password?";
+            fg_Pass.Size = new Size(140, 22);
+            fg_Pass.TabIndex = 5;
+            fg_Pass.Text = "Quên mật khẩu?";
             fg_Pass.Click += fg_Pass_Click_1;
             // 
             // FormDangNhap

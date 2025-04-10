@@ -49,6 +49,7 @@
             col_TenCa = new DataGridViewTextBoxColumn();
             col_NgayLam = new DataGridViewTextBoxColumn();
             img_xoaCa = new DataGridViewImageColumn();
+            panel2 = new Panel();
             close = new Label();
             btnThemCa = new Guna.UI2.WinForms.Guna2Button();
             label9 = new Label();
@@ -67,6 +68,7 @@
             guna2Panel1.Controls.Add(label3);
             guna2Panel1.Controls.Add(txt_TenCa);
             guna2Panel1.Controls.Add(dgv_CaLam);
+            guna2Panel1.Controls.Add(panel2);
             guna2Panel1.CustomBorderColor = Color.Black;
             guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Dock = DockStyle.Fill;
@@ -222,6 +224,15 @@
             img_xoaCa.Name = "img_xoaCa";
             img_xoaCa.Width = 60;
             // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(459, 322);
+            panel2.TabIndex = 28;
+            // 
             // close
             // 
             close.AutoSize = true;
@@ -311,5 +322,6 @@
         private DataGridViewImageColumn img_xoaCa;
         private Label close;
         private Panel panel1;
+        private Panel panel2;
     }
 }

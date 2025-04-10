@@ -6,7 +6,7 @@ namespace DTO
     {
         public string  MaDH { get; set; }
         public DateTime NgayDat { get; set; }
-        public string MaND { get; set; }
+        public string MaNV { get; set; }
         public decimal TongTien { get; set; }
         public string PhuongThuc { get; set; }
     }

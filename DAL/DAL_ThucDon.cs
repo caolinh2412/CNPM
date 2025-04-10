@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using DTO;
 
@@ -6,7 +7,7 @@ namespace DAL
 {
     public class DAL_ThucDon
     {
-        private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
+        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
         public string maMonMoi;
 
 

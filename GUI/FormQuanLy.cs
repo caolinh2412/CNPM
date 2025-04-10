@@ -26,17 +26,17 @@ namespace CoffeeShopManagementSystem
 
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
-            ShowUserControl(new DashboardForm());
+            ShowUserControl(new UC_TrangChu());
         }
 
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
-            ShowUserControl(new MenuForm());
+            ShowUserControl(new UC_Menu());
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            ShowUserControl(new FormQuanLyNV());
+            ShowUserControl(new UC_QuanLyNV());
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -48,12 +48,12 @@ namespace CoffeeShopManagementSystem
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            ShowUserControl(new FormQuanLyHoaDon());
+            ShowUserControl(new UC_QuanLyHoaDon());
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            ShowUserControl(new FormQuanLyKho());
+            ShowUserControl(new UC_QuanLyKho());
         }
         public void ShowDashboardOnSignIn()
         {

@@ -6,13 +6,13 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace DAL
 {
     public class DAL_DanhMuc
     {
-        private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
-
+        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
         public List<DTO_DanhMuc> LayDanhSachDanhMuc()
         {
             List<DTO_DanhMuc> danhMucList = new List<DTO_DanhMuc>();
@@ -35,7 +35,7 @@ namespace DAL
                             DTO_DanhMuc danhMuc = new DTO_DanhMuc
                             {
                                 MaDM = reader["MaDM"]?.ToString() ?? string.Empty,
-                                TenDM = reader["TenDM"]?.ToString() ?? string.Empty 
+                                TenDM = reader["TenDM"]?.ToString() ?? string.Empty
                             };
                             danhMucList.Add(danhMuc);
                         }
@@ -78,4 +78,3 @@ namespace DAL
         }
     }
 }
-

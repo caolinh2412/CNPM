@@ -8,7 +8,7 @@ namespace DTO
 {
     public class DTO_DangNhap
     {
-        public string MaND { get; set; }
+        public string MaNV { get; set; }
         public string HoVaTen { get; set; }
         public string Email { get; set; }
         public string SDT { get; set; }

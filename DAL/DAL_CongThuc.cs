@@ -6,12 +6,13 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace DAL
 {
     public class DAL_CongThuc
     {
-        private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
+        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
 
         public DataTable GetCongThucByMaMon(string maMon)
         {
@@ -51,7 +52,7 @@ namespace DAL
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@MaMon", congThuc.MaMon);
                         cmd.Parameters.AddWithValue("@MaNL", congThuc.MaNL);
-                        cmd.Parameters.AddWithValue("@SoLuong", congThuc.SoLuong); 
+                        cmd.Parameters.AddWithValue("@SoLuong", congThuc.SoLuong);
                         cmd.Parameters.AddWithValue("@DonViTinh", congThuc.DonViTinh);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
@@ -89,6 +90,35 @@ namespace DAL
                     {
                         connection.Close();
                     }
+                }
+            }
+        }
+        public bool KiemTraTonKho(DTO_ThucDon mon, int soLuong)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand("sp_KiemTraTonKho", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Thêm tham số đầu vào
+                    cmd.Parameters.AddWithValue("@MaMon", mon.MaMon);
+                    cmd.Parameters.AddWithValue("@SoLuong", soLuong);
+
+                    // Thêm tham số đầu ra
+                    SqlParameter ketQuaParam = new SqlParameter("@KetQua", SqlDbType.Bit)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(ketQuaParam);
+
+                    // Thực thi procedure
+                    cmd.ExecuteNonQuery();
+
+                    // Lấy kết quả
+                    return (bool)ketQuaParam.Value;
                 }
             }
         }

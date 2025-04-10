@@ -24,5 +24,9 @@ namespace BUS
         {
             return congThucDAL.DeleteCongThuc(maCT);
         }
+        public bool KiemTraTonKho(DTO_ThucDon mon, int soLuong)
+        {
+            return congThucDAL.KiemTraTonKho(mon, soLuong);
+        }
     }
 }

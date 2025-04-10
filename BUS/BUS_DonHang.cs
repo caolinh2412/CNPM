@@ -34,13 +34,13 @@ namespace CoffeeShopManagementSystem.BUS
             return new DTO_DonHang
             {
                 NgayDat = DateTime.Now,
-                MaND = maND,
+                MaNV = maND,
                 TongTien = 0
             };
         }
         public bool ThemDonHangVaChiTiet(DTO_DonHang donHang, BindingList<DTO_ChiTietDonHang> chiTietDonHangs, out string maDH)
         {
-            if (string.IsNullOrEmpty(donHang.MaND))
+            if (string.IsNullOrEmpty(donHang.MaNV))
                 throw new ArgumentException("Mã người dùng không được để trống");           
 
             return _donHangDAL.ThemDonHangVaChiTiet(donHang, chiTietDonHangs, out maDH);

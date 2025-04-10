@@ -90,7 +90,7 @@ namespace GUI
                 DTO_CaLam updatedWorkSchedule = new DTO_CaLam
                 {
                     MaLLV = maLLV,
-                    MaND = maNV,
+                    MaNV = maNV,
                     CaLam = txt_TenCa.Text,
                     Ngay = dtp_NgayLam.Value
                 };
@@ -110,7 +110,7 @@ namespace GUI
             {
                 DTO_CaLam newWorkSchedule = new DTO_CaLam
                 {
-                    MaND = maNV,
+                    MaNV = maNV,
                     CaLam = txt_TenCa.Text,
                     Ngay = dtp_NgayLam.Value
                 };

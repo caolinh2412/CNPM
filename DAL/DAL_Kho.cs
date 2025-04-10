@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
+using System.Configuration;
 
 namespace DAL
-{    
-   public class DAL_Kho
+{
+    public class DAL_Kho
     {
-        private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
+        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
         public List<DTO_Kho> GetAllNguyenLieu()
         {
             List<DTO_Kho> nguyenLieuList = new List<DTO_Kho>();
@@ -130,7 +131,7 @@ namespace DAL
             {
                 try
                 {
-                    string query = "ThemNguyenLieu"; 
+                    string query = "ThemNguyenLieu";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.CommandType = CommandType.StoredProcedure;
 

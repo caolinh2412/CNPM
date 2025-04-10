@@ -23,9 +23,9 @@ namespace GUI
     public partial class FormThanhToan : Form
     {
         private BUS_DonHang donHangBUS;
-        private FormDatHang formDatHang;
+        private UC_DatHang formDatHang;
         public bool DaThanhToan { get; private set; } = false;
-        public FormThanhToan(FormDatHang formDatHang)
+        public FormThanhToan(UC_DatHang formDatHang)
         {
             InitializeComponent();
             donHangBUS = new BUS_DonHang();

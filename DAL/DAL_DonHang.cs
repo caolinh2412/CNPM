@@ -4,13 +4,14 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using DTO;
 using System.ComponentModel;
+using System.Configuration;
 
 namespace DAL
 {
     public class DAL_DonHang
     {
-        private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
-      
+        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
+
         public DataTable GetAllDonHangWithTenNV()
         {
             DataTable dt = new DataTable();
@@ -54,7 +55,7 @@ namespace DAL
                             {
                                 MaDH = reader.GetString(reader.GetOrdinal("MaDH")),
                                 NgayDat = reader.GetDateTime(reader.GetOrdinal("NgayDat")),
-                                MaND = reader.GetString(reader.GetOrdinal("MaND")),
+                                MaNV = reader.GetString(reader.GetOrdinal("MaNV")),
                                 TongTien = reader.GetDecimal(reader.GetOrdinal("TongTien")),
                                 PhuongThuc = reader.GetString(reader.GetOrdinal("PhuongThuc"))
                             };
@@ -81,7 +82,7 @@ namespace DAL
 
                         // Thêm các tham số đầu vào
                         cmd.Parameters.AddWithValue("@NgayDat", donHang.NgayDat);
-                        cmd.Parameters.AddWithValue("@MaND", donHang.MaND);
+                        cmd.Parameters.AddWithValue("@MaNV", donHang.MaNV);
                         cmd.Parameters.AddWithValue("@PhuongThuc", donHang.PhuongThuc);
 
                         // Tạo DataTable cho chi tiết đơn hàng

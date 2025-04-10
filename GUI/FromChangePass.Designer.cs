@@ -47,55 +47,55 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(63, 29, 18);
             label5.Location = new Point(65, 217);
             label5.Name = "label5";
-            label5.Size = new Size(104, 21);
+            label5.Size = new Size(98, 22);
             label5.TabIndex = 58;
-            label5.Text = "Password:";
+            label5.Text = "Mật khẩu:";
             // 
             // newPass
             // 
-            newPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            newPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             newPass.Location = new Point(65, 241);
             newPass.Name = "newPass";
             newPass.PasswordChar = '*';
             newPass.Size = new Size(325, 34);
-            newPass.TabIndex = 57;
+            newPass.TabIndex = 0;
             // 
             // cfPass
             // 
-            cfPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cfPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cfPass.Location = new Point(65, 339);
             cfPass.Name = "cfPass";
             cfPass.PasswordChar = '*';
             cfPass.Size = new Size(325, 34);
-            cfPass.TabIndex = 56;
+            cfPass.TabIndex = 1;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(63, 29, 18);
             label3.Location = new Point(65, 315);
             label3.Name = "label3";
-            label3.Size = new Size(184, 21);
+            label3.Size = new Size(185, 22);
             label3.TabIndex = 55;
-            label3.Text = "Comfirm Password:";
+            label3.Text = "Xác nhận mật khẩu:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(63, 29, 18);
             label2.Location = new Point(100, 158);
             label2.Name = "label2";
-            label2.Size = new Size(255, 27);
+            label2.Size = new Size(250, 28);
             label2.TabIndex = 54;
-            label2.Text = "CHANGE PASSWORD";
+            label2.Text = "THAY ĐỔI MẬT KHẨU";
             // 
             // pictureBox2
             // 
@@ -110,13 +110,13 @@
             // btnSignUp_LogIn
             // 
             btnSignUp_LogIn.BackColor = Color.FromArgb(63, 29, 18);
-            btnSignUp_LogIn.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSignUp_LogIn.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSignUp_LogIn.ForeColor = SystemColors.ButtonHighlight;
             btnSignUp_LogIn.Location = new Point(65, 446);
             btnSignUp_LogIn.Name = "btnSignUp_LogIn";
             btnSignUp_LogIn.Size = new Size(325, 43);
-            btnSignUp_LogIn.TabIndex = 51;
-            btnSignUp_LogIn.Text = "CONFIRM";
+            btnSignUp_LogIn.TabIndex = 4;
+            btnSignUp_LogIn.Text = "XÁC NHẬN";
             btnSignUp_LogIn.UseVisualStyleBackColor = false;
             btnSignUp_LogIn.Click += btnSignUp_LogIn_Click;
             // 
@@ -135,7 +135,7 @@
             // 
             close.AutoSize = true;
             close.BackColor = Color.White;
-            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             close.Location = new Point(871, 9);
             close.Name = "close";
             close.Size = new Size(22, 23);
@@ -147,17 +147,17 @@
             // 
             signIn_showpass.AutoSize = true;
             signIn_showpass.BackColor = Color.Transparent;
-            signIn_showpass.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            signIn_showpass.Font = new Font("Roboto", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             signIn_showpass.ForeColor = Color.FromArgb(63, 29, 18);
             signIn_showpass.Location = new Point(65, 379);
             signIn_showpass.Name = "signIn_showpass";
-            signIn_showpass.Size = new Size(174, 25);
-            signIn_showpass.TabIndex = 60;
-            signIn_showpass.Text = "Show Password";
+            signIn_showpass.Size = new Size(148, 26);
+            signIn_showpass.TabIndex = 3;
+            signIn_showpass.Text = "Hiện mật khẩu";
             signIn_showpass.UseVisualStyleBackColor = false;
             signIn_showpass.CheckedChanged += signIn_showpass_CheckedChanged;
             // 
-            // ChangePassForm
+            // FromChangePass
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -173,7 +173,7 @@
             Controls.Add(btnSignUp_LogIn);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "ChangePassForm";
+            Name = "FromChangePass";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ChangePassForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

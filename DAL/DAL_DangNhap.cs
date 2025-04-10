@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using System.Configuration;
 
 namespace DAL
 {
     public class DAL_DangNhap
     {
-        private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
+        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
         public DTO_DangNhap KiemTraDangNhap(string email, string matKhau)
         {
             using (SqlConnection cn = new SqlConnection(connectionString))
@@ -28,7 +29,7 @@ namespace DAL
                         {
                             return new DTO_DangNhap
                             {
-                                MaND = reader["MaND"].ToString(),
+                                MaNV = reader["MaNV"].ToString(),
                                 HoVaTen = reader["HoVaTen"].ToString(),
                                 Email = reader["Email"].ToString(),
                                 SDT = reader["SDT"].ToString(),

@@ -19,6 +19,7 @@ namespace GUI
         public FormThemDanhMuc()
         {
             InitializeComponent();
+            dgv_DanhMuc.CellContentClick += dgv_DanhMuc_CellContentClick;
             KhoiTaoDanhMuc();
 
         }
@@ -30,9 +31,6 @@ namespace GUI
 
             dgv_DanhMuc.Columns["col_MaDM"].DataPropertyName = "MaDM";
             dgv_DanhMuc.Columns["col_TenDM"].DataPropertyName = "TenDM";
-
-            dgv_DanhMuc.CellContentClick += dgv_DanhMuc_CellContentClick;
-
         }
 
         private void btnThemDM_Click(object sender, EventArgs e)
@@ -50,6 +48,8 @@ namespace GUI
             {
                 busDanhMuc.ThemDanhMuc(maDM, tenDM);
                 MessageBox.Show("Thêm danh mục thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt_MaDM.Clear();
+                txt_TenDM.Clear();
                 KhoiTaoDanhMuc();
             }
             catch (SqlException ex)

@@ -3,7 +3,7 @@ GO
 USE CafeShop;
 
 CREATE TABLE NguoiDung (
-    MaND NVARCHAR(10) PRIMARY KEY, 
+    MaNV NVARCHAR(10) PRIMARY KEY, 
     HoVaTen NVARCHAR(100) NOT NULL,
     Email NVARCHAR(100) UNIQUE NOT NULL,
     SDT VARCHAR(15) UNIQUE NULL,
@@ -12,7 +12,7 @@ CREATE TABLE NguoiDung (
     NgayDiLam DATE NULL,
     MaQL NVARCHAR(10) NULL,
     TrangThai NVARCHAR(20) DEFAULT N'Hoạt động' CHECK (TrangThai IN (N'Hoạt động', N'Không hoạt động')),
-    FOREIGN KEY (MaQL) REFERENCES NguoiDung(MaND)
+    FOREIGN KEY (MaQL) REFERENCES NguoiDung(MaNV)
 );
 
 CREATE TABLE DanhMuc (
@@ -47,10 +47,10 @@ CREATE TABLE NguyenLieu (
 CREATE TABLE DonHang (
     MaDH NVARCHAR(10) PRIMARY KEY, -- Shortened to 10
     NgayDat DATETIME DEFAULT GETDATE(),
-    MaND NVARCHAR(10) NULL,
+    MaNV NVARCHAR(10) NULL,
     TongTien DECIMAL(18,0)  NOT NULL CHECK (TongTien >= 0),
 	PhuongThuc NVARCHAR(20) NOT NULL CHECK (PhuongThuc IN (N'Chuyển khoản', N'Tiền mặt')), 
-    FOREIGN KEY (MaND) REFERENCES NguoiDung(MaND)
+    FOREIGN KEY (MaNV) REFERENCES NguoiDung(MaNV)
 );
 
 -- Bảng Chi Tiết Đơn Hàng
@@ -69,10 +69,10 @@ CREATE TABLE ChiTietDonHang (
 -- Bảng Lịch Làm Việc
 CREATE TABLE LichLamViec (
     MaLLV NVARCHAR(10) PRIMARY KEY,
-    MaND NVARCHAR(10) NOT NULL,
+    MaNV NVARCHAR(10) NOT NULL,
     Ngay DATE NOT NULL,
-    CaLam NVARCHAR(20) NOT NULL CHECK (CaLam IN (N'Sáng', N'Chiều', N'Tối')),
-    FOREIGN KEY (MaND) REFERENCES NguoiDung(MaND) ON DELETE CASCADE
+    CaLam NVARCHAR(20) NOT NULL,
+    FOREIGN KEY (MaNV) REFERENCES NguoiDung(MaNV) ON DELETE CASCADE
 );
 
 --Bảng công thức món 
@@ -91,13 +91,13 @@ CREATE TABLE CongThuc (
 CREATE PROCEDURE DangNhap (@email NVARCHAR(100), @password NVARCHAR(255))
 AS
 BEGIN
-    SELECT MaND, HoVaTen, Email, SDT, GioiTinh, Password, NgayDiLam, MaQL
+    SELECT MaNV, HoVaTen, Email, SDT, GioiTinh, Password, NgayDiLam, MaQL
     FROM NguoiDung 
     WHERE email = @email AND password = @password AND  TrangThai = N'Hoạt động'
 
     UNION ALL
 
-    SELECT MaND, HoVaTen, Email, SDT, GioiTinh, Password, NgayDiLam, MaQL
+    SELECT MaNV, HoVaTen, Email, SDT, GioiTinh, Password, NgayDiLam, MaQL
     FROM NguoiDung 
     WHERE email = @email AND password = @password AND MaQL IS NULL;
 END;
@@ -124,12 +124,12 @@ END
 CREATE PROCEDURE GetAllEmployees
 AS
 BEGIN
-    SELECT MaND, HoVaTen, GioiTinh, Email, SDT, NgayDiLam, TrangThai
+    SELECT MaNV, HoVaTen, GioiTinh, Email, SDT, NgayDiLam, TrangThai
     FROM NguoiDung;
 END
 
 CREATE PROCEDURE TatHD
-    @MaND NVARCHAR(10)  -- Sử dụng NVARCHAR để đồng bộ với bảng NguoiDung
+    @MaNV NVARCHAR(10)  -- Sử dụng NVARCHAR để đồng bộ với bảng NguoiDung
 AS
 BEGIN
     UPDATE NguoiDung
@@ -138,12 +138,12 @@ BEGIN
                         WHEN TrangThai = N'Không hoạt động' THEN N'Hoạt động'
                         ELSE TrangThai  
                     END
-    WHERE MaND = @MaND;
+    WHERE MaNV = @MaNV;
 END
 
 --Chỉnh sửa lại thông tin nhân viên 
-CREATE PROCEDURE UpdateEmployee
-    @MaND VARCHAR(10),
+CREATE OR ALTER PROCEDURE UpdateEmployee
+    @MaNV VARCHAR(10),
     @HoVaTen NVARCHAR(100),
     @GioiTinh NVARCHAR(10),
     @Email NVARCHAR(100),
@@ -157,44 +157,45 @@ BEGIN
         email = @Email, 
         SDT = @SDT, 
         NgayDiLam = @NgayDiLam 
-    WHERE MaND = @MaND;
+    WHERE MaNV = @MaNV;
 END
 
 --Thêm nhân viên vào bảng
-CREATE PROCEDURE InsertEmployee 
+CREATE OR ALTER PROCEDURE InsertEmployee 
     @HoVaTen NVARCHAR(100),
-    @email NVARCHAR(100),
+    @Email NVARCHAR(100),
     @SDT VARCHAR(15),
     @GioiTinh NVARCHAR(10),
-    @NgayDiLam DATE
+    @NgayDiLam DATE,
+    @MaQL NVARCHAR(10)  
 AS
 BEGIN
-    DECLARE @NewMaND NVARCHAR(50);
+    DECLARE @NewMaNV NVARCHAR(50);
     DECLARE @DefaultPassword NVARCHAR(255);
-    DECLARE @MaQL NVARCHAR(50) = 'QL001';  
 
-    IF NOT EXISTS (SELECT 1 FROM NguoiDung WHERE MaND LIKE 'NV%')
+    IF NOT EXISTS (SELECT 1 FROM NguoiDung WHERE MaNV LIKE 'NV%')
     BEGIN
-        SET @NewMaND = 'NV001';
+        SET @NewMaNV = 'NV001';
     END
     ELSE
     BEGIN
-        SELECT @NewMaND = 'NV' + RIGHT('000' + CAST(CAST(SUBSTRING(MAX(MaND), 3, 3) AS INT) + 1 AS NVARCHAR(3)), 3)
+        SELECT @NewMaNV = 'NV' + RIGHT('000' + CAST(CAST(SUBSTRING(MAX(MaNV), 3, 3) AS INT) + 1 AS NVARCHAR(3)), 3)
         FROM NguoiDung 
-        WHERE MaND LIKE 'NV%';
+        WHERE MaNV LIKE 'NV%';
     END
 
-    SET @DefaultPassword = 'CafeShop' + @NewMaND;
+    SET @DefaultPassword = 'CafeShop' + @NewMaNV;
 
-    INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam, MaQL)
+    INSERT INTO NguoiDung (MaNV, HoVaTen, Email, SDT, GioiTinh, password, NgayDiLam, MaQL)
     VALUES 
-        (@NewMaND, @HoVaTen, @email, @SDT, @GioiTinh, @DefaultPassword, @NgayDiLam, @MaQL);
+        (@NewMaNV, @HoVaTen, @Email, @SDT, @GioiTinh, @DefaultPassword, @NgayDiLam, @MaQL);
 END;
 
+SELECT * FROM NguoiDung
 
 --Thêm lịch làm việc 
 CREATE PROCEDURE InsertWorkSchedule
-    @MaND NVARCHAR(50),
+    @MaNV NVARCHAR(10),
     @Ngay DATE,
     @CaLam NVARCHAR(50)
 AS
@@ -211,8 +212,8 @@ BEGIN
 		FROM LichLamViec 
 		WHERE MaLLV LIKE 'LLV%';
     END
-    INSERT INTO LichLamViec (MaLLV, MaND, Ngay, CaLam)
-    VALUES (@NewMaLLV, @MaND, @Ngay, @CaLam);
+    INSERT INTO LichLamViec (MaLLV, MaNV, Ngay, CaLam)
+    VALUES (@NewMaLLV, @MaNV, @Ngay, @CaLam);
 END;
 
 --Tạo lịch làm việc 
@@ -226,14 +227,14 @@ END;
 
 --Cập nhật lịch làm việc
 CREATE PROCEDURE CapNhatLichLamViec
-    @MaLLV NVARCHAR(50),
-    @MaND NVARCHAR(50),
+    @MaLLV NVARCHAR(10),
+    @MaNV NVARCHAR(10),
     @Ngay DATE,
     @CaLam NVARCHAR(50)
 AS
 BEGIN
     UPDATE LichLamViec 
-    SET MaND = @MaND, 
+    SET MaNV = @MaNV, 
         Ngay = @Ngay, 
         CaLam = @CaLam 
     WHERE MaLLV = @MaLLV;
@@ -337,7 +338,7 @@ BEGIN
     VALUES (@MaDM, @TenDM)
 END
 
-CREATE PROCEDURE sp_XoaDanhMuc
+CREATE OR ALTER PROCEDURE sp_XoaDanhMuc
     @MaDM VARCHAR(10)
 AS
 BEGIN
@@ -354,11 +355,8 @@ BEGIN
     END
 
     DELETE FROM DanhMuc WHERE MaDM = @MaDM;
-    RAISERROR(N'Danh mục đã được xóa thành công.', 0, 1);
-END;
 
-
-
+END
 
 
 --Lấy tất cả các món 
@@ -389,7 +387,7 @@ BEGIN
     END CATCH
 END;
 
-CREATE PROCEDURE UpdateMon
+CREATE or alter PROCEDURE UpdateMon
     @MaMon NVARCHAR(10),
     @TenMon NVARCHAR(50),
     @Gia DECIMAL(10,2),
@@ -429,17 +427,14 @@ BEGIN
 
             BEGIN TRANSACTION
             BEGIN TRY              
+                INSERT INTO Menu (MaMon, TenMon, Gia, HinhAnh, MaDM)
+                VALUES (@NewMaMon, @TenMon, @Gia, @HinhAnh, @MaDM);
+
                 UPDATE CongThuc
                 SET MaMon = @NewMaMon
                 WHERE MaMon = @MaMon;
 
-                UPDATE Menu
-                SET 
-                    MaMon = @NewMaMon,
-                    TenMon = @TenMon,
-                    Gia = @Gia,
-                    HinhAnh = @HinhAnh,
-                    MaDM = @MaDM
+                DELETE FROM Menu
                 WHERE MaMon = @MaMon;
 
                 COMMIT TRANSACTION
@@ -451,7 +446,7 @@ BEGIN
             END CATCH
         END
         ELSE
-        BEGIN          
+        BEGIN                     
             UPDATE Menu
             SET 
                 TenMon = @TenMon,
@@ -483,11 +478,9 @@ CREATE TYPE ChiTietDonHangType AS TABLE (
     SoLuong INT,
     Gia DECIMAL(10,2)
 );
-USE CafeShop
-GO
 CREATE PROCEDURE sp_ThemDonHangVaChiTiet
     @NgayDat DATETIME,
-    @MaND NVARCHAR(50),
+    @MaNV NVARCHAR(10),
     @ChiTietDonHang AS ChiTietDonHangType READONLY,
     @MaDH NVARCHAR(10) OUTPUT,
 	@PhuongThuc NVARCHAR(20) 
@@ -506,8 +499,8 @@ BEGIN
         SELECT @TongTien = SUM(SoLuong * Gia)
         FROM @ChiTietDonHang;
 
-        INSERT INTO DonHang (MaDH, NgayDat, MaND, TongTien, PhuongThuc)
-        VALUES (@MaDH, @NgayDat, @MaND, @TongTien, @PhuongThuc);
+        INSERT INTO DonHang (MaDH, NgayDat, MaNV, TongTien, PhuongThuc)
+        VALUES (@MaDH, @NgayDat, @MaNV, @TongTien, @PhuongThuc);
 
         DECLARE @MaxChiTietID INT;
         SELECT @MaxChiTietID = ISNULL(MAX(CAST(SUBSTRING(MaCTDH, 3, LEN(MaCTDH) - 2) AS INT)), 0)
@@ -557,8 +550,6 @@ END
 
 
 --Lấy toàn bộ đơn hàng 
-use CafeShop
-go
 
 CREATE PROCEDURE sp_GetAllDonHang
 AS
@@ -566,16 +557,17 @@ BEGIN
     SELECT 
         dh.MaDH,
         dh.NgayDat,
-        dh.MaND,
+        dh.MaNV,
         nd.HoVaTen,
         dh.TongTien,
         dh.PhuongThuc 
     FROM DonHang dh
-    INNER JOIN NguoiDung nd ON dh.MaND = nd.MaND
+    INNER JOIN NguoiDung nd ON dh.MaNV = nd.MaNV
 END
+
 --Lấy chi tiết đơn hàng theo mã đơn hàng 
 CREATE PROCEDURE sp_LayCTHDTheoMaDH
-    @MaDH nvarchar(50) 
+    @MaDH nvarchar(10) 
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -644,26 +636,23 @@ BEGIN
 END
 ---xóa nguyên liệu 
 CREATE PROCEDURE DeleteNguyenLieu
-    @MaNL VARCHAR(50)
+    @MaNL VARCHAR(10)
 AS
 BEGIN
     DELETE FROM NguyenLieu 
     WHERE MaNL = @MaNL;
 END
 
---chỉnh sửa nguyên liệu 
-CREATE PROCEDURE UpdateNguyenLieu
-    @MaNL NVARCHAR(50),
+CREATE OR ALTER PROCEDURE UpdateNguyenLieu
+    @MaNL NVARCHAR(10),
     @TenNL NVARCHAR(100),
     @SoLuongTon DECIMAL(10,2),  
-    @DonViTinh NVARCHAR(50),
+    @DonViTinh NVARCHAR(20),
     @NgayNhap DATE,
     @TenNCC NVARCHAR(100),
     @SDT VARCHAR(15)
 AS
 BEGIN
-    SET NOCOUNT ON;
-
     UPDATE NguyenLieu
     SET 
         TenNL = @TenNL,
@@ -676,10 +665,10 @@ BEGIN
 END;
 
 --Thêm nguyên liệu 
-CREATE PROCEDURE ThemNguyenLieu
+CREATE OR ALTER PROCEDURE ThemNguyenLieu
     @TenNL NVARCHAR(100),
     @SoLuongTon DECIMAL(10,2), 
-    @DonViTinh NVARCHAR(50),
+    @DonViTinh NVARCHAR(20),
     @NgayNhap DATE,
     @TenNCC NVARCHAR(100),
     @SDT VARCHAR(15)
@@ -705,6 +694,7 @@ BEGIN
     INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
     VALUES (@MaNL, @TenNL, @SoLuongTon, @DonViTinh, @NgayNhap, @TenNCC, @SDT);
 END;
+
 --Lấy mã nguyên liệu tiếp theo 
 CREATE PROCEDURE GetNextMaNL
 AS
@@ -728,7 +718,7 @@ END;
 
 --CÔNG THỨC
 CREATE PROCEDURE sp_LayCongThuc
-    @MaMon NVARCHAR(50)
+    @MaMon NVARCHAR(10)
 AS
 BEGIN
     SELECT 
@@ -749,7 +739,7 @@ CREATE PROCEDURE sp_ThemCongThuc
     @MaMon NVARCHAR(10),
     @MaNL NVARCHAR(10),
     @SoLuong DECIMAL(10, 2),
-    @DonViTinh NVARCHAR(50)
+    @DonViTinh NVARCHAR(20)
 AS
 BEGIN
     DECLARE @MaCT NVARCHAR(10);
@@ -782,7 +772,7 @@ END;
 
 --Xóa công thức 
 CREATE PROCEDURE sp_DeleteCongThuc
-    @MaCT NVARCHAR(50)
+    @MaCT NVARCHAR(10)
 AS
 BEGIN
     DELETE FROM CongThuc WHERE MaCT = @MaCT;
@@ -790,19 +780,17 @@ END;
 
 --Cập nhật số lượng tồn kho 
 CREATE PROCEDURE sp_CapNhatSoLuongTonKho
-    @MaDH NVARCHAR(50)
+    @MaDH NVARCHAR(10)
 AS
 BEGIN
     BEGIN TRY
         BEGIN TRANSACTION;
 
-        -- Tạo bảng tạm với kiểu dữ liệu chính xác
         CREATE TABLE #TempNguyenLieu (
-            MaNL NVARCHAR(50),
+            MaNL NVARCHAR(10),
             SoLuongCanTru DECIMAL(18, 2)
         );
 
-        -- Tính tổng số lượng cần trừ dựa theo công thức và chi tiết đơn hàng
         INSERT INTO #TempNguyenLieu (MaNL, SoLuongCanTru)
         SELECT 
             ct.MaNL,
@@ -812,7 +800,6 @@ BEGIN
         WHERE ctdh.MaDH = @MaDH
         GROUP BY ct.MaNL;
 
-        -- Kiểm tra tồn kho có đủ không
         IF EXISTS (
             SELECT 1
             FROM #TempNguyenLieu tmp
@@ -831,7 +818,6 @@ BEGIN
         FROM NguyenLieu nl
         INNER JOIN #TempNguyenLieu tmp ON nl.MaNL = tmp.MaNL;
 
-        -- Dọn dẹp bảng tạm
         DROP TABLE #TempNguyenLieu;
 
         COMMIT TRANSACTION;
@@ -845,6 +831,51 @@ BEGIN
     END CATCH
 END
 
+
+CREATE PROCEDURE sp_KiemTraTonKho
+    @MaMon NVARCHAR(10),
+    @SoLuong INT,
+    @KetQua BIT OUTPUT
+AS
+BEGIN
+    BEGIN TRY
+        CREATE TABLE #TempKiemTra (
+            MaNL NVARCHAR(10),
+            SoLuongCan DECIMAL(18,2),
+            SoLuongTon DECIMAL(18,2)
+        );
+        INSERT INTO #TempKiemTra (MaNL, SoLuongCan, SoLuongTon)
+        SELECT 
+            ct.MaNL,
+            ct.SoLuong * @SoLuong AS SoLuongCan,
+            nl.SoLuongTon
+        FROM CongThuc ct
+        INNER JOIN NguyenLieu nl ON ct.MaNL = nl.MaNL
+        WHERE ct.MaMon = @MaMon;
+
+        IF EXISTS (
+            SELECT 1 
+            FROM #TempKiemTra 
+            WHERE SoLuongTon < SoLuongCan
+        )
+        BEGIN
+            SET @KetQua = 0; 
+        END
+        ELSE
+        BEGIN
+            SET @KetQua = 1; 
+        END
+        DROP TABLE #TempKiemTra;
+    END TRY
+    BEGIN CATCH
+        IF OBJECT_ID('tempdb..#TempKiemTra') IS NOT NULL
+            DROP TABLE #TempKiemTra;
+            
+        SET @KetQua = 0; -- Trả về false nếu có lỗi
+        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR (@ErrorMessage, 16, 1);
+    END CATCH
+END
 
 CREATE PROCEDURE sp_GetDoanhThuTheoThang
     @Nam INT
@@ -867,199 +898,4 @@ BEGIN
 END
 
 
---NHẬP THÔNG TIN THỬ NGHIỆM 
-
--- Nhập dữ liệu cho quản lý (MaQL là NULL)
-INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam, MaQL)
-VALUES
-('QL001', N'Nguyễn Văn A', 'admin@gmail.com', '0901234567', N'Nam', '1234554321', '2023-01-01', NULL);
-
--- Nhập dữ liệu cho nhân viên (MaQL tham chiếu đến quản lý)
-INSERT INTO NguoiDung (MaND, HoVaTen, email, SDT, GioiTinh, password, NgayDiLam, MaQL)
-VALUES
-('NV001', N'Lê Văn C', 'levanc@gmail.com', '0923456789', N'Nam', 'pass789', '2023-03-01', 'QL001'),
-('NV002', N'Phạm Thị D', 'phamthid@gmail.com', '0934567890', N'Nữ', 'pass1011', '2023-04-10', 'QL001'),
-('NV003', N'Hoàng Văn E', 'hoangvane@gmail.com', '0945678901', N'Nam', 'pass1213', '2023-05-20', 'QL001'),
-('NV004', N'Vũ Thị F', 'vuthif@gmail.com', '0956789012', N'Nữ', 'pass1415', '2023-06-30', 'QL001');
-
-
-INSERT INTO LichLamViec (MaLLV, MaND, Ngay, CaLam) VALUES
-('LLV001', 'NV002', '2024-10-26', N'Sáng'),
-('LLV002', 'NV002', '2024-10-26', N'Chiều'),
-('LLV003', 'NV003', '2024-10-27', N'Tối'),
-('LLV004', 'NV003', '2024-10-28', N'Chiều');
-
--- Thêm món Cà phê sữa đá
-INSERT INTO Menu (MaMon, TenMon, Gia, MaDM)
-VALUES ('CF0001', N'Cà phê sữa đá', 25000, 'CF');
-
--- Thêm món Trà sữa trân châu đường đen
-INSERT INTO Menu (MaMon, TenMon, Gia, MaDM)
-VALUES ('TS0001', N'Trà sữa trân châu đường đen', 35000, 'TS');
-
--- Thêm món Nước ép cam
-INSERT INTO Menu (MaMon, TenMon, Gia, MaDM)
-VALUES ('NE0001', N'Nước ép cam', 30000, 'NE');
-
--- Thêm món Sinh tố bơ
-INSERT INTO Menu (MaMon, TenMon, Gia, MaDM)
-VALUES ('ST0001', N'Sinh tố bơ', 40000, 'ST');
-
--- Thêm món Trà đào cam sả
-INSERT INTO Menu (MaMon, TenMon, Gia, MaDM)
-VALUES ('T0001', N'Trà đào cam sả', 38000, 'T');
-
--- Thêm món Đá xay socola
-INSERT INTO Menu (MaMon, TenMon, Gia, MaDM)
-VALUES ('DX0001', N'Đá xay socola', 45000, 'DX');
-
--- Thêm món Bánh ngọt Tiramisu
-INSERT INTO Menu (MaMon, TenMon, Gia, MaDM)
-VALUES ('BN0001', N'Bánh ngọt Tiramisu', 50000, 'BN');
-
-INSERT INTO Menu (MaMon, TenMon, Gia, MaDM)
-VALUES ('CF0002', N'Cà phê đen đá', 20000, 'CF');
-
--- Thêm món không có hình ảnh
-INSERT INTO Menu (MaMon, TenMon, Gia,MaDM)
-VALUES ('TS0002', N'Trà sữa matcha', 32000, 'TS');
-
--- Thêm danh mục Cà phê
-INSERT INTO DanhMuc (MaDM, TenDM)
-VALUES ('CF', N'Cà phê');
-
--- Thêm danh mục Trà sữa
-INSERT INTO DanhMuc (MaDM, TenDM)
-VALUES ('TS', N'Trà sữa');
-
--- Thêm danh mục Nước ép
-INSERT INTO DanhMuc (MaDM, TenDM)
-VALUES ('NE', N'Nước ép');
-
--- Thêm danh mục Sinh tố
-INSERT INTO DanhMuc (MaDM, TenDM)
-VALUES ('ST', N'Sinh tố');
-
--- Thêm danh mục Trà
-INSERT INTO DanhMuc (MaDM, TenDM)
-VALUES ('T', N'Trà');
-
--- Thêm danh mục Đá xay
-INSERT INTO DanhMuc (MaDM, TenDM)
-VALUES ('DX', N'Đá xay');
-
--- Thêm danh mục Bánh ngọt
-INSERT INTO DanhMuc (MaDM, TenDM)
-VALUES ('BN', N'Bánh ngọt');
-
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL01', N'Bột cà phê', 10000, N'gram', '2025-04-01', N'Công ty Cà phê ABC', '0901234567');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL02', N'Sữa đặc', 100000, N'ml', '2025-04-02', N'Công ty Sữa XYZ', '0902345678');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL03', N'Đá', 50000, N'gram', '2025-04-03', N'Công ty Đá ABC', '0903456789');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL04', N'Trà đen', 20000, N'gram', '2025-04-01', N'Công ty Trà XYZ', '0904567890');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL05', N'Sữa tươi', 100000, N'ml', '2025-04-02', N'Công ty Sữa DEF', '0905678901');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL06', N'Đường đen', 20000, N'gram', '2025-04-01', N'Công ty Đường JKL', '0906789012');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL07', N'Trân châu', 50000, N'gram', '2025-04-03', N'Công ty Trân châu GHI', '0907890123');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL08', N'Cam tươi', 10000, N'quả', '2025-04-02', N'Công ty Cam ABC', '0908901234');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL09', N'Đường', 30000, N'gram', '2025-04-01', N'Công ty Đường MNO', '0909012345');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL10', N'Bơ chín', 5000, N'quả', '2025-04-02', N'Công ty Bơ XYZ', '0902345678');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL11', N'Bột matcha', 10000, N'gram', '2025-04-01', N'Công ty Matcha PQR', '0903456789');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL12', N'Siro socola', 50000, N'ml', '2025-04-03', N'Công ty Socola TUV', '0904567890');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL13', N'Phô mai mascarpone', 5000, N'gram', '2025-04-02', N'Công ty Phô mai ABC', '0905678901');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL14', N'Bánh ladyfinger', 1000, N'gram', '2025-04-01', N'Công ty Bánh GHI', '0906789012');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL15', N'Trứng', 1000, N'quả', '2025-04-03', N'Công ty Trứng ABC', '0907890123');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL16', N'Rượu Marsala', 5000, N'ml', '2025-04-02', N'Công ty Rượu DEF', '0908901234');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL17', N'Cacao bột', 10000, N'gram', '2025-04-01', N'Công ty Cacao GHI', '0909012345');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL18', N'Nước cam', 20000, N'ml', '2025-04-03', N'Công ty Cam XYZ', '0902345678');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL19', N'Đào tươi', 5000, N'quả', '2025-04-02', N'Công ty Đào ABC', '0903456789');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL20', N'Sả', 5000, N'gram', '2025-04-01', N'Công ty Sả XYZ', '0904567890');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL21', N'Bột cacao', 5000, N'gram', '2025-04-03', N'Công ty Cacao PQR', '0905678901');
-
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTon, DonViTinh, NgayNhap, TenNCC, SDT)
-VALUES ('NL22', N'Siro đào', 50000, N'ml', '2025-04-02', N'Công ty Siro ABC', '0906789012');
-
-
--- Cà phê sữa đá (CF0001)
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT001', 'CF0001', 'NL01', 50, 'gram'); -- Bột cà phê
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT002', 'CF0001', 'NL02', 30, 'ml');   -- Sữa đặc
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT003', 'CF0001', 'NL03', 100, 'gram');-- Đá
-
--- Trà sữa trân châu đường đen (TS0001)
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT004', 'TS0001', 'NL04', 5, 'gram');  -- Trà đen
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT005', 'TS0001', 'NL05', 150, 'ml');  -- Sữa tươi
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT006', 'TS0001', 'NL06', 30, 'gram'); -- Đường đen
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT007', 'TS0001', 'NL07', 50, 'gram'); -- Trân châu
-
--- Nước ép cam (NE0001)
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT008', 'NE0001', 'NL08', 200, 'ml');  -- Nước cam
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT009', 'NE0001', 'NL09', 20, 'gram'); -- Đường
-
--- Sinh tố bơ (ST0001)
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT010', 'ST0001', 'NL10', 1, 'quả');   -- Bơ chín
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT011', 'ST0001', 'NL05', 150, 'ml');  -- Sữa tươi
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT012', 'ST0001', 'NL09', 20, 'gram'); -- Đường
-
--- Trà đào cam sả (T0001)
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT013', 'T0001', 'NL04', 5, 'gram');   -- Trà đen
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT014', 'T0001', 'NL18', 200, 'ml');   -- Nước cam
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT015', 'T0001', 'NL19', 100, 'gram'); -- Đào tươi
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT016', 'T0001', 'NL20', 1, 'cây');    -- Sả
-
--- Đá xay socola (DX0001)
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT017', 'DX0001', 'NL17', 50, 'gram'); -- Bột cacao
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT018', 'DX0001', 'NL05', 150, 'ml');  -- Sữa tươi
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT019', 'DX0001', 'NL03', 100, 'gram');-- Đá
-
--- Bánh ngọt Tiramisu (BN0001)
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT020', 'BN0001', 'NL13', 200, 'gram');-- Phô mai mascarpone
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT021', 'BN0001', 'NL14', 10, 'cái');  -- Bánh ladyfinger
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT022', 'BN0001', 'NL15', 3, 'quả');   -- Trứng
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT023', 'BN0001', 'NL16', 50, 'ml');   -- Rượu Marsala
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT024', 'BN0001', 'NL04', 20, 'gram'); -- Bột cacao
-
--- Trà sữa matcha (TS0002)
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT025', 'TS0002', 'NL11', 5, 'gram');  -- Bột matcha
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT026', 'TS0002', 'NL05', 150, 'ml');  -- Sữa tươi
-INSERT INTO CongThuc (MaCT, MaMon, MaNL, SoLuong, DonViTinh) VALUES ('CT027', 'TS0002', 'NL07', 50, 'gram'); -- Trân châu
 

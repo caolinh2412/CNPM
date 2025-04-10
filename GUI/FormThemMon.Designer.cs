@@ -52,6 +52,7 @@
             btn_Luu = new Guna.UI2.WinForms.Guna2Button();
             panel2 = new Panel();
             txt_GiaMon = new Guna.UI2.WinForms.Guna2TextBox();
+            panel3 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pic_Mon).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -248,6 +249,15 @@
             txt_GiaMon.Size = new Size(236, 37);
             txt_GiaMon.TabIndex = 29;
             // 
+            // panel3
+            // 
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(476, 322);
+            panel3.TabIndex = 30;
+            // 
             // FormThemMon
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -263,6 +273,7 @@
             Controls.Add(btn_ChonAnh);
             Controls.Add(pic_Mon);
             Controls.Add(panel1);
+            Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormThemMon";
             StartPosition = FormStartPosition.CenterScreen;
@@ -289,5 +300,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btn_Luu;
         private Panel panel2;
+        private Panel panel3;
     }
 }

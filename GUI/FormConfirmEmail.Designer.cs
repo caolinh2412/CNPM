@@ -73,13 +73,13 @@
             // btnConfirm
             // 
             btnConfirm.BackColor = Color.FromArgb(63, 29, 18);
-            btnConfirm.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConfirm.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnConfirm.ForeColor = SystemColors.ButtonHighlight;
             btnConfirm.Location = new Point(234, 447);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(154, 43);
-            btnConfirm.TabIndex = 41;
-            btnConfirm.Text = "CONFIRM";
+            btnConfirm.TabIndex = 3;
+            btnConfirm.Text = "Xác nhận";
             btnConfirm.UseVisualStyleBackColor = false;
             btnConfirm.Click += btnConfirm_Click;
             // 
@@ -122,7 +122,7 @@
             txt_email.Location = new Point(63, 259);
             txt_email.Name = "txt_email";
             txt_email.Size = new Size(325, 34);
-            txt_email.TabIndex = 49;
+            txt_email.TabIndex = 0;
             // 
             // code
             // 
@@ -130,31 +130,31 @@
             code.Location = new Point(63, 368);
             code.Name = "code";
             code.Size = new Size(325, 34);
-            code.TabIndex = 48;
+            code.TabIndex = 2;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(63, 29, 18);
             label3.Location = new Point(63, 344);
             label3.Name = "label3";
-            label3.Size = new Size(169, 21);
+            label3.Size = new Size(128, 22);
             label3.TabIndex = 47;
-            label3.Text = "Verification Code:";
+            label3.Text = "Mã xác nhận:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(63, 29, 18);
-            label2.Location = new Point(131, 153);
+            label2.Location = new Point(119, 152);
             label2.Name = "label2";
-            label2.Size = new Size(199, 27);
+            label2.Size = new Size(211, 28);
             label2.TabIndex = 46;
-            label2.Text = "CONFIRM EMAIL";
+            label2.Text = "XÁC NHẬN EMAIL";
             // 
             // lblCountdown
             // 
@@ -170,17 +170,17 @@
             // btnSendCode
             // 
             btnSendCode.BackColor = Color.FromArgb(63, 29, 18);
-            btnSendCode.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSendCode.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSendCode.ForeColor = SystemColors.ButtonHighlight;
             btnSendCode.Location = new Point(63, 447);
             btnSendCode.Name = "btnSendCode";
             btnSendCode.Size = new Size(154, 43);
-            btnSendCode.TabIndex = 53;
-            btnSendCode.Text = "SEND CODE";
+            btnSendCode.TabIndex = 1;
+            btnSendCode.Text = "Gửi mã";
             btnSendCode.UseVisualStyleBackColor = false;
             btnSendCode.Click += btnSendCode_Click;
             // 
-            // ConfirmEmailForm
+            // FormConfirmEmail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -198,7 +198,7 @@
             Controls.Add(btnConfirm);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "ConfirmEmailForm";
+            Name = "FormConfirmEmail";
             StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

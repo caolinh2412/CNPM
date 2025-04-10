@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,14 +12,14 @@ namespace DAL
 {
     public class DAL_NhanVien
     {
-        private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
+        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
 
         public string MaNvLonNhat()
         {
             string maxCode = "NV000";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT MAX(MaND) FROM NguoiDung WHERE MaND LIKE 'NV%'";
+                string query = "SELECT MAX(MaNV) FROM NguoiDung";
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
                 var result = command.ExecuteScalar();
@@ -52,7 +53,7 @@ namespace DAL
                             {
                                 DTO_DangNhap employee = new DTO_DangNhap
                                 {
-                                    MaND = reader["MaND"].ToString(),
+                                    MaNV = reader["MaNV"].ToString(),
                                     HoVaTen = reader["HoVaTen"].ToString(),
                                     GioiTinh = reader["GioiTinh"].ToString(),
                                     Email = reader["email"].ToString(),
@@ -88,7 +89,7 @@ namespace DAL
                     string procedure = "TatHD";
                     SqlCommand command = new SqlCommand(procedure, connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@MaND", maNV);
+                    command.Parameters.AddWithValue("@MaNV", maNV);
                     connection.Open();
                     int result = command.ExecuteNonQuery();
                     return result > 0;
@@ -116,7 +117,7 @@ namespace DAL
                     string procedure = "UpdateEmployee";
                     SqlCommand command = new SqlCommand(procedure, connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@MaND", employee.MaND);
+                    command.Parameters.AddWithValue("@MaNV", employee.MaNV);
                     command.Parameters.AddWithValue("@HoVaTen", employee.HoVaTen);
                     command.Parameters.AddWithValue("@GioiTinh", employee.GioiTinh);
                     command.Parameters.AddWithValue("@Email", employee.Email);
@@ -156,6 +157,7 @@ namespace DAL
                     command.Parameters.AddWithValue("@SDT", employee.SDT);
                     command.Parameters.AddWithValue("@GioiTinh", employee.GioiTinh);
                     command.Parameters.AddWithValue("@NgayDiLam", employee.NgayDiLam);
+                    command.Parameters.AddWithValue("@MaQL", employee.MaQL);
 
                     connection.Open();
                     int result = command.ExecuteNonQuery();
@@ -180,9 +182,9 @@ namespace DAL
             List<DTO_CaLam> workSchedule = new List<DTO_CaLam>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT MaLLV, MaND, Ngay, CaLam FROM LichLamViec WHERE MaND = @MaND";
+                string query = "SELECT MaLLV, MaNV, Ngay, CaLam FROM LichLamViec WHERE MaNV = @MaNV";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaND", maNV);
+                command.Parameters.AddWithValue("@MaNV", maNV);
                 connection.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -191,7 +193,7 @@ namespace DAL
                         DTO_CaLam caLam = new DTO_CaLam
                         {
                             MaLLV = reader["MaLLV"].ToString(),
-                            MaND = reader["MaND"].ToString(),
+                            MaNV = reader["MaNV"].ToString(),
                             Ngay = Convert.ToDateTime(reader["Ngay"]),
                             CaLam = reader["CaLam"].ToString()
                         };
@@ -211,7 +213,7 @@ namespace DAL
                     SqlCommand command = new SqlCommand(query, connection);
                     command.CommandType = CommandType.StoredProcedure; 
 
-                    command.Parameters.AddWithValue("@MaND", workSchedule.MaND);
+                    command.Parameters.AddWithValue("@MaNV", workSchedule.MaNV);
                     command.Parameters.AddWithValue("@Ngay", workSchedule.Ngay);
                     command.Parameters.AddWithValue("@CaLam", workSchedule.CaLam);
 
@@ -273,7 +275,7 @@ namespace DAL
                     command.CommandType = CommandType.StoredProcedure; 
               
                     command.Parameters.AddWithValue("@MaLLV", workSchedule.MaLLV);
-                    command.Parameters.AddWithValue("@MaND", workSchedule.MaND);
+                    command.Parameters.AddWithValue("@MaNV", workSchedule.MaNV);
                     command.Parameters.AddWithValue("@Ngay", workSchedule.Ngay);
                     command.Parameters.AddWithValue("@CaLam", workSchedule.CaLam);
 

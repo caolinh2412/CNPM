@@ -22,7 +22,7 @@ namespace GUI
         }
         public static string GetCurrentUserID()
         {
-            return CurrentUser?.MaND ?? "Chưa đăng nhập";
+            return CurrentUser?.MaNV ?? "Chưa đăng nhập";
         }
     }
 }

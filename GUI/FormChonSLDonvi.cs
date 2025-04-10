@@ -14,11 +14,12 @@ namespace GUI
     {
         public decimal SoLuong { get; private set; }
         public string DonVi { get; private set; }
-        public FormChonSLDonvi()
+        public FormChonSLDonvi(string donViNguyenLieu)
         {
             InitializeComponent();
+            txt_DV.Text = donViNguyenLieu;
+            txt_DV.ReadOnly = true; 
         }
-
         private void btn_Luu_Click(object sender, EventArgs e)
         {
             if (decimal.TryParse(txt_SoLuong.Text, out decimal soLuong) && !string.IsNullOrWhiteSpace(txt_DV.Text))

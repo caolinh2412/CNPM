@@ -49,6 +49,7 @@
             btnDanhMuc = new Guna.UI2.WinForms.Guna2Button();
             btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
             panelMain = new Panel();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -67,19 +68,19 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(260, 735);
+            panel1.Size = new Size(260, 797);
             panel1.TabIndex = 0;
             // 
             // btnLogOut
             // 
             btnLogOut.BackColor = Color.FromArgb(63, 29, 18);
-            btnLogOut.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogOut.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogOut.ForeColor = SystemColors.ButtonHighlight;
             btnLogOut.Location = new Point(64, 671);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(143, 33);
-            btnLogOut.TabIndex = 36;
-            btnLogOut.Text = "LOG OUT";
+            btnLogOut.TabIndex = 5;
+            btnLogOut.Text = "ĐĂNG XUẤT";
             btnLogOut.UseVisualStyleBackColor = false;
             btnLogOut.Click += btnLogOut_Click;
             // 
@@ -88,7 +89,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial Rounded MT Bold", 13.8F, FontStyle.Underline, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(87, 122);
+            label1.Location = new Point(86, 124);
             label1.Name = "label1";
             label1.Size = new Size(83, 27);
             label1.TabIndex = 6;
@@ -258,19 +259,29 @@
             // panelMain
             // 
             panelMain.AutoSize = true;
-            panelMain.BackColor = Color.White;
+            panelMain.BackColor = SystemColors.ButtonHighlight;
             panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(260, 0);
+            panelMain.Location = new Point(260, 52);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1088, 735);
-            panelMain.TabIndex = 1;
+            panelMain.Size = new Size(1088, 745);
+            panelMain.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(63, 29, 18);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(260, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1088, 52);
+            panel2.TabIndex = 2;
             // 
             // FormQuanLy
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1348, 735);
+            ClientSize = new Size(1348, 797);
             Controls.Add(panelMain);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormQuanLy";
@@ -295,5 +306,6 @@
         private Label label1;
         private Button btnLogOut;
         private Panel panelMain;
+        private Panel panel2;
     }
 }
