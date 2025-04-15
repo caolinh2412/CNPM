@@ -12,7 +12,7 @@ namespace DAL
 {
     public class DAL_DanhMuc
     {
-        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
+        private static string connectionString = DBConnection.GetConnectionString();
         public List<DTO_DanhMuc> LayDanhSachDanhMuc()
         {
             List<DTO_DanhMuc> danhMucList = new List<DTO_DanhMuc>();

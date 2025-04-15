@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             label3 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -67,7 +67,7 @@
             // guna2Button1
             // 
             guna2Button1.BorderRadius = 12;
-            guna2Button1.CustomizableEdges = customizableEdges13;
+            guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -77,7 +77,7 @@
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(156, 139);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(86, 29);
             guna2Button1.TabIndex = 30;
             guna2Button1.Text = "Thoát";
@@ -86,7 +86,7 @@
             // btn_Luu
             // 
             btn_Luu.BorderRadius = 12;
-            btn_Luu.CustomizableEdges = customizableEdges15;
+            btn_Luu.CustomizableEdges = customizableEdges3;
             btn_Luu.DisabledState.BorderColor = Color.DarkGray;
             btn_Luu.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_Luu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -96,9 +96,9 @@
             btn_Luu.ForeColor = Color.White;
             btn_Luu.Location = new Point(24, 139);
             btn_Luu.Name = "btn_Luu";
-            btn_Luu.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btn_Luu.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btn_Luu.Size = new Size(86, 29);
-            btn_Luu.TabIndex = 25;
+            btn_Luu.TabIndex = 1;
             btn_Luu.Text = "Lưu";
             btn_Luu.Click += btn_Luu_Click_1;
             // 
@@ -106,7 +106,7 @@
             // 
             txt_MaNV.BorderColor = Color.FromArgb(63, 29, 18);
             txt_MaNV.BorderRadius = 10;
-            txt_MaNV.CustomizableEdges = customizableEdges17;
+            txt_MaNV.CustomizableEdges = customizableEdges5;
             txt_MaNV.DefaultText = "";
             txt_MaNV.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txt_MaNV.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -120,15 +120,16 @@
             txt_MaNV.Name = "txt_MaNV";
             txt_MaNV.PlaceholderText = "";
             txt_MaNV.SelectedText = "";
-            txt_MaNV.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            txt_MaNV.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txt_MaNV.Size = new Size(155, 42);
-            txt_MaNV.TabIndex = 30;
+            txt_MaNV.TabIndex = 0;
             txt_MaNV.TextChanged += txt_MaNV_TextChanged;
             // 
             // FormChonSL
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = guna2Button1;
             ClientSize = new Size(283, 191);
             Controls.Add(guna2Button1);
             Controls.Add(txt_MaNV);

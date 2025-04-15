@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flp_Lich = new FlowLayoutPanel();
             uC_Ngay1 = new UC_Ngay();
             panel8 = new Panel();
@@ -53,6 +55,8 @@
             lb_ThangHT = new Label();
             btn_ThangSau = new Guna.UI2.WinForms.Guna2Button();
             btn_Thangtrc = new Guna.UI2.WinForms.Guna2Button();
+            label7 = new Label();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             flp_Lich.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
@@ -63,14 +67,16 @@
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel9.SuspendLayout();
+            guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // flp_Lich
             // 
+            flp_Lich.BackColor = Color.FromArgb(248, 247, 239);
             flp_Lich.Controls.Add(uC_Ngay1);
-            flp_Lich.Location = new Point(44, 153);
+            flp_Lich.Location = new Point(44, 156);
             flp_Lich.Name = "flp_Lich";
-            flp_Lich.Size = new Size(987, 560);
+            flp_Lich.Size = new Size(990, 544);
             flp_Lich.TabIndex = 0;
             // 
             // uC_Ngay1
@@ -253,10 +259,11 @@
             // 
             // panel9
             // 
+            panel9.BackColor = Color.FromArgb(248, 247, 239);
             panel9.Controls.Add(lb_ThangHT);
             panel9.Controls.Add(btn_ThangSau);
             panel9.Controls.Add(btn_Thangtrc);
-            panel9.Location = new Point(44, 72);
+            panel9.Location = new Point(3, 25);
             panel9.Name = "panel9";
             panel9.Size = new Size(987, 32);
             panel9.TabIndex = 15;
@@ -274,7 +281,8 @@
             // 
             // btn_ThangSau
             // 
-            btn_ThangSau.CustomizableEdges = customizableEdges5;
+            btn_ThangSau.BorderRadius = 5;
+            btn_ThangSau.CustomizableEdges = customizableEdges1;
             btn_ThangSau.DisabledState.BorderColor = Color.DarkGray;
             btn_ThangSau.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_ThangSau.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -285,7 +293,7 @@
             btn_ThangSau.ForeColor = Color.White;
             btn_ThangSau.Location = new Point(886, 0);
             btn_ThangSau.Name = "btn_ThangSau";
-            btn_ThangSau.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btn_ThangSau.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btn_ThangSau.Size = new Size(101, 32);
             btn_ThangSau.TabIndex = 1;
             btn_ThangSau.Text = "▶";
@@ -293,7 +301,8 @@
             // 
             // btn_Thangtrc
             // 
-            btn_Thangtrc.CustomizableEdges = customizableEdges7;
+            btn_Thangtrc.BorderRadius = 5;
+            btn_Thangtrc.CustomizableEdges = customizableEdges3;
             btn_Thangtrc.DisabledState.BorderColor = Color.DarkGray;
             btn_Thangtrc.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_Thangtrc.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -304,19 +313,45 @@
             btn_Thangtrc.ForeColor = Color.White;
             btn_Thangtrc.Location = new Point(0, 0);
             btn_Thangtrc.Name = "btn_Thangtrc";
-            btn_Thangtrc.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btn_Thangtrc.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btn_Thangtrc.Size = new Size(101, 32);
             btn_Thangtrc.TabIndex = 0;
             btn_Thangtrc.Text = "◀";
             btn_Thangtrc.Click += btn_Thangtrc_Click;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Roboto", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.FromArgb(63, 29, 18);
+            label7.Location = new Point(40, 10);
+            label7.Name = "label7";
+            label7.Size = new Size(345, 34);
+            label7.TabIndex = 16;
+            label7.Text = "CHI TIẾT LỊCH LÀM VIỆC";
+            // 
+            // guna2Panel1
+            // 
+            guna2Panel1.BackColor = Color.FromArgb(248, 247, 239);
+            guna2Panel1.BorderColor = Color.Black;
+            guna2Panel1.BorderRadius = 5;
+            guna2Panel1.BorderThickness = 1;
+            guna2Panel1.Controls.Add(panel9);
+            guna2Panel1.CustomizableEdges = customizableEdges5;
+            guna2Panel1.Location = new Point(40, 47);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Panel1.Size = new Size(995, 663);
+            guna2Panel1.TabIndex = 17;
+            // 
             // uc_CaLamViec_NV
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel9);
+            Controls.Add(label7);
             Controls.Add(panel8);
             Controls.Add(flp_Lich);
+            Controls.Add(guna2Panel1);
             Name = "uc_CaLamViec_NV";
             Size = new Size(1087, 730);
             Load += uc_CaLamViec_NV_Load;
@@ -338,7 +373,9 @@
             panel4.PerformLayout();
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
+            guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -364,5 +401,7 @@
         private Guna.UI2.WinForms.Guna2Button btn_Thangtrc;
         private Label lb_ThangHT;
         private Guna.UI2.WinForms.Guna2Button btn_ThangSau;
+        private Label label7;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

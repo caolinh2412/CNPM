@@ -12,7 +12,7 @@ namespace DAL
 {
     public class DAL_NhanVien
     {
-        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
+        private static string connectionString = DBConnection.GetConnectionString();
 
         public string MaNvLonNhat()
         {

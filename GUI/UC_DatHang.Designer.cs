@@ -79,7 +79,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(63, 29, 18);
-            label7.Location = new Point(18, 39);
+            label7.Location = new Point(18, 25);
             label7.Name = "label7";
             label7.Size = new Size(92, 22);
             label7.TabIndex = 16;
@@ -98,7 +98,7 @@
             cb_loaiMon.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cb_loaiMon.ForeColor = Color.FromArgb(63, 29, 18);
             cb_loaiMon.ItemHeight = 30;
-            cb_loaiMon.Location = new Point(116, 25);
+            cb_loaiMon.Location = new Point(116, 15);
             cb_loaiMon.Name = "cb_loaiMon";
             cb_loaiMon.ShadowDecoration.CustomizableEdges = customizableEdges2;
             cb_loaiMon.Size = new Size(236, 36);
@@ -109,11 +109,11 @@
             flp_ThucDon.AutoScroll = true;
             flp_ThucDon.BackColor = Color.FromArgb(248, 247, 239);
             flp_ThucDon.BorderStyle = BorderStyle.FixedSingle;
-            flp_ThucDon.Location = new Point(18, 71);
+            flp_ThucDon.Location = new Point(18, 61);
             flp_ThucDon.Margin = new Padding(7);
             flp_ThucDon.Name = "flp_ThucDon";
             flp_ThucDon.Padding = new Padding(20);
-            flp_ThucDon.Size = new Size(563, 641);
+            flp_ThucDon.Size = new Size(563, 651);
             flp_ThucDon.TabIndex = 30;
             // 
             // pnl_HoaDon
@@ -137,9 +137,9 @@
             pnl_HoaDon.Controls.Add(dgv_ChiTietHD);
             pnl_HoaDon.Controls.Add(label2);
             pnl_HoaDon.Controls.Add(label9);
-            pnl_HoaDon.Location = new Point(613, 71);
+            pnl_HoaDon.Location = new Point(613, 61);
             pnl_HoaDon.Name = "pnl_HoaDon";
-            pnl_HoaDon.Size = new Size(430, 587);
+            pnl_HoaDon.Size = new Size(430, 597);
             pnl_HoaDon.TabIndex = 31;
             // 
             // lb_MaHD
@@ -430,7 +430,7 @@
             btn_XoaMon.FillColor = Color.FromArgb(63, 29, 18);
             btn_XoaMon.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_XoaMon.ForeColor = Color.White;
-            btn_XoaMon.Location = new Point(890, 25);
+            btn_XoaMon.Location = new Point(890, 15);
             btn_XoaMon.Name = "btn_XoaMon";
             btn_XoaMon.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btn_XoaMon.Size = new Size(63, 36);
@@ -449,7 +449,7 @@
             btn_Huy.FillColor = Color.FromArgb(63, 29, 18);
             btn_Huy.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Huy.ForeColor = Color.White;
-            btn_Huy.Location = new Point(975, 25);
+            btn_Huy.Location = new Point(975, 15);
             btn_Huy.Name = "btn_Huy";
             btn_Huy.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btn_Huy.Size = new Size(68, 36);

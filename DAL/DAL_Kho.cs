@@ -13,7 +13,7 @@ namespace DAL
 {
     public class DAL_Kho
     {
-        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
+        private static string connectionString = DBConnection.GetConnectionString();
         public List<DTO_Kho> GetAllNguyenLieu()
         {
             List<DTO_Kho> nguyenLieuList = new List<DTO_Kho>();

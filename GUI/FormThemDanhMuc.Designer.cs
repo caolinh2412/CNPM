@@ -95,7 +95,7 @@
             btnThemDM.Name = "btnThemDM";
             btnThemDM.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnThemDM.Size = new Size(86, 23);
-            btnThemDM.TabIndex = 23;
+            btnThemDM.TabIndex = 3;
             btnThemDM.Text = "Thêm";
             btnThemDM.Click += btnThemDM_Click;
             // 
@@ -150,7 +150,7 @@
             txt_MaDM.SelectedText = "";
             txt_MaDM.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txt_MaDM.Size = new Size(146, 27);
-            txt_MaDM.TabIndex = 27;
+            txt_MaDM.TabIndex = 0;
             // 
             // txt_TenDM
             // 
@@ -172,7 +172,7 @@
             txt_TenDM.SelectedText = "";
             txt_TenDM.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txt_TenDM.Size = new Size(177, 27);
-            txt_TenDM.TabIndex = 28;
+            txt_TenDM.TabIndex = 1;
             // 
             // label1
             // 

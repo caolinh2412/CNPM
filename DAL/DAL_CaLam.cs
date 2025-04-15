@@ -10,7 +10,7 @@ namespace DAL
 {
     public class DAL_CaLam
     {
-        private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
+        private static string connectionString = DBConnection.GetConnectionString();
 
         public List<DTO_CaLam> GetCaLamTheoNgayVaMaNV(DateTime ngay, string maNV)
         {

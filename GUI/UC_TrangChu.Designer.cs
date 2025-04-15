@@ -176,8 +176,6 @@
             // 
             guna2Panel2.BackColor = Color.FromArgb(63, 29, 18);
             guna2Panel2.BorderColor = Color.Black;
-            guna2Panel2.BorderRadius = 15;
-            guna2Panel2.BorderThickness = 1;
             guna2Panel2.Controls.Add(lblSoNV);
             guna2Panel2.Controls.Add(pictureBox2);
             guna2Panel2.Controls.Add(label2);
@@ -230,7 +228,7 @@
             guna2Panel1.Controls.Add(pictureBox1);
             guna2Panel1.Controls.Add(label1);
             guna2Panel1.CustomizableEdges = customizableEdges7;
-            guna2Panel1.Location = new Point(14, 20);
+            guna2Panel1.Location = new Point(16, 20);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Panel1.Size = new Size(228, 197);
@@ -280,10 +278,10 @@
             guna2Panel5.Controls.Add(guna2Panel2);
             guna2Panel5.Controls.Add(guna2Panel3);
             guna2Panel5.CustomizableEdges = customizableEdges9;
-            guna2Panel5.Location = new Point(24, 24);
+            guna2Panel5.Location = new Point(24, 27);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel5.Size = new Size(1032, 239);
+            guna2Panel5.Size = new Size(1032, 225);
             guna2Panel5.TabIndex = 5;
             // 
             // guna2Panel6
@@ -316,7 +314,7 @@
             guna2PictureBox1.TabIndex = 0;
             guna2PictureBox1.TabStop = false;
             // 
-            // DashboardForm
+            // UC_TrangChu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -324,7 +322,7 @@
             BackColor = Color.White;
             Controls.Add(guna2Panel6);
             Controls.Add(guna2Panel5);
-            Name = "DashboardForm";
+            Name = "UC_TrangChu";
             Size = new Size(1087, 730);
             guna2Panel4.ResumeLayout(false);
             guna2Panel4.PerformLayout();

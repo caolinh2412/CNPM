@@ -8,7 +8,7 @@ namespace DAL
 {
     public class DAL_ChiTietDonHang
     {
-        private string connectionString = @"Server=LAPTOP-K789CPDG;Database=CafeShop;Integrated Security=True;TrustServerCertificate=True;";
+        private static string connectionString = DBConnection.GetConnectionString();
 
         public bool ThemChiTietDonHang(DTO_ChiTietDonHang chiTietDH)
         {

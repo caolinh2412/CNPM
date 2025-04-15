@@ -1,19 +1,6 @@
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\DTO.deps.json
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\DTO.runtimeconfig.json
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\DTO.exe
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\DAL.exe
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\DAL.deps.json
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\DAL.runtimeconfig.json
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\DAL.dll
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\DAL.pdb
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\QRCoder.dll
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\runtimes\unix\lib\net6.0\System.Data.SqlClient.dll
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Data.SqlClient.dll
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\DTO.dll
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\bin\Debug\net6.0-windows\DTO.pdb
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\obj\Debug\net6.0-windows\DAL.csproj.AssemblyReference.cache
@@ -26,5 +13,4 @@ D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\obj\Debug\net6.0-windows\DAL.
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\obj\Debug\net6.0-windows\DAL.dll
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\obj\Debug\net6.0-windows\refint\DAL.dll
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\obj\Debug\net6.0-windows\DAL.pdb
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\obj\Debug\net6.0-windows\DAL.genruntimeconfig.cache
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\DAL\obj\Debug\net6.0-windows\ref\DAL.dll

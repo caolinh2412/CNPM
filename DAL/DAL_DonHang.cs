@@ -10,7 +10,7 @@ namespace DAL
 {
     public class DAL_DonHang
     {
-        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
+        private static string connectionString = DBConnection.GetConnectionString();
 
         public DataTable GetAllDonHangWithTenNV()
         {

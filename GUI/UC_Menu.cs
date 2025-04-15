@@ -22,6 +22,8 @@ namespace GUI
             InitializeComponent();
             InitializeCategoryComboBox();
             dgv_DanhMuc.CellClick += dgv_dsNV_CellClick;
+            dgv_DanhMuc.KeyDown += dgv_DanhMuc_KeyDown;
+            cb_LoaiMon.KeyDown += cb_LoaiMon_KeyDown;
         }
 
         private void InitializeCategoryComboBox()
@@ -135,9 +137,35 @@ namespace GUI
             formThemDanhMuc.ShowDialog();
             if (formThemDanhMuc.DialogResult == DialogResult.OK)
             {
-                MessageBox.Show("Thêm danh mục thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);    
+                MessageBox.Show("Thêm danh mục thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             InitializeCategoryComboBox();
+        }
+        private void dgv_DanhMuc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && dgv_DanhMuc.CurrentCell != null)
+            {
+                int col = dgv_DanhMuc.CurrentCell.ColumnIndex;
+                int row = dgv_DanhMuc.CurrentCell.RowIndex;
+
+                if (row >= 0 && (col == dgv_DanhMuc.Columns["img_edit"].Index || col == dgv_DanhMuc.Columns["img_delete"].Index))
+                {
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                    dgv_dsNV_CellClick(sender, new DataGridViewCellEventArgs(col, row));
+                }
+            }
+        }
+
+        private void cb_LoaiMon_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                var selectedValue = cb_LoaiMon.SelectedValue;
+                LoadMenuItems(selectedValue?.ToString());
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

@@ -126,10 +126,10 @@
             tb_control.Controls.Add(tabPage2);
             tb_control.Dock = DockStyle.Bottom;
             tb_control.ItemSize = new Size(180, 40);
-            tb_control.Location = new Point(0, 37);
+            tb_control.Location = new Point(0, 51);
             tb_control.Name = "tb_control";
             tb_control.SelectedIndex = 0;
-            tb_control.Size = new Size(1087, 693);
+            tb_control.Size = new Size(1087, 679);
             tb_control.TabButtonHoverState.BorderColor = Color.Empty;
             tb_control.TabButtonHoverState.FillColor = Color.Black;
             tb_control.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -157,7 +157,7 @@
             tabPage1.Location = new Point(4, 44);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1079, 645);
+            tabPage1.Size = new Size(1079, 631);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Kho";
             tabPage1.UseVisualStyleBackColor = true;
@@ -208,12 +208,13 @@
             txt_DonVi.ForeColor = Color.Black;
             txt_DonVi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_DonVi.Location = new Point(304, 121);
+            txt_DonVi.Margin = new Padding(3, 4, 3, 4);
             txt_DonVi.Name = "txt_DonVi";
             txt_DonVi.PlaceholderText = "";
             txt_DonVi.SelectedText = "";
             txt_DonVi.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txt_DonVi.Size = new Size(118, 27);
-            txt_DonVi.TabIndex = 20;
+            txt_DonVi.TabIndex = 3;
             // 
             // btnHuy
             // 
@@ -230,7 +231,7 @@
             btnHuy.Name = "btnHuy";
             btnHuy.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnHuy.Size = new Size(112, 36);
-            btnHuy.TabIndex = 19;
+            btnHuy.TabIndex = 10;
             btnHuy.Text = "Hủy";
             btnHuy.Click += btnHuy_Click_1;
             // 
@@ -249,7 +250,7 @@
             btnLuu.Name = "btnLuu";
             btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnLuu.Size = new Size(112, 36);
-            btnLuu.TabIndex = 18;
+            btnLuu.TabIndex = 7;
             btnLuu.Text = "Lưu";
             btnLuu.Click += btnLuu_Click_1;
             // 
@@ -268,7 +269,7 @@
             btnSua.Name = "btnSua";
             btnSua.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnSua.Size = new Size(112, 36);
-            btnSua.TabIndex = 17;
+            btnSua.TabIndex = 9;
             btnSua.Text = "Sửa";
             btnSua.Click += btnSua_Click_1;
             // 
@@ -287,7 +288,7 @@
             btnThem.Name = "btnThem";
             btnThem.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnThem.Size = new Size(112, 36);
-            btnThem.TabIndex = 11;
+            btnThem.TabIndex = 0;
             btnThem.Text = "Thêm";
             btnThem.Click += btnThem_Click_1;
             // 
@@ -296,7 +297,7 @@
             dtp_NgayNhap.Location = new Point(722, 121);
             dtp_NgayNhap.Name = "dtp_NgayNhap";
             dtp_NgayNhap.Size = new Size(250, 27);
-            dtp_NgayNhap.TabIndex = 15;
+            dtp_NgayNhap.TabIndex = 6;
             // 
             // txt_TonKho
             // 
@@ -313,12 +314,13 @@
             txt_TonKho.ForeColor = Color.Black;
             txt_TonKho.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_TonKho.Location = new Point(168, 121);
+            txt_TonKho.Margin = new Padding(3, 4, 3, 4);
             txt_TonKho.Name = "txt_TonKho";
             txt_TonKho.PlaceholderText = "";
             txt_TonKho.SelectedText = "";
             txt_TonKho.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txt_TonKho.Size = new Size(118, 27);
-            txt_TonKho.TabIndex = 14;
+            txt_TonKho.TabIndex = 2;
             // 
             // txt_sdt
             // 
@@ -335,12 +337,13 @@
             txt_sdt.ForeColor = Color.Black;
             txt_sdt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_sdt.Location = new Point(718, 80);
+            txt_sdt.Margin = new Padding(3, 4, 3, 4);
             txt_sdt.Name = "txt_sdt";
             txt_sdt.PlaceholderText = "";
             txt_sdt.SelectedText = "";
             txt_sdt.ShadowDecoration.CustomizableEdges = customizableEdges14;
             txt_sdt.Size = new Size(254, 27);
-            txt_sdt.TabIndex = 13;
+            txt_sdt.TabIndex = 5;
             // 
             // txt_NCC
             // 
@@ -357,12 +360,13 @@
             txt_NCC.ForeColor = Color.Black;
             txt_NCC.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_NCC.Location = new Point(718, 39);
+            txt_NCC.Margin = new Padding(3, 4, 3, 4);
             txt_NCC.Name = "txt_NCC";
             txt_NCC.PlaceholderText = "";
             txt_NCC.SelectedText = "";
             txt_NCC.ShadowDecoration.CustomizableEdges = customizableEdges16;
             txt_NCC.Size = new Size(254, 27);
-            txt_NCC.TabIndex = 12;
+            txt_NCC.TabIndex = 4;
             // 
             // txt_Ten
             // 
@@ -379,12 +383,13 @@
             txt_Ten.ForeColor = Color.Black;
             txt_Ten.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_Ten.Location = new Point(168, 80);
+            txt_Ten.Margin = new Padding(3, 4, 3, 4);
             txt_Ten.Name = "txt_Ten";
             txt_Ten.PlaceholderText = "";
             txt_Ten.SelectedText = "";
             txt_Ten.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txt_Ten.Size = new Size(254, 27);
-            txt_Ten.TabIndex = 11;
+            txt_Ten.TabIndex = 1;
             // 
             // txt_MaNL
             // 
@@ -401,6 +406,7 @@
             txt_MaNL.ForeColor = Color.Black;
             txt_MaNL.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_MaNL.Location = new Point(168, 39);
+            txt_MaNL.Margin = new Padding(3, 4, 3, 4);
             txt_MaNL.Name = "txt_MaNL";
             txt_MaNL.PlaceholderText = "";
             txt_MaNL.SelectedText = "";
@@ -516,7 +522,7 @@
             dgv_Kho.RowHeadersWidth = 51;
             dgv_Kho.RowTemplate.Height = 29;
             dgv_Kho.Size = new Size(1005, 376);
-            dgv_Kho.TabIndex = 0;
+            dgv_Kho.TabIndex = 8;
             dgv_Kho.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_Kho.ThemeStyle.AlternatingRowsStyle.Font = null;
             dgv_Kho.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
@@ -674,7 +680,7 @@
             dgv_TenMon.RowHeadersVisible = false;
             dgv_TenMon.RowHeadersWidth = 51;
             dgv_TenMon.RowTemplate.Height = 29;
-            dgv_TenMon.Size = new Size(494, 211);
+            dgv_TenMon.Size = new Size(494, 222);
             dgv_TenMon.TabIndex = 2;
             dgv_TenMon.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_TenMon.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -831,7 +837,7 @@
             dgv_NL.RowHeadersVisible = false;
             dgv_NL.RowHeadersWidth = 51;
             dgv_NL.RowTemplate.Height = 29;
-            dgv_NL.Size = new Size(483, 214);
+            dgv_NL.Size = new Size(483, 225);
             dgv_NL.TabIndex = 0;
             dgv_NL.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_NL.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -872,7 +878,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Roboto", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(63, 29, 18);
-            label1.Location = new Point(21, 0);
+            label1.Location = new Point(36, 14);
             label1.Name = "label1";
             label1.Size = new Size(394, 34);
             label1.TabIndex = 2;

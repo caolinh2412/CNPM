@@ -125,11 +125,12 @@ CREATE PROCEDURE GetAllEmployees
 AS
 BEGIN
     SELECT MaNV, HoVaTen, GioiTinh, Email, SDT, NgayDiLam, TrangThai
-    FROM NguoiDung;
+    FROM NguoiDung
+	WHERE MaQL IS NOT NULL;
 END
 
 CREATE PROCEDURE TatHD
-    @MaNV NVARCHAR(10)  -- Sử dụng NVARCHAR để đồng bộ với bảng NguoiDung
+    @MaNV NVARCHAR(10)  
 AS
 BEGIN
     UPDATE NguoiDung
@@ -173,7 +174,7 @@ BEGIN
     DECLARE @NewMaNV NVARCHAR(50);
     DECLARE @DefaultPassword NVARCHAR(255);
 
-    IF NOT EXISTS (SELECT 1 FROM NguoiDung WHERE MaNV LIKE 'NV%')
+    IF NOT EXISTS (SELECT 1 FROM NguoiDung )
     BEGIN
         SET @NewMaNV = 'NV001';
     END
@@ -181,7 +182,6 @@ BEGIN
     BEGIN
         SELECT @NewMaNV = 'NV' + RIGHT('000' + CAST(CAST(SUBSTRING(MAX(MaNV), 3, 3) AS INT) + 1 AS NVARCHAR(3)), 3)
         FROM NguoiDung 
-        WHERE MaNV LIKE 'NV%';
     END
 
     SET @DefaultPassword = 'CafeShop' + @NewMaNV;

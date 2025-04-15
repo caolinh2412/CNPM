@@ -17,18 +17,19 @@ namespace CoffeeShopManagementSystem
         {
             InitializeComponent();
         }
+       
         private void ShowUserControl(UserControl control)
         {
             panelMain.Controls.Clear();
-            control.Dock = DockStyle.Fill;
+            control.Dock = DockStyle.Fill;         
             panelMain.Controls.Add(control);
         }
+
 
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
             ShowUserControl(new UC_TrangChu());
         }
-
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
             ShowUserControl(new UC_Menu());

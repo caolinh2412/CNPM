@@ -147,7 +147,7 @@
             btnHuy.Name = "btnHuy";
             btnHuy.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnHuy.Size = new Size(112, 36);
-            btnHuy.TabIndex = 19;
+            btnHuy.TabIndex = 9;
             btnHuy.Text = "Hủy";
             btnHuy.Click += btnHuy_Click;
             // 
@@ -166,7 +166,7 @@
             btnLuu.Name = "btnLuu";
             btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnLuu.Size = new Size(112, 36);
-            btnLuu.TabIndex = 18;
+            btnLuu.TabIndex = 6;
             btnLuu.Text = "Lưu";
             btnLuu.Click += btnLuu_Click;
             // 
@@ -185,7 +185,7 @@
             btnSua.Name = "btnSua";
             btnSua.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSua.Size = new Size(112, 36);
-            btnSua.TabIndex = 17;
+            btnSua.TabIndex = 8;
             btnSua.Text = "Sửa";
             btnSua.Click += btnSua_Click;
             // 
@@ -204,7 +204,7 @@
             btnThem.Name = "btnThem";
             btnThem.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnThem.Size = new Size(112, 36);
-            btnThem.TabIndex = 11;
+            btnThem.TabIndex = 0;
             btnThem.Text = "Thêm";
             btnThem.Click += btnThem_Click;
             // 
@@ -440,13 +440,14 @@
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(63, 29, 18);
-            dataGridViewCellStyle3.SelectionBackColor = Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgv_dsNV.DefaultCellStyle = dataGridViewCellStyle3;
             dgv_dsNV.GridColor = Color.FromArgb(248, 247, 239);
             dgv_dsNV.Location = new Point(3, 46);
+            dgv_dsNV.MultiSelect = false;
             dgv_dsNV.Name = "dgv_dsNV";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
@@ -460,7 +461,7 @@
             dgv_dsNV.RowHeadersWidth = 51;
             dgv_dsNV.RowTemplate.Height = 29;
             dgv_dsNV.Size = new Size(1044, 372);
-            dgv_dsNV.TabIndex = 23;
+            dgv_dsNV.TabIndex = 7;
             dgv_dsNV.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_dsNV.ThemeStyle.AlternatingRowsStyle.Font = null;
             dgv_dsNV.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;

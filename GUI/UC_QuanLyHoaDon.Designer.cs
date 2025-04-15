@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
             Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
             Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
@@ -79,27 +81,27 @@
             col_Ngay = new DataGridViewTextBoxColumn();
             col_Tongtien = new DataGridViewTextBoxColumn();
             col_PhuongThuc = new DataGridViewTextBoxColumn();
-            label7 = new Label();
             cb_thang = new Guna.UI2.WinForms.Guna2ComboBox();
+            label7 = new Label();
+            cb_nam = new Guna.UI2.WinForms.Guna2ComboBox();
             dgv_CTDH = new Guna.UI2.WinForms.Guna2DataGridView();
+            label2 = new Label();
+            guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
+            tabPage1 = new TabPage();
+            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            tabPage2 = new TabPage();
+            gunaChart_Mon = new Guna.Charts.WinForms.GunaChart();
+            gunaChart_dtThang = new Guna.Charts.WinForms.GunaChart();
             col_TenMon = new DataGridViewTextBoxColumn();
             col_SL = new DataGridViewTextBoxColumn();
             col_DonGia = new DataGridViewTextBoxColumn();
             col_ThanhTien = new DataGridViewTextBoxColumn();
-            panel1 = new Panel();
-            cb_nam = new Guna.UI2.WinForms.Guna2ComboBox();
-            label2 = new Label();
-            guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            gunaChart_Mon = new Guna.Charts.WinForms.GunaChart();
-            gunaChart_dtThang = new Guna.Charts.WinForms.GunaChart();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_DonHang).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgv_CTDH).BeginInit();
-            panel1.SuspendLayout();
             guna2TabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            guna2Panel2.SuspendLayout();
             tabPage2.SuspendLayout();
             SuspendLayout();
             // 
@@ -117,12 +119,18 @@
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.FromArgb(248, 247, 239);
+            guna2Panel1.BorderColor = Color.Black;
+            guna2Panel1.BorderRadius = 10;
+            guna2Panel1.BorderThickness = 1;
             guna2Panel1.Controls.Add(dgv_DonHang);
-            guna2Panel1.CustomizableEdges = customizableEdges1;
-            guna2Panel1.Location = new Point(14, 73);
+            guna2Panel1.Controls.Add(cb_thang);
+            guna2Panel1.Controls.Add(label7);
+            guna2Panel1.Controls.Add(cb_nam);
+            guna2Panel1.CustomizableEdges = customizableEdges5;
+            guna2Panel1.Location = new Point(14, 19);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel1.Size = new Size(666, 536);
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Panel1.Size = new Size(644, 596);
             guna2Panel1.TabIndex = 2;
             // 
             // dgv_DonHang
@@ -130,7 +138,7 @@
             dataGridViewCellStyle1.BackColor = Color.White;
             dgv_DonHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgv_DonHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            dgv_DonHang.BorderStyle = BorderStyle.FixedSingle;
+            dgv_DonHang.BackgroundColor = Color.FromArgb(248, 247, 239);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(63, 29, 18);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -150,8 +158,9 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgv_DonHang.DefaultCellStyle = dataGridViewCellStyle3;
-            dgv_DonHang.GridColor = Color.FromArgb(231, 229, 255);
-            dgv_DonHang.Location = new Point(3, 0);
+            dgv_DonHang.GridColor = Color.FromArgb(248, 247, 239);
+            dgv_DonHang.Location = new Point(3, 71);
+            dgv_DonHang.MultiSelect = false;
             dgv_DonHang.Name = "dgv_DonHang";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = SystemColors.Control;
@@ -164,15 +173,15 @@
             dgv_DonHang.RowHeadersVisible = false;
             dgv_DonHang.RowHeadersWidth = 51;
             dgv_DonHang.RowTemplate.Height = 29;
-            dgv_DonHang.Size = new Size(663, 536);
+            dgv_DonHang.Size = new Size(639, 522);
             dgv_DonHang.TabIndex = 0;
             dgv_DonHang.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_DonHang.ThemeStyle.AlternatingRowsStyle.Font = null;
             dgv_DonHang.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
             dgv_DonHang.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
             dgv_DonHang.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dgv_DonHang.ThemeStyle.BackColor = Color.White;
-            dgv_DonHang.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgv_DonHang.ThemeStyle.BackColor = Color.FromArgb(248, 247, 239);
+            dgv_DonHang.ThemeStyle.GridColor = Color.FromArgb(248, 247, 239);
             dgv_DonHang.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             dgv_DonHang.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             dgv_DonHang.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -194,7 +203,7 @@
             col_MaHD.HeaderText = "Mã hóa đơn";
             col_MaHD.MinimumWidth = 6;
             col_MaHD.Name = "col_MaHD";
-            col_MaHD.Width = 125;
+            col_MaHD.Width = 105;
             // 
             // col_NhanVien
             // 
@@ -228,23 +237,12 @@
             col_PhuongThuc.Name = "col_PhuongThuc";
             col_PhuongThuc.Width = 120;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.FromArgb(63, 29, 18);
-            label7.Location = new Point(17, 33);
-            label7.Name = "label7";
-            label7.Size = new Size(195, 22);
-            label7.TabIndex = 17;
-            label7.Text = "Lọc theo tháng/năm:";
-            // 
             // cb_thang
             // 
             cb_thang.BackColor = Color.Transparent;
             cb_thang.BorderColor = Color.FromArgb(63, 29, 18);
             cb_thang.BorderRadius = 10;
-            cb_thang.CustomizableEdges = customizableEdges3;
+            cb_thang.CustomizableEdges = customizableEdges1;
             cb_thang.DrawMode = DrawMode.OwnerDrawFixed;
             cb_thang.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_thang.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -252,17 +250,47 @@
             cb_thang.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cb_thang.ForeColor = Color.FromArgb(63, 29, 18);
             cb_thang.ItemHeight = 30;
-            cb_thang.Location = new Point(228, 19);
+            cb_thang.Location = new Point(215, 14);
             cb_thang.Name = "cb_thang";
-            cb_thang.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            cb_thang.ShadowDecoration.CustomizableEdges = customizableEdges2;
             cb_thang.Size = new Size(194, 36);
             cb_thang.TabIndex = 29;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.FromArgb(63, 29, 18);
+            label7.Location = new Point(3, 28);
+            label7.Name = "label7";
+            label7.Size = new Size(195, 22);
+            label7.TabIndex = 17;
+            label7.Text = "Lọc theo tháng/năm:";
+            // 
+            // cb_nam
+            // 
+            cb_nam.BackColor = Color.Transparent;
+            cb_nam.BorderColor = Color.FromArgb(63, 29, 18);
+            cb_nam.BorderRadius = 10;
+            cb_nam.CustomizableEdges = customizableEdges3;
+            cb_nam.DrawMode = DrawMode.OwnerDrawFixed;
+            cb_nam.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_nam.FocusedColor = Color.FromArgb(94, 148, 255);
+            cb_nam.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cb_nam.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cb_nam.ForeColor = Color.FromArgb(63, 29, 18);
+            cb_nam.ItemHeight = 30;
+            cb_nam.Location = new Point(430, 14);
+            cb_nam.Name = "cb_nam";
+            cb_nam.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            cb_nam.Size = new Size(195, 36);
+            cb_nam.TabIndex = 31;
             // 
             // dgv_CTDH
             // 
             dataGridViewCellStyle5.BackColor = Color.White;
             dgv_CTDH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dgv_CTDH.BorderStyle = BorderStyle.FixedSingle;
+            dgv_CTDH.BackgroundColor = Color.FromArgb(248, 247, 239);
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = Color.FromArgb(63, 29, 18);
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -274,7 +302,7 @@
             dgv_CTDH.ColumnHeadersHeight = 22;
             dgv_CTDH.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgv_CTDH.Columns.AddRange(new DataGridViewColumn[] { col_TenMon, col_SL, col_DonGia, col_ThanhTien });
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = Color.White;
             dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
@@ -282,21 +310,22 @@
             dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
             dgv_CTDH.DefaultCellStyle = dataGridViewCellStyle7;
-            dgv_CTDH.GridColor = Color.FromArgb(231, 229, 255);
-            dgv_CTDH.Location = new Point(1, -3);
+            dgv_CTDH.GridColor = Color.FromArgb(248, 247, 239);
+            dgv_CTDH.Location = new Point(3, 71);
+            dgv_CTDH.MultiSelect = false;
             dgv_CTDH.Name = "dgv_CTDH";
             dgv_CTDH.RowHeadersVisible = false;
             dgv_CTDH.RowHeadersWidth = 51;
             dgv_CTDH.RowTemplate.Height = 29;
-            dgv_CTDH.Size = new Size(355, 533);
+            dgv_CTDH.Size = new Size(367, 522);
             dgv_CTDH.TabIndex = 1;
             dgv_CTDH.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_CTDH.ThemeStyle.AlternatingRowsStyle.Font = null;
             dgv_CTDH.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
             dgv_CTDH.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
             dgv_CTDH.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            dgv_CTDH.ThemeStyle.BackColor = Color.White;
-            dgv_CTDH.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgv_CTDH.ThemeStyle.BackColor = Color.FromArgb(248, 247, 239);
+            dgv_CTDH.ThemeStyle.GridColor = Color.FromArgb(248, 247, 239);
             dgv_CTDH.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             dgv_CTDH.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             dgv_CTDH.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -312,64 +341,12 @@
             dgv_CTDH.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgv_CTDH.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // col_TenMon
-            // 
-            col_TenMon.HeaderText = "Tên món";
-            col_TenMon.MinimumWidth = 6;
-            col_TenMon.Name = "col_TenMon";
-            // 
-            // col_SL
-            // 
-            col_SL.HeaderText = "Số lượng";
-            col_SL.MinimumWidth = 6;
-            col_SL.Name = "col_SL";
-            // 
-            // col_DonGia
-            // 
-            col_DonGia.HeaderText = "Đơn giá ";
-            col_DonGia.MinimumWidth = 6;
-            col_DonGia.Name = "col_DonGia";
-            // 
-            // col_ThanhTien
-            // 
-            col_ThanhTien.HeaderText = "Thành tiền";
-            col_ThanhTien.MinimumWidth = 6;
-            col_ThanhTien.Name = "col_ThanhTien";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(248, 247, 239);
-            panel1.Controls.Add(dgv_CTDH);
-            panel1.Location = new Point(711, 73);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(356, 533);
-            panel1.TabIndex = 30;
-            // 
-            // cb_nam
-            // 
-            cb_nam.BackColor = Color.Transparent;
-            cb_nam.BorderColor = Color.FromArgb(63, 29, 18);
-            cb_nam.BorderRadius = 10;
-            cb_nam.CustomizableEdges = customizableEdges5;
-            cb_nam.DrawMode = DrawMode.OwnerDrawFixed;
-            cb_nam.DropDownStyle = ComboBoxStyle.DropDownList;
-            cb_nam.FocusedColor = Color.FromArgb(94, 148, 255);
-            cb_nam.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cb_nam.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cb_nam.ForeColor = Color.FromArgb(63, 29, 18);
-            cb_nam.ItemHeight = 30;
-            cb_nam.Location = new Point(442, 19);
-            cb_nam.Name = "cb_nam";
-            cb_nam.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            cb_nam.Size = new Size(195, 36);
-            cb_nam.TabIndex = 31;
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(63, 29, 18);
-            label2.Location = new Point(712, 33);
+            label2.Location = new Point(3, 26);
             label2.Name = "label2";
             label2.Size = new Size(167, 24);
             label2.TabIndex = 32;
@@ -379,11 +356,12 @@
             // 
             guna2TabControl1.Controls.Add(tabPage1);
             guna2TabControl1.Controls.Add(tabPage2);
+            guna2TabControl1.Dock = DockStyle.Bottom;
             guna2TabControl1.ItemSize = new Size(180, 40);
-            guna2TabControl1.Location = new Point(3, 49);
+            guna2TabControl1.Location = new Point(0, 49);
             guna2TabControl1.Name = "guna2TabControl1";
             guna2TabControl1.SelectedIndex = 0;
-            guna2TabControl1.Size = new Size(1081, 663);
+            guna2TabControl1.Size = new Size(1087, 681);
             guna2TabControl1.TabButtonHoverState.BorderColor = Color.Empty;
             guna2TabControl1.TabButtonHoverState.FillColor = Color.Black;
             guna2TabControl1.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -407,18 +385,29 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.White;
-            tabPage1.Controls.Add(panel1);
-            tabPage1.Controls.Add(label2);
+            tabPage1.Controls.Add(guna2Panel2);
             tabPage1.Controls.Add(guna2Panel1);
-            tabPage1.Controls.Add(cb_nam);
-            tabPage1.Controls.Add(label7);
-            tabPage1.Controls.Add(cb_thang);
             tabPage1.Location = new Point(4, 44);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1073, 615);
+            tabPage1.Size = new Size(1079, 633);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Hóa Đơn";
+            // 
+            // guna2Panel2
+            // 
+            guna2Panel2.BackColor = Color.FromArgb(248, 247, 239);
+            guna2Panel2.BorderColor = Color.Black;
+            guna2Panel2.BorderRadius = 10;
+            guna2Panel2.BorderThickness = 1;
+            guna2Panel2.Controls.Add(label2);
+            guna2Panel2.Controls.Add(dgv_CTDH);
+            guna2Panel2.CustomizableEdges = customizableEdges7;
+            guna2Panel2.Location = new Point(689, 19);
+            guna2Panel2.Name = "guna2Panel2";
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Panel2.Size = new Size(373, 596);
+            guna2Panel2.TabIndex = 3;
             // 
             // tabPage2
             // 
@@ -510,22 +499,58 @@
             tick6.Font = chartFont16;
             gunaChart_dtThang.ZAxes.Ticks = tick6;
             // 
-            // FormQuanLyHoaDon
+            // col_TenMon
+            // 
+            col_TenMon.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            col_TenMon.FillWeight = 30.8411255F;
+            col_TenMon.HeaderText = "Tên món";
+            col_TenMon.MinimumWidth = 6;
+            col_TenMon.Name = "col_TenMon";
+            col_TenMon.Width = 110;
+            // 
+            // col_SL
+            // 
+            col_SL.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            col_SL.HeaderText = "Số lượng";
+            col_SL.MinimumWidth = 6;
+            col_SL.Name = "col_SL";
+            col_SL.Width = 78;
+            // 
+            // col_DonGia
+            // 
+            col_DonGia.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            col_DonGia.FillWeight = 252.336441F;
+            col_DonGia.HeaderText = "Đơn giá ";
+            col_DonGia.MinimumWidth = 6;
+            col_DonGia.Name = "col_DonGia";
+            col_DonGia.Width = 85;
+            // 
+            // col_ThanhTien
+            // 
+            col_ThanhTien.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            col_ThanhTien.FillWeight = 16.8224335F;
+            col_ThanhTien.HeaderText = "Thành tiền";
+            col_ThanhTien.MinimumWidth = 6;
+            col_ThanhTien.Name = "col_ThanhTien";
+            col_ThanhTien.Width = 90;
+            // 
+            // UC_QuanLyHoaDon
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             Controls.Add(label1);
             Controls.Add(guna2TabControl1);
-            Name = "FormQuanLyHoaDon";
+            Name = "UC_QuanLyHoaDon";
             Size = new Size(1087, 730);
             guna2Panel1.ResumeLayout(false);
+            guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_DonHang).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_CTDH).EndInit();
-            panel1.ResumeLayout(false);
             guna2TabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            guna2Panel2.ResumeLayout(false);
+            guna2Panel2.PerformLayout();
             tabPage2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -539,11 +564,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cb_thang;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_DonHang;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_CTDH;
-        private Panel panel1;
-        private DataGridViewTextBoxColumn col_TenMon;
-        private DataGridViewTextBoxColumn col_SL;
-        private DataGridViewTextBoxColumn col_DonGia;
-        private DataGridViewTextBoxColumn col_ThanhTien;
         private Guna.UI2.WinForms.Guna2ComboBox cb_nam;
         private Label label2;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
@@ -551,10 +571,15 @@
         private TabPage tabPage2;
         private Guna.Charts.WinForms.GunaChart gunaChart_Mon;
         private Guna.Charts.WinForms.GunaChart gunaChart_dtThang;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private DataGridViewTextBoxColumn col_MaHD;
         private DataGridViewTextBoxColumn col_NhanVien;
         private DataGridViewTextBoxColumn col_Ngay;
         private DataGridViewTextBoxColumn col_Tongtien;
         private DataGridViewTextBoxColumn col_PhuongThuc;
+        private DataGridViewTextBoxColumn col_TenMon;
+        private DataGridViewTextBoxColumn col_SL;
+        private DataGridViewTextBoxColumn col_DonGia;
+        private DataGridViewTextBoxColumn col_ThanhTien;
     }
 }

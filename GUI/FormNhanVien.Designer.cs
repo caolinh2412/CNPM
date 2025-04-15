@@ -33,6 +33,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnLogOut = new Button();
             nameUser = new Label();
@@ -41,8 +43,13 @@
             btn_LLV = new Guna.UI2.WinForms.Guna2Button();
             panelMain = new Panel();
             panel2 = new Panel();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            label2 = new Label();
+            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -54,21 +61,21 @@
             panel1.Controls.Add(guna2Button4);
             panel1.Controls.Add(btn_LLV);
             panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
+            panel1.Location = new Point(0, 64);
             panel1.Name = "panel1";
-            panel1.Size = new Size(270, 790);
+            panel1.Size = new Size(270, 732);
             panel1.TabIndex = 1;
             // 
             // btnLogOut
             // 
             btnLogOut.BackColor = Color.FromArgb(63, 29, 18);
-            btnLogOut.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogOut.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogOut.ForeColor = SystemColors.ButtonHighlight;
             btnLogOut.Location = new Point(68, 665);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(143, 33);
             btnLogOut.TabIndex = 36;
-            btnLogOut.Text = "LOG OUT";
+            btnLogOut.Text = "ĐĂNG XUẤT";
             btnLogOut.UseVisualStyleBackColor = false;
             btnLogOut.Click += btnLogOut_Click;
             // 
@@ -116,7 +123,7 @@
             guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");
             guna2Button4.ImageAlign = HorizontalAlignment.Left;
             guna2Button4.ImageOffset = new Point(10, 0);
-            guna2Button4.Location = new Point(22, 234);
+            guna2Button4.Location = new Point(22, 213);
             guna2Button4.Name = "guna2Button4";
             guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button4.Size = new Size(248, 59);
@@ -146,7 +153,7 @@
             btn_LLV.Image = (Image)resources.GetObject("btn_LLV.Image");
             btn_LLV.ImageAlign = HorizontalAlignment.Left;
             btn_LLV.ImageOffset = new Point(10, 0);
-            btn_LLV.Location = new Point(22, 337);
+            btn_LLV.Location = new Point(22, 310);
             btn_LLV.Name = "btn_LLV";
             btn_LLV.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btn_LLV.Size = new Size(248, 59);
@@ -159,34 +166,75 @@
             // panelMain
             // 
             panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(270, 52);
+            panelMain.Location = new Point(270, 64);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1087, 738);
+            panelMain.Size = new Size(1087, 732);
             panelMain.TabIndex = 2;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Black;
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(guna2PictureBox1);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(270, 0);
+            panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1087, 52);
+            panel2.Size = new Size(1357, 64);
             panel2.TabIndex = 3;
+            // 
+            // guna2PictureBox1
+            // 
+            guna2PictureBox1.CustomizableEdges = customizableEdges5;
+            guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
+            guna2PictureBox1.ImageRotate = 0F;
+            guna2PictureBox1.Location = new Point(12, 3);
+            guna2PictureBox1.Name = "guna2PictureBox1";
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2PictureBox1.Size = new Size(65, 61);
+            guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            guna2PictureBox1.TabIndex = 1;
+            guna2PictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(75, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(189, 22);
+            label2.TabIndex = 8;
+            label2.Text = "Quản lý quán cà phê";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Roboto", 10.2F, FontStyle.Italic, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(111, 31);
+            label3.Name = "label3";
+            label3.Size = new Size(153, 20);
+            label3.TabIndex = 9;
+            label3.Text = "Dành cho nhân viên";
             // 
             // FormNhanVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1357, 790);
+            ClientSize = new Size(1357, 796);
             Controls.Add(panelMain);
-            Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormNhanVien";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StaffForm";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -200,5 +248,8 @@
         private Guna.UI2.WinForms.Guna2Button btn_LLV;
         private Panel panelMain;
         private Panel panel2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Label label2;
+        private Label label3;
     }
 }

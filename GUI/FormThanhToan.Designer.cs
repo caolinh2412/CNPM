@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThanhToan));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             label2 = new Label();
             rdoChuyenKhoan = new RadioButton();
@@ -49,14 +49,14 @@
             label1 = new Label();
             label7 = new Label();
             qr_ThanhToan = new Guna.UI2.WinForms.Guna2PictureBox();
-            qr_zalopay = new Guna.UI2.WinForms.Guna2PictureBox();
+            pic_zaloLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             pic_momoLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             panel1 = new Panel();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             label4 = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)qr_ThanhToan).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)qr_zalopay).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pic_zaloLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_momoLogo).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -73,7 +73,7 @@
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(qr_ThanhToan);
-            panel2.Controls.Add(qr_zalopay);
+            panel2.Controls.Add(pic_zaloLogo);
             panel2.Controls.Add(pic_momoLogo);
             panel2.Controls.Add(panel1);
             panel2.Dock = DockStyle.Fill;
@@ -121,7 +121,7 @@
             // 
             // btn_thanhToan
             // 
-            btn_thanhToan.CustomizableEdges = customizableEdges1;
+            btn_thanhToan.CustomizableEdges = customizableEdges11;
             btn_thanhToan.DisabledState.BorderColor = Color.DarkGray;
             btn_thanhToan.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_thanhToan.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -131,7 +131,7 @@
             btn_thanhToan.ForeColor = Color.White;
             btn_thanhToan.Location = new Point(263, 310);
             btn_thanhToan.Name = "btn_thanhToan";
-            btn_thanhToan.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btn_thanhToan.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btn_thanhToan.Size = new Size(246, 36);
             btn_thanhToan.TabIndex = 45;
             btn_thanhToan.Text = "Đã thanh toán";
@@ -180,39 +180,39 @@
             // qr_ThanhToan
             // 
             qr_ThanhToan.BorderStyle = BorderStyle.FixedSingle;
-            qr_ThanhToan.CustomizableEdges = customizableEdges3;
+            qr_ThanhToan.CustomizableEdges = customizableEdges13;
             qr_ThanhToan.Image = (Image)resources.GetObject("qr_ThanhToan.Image");
             qr_ThanhToan.ImageRotate = 0F;
             qr_ThanhToan.Location = new Point(11, 77);
             qr_ThanhToan.Name = "qr_ThanhToan";
-            qr_ThanhToan.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            qr_ThanhToan.ShadowDecoration.CustomizableEdges = customizableEdges14;
             qr_ThanhToan.Size = new Size(243, 269);
             qr_ThanhToan.SizeMode = PictureBoxSizeMode.StretchImage;
             qr_ThanhToan.TabIndex = 34;
             qr_ThanhToan.TabStop = false;
             // 
-            // qr_zalopay
+            // pic_zaloLogo
             // 
-            qr_zalopay.BorderRadius = 10;
-            qr_zalopay.CustomizableEdges = customizableEdges5;
-            qr_zalopay.Image = (Image)resources.GetObject("qr_zalopay.Image");
-            qr_zalopay.ImageRotate = 0F;
-            qr_zalopay.Location = new Point(423, 216);
-            qr_zalopay.Name = "qr_zalopay";
-            qr_zalopay.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            qr_zalopay.Size = new Size(75, 71);
-            qr_zalopay.SizeMode = PictureBoxSizeMode.StretchImage;
-            qr_zalopay.TabIndex = 33;
-            qr_zalopay.TabStop = false;
+            pic_zaloLogo.BorderRadius = 10;
+            pic_zaloLogo.CustomizableEdges = customizableEdges15;
+            pic_zaloLogo.Image = (Image)resources.GetObject("pic_zaloLogo.Image");
+            pic_zaloLogo.ImageRotate = 0F;
+            pic_zaloLogo.Location = new Point(423, 216);
+            pic_zaloLogo.Name = "pic_zaloLogo";
+            pic_zaloLogo.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            pic_zaloLogo.Size = new Size(75, 71);
+            pic_zaloLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic_zaloLogo.TabIndex = 33;
+            pic_zaloLogo.TabStop = false;
             // 
             // pic_momoLogo
             // 
-            pic_momoLogo.CustomizableEdges = customizableEdges7;
+            pic_momoLogo.CustomizableEdges = customizableEdges17;
             pic_momoLogo.Image = (Image)resources.GetObject("pic_momoLogo.Image");
             pic_momoLogo.ImageRotate = 0F;
             pic_momoLogo.Location = new Point(263, 216);
             pic_momoLogo.Name = "pic_momoLogo";
-            pic_momoLogo.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            pic_momoLogo.ShadowDecoration.CustomizableEdges = customizableEdges18;
             pic_momoLogo.Size = new Size(75, 71);
             pic_momoLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pic_momoLogo.TabIndex = 32;
@@ -232,7 +232,7 @@
             // guna2Button1
             // 
             guna2Button1.BorderRadius = 12;
-            guna2Button1.CustomizableEdges = customizableEdges9;
+            guna2Button1.CustomizableEdges = customizableEdges19;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -242,7 +242,7 @@
             guna2Button1.ForeColor = Color.FromArgb(63, 29, 18);
             guna2Button1.Location = new Point(423, 12);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2Button1.Size = new Size(86, 29);
             guna2Button1.TabIndex = 31;
             guna2Button1.Text = "Thoát";
@@ -273,7 +273,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)qr_ThanhToan).EndInit();
-            ((System.ComponentModel.ISupportInitialize)qr_zalopay).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pic_zaloLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_momoLogo).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -284,7 +284,7 @@
 
         private Panel panel2;
         private Panel panel1;
-        private Guna.UI2.WinForms.Guna2PictureBox qr_zalopay;
+        private Guna.UI2.WinForms.Guna2PictureBox pic_zaloLogo;
         private Guna.UI2.WinForms.Guna2PictureBox pic_momoLogo;
         private Guna.UI2.WinForms.Guna2PictureBox qr_ThanhToan;
         private Label label1;

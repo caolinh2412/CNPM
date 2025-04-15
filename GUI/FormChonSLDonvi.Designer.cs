@@ -67,7 +67,7 @@
             txt_SoLuong.SelectedText = "";
             txt_SoLuong.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txt_SoLuong.Size = new Size(145, 28);
-            txt_SoLuong.TabIndex = 31;
+            txt_SoLuong.TabIndex = 0;
             // 
             // panel1
             // 
@@ -106,7 +106,7 @@
             btn_Luu.Name = "btn_Luu";
             btn_Luu.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btn_Luu.Size = new Size(86, 29);
-            btn_Luu.TabIndex = 33;
+            btn_Luu.TabIndex = 1;
             btn_Luu.Text = "Lưu";
             btn_Luu.Click += btn_Luu_Click;
             // 
@@ -125,7 +125,7 @@
             btnThoat.Name = "btnThoat";
             btnThoat.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnThoat.Size = new Size(86, 29);
-            btnThoat.TabIndex = 34;
+            btnThoat.TabIndex = 2;
             btnThoat.Text = "Thoát";
             btnThoat.Click += btnThoat_Click;
             // 
@@ -177,6 +177,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnThoat;
             ClientSize = new Size(291, 203);
             Controls.Add(label1);
             Controls.Add(label7);

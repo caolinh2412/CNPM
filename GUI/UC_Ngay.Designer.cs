@@ -60,10 +60,10 @@
             pnel_Ngay.Controls.Add(lb_Ngay);
             pnel_Ngay.Location = new Point(0, 0);
             pnel_Ngay.Margin = new Padding(0);
-            pnel_Ngay.MaximumSize = new Size(141, 87);
-            pnel_Ngay.MinimumSize = new Size(141, 87);
+            pnel_Ngay.MaximumSize = new Size(140, 87);
+            pnel_Ngay.MinimumSize = new Size(140, 87);
             pnel_Ngay.Name = "pnel_Ngay";
-            pnel_Ngay.Size = new Size(141, 87);
+            pnel_Ngay.Size = new Size(140, 87);
             pnel_Ngay.TabIndex = 3;
             // 
             // UC_Ngay

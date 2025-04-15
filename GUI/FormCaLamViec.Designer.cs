@@ -94,7 +94,7 @@
             dtp_NgayLam.Location = new Point(216, 71);
             dtp_NgayLam.Name = "dtp_NgayLam";
             dtp_NgayLam.Size = new Size(223, 27);
-            dtp_NgayLam.TabIndex = 26;
+            dtp_NgayLam.TabIndex = 1;
             // 
             // label3
             // 
@@ -127,7 +127,7 @@
             txt_TenCa.SelectedText = "";
             txt_TenCa.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txt_TenCa.Size = new Size(146, 27);
-            txt_TenCa.TabIndex = 24;
+            txt_TenCa.TabIndex = 0;
             // 
             // dgv_CaLam
             // 
@@ -168,7 +168,7 @@
             dgv_CaLam.RowHeadersWidth = 51;
             dgv_CaLam.RowTemplate.Height = 29;
             dgv_CaLam.Size = new Size(459, 205);
-            dgv_CaLam.TabIndex = 22;
+            dgv_CaLam.TabIndex = 3;
             dgv_CaLam.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_CaLam.ThemeStyle.AlternatingRowsStyle.Font = null;
             dgv_CaLam.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
@@ -256,11 +256,11 @@
             btnThemCa.FillColor = Color.Green;
             btnThemCa.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnThemCa.ForeColor = Color.White;
-            btnThemCa.Location = new Point(301, 12);
+            btnThemCa.Location = new Point(270, 12);
             btnThemCa.Name = "btnThemCa";
             btnThemCa.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnThemCa.Size = new Size(86, 23);
-            btnThemCa.TabIndex = 23;
+            btnThemCa.TabIndex = 2;
             btnThemCa.Text = "Thêm";
             btnThemCa.Click += btnThemCa_Click;
             // 

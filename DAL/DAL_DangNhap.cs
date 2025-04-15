@@ -12,7 +12,7 @@ namespace DAL
 {
     public class DAL_DangNhap
     {
-        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
+        private static string connectionString = DBConnection.GetConnectionString();
         public DTO_DangNhap KiemTraDangNhap(string email, string matKhau)
         {
             using (SqlConnection cn = new SqlConnection(connectionString))

@@ -3,11 +3,13 @@ using System.Data;
 using System.Data.SqlClient;
 using DTO;
 
+
+
 namespace DAL
 {
     public class DAL_ThucDon
     {
-        private static string connectionString = ConfigurationManager.ConnectionStrings["CafeShopConnection"].ConnectionString;
+        private static string connectionString = DBConnection.GetConnectionString();
         public string maMonMoi;
 
 
