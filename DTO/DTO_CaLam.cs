@@ -12,5 +12,7 @@ namespace DTO
         public string MaNV { get; set; }
         public DateTime Ngay { get; set; }
         public string CaLam { get; set; }
+        public string TrangThai { get; set; }
+
     }
 }

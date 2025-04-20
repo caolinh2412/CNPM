@@ -35,22 +35,6 @@ namespace BUS
         {
             return dal.InsertEmployee(employee);
         }
-        public List<DTO_CaLam> GetWorkScheduleByEmployeeId(string maNV)
-        {
-            return dal.GetWorkScheduleByEmployeeId(maNV);
-        }
-        public bool InsertWorkSchedule(DTO_CaLam workSchedule)
-        {
-            return dal.InsertWorkSchedule(workSchedule);
-        }
-        public bool DeleteWorkSchedule(string maLLV)
-        {
-            return dal.DeleteWorkSchedule(maLLV);
-        }
-        public bool UpdateWorkSchedule(DTO_CaLam workSchedule)
-        {
-            return dal.UpdateWorkSchedule(workSchedule);
-        }
         public int GetEmployeeCount()
         {
             return dal.GetEmployeeCount();

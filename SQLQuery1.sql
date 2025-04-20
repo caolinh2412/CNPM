@@ -72,6 +72,7 @@ CREATE TABLE LichLamViec (
     MaNV NVARCHAR(10) NOT NULL,
     Ngay DATE NOT NULL,
     CaLam NVARCHAR(20) NOT NULL,
+    TrangThai NVARCHAR(50), 
     FOREIGN KEY (MaNV) REFERENCES NguoiDung(MaNV) ON DELETE CASCADE
 );
 
@@ -209,19 +210,19 @@ BEGIN
     ELSE
     BEGIN
        SELECT @NewMaLLV = 'LLV' + RIGHT('000' + CAST(CAST(ISNULL(MAX(CAST(SUBSTRING(MaLLV, 4, LEN(MaLLV) - 3) AS INT)), 0) + 1 AS NVARCHAR) AS NVARCHAR), 3)
-		FROM LichLamViec 
-		WHERE MaLLV LIKE 'LLV%';
+        FROM LichLamViec
+        WHERE MaLLV LIKE 'LLV%';
     END
-    INSERT INTO LichLamViec (MaLLV, MaNV, Ngay, CaLam)
-    VALUES (@NewMaLLV, @MaNV, @Ngay, @CaLam);
+    INSERT INTO LichLamViec (MaLLV, MaNV, Ngay, CaLam, TrangThai)
+    VALUES (@NewMaLLV, @MaNV, @Ngay, @CaLam, N'Làm'); -- Thêm trạng thái mặc định là "Làm"
 END;
 
---Tạo lịch làm việc 
+--Xóa lịch làm việc 
 CREATE PROCEDURE DeleteWorkSchedule
     @MaLLV NVARCHAR(50)
 AS
 BEGIN
-    DELETE FROM LichLamViec 
+    DELETE FROM LichLamViec
     WHERE MaLLV = @MaLLV;
 END;
 
@@ -230,13 +231,15 @@ CREATE PROCEDURE CapNhatLichLamViec
     @MaLLV NVARCHAR(10),
     @MaNV NVARCHAR(10),
     @Ngay DATE,
-    @CaLam NVARCHAR(50)
+    @CaLam NVARCHAR(50),
+    @TrangThai NVARCHAR(50) 
 AS
 BEGIN
-    UPDATE LichLamViec 
-    SET MaNV = @MaNV, 
-        Ngay = @Ngay, 
-        CaLam = @CaLam 
+    UPDATE LichLamViec
+    SET MaNV = @MaNV,
+        Ngay = @Ngay,
+        CaLam = @CaLam,
+        TrangThai = @TrangThai 
     WHERE MaLLV = @MaLLV;
 END;
 

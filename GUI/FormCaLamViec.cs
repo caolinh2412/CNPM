@@ -9,7 +9,7 @@ namespace GUI
     public partial class FormCaLamViec : Form
     {
         private string maNV;
-        private BUS_NhanVien bus = new BUS_NhanVien();
+        private BUS_CaLam bus = new BUS_CaLam();      
         private bool isEditMode = false;
         private int selectedRowIndex = -1;
 
@@ -29,6 +29,7 @@ namespace GUI
             dgv_CaLam.Columns["col_TenCa"].DataPropertyName = "CaLam";
             dgv_CaLam.Columns["col_NgayLam"].DataPropertyName = "Ngay";
             dgv_CaLam.Columns["col_NgayLam"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgv_CaLam.Columns["col_TrangThai"].DataPropertyName = "TrangThai";
 
             dgv_CaLam.CellClick += dgv_CaLam_CellClick;
         }
@@ -62,12 +63,13 @@ namespace GUI
                             MessageBox.Show("Xóa ca làm việc thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+                    ClearInputFields();
                 }
                 else
                 {
                     DataGridViewRow selectedRow = dgv_CaLam.Rows[e.RowIndex];
                     txt_TenCa.Text = selectedRow.Cells["col_TenCa"].Value.ToString();
-                    dtp_NgayLam.Value = Convert.ToDateTime(selectedRow.Cells["col_NgayLam"].Value);
+                    dtp_NgayLam.Value = Convert.ToDateTime(selectedRow.Cells["col_NgayLam"].Value);                 
                     selectedRowIndex = e.RowIndex;
                     isEditMode = true;
                 }
@@ -92,7 +94,8 @@ namespace GUI
                     MaLLV = maLLV,
                     MaNV = maNV,
                     CaLam = txt_TenCa.Text,
-                    Ngay = dtp_NgayLam.Value
+                    Ngay = dtp_NgayLam.Value,
+                    TrangThai = selectedRow.Cells["col_TrangThai"].Value.ToString()
                 };
 
                 bool success = bus.UpdateWorkSchedule(updatedWorkSchedule);
