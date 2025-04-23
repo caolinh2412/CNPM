@@ -230,7 +230,6 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Name = "FormNhanVien";
-            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormNhanVien";
             panel1.ResumeLayout(false);

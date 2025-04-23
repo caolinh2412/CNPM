@@ -164,11 +164,6 @@ namespace GUI
             HienThiThongTinHeThong();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-            // Để trống hoặc thêm logic nếu cần
-        }
-
         private void btn_In_Click(object sender, EventArgs e)
         {
             if (chiTietDonHangs.Count == 0)

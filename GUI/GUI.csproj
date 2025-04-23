@@ -10,9 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="—Pngtree—simple-coffee-shop-logo_16099189.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="—Pngtree—simple-coffee-shop-logo_16099189.ico" />
   </ItemGroup>
 
   <ItemGroup>

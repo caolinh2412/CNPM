@@ -17,6 +17,7 @@ namespace CoffeeShopManagementSystem
         public FormNhanVien()
         {
             InitializeComponent();
+
             FormNhanVien_Load();
             nameUser.TextChanged += nameUser_TextChanged;
 
