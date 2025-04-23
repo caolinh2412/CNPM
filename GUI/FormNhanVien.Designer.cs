@@ -43,9 +43,9 @@
             btn_LLV = new Guna.UI2.WinForms.Guna2Button();
             panelMain = new Panel();
             panel2 = new Panel();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            label2 = new Label();
             label3 = new Label();
+            label2 = new Label();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -183,6 +183,28 @@
             panel2.Size = new Size(1357, 64);
             panel2.TabIndex = 3;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Roboto", 10.2F, FontStyle.Italic, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(111, 31);
+            label3.Name = "label3";
+            label3.Size = new Size(153, 20);
+            label3.TabIndex = 9;
+            label3.Text = "Dành cho nhân viên";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(75, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(189, 22);
+            label2.TabIndex = 8;
+            label2.Text = "Quản lý quán cà phê";
+            // 
             // guna2PictureBox1
             // 
             guna2PictureBox1.CustomizableEdges = customizableEdges5;
@@ -196,28 +218,6 @@
             guna2PictureBox1.TabIndex = 1;
             guna2PictureBox1.TabStop = false;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Roboto", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(75, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(189, 22);
-            label2.TabIndex = 8;
-            label2.Text = "Quản lý quán cà phê";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Roboto", 10.2F, FontStyle.Italic, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(111, 31);
-            label3.Name = "label3";
-            label3.Size = new Size(153, 20);
-            label3.TabIndex = 9;
-            label3.Text = "Dành cho nhân viên";
-            // 
             // FormNhanVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -227,9 +227,12 @@
             Controls.Add(panel1);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             Name = "FormNhanVien";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "StaffForm";
+            Text = "FormNhanVien";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);

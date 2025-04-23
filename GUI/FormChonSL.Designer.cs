@@ -34,6 +34,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChonSL));
             panel1 = new Panel();
             label3 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -49,7 +50,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(283, 45);
+            panel1.Size = new Size(273, 45);
             panel1.TabIndex = 29;
             // 
             // label3
@@ -117,6 +118,7 @@
             txt_MaNV.ForeColor = Color.Black;
             txt_MaNV.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_MaNV.Location = new Point(56, 69);
+            txt_MaNV.Margin = new Padding(3, 4, 3, 4);
             txt_MaNV.Name = "txt_MaNV";
             txt_MaNV.PlaceholderText = "";
             txt_MaNV.SelectedText = "";
@@ -130,12 +132,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = guna2Button1;
-            ClientSize = new Size(283, 191);
+            ClientSize = new Size(273, 191);
             Controls.Add(guna2Button1);
             Controls.Add(txt_MaNV);
             Controls.Add(panel1);
             Controls.Add(btn_Luu);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormChonSL";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormChonSL";

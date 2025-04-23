@@ -21,6 +21,7 @@ namespace CoffeeShopManagementSystem
         public FormDangNhap()
         {
             InitializeComponent(); // Khởi tạo giao diện đăng nhập
+            
             if (File.Exists("config.txt"))
             {
                 StreamReader rd = new StreamReader("config.txt");
@@ -93,7 +94,7 @@ namespace CoffeeShopManagementSystem
                         staffForm.DathangOnSignIn();
 
                     }
-                    this.Hide();  // Ẩn form đăng nhập
+                    this.Hide(); // Ẩn form đăng nhập
                 }
                 else
                 {

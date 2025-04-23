@@ -295,6 +295,7 @@
             Controls.Add(panel1);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormCaLamViec";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormCaLamViec";

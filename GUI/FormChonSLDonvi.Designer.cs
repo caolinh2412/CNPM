@@ -36,6 +36,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChonSLDonvi));
             txt_SoLuong = new Guna.UI2.WinForms.Guna2TextBox();
             panel1 = new Panel();
             label3 = new Label();
@@ -62,6 +63,7 @@
             txt_SoLuong.ForeColor = Color.Black;
             txt_SoLuong.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_SoLuong.Location = new Point(121, 64);
+            txt_SoLuong.Margin = new Padding(3, 4, 3, 4);
             txt_SoLuong.Name = "txt_SoLuong";
             txt_SoLuong.PlaceholderText = "";
             txt_SoLuong.SelectedText = "";
@@ -144,6 +146,7 @@
             txt_DV.ForeColor = Color.Black;
             txt_DV.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_DV.Location = new Point(121, 118);
+            txt_DV.Margin = new Padding(3, 4, 3, 4);
             txt_DV.Name = "txt_DV";
             txt_DV.PlaceholderText = "";
             txt_DV.SelectedText = "";
@@ -187,6 +190,7 @@
             Controls.Add(panel1);
             Controls.Add(txt_SoLuong);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormChonSLDonvi";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormChonSLDonvi";

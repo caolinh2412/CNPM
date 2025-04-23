@@ -34,13 +34,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThemDanhMuc));
             panel1 = new Panel();
-            close = new Label();
+            close = new Guna.UI2.WinForms.Guna2Button();
             btnThemDM = new Guna.UI2.WinForms.Guna2Button();
             label9 = new Label();
             panel2 = new Panel();
@@ -70,31 +72,38 @@
             // 
             // close
             // 
-            close.AutoSize = true;
-            close.BackColor = Color.FromArgb(63, 29, 18);
-            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            close.Location = new Point(417, 12);
+            close.BorderRadius = 12;
+            close.CustomizableEdges = customizableEdges1;
+            close.DisabledState.BorderColor = Color.DarkGray;
+            close.DisabledState.CustomBorderColor = Color.DarkGray;
+            close.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            close.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            close.FillColor = Color.FromArgb(248, 247, 239);
+            close.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            close.ForeColor = Color.FromArgb(63, 29, 18);
+            close.Location = new Point(361, 7);
             close.Name = "close";
-            close.Size = new Size(22, 23);
-            close.TabIndex = 39;
-            close.Text = "X";
+            close.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            close.Size = new Size(86, 29);
+            close.TabIndex = 31;
+            close.Text = "Thoát";
             close.Click += close_Click;
             // 
             // btnThemDM
             // 
             btnThemDM.BorderRadius = 12;
-            btnThemDM.CustomizableEdges = customizableEdges1;
+            btnThemDM.CustomizableEdges = customizableEdges3;
             btnThemDM.DisabledState.BorderColor = Color.DarkGray;
             btnThemDM.DisabledState.CustomBorderColor = Color.DarkGray;
             btnThemDM.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnThemDM.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnThemDM.FillColor = Color.Green;
+            btnThemDM.FillColor = Color.FromArgb(248, 247, 239);
             btnThemDM.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnThemDM.ForeColor = Color.White;
-            btnThemDM.Location = new Point(301, 12);
+            btnThemDM.ForeColor = Color.FromArgb(63, 29, 18);
+            btnThemDM.Location = new Point(250, 8);
             btnThemDM.Name = "btnThemDM";
-            btnThemDM.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnThemDM.Size = new Size(86, 23);
+            btnThemDM.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnThemDM.Size = new Size(86, 28);
             btnThemDM.TabIndex = 3;
             btnThemDM.Text = "Thêm";
             btnThemDM.Click += btnThemDM_Click;
@@ -134,7 +143,7 @@
             // 
             txt_MaDM.BorderColor = Color.FromArgb(63, 29, 18);
             txt_MaDM.BorderRadius = 10;
-            txt_MaDM.CustomizableEdges = customizableEdges3;
+            txt_MaDM.CustomizableEdges = customizableEdges5;
             txt_MaDM.DefaultText = "";
             txt_MaDM.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txt_MaDM.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -145,10 +154,11 @@
             txt_MaDM.ForeColor = Color.Black;
             txt_MaDM.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_MaDM.Location = new Point(37, 88);
+            txt_MaDM.Margin = new Padding(3, 4, 3, 4);
             txt_MaDM.Name = "txt_MaDM";
             txt_MaDM.PlaceholderText = "";
             txt_MaDM.SelectedText = "";
-            txt_MaDM.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txt_MaDM.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txt_MaDM.Size = new Size(146, 27);
             txt_MaDM.TabIndex = 0;
             // 
@@ -156,7 +166,7 @@
             // 
             txt_TenDM.BorderColor = Color.FromArgb(63, 29, 18);
             txt_TenDM.BorderRadius = 10;
-            txt_TenDM.CustomizableEdges = customizableEdges5;
+            txt_TenDM.CustomizableEdges = customizableEdges7;
             txt_TenDM.DefaultText = "";
             txt_TenDM.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txt_TenDM.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -167,10 +177,11 @@
             txt_TenDM.ForeColor = Color.Black;
             txt_TenDM.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_TenDM.Location = new Point(250, 88);
+            txt_TenDM.Margin = new Padding(3, 4, 3, 4);
             txt_TenDM.Name = "txt_TenDM";
             txt_TenDM.PlaceholderText = "";
             txt_TenDM.SelectedText = "";
-            txt_TenDM.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txt_TenDM.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txt_TenDM.Size = new Size(177, 27);
             txt_TenDM.TabIndex = 1;
             // 
@@ -287,6 +298,7 @@
             Controls.Add(panel1);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormThemDanhMuc";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormThemDanhMuc";
@@ -300,7 +312,6 @@
         #endregion
 
         private Panel panel1;
-        private Label close;
         private Guna.UI2.WinForms.Guna2Button btnThemDM;
         private Label label9;
         private Label label3;
@@ -312,5 +323,6 @@
         private DataGridViewTextBoxColumn col_MaDM;
         private DataGridViewTextBoxColumn col_TenDM;
         private DataGridViewImageColumn img_XoaDM;
+        private Guna.UI2.WinForms.Guna2Button close;
     }
 }

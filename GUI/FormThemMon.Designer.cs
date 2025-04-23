@@ -141,6 +141,7 @@
             txt_TenMon.ForeColor = Color.Black;
             txt_TenMon.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_TenMon.Location = new Point(31, 95);
+            txt_TenMon.Margin = new Padding(3, 4, 3, 4);
             txt_TenMon.Name = "txt_TenMon";
             txt_TenMon.PlaceholderText = "";
             txt_TenMon.SelectedText = "";
@@ -242,6 +243,7 @@
             txt_GiaMon.ForeColor = Color.Black;
             txt_GiaMon.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_GiaMon.Location = new Point(31, 176);
+            txt_GiaMon.Margin = new Padding(3, 4, 3, 4);
             txt_GiaMon.Name = "txt_GiaMon";
             txt_GiaMon.PlaceholderText = "";
             txt_GiaMon.SelectedText = "";
@@ -276,6 +278,7 @@
             Controls.Add(panel1);
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormThemMon";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormThemMon";

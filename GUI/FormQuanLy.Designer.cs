@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLy));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnLogOut = new Button();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -99,7 +99,7 @@
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(56, 17);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges27;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(157, 125);
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -124,9 +124,9 @@
             guna2Button5.CheckedState.FillColor = Color.Tan;
             guna2Button5.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button5.CheckedState.Image = (Image)resources.GetObject("resource.Image");
-            customizableEdges2.BottomRight = false;
-            customizableEdges2.TopRight = false;
-            guna2Button5.CustomizableEdges = customizableEdges2;
+            customizableEdges28.BottomRight = false;
+            customizableEdges28.TopRight = false;
+            guna2Button5.CustomizableEdges = customizableEdges28;
             guna2Button5.DisabledState.BorderColor = Color.DarkGray;
             guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -139,7 +139,7 @@
             guna2Button5.ImageOffset = new Point(10, 0);
             guna2Button5.Location = new Point(6, 541);
             guna2Button5.Name = "guna2Button5";
-            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges29;
             guna2Button5.Size = new Size(254, 59);
             guna2Button5.TabIndex = 4;
             guna2Button5.Text = "Kho nguyên liệu";
@@ -154,9 +154,9 @@
             guna2Button4.CheckedState.FillColor = Color.Tan;
             guna2Button4.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button4.CheckedState.Image = (Image)resources.GetObject("resource.Image1");
-            customizableEdges4.BottomRight = false;
-            customizableEdges4.TopRight = false;
-            guna2Button4.CustomizableEdges = customizableEdges4;
+            customizableEdges30.BottomRight = false;
+            customizableEdges30.TopRight = false;
+            guna2Button4.CustomizableEdges = customizableEdges30;
             guna2Button4.DisabledState.BorderColor = Color.DarkGray;
             guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -169,7 +169,7 @@
             guna2Button4.ImageOffset = new Point(10, 0);
             guna2Button4.Location = new Point(3, 457);
             guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges31;
             guna2Button4.Size = new Size(257, 59);
             guna2Button4.TabIndex = 3;
             guna2Button4.Text = "Báo cáo hóa đơn";
@@ -184,9 +184,9 @@
             guna2Button3.CheckedState.FillColor = Color.Tan;
             guna2Button3.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             guna2Button3.CheckedState.Image = (Image)resources.GetObject("resource.Image2");
-            customizableEdges6.BottomRight = false;
-            customizableEdges6.TopRight = false;
-            guna2Button3.CustomizableEdges = customizableEdges6;
+            customizableEdges32.BottomRight = false;
+            customizableEdges32.TopRight = false;
+            guna2Button3.CustomizableEdges = customizableEdges32;
             guna2Button3.DisabledState.BorderColor = Color.DarkGray;
             guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -199,7 +199,7 @@
             guna2Button3.ImageOffset = new Point(10, 0);
             guna2Button3.Location = new Point(6, 377);
             guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges33;
             guna2Button3.Size = new Size(254, 59);
             guna2Button3.TabIndex = 2;
             guna2Button3.Text = "Nhân viên";
@@ -215,9 +215,9 @@
             btnDanhMuc.CheckedState.FillColor = Color.Tan;
             btnDanhMuc.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnDanhMuc.CheckedState.Image = (Image)resources.GetObject("resource.Image3");
-            customizableEdges8.BottomRight = false;
-            customizableEdges8.TopRight = false;
-            btnDanhMuc.CustomizableEdges = customizableEdges8;
+            customizableEdges34.BottomRight = false;
+            customizableEdges34.TopRight = false;
+            btnDanhMuc.CustomizableEdges = customizableEdges34;
             btnDanhMuc.DisabledState.BorderColor = Color.DarkGray;
             btnDanhMuc.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDanhMuc.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -230,7 +230,7 @@
             btnDanhMuc.ImageOffset = new Point(10, 0);
             btnDanhMuc.Location = new Point(3, 295);
             btnDanhMuc.Name = "btnDanhMuc";
-            btnDanhMuc.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            btnDanhMuc.ShadowDecoration.CustomizableEdges = customizableEdges35;
             btnDanhMuc.Size = new Size(257, 59);
             btnDanhMuc.TabIndex = 1;
             btnDanhMuc.Text = "Thực đơn";
@@ -246,9 +246,9 @@
             btnTrangChu.CheckedState.FillColor = Color.Tan;
             btnTrangChu.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnTrangChu.CheckedState.Image = (Image)resources.GetObject("resource.Image4");
-            customizableEdges10.BottomRight = false;
-            customizableEdges10.TopRight = false;
-            btnTrangChu.CustomizableEdges = customizableEdges10;
+            customizableEdges36.BottomRight = false;
+            customizableEdges36.TopRight = false;
+            btnTrangChu.CustomizableEdges = customizableEdges36;
             btnTrangChu.DisabledState.BorderColor = Color.DarkGray;
             btnTrangChu.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTrangChu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -261,7 +261,7 @@
             btnTrangChu.ImageOffset = new Point(10, 0);
             btnTrangChu.Location = new Point(6, 208);
             btnTrangChu.Name = "btnTrangChu";
-            btnTrangChu.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            btnTrangChu.ShadowDecoration.CustomizableEdges = customizableEdges37;
             btnTrangChu.Size = new Size(254, 59);
             btnTrangChu.TabIndex = 0;
             btnTrangChu.Text = "Trang Chủ";
@@ -315,12 +315,12 @@
             // 
             // guna2PictureBox1
             // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges12;
+            guna2PictureBox1.CustomizableEdges = customizableEdges38;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(6, 3);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges39;
             guna2PictureBox1.Size = new Size(65, 61);
             guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2PictureBox1.TabIndex = 0;
@@ -336,6 +336,7 @@
             Controls.Add(panel1);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Name = "FormQuanLy";
             StartPosition = FormStartPosition.CenterScreen;

@@ -58,3 +58,4 @@ D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\r
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\GUI.pdb
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\GUI.genruntimeconfig.cache
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\ref\GUI.dll
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\bin\Debug\net7.0-windows7.0\—Pngtree—simple-coffee-shop-logo_16099189.ico
