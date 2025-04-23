@@ -16,6 +16,7 @@ namespace GUI
     {
         private DTO_ThucDon monDangSua = null;
         private BUS_DanhMuc bus1 = new BUS_DanhMuc();
+        private string selectedImagePath = "";
 
         public FormThemMon()
         {
@@ -40,23 +41,37 @@ namespace GUI
         }
 
         private void btn_ChonAnh_Click(object sender, EventArgs e)
-        {
+        {        
             OpenFileDialog ofd = new OpenFileDialog
             {
                 Filter = "Image Files (*.jpg;*.png;*.bmp)|*.jpg;*.png;*.bmp"
             };
+
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                pic_Mon.Image = Image.FromFile(ofd.FileName);
-                pic_Mon.ImageLocation = ofd.FileName;
+                string sourcePath = ofd.FileName;
+                string fileName = Path.GetFileName(sourcePath);
+                string imagesFolder = Path.Combine(Application.StartupPath, "img");
+
+                if (!Directory.Exists(imagesFolder))
+                    Directory.CreateDirectory(imagesFolder);
+
+                string targetPath = Path.Combine(imagesFolder, fileName);
+                File.Copy(sourcePath, targetPath, true);
+
+                pic_Mon.Image = Image.FromFile(targetPath);
+                pic_Mon.ImageLocation = targetPath;
+
+                selectedImagePath = Path.Combine("img", fileName); // lưu đường dẫn tương đối
             }
         }
+        
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
             string tenMon = txt_TenMon.Text.Trim();
-            string maDanhMuc = cb_loaiMon.SelectedValue?.ToString();
-            string hinhAnh = pic_Mon.ImageLocation ?? "";
+            string maDanhMuc = cb_loaiMon.SelectedValue?.ToString();           
+            string hinhAnh = selectedImagePath ?? "";
 
             if (string.IsNullOrEmpty(tenMon) || string.IsNullOrEmpty(maDanhMuc))
             {
@@ -115,6 +130,7 @@ namespace GUI
             txt_GiaMon.Text = "";
             cb_loaiMon.SelectedIndex = -1; 
             pic_Mon.Image = null;
+            selectedImagePath = "";
         }
         public void LoadMon(DTO_ThucDon mon)
         {
@@ -123,12 +139,14 @@ namespace GUI
                 monDangSua = mon;
                 txt_TenMon.Text = mon.TenMon;
                 txt_GiaMon.Text = mon.Gia.ToString("N0");
-                cb_loaiMon.SelectedValue = mon.MaDM; 
-
-                if (!string.IsNullOrEmpty(mon.HinhAnh) && System.IO.File.Exists(mon.HinhAnh))
+                cb_loaiMon.SelectedValue = mon.MaDM;
+         
+                string fullImagePath = Path.Combine(Application.StartupPath, mon.HinhAnh);
+                if (!string.IsNullOrEmpty(mon.HinhAnh) && File.Exists(fullImagePath))
                 {
-                    pic_Mon.Image = Image.FromFile(mon.HinhAnh);
-                    pic_Mon.ImageLocation = mon.HinhAnh;
+                    pic_Mon.Image = Image.FromFile(fullImagePath);
+                    pic_Mon.ImageLocation = fullImagePath;
+                    selectedImagePath = mon.HinhAnh; // giữ lại để update
                 }
                 else
                 {
