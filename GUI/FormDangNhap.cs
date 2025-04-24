@@ -17,11 +17,10 @@ namespace CoffeeShopManagementSystem
 {
     public partial class FormDangNhap : Form
     {
-
+        
         public FormDangNhap()
         {
             InitializeComponent(); // Khởi tạo giao diện đăng nhập
-            
             if (File.Exists("config.txt"))
             {
                 StreamReader rd = new StreamReader("config.txt");
@@ -51,6 +50,7 @@ namespace CoffeeShopManagementSystem
                 f.ShowDialog();  // Chặn tới khi đóng config
             }
         }
+
 
         // Sự kiện khi nhấn nút đóng (close)
         private void close_Click(object sender, EventArgs e)

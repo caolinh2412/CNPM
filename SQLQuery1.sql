@@ -781,46 +781,105 @@ BEGIN
     DELETE FROM CongThuc WHERE MaCT = @MaCT;
 END;
 
---Cập nhật số lượng tồn kho 
-CREATE PROCEDURE sp_CapNhatSoLuongTonKho
-    @MaDH NVARCHAR(10)
+
+USE CafeShop
+GO
+CREATE OR ALTER PROCEDURE sp_KiemTraTonKho
+    @MaMon NVARCHAR(10),
+    @SoLuong INT,
+    @KetQua BIT OUTPUT
 AS
 BEGIN
     BEGIN TRY
         BEGIN TRANSACTION;
 
+        -- Bảng tạm để lưu trữ nguyên liệu và số lượng cần thiết
+        CREATE TABLE #TempKiemTra (
+            MaNL NVARCHAR(10),
+            SoLuongCan DECIMAL(18, 2),
+            SoLuongTon DECIMAL(18, 2)
+        );
+
+        -- Lấy danh sách nguyên liệu cần thiết cho món và số lượng tồn kho
+        INSERT INTO #TempKiemTra (MaNL, SoLuongCan, SoLuongTon)
+        SELECT 
+            ct.MaNL,
+            ct.SoLuong * @SoLuong AS SoLuongCan,
+            nl.SoLuongTon
+        FROM CongThuc ct
+        INNER JOIN NguyenLieu nl ON ct.MaNL = nl.MaNL
+        WHERE ct.MaMon = @MaMon;
+
+        -- Kiểm tra nếu tồn kho đủ
+        IF EXISTS (
+            SELECT 1 
+            FROM #TempKiemTra 
+            WHERE SoLuongTon < SoLuongCan
+        )
+        BEGIN
+            SET @KetQua = 0; -- Không đủ tồn kho
+            ROLLBACK TRANSACTION;
+            RETURN;
+        END
+        ELSE
+        BEGIN
+            -- Cập nhật lại số lượng tồn kho cho nguyên liệu
+            UPDATE nl
+            SET nl.SoLuongTon = nl.SoLuongTon - tmp.SoLuongCan
+            FROM NguyenLieu nl
+            INNER JOIN #TempKiemTra tmp ON nl.MaNL = tmp.MaNL;
+
+            -- Trả về kết quả thành công
+            SET @KetQua = 1;
+
+            -- Cập nhật kho thành công, commit giao dịch
+            COMMIT TRANSACTION;
+        END
+
+        -- Xóa bảng tạm
+        DROP TABLE #TempKiemTra;
+
+    END TRY
+    BEGIN CATCH
+        -- Nếu có lỗi, rollback giao dịch và thông báo lỗi
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SET @KetQua = 0; -- Trả về false nếu có lỗi
+        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR (@ErrorMessage, 16, 1);
+    END CATCH
+END
+
+CREATE OR ALTER PROCEDURE sp_CapNhatKhoKhiXoaMon
+    @MaMon NVARCHAR(10),
+    @SoLuong INT
+AS
+BEGIN
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- Tạo bảng tạm để chứa các nguyên liệu cần cập nhật
         CREATE TABLE #TempNguyenLieu (
             MaNL NVARCHAR(10),
             SoLuongCanTru DECIMAL(18, 2)
         );
 
+        -- Lấy danh sách nguyên liệu và số lượng cần cập nhật lại kho
         INSERT INTO #TempNguyenLieu (MaNL, SoLuongCanTru)
         SELECT 
             ct.MaNL,
-            SUM(ct.SoLuong * ctdh.SoLuong) AS SoLuongCanTru
-        FROM ChiTietDonHang ctdh
-        INNER JOIN CongThuc ct ON ctdh.MaMon = ct.MaMon
-        WHERE ctdh.MaDH = @MaDH
-        GROUP BY ct.MaNL;
+            ct.SoLuong * @SoLuong AS SoLuongCanTru
+        FROM CongThuc ct
+        WHERE ct.MaMon = @MaMon;
 
-        IF EXISTS (
-            SELECT 1
-            FROM #TempNguyenLieu tmp
-            INNER JOIN NguyenLieu nl ON tmp.MaNL = nl.MaNL
-            WHERE nl.SoLuongTon < tmp.SoLuongCanTru
-        )
-        BEGIN
-            ROLLBACK TRANSACTION;
-            RAISERROR (N'Không đủ số lượng tồn kho để thanh toán đơn hàng!', 16, 1);
-            RETURN;
-        END
-
-        -- Trừ tồn kho
+        -- Cập nhật lại tồn kho cho nguyên liệu
         UPDATE nl
-        SET nl.SoLuongTon = nl.SoLuongTon - tmp.SoLuongCanTru
+        SET nl.SoLuongTon = nl.SoLuongTon + tmp.SoLuongCanTru
         FROM NguyenLieu nl
         INNER JOIN #TempNguyenLieu tmp ON nl.MaNL = tmp.MaNL;
 
+        -- Xóa bảng tạm
         DROP TABLE #TempNguyenLieu;
 
         COMMIT TRANSACTION;
@@ -834,51 +893,6 @@ BEGIN
     END CATCH
 END
 
-
-CREATE PROCEDURE sp_KiemTraTonKho
-    @MaMon NVARCHAR(10),
-    @SoLuong INT,
-    @KetQua BIT OUTPUT
-AS
-BEGIN
-    BEGIN TRY
-        CREATE TABLE #TempKiemTra (
-            MaNL NVARCHAR(10),
-            SoLuongCan DECIMAL(18,2),
-            SoLuongTon DECIMAL(18,2)
-        );
-        INSERT INTO #TempKiemTra (MaNL, SoLuongCan, SoLuongTon)
-        SELECT 
-            ct.MaNL,
-            ct.SoLuong * @SoLuong AS SoLuongCan,
-            nl.SoLuongTon
-        FROM CongThuc ct
-        INNER JOIN NguyenLieu nl ON ct.MaNL = nl.MaNL
-        WHERE ct.MaMon = @MaMon;
-
-        IF EXISTS (
-            SELECT 1 
-            FROM #TempKiemTra 
-            WHERE SoLuongTon < SoLuongCan
-        )
-        BEGIN
-            SET @KetQua = 0; 
-        END
-        ELSE
-        BEGIN
-            SET @KetQua = 1; 
-        END
-        DROP TABLE #TempKiemTra;
-    END TRY
-    BEGIN CATCH
-        IF OBJECT_ID('tempdb..#TempKiemTra') IS NOT NULL
-            DROP TABLE #TempKiemTra;
-            
-        SET @KetQua = 0; -- Trả về false nếu có lỗi
-        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
-        RAISERROR (@ErrorMessage, 16, 1);
-    END CATCH
-END
 
 CREATE PROCEDURE sp_GetDoanhThuTheoThang
     @Nam INT
@@ -899,6 +913,5 @@ BEGIN
     GROUP BY ThangList.Thang
     ORDER BY ThangList.Thang;
 END
-
 
 

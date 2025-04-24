@@ -4,6 +4,9 @@
     <Compile Update="frmConfig.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UC_Mon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UC_Ngay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -32,9 +35,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UC_DatHang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="UC_Mon.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UC_QuanLyHoaDon.cs">

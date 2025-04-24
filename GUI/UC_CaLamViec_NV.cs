@@ -17,6 +17,7 @@ namespace GUI
         public uc_CaLamViec_NV()
         {
             InitializeComponent();
+            DoubleBuffered = true;
         }
         private void uc_CaLamViec_NV_Load(object sender, EventArgs e)
         {

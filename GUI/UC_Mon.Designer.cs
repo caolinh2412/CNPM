@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FormMon
+    partial class UC_Mon
     {
         /// <summary> 
         /// Required designer variable.
@@ -16,6 +16,7 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
+                img_Mon.Image?.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -28,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMon));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Mon));
             panel1 = new Panel();
             txt_TenMon = new Label();
             img_Mon = new PictureBox();
@@ -72,7 +73,8 @@
             img_Mon.SizeMode = PictureBoxSizeMode.StretchImage;
             img_Mon.TabIndex = 0;
             img_Mon.TabStop = false;
-            img_Mon.Click += img_Mon_Click;
+          
+
             // 
             // lb_Gia
             // 

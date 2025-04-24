@@ -10,8 +10,7 @@ namespace DAL
     public class DAL_ThucDon
     {
         private static string connectionString = DBConnection.GetConnectionString();
-        public string maMonMoi;
-
+        public string maMonMoi;     
 
         public List<DTO_ThucDon> GetMenuItemsByCategory(string category)
         {
@@ -59,9 +58,9 @@ namespace DAL
             List<DTO_ThucDon> menuItems = new List<DTO_ThucDon>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "LayTatCaMonAn"; 
+                string query = "LayTatCaMonAn";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.CommandType = CommandType.StoredProcedure; 
+                command.CommandType = CommandType.StoredProcedure;
                 connection.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {

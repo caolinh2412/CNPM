@@ -20,14 +20,24 @@ namespace GUI
         public FormThanhToan(UC_DatHang formDatHang)
         {
             InitializeComponent();
+          
+
             donHangBUS = new BUS_DonHang();
             this.formDatHang = formDatHang;
+
 
             HienThiThongTinHeThong();
             pic_momoLogo.Click += Pic_momoLogo_Click;
             pic_zaloLogo.Click += Pic_zaloLogo_Click;
 
             lb_Tong.Text = formDatHang.TongTien.ToString("N0") + " VNĐ";
+
+            rdoChuyenKhoan.CheckedChanged += Radio_CheckedChanged;
+            rdoTienMat.CheckedChanged += Radio_CheckedChanged;
+
+            // Vô hiệu hóa mặc định
+            pic_momoLogo.Enabled = false;
+            pic_zaloLogo.Enabled = false;
         }
 
         private void HienThiThongTinHeThong()
@@ -189,6 +199,22 @@ namespace GUI
         {
             this.Close();
         }
+        private void Radio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoChuyenKhoan.Checked)
+            {
+                pic_momoLogo.Enabled = true;
+                pic_zaloLogo.Enabled = true;
+            }
+            else
+            {
+                pic_momoLogo.Enabled = false;
+                pic_zaloLogo.Enabled = false;
+
+                qr_ThanhToan.Image = null;
+            }
+        }
+
 
         private void btn_thanhToan_Click(object sender, EventArgs e)
         {

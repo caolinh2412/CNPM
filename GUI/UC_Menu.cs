@@ -91,22 +91,6 @@ namespace GUI
             dgv_DanhMuc.Columns["col_GiaBan"].DefaultCellStyle.Format = "N0";
 
         }
-
-        // Sự kiện khi nhấn nút thêm món
-        private void pic_ThemMon_Click(object sender, EventArgs e)
-        {
-            // Mở form thêm món
-            FormThemMon themMon = new FormThemMon();
-            themMon.Show();
-
-            // Gán sự kiện FormClosed để cập nhật lại danh sách món ăn khi form đóng
-            themMon.FormClosed += (s, args) =>
-            {
-                var selectedValue = cb_LoaiMon.SelectedValue; // Lấy giá trị được chọn trong ComboBox
-                LoadMenuItems(selectedValue?.ToString()); // Tải lại danh sách món ăn
-            };
-        }
-
         // Sự kiện khi nhấn nút xóa hoặc sửa món
         private void dgv_dsNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -161,19 +145,6 @@ namespace GUI
             InitializeCategoryComboBox(); // Cập nhật danh sách danh mục
         }
 
-        // Sự kiện khi nhấn nút thêm danh mục
-        private void pic_ThemDanhMuc_Click(object sender, EventArgs e)
-        {
-            // Mở form thêm danh mục và thêm danh mục mới 
-            FormThemDanhMuc formThemDanhMuc = new FormThemDanhMuc();
-            formThemDanhMuc.ShowDialog();
-            if (formThemDanhMuc.DialogResult == DialogResult.OK)             {
-                MessageBox.Show("Thêm danh mục thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            // Tải lại danh sách món ăn và danh mục
-            InitializeCategoryComboBox();
-        }
-
         // Sự kiện khi nhấn phím Enter trong DataGridView
         private void dgv_DanhMuc_KeyDown(object sender, KeyEventArgs e)
         {
@@ -205,6 +176,33 @@ namespace GUI
                 e.Handled = true; // Ngăn chặn sự kiện KeyDown tiếp tục
                 e.SuppressKeyPress = true; // Ngăn chặn âm thanh "ding" khi nhấn Enter
             }
+        }
+        // Sự kiện khi nhấn nút thêm danh mục
+        private void btn_ThemDanhMuc_Click(object sender, EventArgs e)
+        {
+            // Mở form thêm danh mục và thêm danh mục mới 
+            FormThemDanhMuc formThemDanhMuc = new FormThemDanhMuc();
+            formThemDanhMuc.ShowDialog();
+            if (formThemDanhMuc.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show("Thêm danh mục thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            // Tải lại danh sách món ăn và danh mục
+            InitializeCategoryComboBox();
+        }
+
+        private void btn_ThemMon_Click(object sender, EventArgs e)
+        {
+            // Mở form thêm món
+            FormThemMon themMon = new FormThemMon();
+            themMon.Show();
+
+            // Gán sự kiện FormClosed để cập nhật lại danh sách món ăn khi form đóng
+            themMon.FormClosed += (s, args) =>
+            {
+                var selectedValue = cb_LoaiMon.SelectedValue; // Lấy giá trị được chọn trong ComboBox
+                LoadMenuItems(selectedValue?.ToString()); // Tải lại danh sách món ăn
+            };
         }
     }
 }

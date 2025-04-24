@@ -122,5 +122,21 @@ namespace DAL
                 }
             }
         }
+        public void CapNhatKhoKhiXoaMon(string maMon, int soLuong)
+        {
+            // Gọi thủ tục sp_CapNhatKhoKhiXoaMon
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_CapNhatKhoKhiXoaMon", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@MaMon", maMon);
+                    cmd.Parameters.AddWithValue("@SoLuong", soLuong);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

@@ -40,7 +40,7 @@ D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\G
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\GUI.uc_CaLamViec_NV.resources
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\GUI.UC_DatHang.resources
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\GUI.UC_Menu.resources
-D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\GUI.FormMon.resources
+D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\GUI.UC_Mon.resources
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\GUI.UC_Ngay.resources
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\GUI.UC_QuanLyHoaDon.resources
 D:\DH\DoAnCnpm\CNPM\CoffeeShopManagementSystem\GUI\obj\Debug\net7.0-windows7.0\GUI.UC_QuanLyKho.resources

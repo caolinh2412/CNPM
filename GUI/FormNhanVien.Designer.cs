@@ -39,7 +39,7 @@
             btnLogOut = new Button();
             nameUser = new Label();
             pictureBox1 = new PictureBox();
-            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            btn_DatHang = new Guna.UI2.WinForms.Guna2Button();
             btn_LLV = new Guna.UI2.WinForms.Guna2Button();
             panelMain = new Panel();
             panel2 = new Panel();
@@ -58,7 +58,7 @@
             panel1.Controls.Add(btnLogOut);
             panel1.Controls.Add(nameUser);
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(guna2Button4);
+            panel1.Controls.Add(btn_DatHang);
             panel1.Controls.Add(btn_LLV);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 64);
@@ -103,35 +103,35 @@
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
-            // guna2Button4
+            // btn_DatHang
             // 
-            guna2Button4.AutoRoundedCorners = true;
-            guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            guna2Button4.CheckedState.FillColor = Color.Tan;
-            guna2Button4.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button4.CheckedState.Image = (Image)resources.GetObject("resource.Image");
+            btn_DatHang.AutoRoundedCorners = true;
+            btn_DatHang.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            btn_DatHang.CheckedState.FillColor = Color.Tan;
+            btn_DatHang.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_DatHang.CheckedState.Image = (Image)resources.GetObject("resource.Image");
             customizableEdges1.BottomRight = false;
             customizableEdges1.TopRight = false;
-            guna2Button4.CustomizableEdges = customizableEdges1;
-            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.FillColor = Color.Transparent;
-            guna2Button4.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button4.ForeColor = Color.White;
-            guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");
-            guna2Button4.ImageAlign = HorizontalAlignment.Left;
-            guna2Button4.ImageOffset = new Point(10, 0);
-            guna2Button4.Location = new Point(22, 213);
-            guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button4.Size = new Size(248, 59);
-            guna2Button4.TabIndex = 3;
-            guna2Button4.Text = "Đặt hàng";
-            guna2Button4.TextAlign = HorizontalAlignment.Left;
-            guna2Button4.TextOffset = new Point(20, 0);
-            guna2Button4.Click += guna2Button4_Click;
+            btn_DatHang.CustomizableEdges = customizableEdges1;
+            btn_DatHang.DisabledState.BorderColor = Color.DarkGray;
+            btn_DatHang.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_DatHang.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_DatHang.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_DatHang.FillColor = Color.Transparent;
+            btn_DatHang.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_DatHang.ForeColor = Color.White;
+            btn_DatHang.Image = (Image)resources.GetObject("btn_DatHang.Image");
+            btn_DatHang.ImageAlign = HorizontalAlignment.Left;
+            btn_DatHang.ImageOffset = new Point(10, 0);
+            btn_DatHang.Location = new Point(22, 225);
+            btn_DatHang.Name = "btn_DatHang";
+            btn_DatHang.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btn_DatHang.Size = new Size(248, 59);
+            btn_DatHang.TabIndex = 3;
+            btn_DatHang.Text = "Đặt hàng";
+            btn_DatHang.TextAlign = HorizontalAlignment.Left;
+            btn_DatHang.TextOffset = new Point(20, 0);
+            btn_DatHang.Click += btn_DatHang_Click;
             // 
             // btn_LLV
             // 
@@ -153,7 +153,7 @@
             btn_LLV.Image = (Image)resources.GetObject("btn_LLV.Image");
             btn_LLV.ImageAlign = HorizontalAlignment.Left;
             btn_LLV.ImageOffset = new Point(10, 0);
-            btn_LLV.Location = new Point(22, 310);
+            btn_LLV.Location = new Point(22, 319);
             btn_LLV.Name = "btn_LLV";
             btn_LLV.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btn_LLV.Size = new Size(248, 59);
@@ -246,7 +246,7 @@
         private Button btnLogOut;
         private Label nameUser;
         private PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button btn_DatHang;
         private Guna.UI2.WinForms.Guna2Button btn_LLV;
         private Panel panelMain;
         private Panel panel2;

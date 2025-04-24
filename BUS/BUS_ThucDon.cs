@@ -12,6 +12,7 @@ namespace BUS
     {
         private DAL_ThucDon dal = new DAL_ThucDon();
 
+
         public List<DTO_ThucDon> GetMenuItemsByCategory(string category)
         {
             return dal.GetMenuItemsByCategory(category);
@@ -41,6 +42,6 @@ namespace BUS
         {
             return dal.UpdateMon(thucDon);
         }
-       
+
     }
 }

@@ -32,7 +32,8 @@ namespace CoffeeShopManagementSystem
         {
             nameUser.Text = Session.GetCurrentUserName();
         }
-        private void guna2Button4_Click(object sender, EventArgs e)
+     
+        private void btn_DatHang_Click(object sender, EventArgs e)
         {
             ShowUserControl(new UC_DatHang());
         }
@@ -45,7 +46,7 @@ namespace CoffeeShopManagementSystem
         }
         public void DathangOnSignIn()
         {
-            guna2Button4.PerformClick();
+            btn_DatHang.PerformClick();
         }
 
         private void btn_LLV_Click(object sender, EventArgs e)
@@ -56,16 +57,16 @@ namespace CoffeeShopManagementSystem
         private void nameUser_TextChanged(object sender, EventArgs e)
         {
             nameUser.AutoSize = true;
-            
+
             Control parent = nameUser.Parent;
             if (parent != null)
             {
                 nameUser.Left = (parent.Width - nameUser.Width) / 2;
             }
             else
-            {             
+            {
                 nameUser.Left = (this.ClientSize.Width - nameUser.Width) / 2;
             }
-        }
+        }    
     }
 }

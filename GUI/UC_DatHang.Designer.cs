@@ -489,7 +489,7 @@
             Controls.Add(btn_In);
             Name = "UC_DatHang";
             Size = new Size(1087, 735);
-            Load += LocThucDonTheoDanhMuc;
+            //Load += LocThucDonTheoDanhMuc;
             pnl_HoaDon.ResumeLayout(false);
             pnl_HoaDon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_ChiTietHD).EndInit();
@@ -502,7 +502,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cb_loaiMon;
         private FlowLayoutPanel flp_ThucDon;
         private Panel pnl_HoaDon;
-        private FormMon formMon5;
+        private UC_Mon formMon5;
         private Label label9;
         private Label label2;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_ChiTietHD;

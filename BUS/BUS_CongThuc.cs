@@ -28,5 +28,9 @@ namespace BUS
         {
             return congThucDAL.KiemTraTonKho(mon, soLuong);
         }
+        public void CapNhatKhoKhiXoaMon(string maMon, int soLuong)
+        {
+            congThucDAL.CapNhatKhoKhiXoaMon(maMon, soLuong);
+        }   
     }
 }

@@ -63,6 +63,8 @@ namespace DAL
             }
             return nguyenLieuList;
         }
+
+
         public bool DeleteNguyenLieu(string maNL)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
