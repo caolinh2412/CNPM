@@ -489,7 +489,6 @@
             Controls.Add(btn_In);
             Name = "UC_DatHang";
             Size = new Size(1087, 735);
-            //Load += LocThucDonTheoDanhMuc;
             pnl_HoaDon.ResumeLayout(false);
             pnl_HoaDon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_ChiTietHD).EndInit();

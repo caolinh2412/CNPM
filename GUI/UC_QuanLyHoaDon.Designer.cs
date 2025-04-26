@@ -73,6 +73,13 @@
             Guna.Charts.WinForms.ChartFont chartFont15 = new Guna.Charts.WinForms.ChartFont();
             Guna.Charts.WinForms.Tick tick6 = new Guna.Charts.WinForms.Tick();
             Guna.Charts.WinForms.ChartFont chartFont16 = new Guna.Charts.WinForms.ChartFont();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QuanLyHoaDon));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             dgv_DonHang = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -85,6 +92,10 @@
             label7 = new Label();
             cb_nam = new Guna.UI2.WinForms.Guna2ComboBox();
             dgv_CTDH = new Guna.UI2.WinForms.Guna2DataGridView();
+            col_TenMon = new DataGridViewTextBoxColumn();
+            col_SL = new DataGridViewTextBoxColumn();
+            col_DonGia = new DataGridViewTextBoxColumn();
+            col_ThanhTien = new DataGridViewTextBoxColumn();
             label2 = new Label();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             tabPage1 = new TabPage();
@@ -92,10 +103,10 @@
             tabPage2 = new TabPage();
             gunaChart_Mon = new Guna.Charts.WinForms.GunaChart();
             gunaChart_dtThang = new Guna.Charts.WinForms.GunaChart();
-            col_TenMon = new DataGridViewTextBoxColumn();
-            col_SL = new DataGridViewTextBoxColumn();
-            col_DonGia = new DataGridViewTextBoxColumn();
-            col_ThanhTien = new DataGridViewTextBoxColumn();
+            guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            label3 = new Label();
+            btn_in = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_DonHang).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgv_CTDH).BeginInit();
@@ -103,6 +114,8 @@
             tabPage1.SuspendLayout();
             guna2Panel2.SuspendLayout();
             tabPage2.SuspendLayout();
+            guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -341,6 +354,41 @@
             dgv_CTDH.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgv_CTDH.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
+            // col_TenMon
+            // 
+            col_TenMon.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            col_TenMon.FillWeight = 30.8411255F;
+            col_TenMon.HeaderText = "Tên món";
+            col_TenMon.MinimumWidth = 6;
+            col_TenMon.Name = "col_TenMon";
+            col_TenMon.Width = 110;
+            // 
+            // col_SL
+            // 
+            col_SL.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            col_SL.HeaderText = "Số lượng";
+            col_SL.MinimumWidth = 6;
+            col_SL.Name = "col_SL";
+            col_SL.Width = 78;
+            // 
+            // col_DonGia
+            // 
+            col_DonGia.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            col_DonGia.FillWeight = 252.336441F;
+            col_DonGia.HeaderText = "Đơn giá ";
+            col_DonGia.MinimumWidth = 6;
+            col_DonGia.Name = "col_DonGia";
+            col_DonGia.Width = 85;
+            // 
+            // col_ThanhTien
+            // 
+            col_ThanhTien.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            col_ThanhTien.FillWeight = 16.8224335F;
+            col_ThanhTien.HeaderText = "Thành tiền";
+            col_ThanhTien.MinimumWidth = 6;
+            col_ThanhTien.Name = "col_ThanhTien";
+            col_ThanhTien.Width = 90;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -413,10 +461,11 @@
             // 
             tabPage2.Controls.Add(gunaChart_Mon);
             tabPage2.Controls.Add(gunaChart_dtThang);
+            tabPage2.Controls.Add(guna2Panel3);
             tabPage2.Location = new Point(4, 44);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1073, 615);
+            tabPage2.Size = new Size(1079, 633);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Thống kê";
             tabPage2.UseVisualStyleBackColor = true;
@@ -429,7 +478,7 @@
             gunaChart_Mon.Legend.LabelForeColor = Color.Black;
             gunaChart_Mon.Location = new Point(42, 6);
             gunaChart_Mon.Name = "gunaChart_Mon";
-            gunaChart_Mon.Size = new Size(981, 272);
+            gunaChart_Mon.Size = new Size(652, 272);
             gunaChart_Mon.TabIndex = 3;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
@@ -499,40 +548,67 @@
             tick6.Font = chartFont16;
             gunaChart_dtThang.ZAxes.Ticks = tick6;
             // 
-            // col_TenMon
+            // guna2Panel3
             // 
-            col_TenMon.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            col_TenMon.FillWeight = 30.8411255F;
-            col_TenMon.HeaderText = "Tên món";
-            col_TenMon.MinimumWidth = 6;
-            col_TenMon.Name = "col_TenMon";
-            col_TenMon.Width = 110;
+            guna2Panel3.BackColor = Color.White;
+            guna2Panel3.BorderColor = Color.Black;
+            guna2Panel3.BorderRadius = 10;
+            guna2Panel3.BorderThickness = 1;
+            guna2Panel3.Controls.Add(guna2PictureBox1);
+            guna2Panel3.Controls.Add(label3);
+            guna2Panel3.Controls.Add(btn_in);
+            guna2Panel3.CustomizableEdges = customizableEdges13;
+            guna2Panel3.Location = new Point(716, 6);
+            guna2Panel3.Name = "guna2Panel3";
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2Panel3.Size = new Size(307, 272);
+            guna2Panel3.TabIndex = 6;
             // 
-            // col_SL
+            // guna2PictureBox1
             // 
-            col_SL.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            col_SL.HeaderText = "Số lượng";
-            col_SL.MinimumWidth = 6;
-            col_SL.Name = "col_SL";
-            col_SL.Width = 78;
+            guna2PictureBox1.BackColor = Color.Transparent;
+            guna2PictureBox1.CustomizableEdges = customizableEdges9;
+            guna2PictureBox1.ErrorImage = (Image)resources.GetObject("guna2PictureBox1.ErrorImage");
+            guna2PictureBox1.FillColor = Color.Transparent;
+            guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
+            guna2PictureBox1.ImageRotate = 0F;
+            guna2PictureBox1.Location = new Point(83, 57);
+            guna2PictureBox1.Name = "guna2PictureBox1";
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2PictureBox1.Size = new Size(143, 126);
+            guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            guna2PictureBox1.TabIndex = 19;
+            guna2PictureBox1.TabStop = false;
             // 
-            // col_DonGia
+            // label3
             // 
-            col_DonGia.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            col_DonGia.FillWeight = 252.336441F;
-            col_DonGia.HeaderText = "Đơn giá ";
-            col_DonGia.MinimumWidth = 6;
-            col_DonGia.Name = "col_DonGia";
-            col_DonGia.Width = 85;
+            label3.AutoSize = true;
+            label3.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(63, 29, 18);
+            label3.Location = new Point(15, 17);
+            label3.Name = "label3";
+            label3.Size = new Size(103, 28);
+            label3.TabIndex = 18;
+            label3.Text = "Báo cáo";
             // 
-            // col_ThanhTien
+            // btn_in
             // 
-            col_ThanhTien.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            col_ThanhTien.FillWeight = 16.8224335F;
-            col_ThanhTien.HeaderText = "Thành tiền";
-            col_ThanhTien.MinimumWidth = 6;
-            col_ThanhTien.Name = "col_ThanhTien";
-            col_ThanhTien.Width = 90;
+            btn_in.BorderRadius = 12;
+            btn_in.CustomizableEdges = customizableEdges11;
+            btn_in.DisabledState.BorderColor = Color.DarkGray;
+            btn_in.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_in.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_in.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_in.FillColor = Color.FromArgb(63, 29, 18);
+            btn_in.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_in.ForeColor = Color.White;
+            btn_in.Location = new Point(15, 199);
+            btn_in.Name = "btn_in";
+            btn_in.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btn_in.Size = new Size(278, 45);
+            btn_in.TabIndex = 5;
+            btn_in.Text = "xuất báo cáo";
+            btn_in.Click += btn_in_Click;
             // 
             // UC_QuanLyHoaDon
             // 
@@ -552,6 +628,9 @@
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();
             tabPage2.ResumeLayout(false);
+            guna2Panel3.ResumeLayout(false);
+            guna2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -581,5 +660,9 @@
         private DataGridViewTextBoxColumn col_SL;
         private DataGridViewTextBoxColumn col_DonGia;
         private DataGridViewTextBoxColumn col_ThanhTien;
+        private Guna.UI2.WinForms.Guna2Button btn_in;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Label label3;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

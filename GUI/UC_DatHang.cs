@@ -34,7 +34,8 @@ namespace GUI
         private Bitmap memoryimg;
         private PrintDocument printDocument1;
         private PrintPreviewDialog printPreviewDialog1;
-     
+        private readonly Dictionary<string, List<UC_Mon>> _monTheoDanhMuc = new Dictionary<string, List<UC_Mon>>();
+
         public UC_DatHang()
         {
             InitializeComponent();
@@ -117,26 +118,19 @@ namespace GUI
 
             flp_ThucDon.ResumeLayout(); // Tiếp tục layout
         }
-
         private void LocThucDonTheoDanhMuc(string danhMuc)
         {
             flp_ThucDon.SuspendLayout();
 
-            foreach (var formMon in danhSachMon)
+            foreach (var mon in danhSachMon)
             {
-                var dto = formMon.LayThongTinMon(); // cần tạo hàm này trong FormMon để lấy dữ liệu món
-                if (danhMuc == null || dto.MaDM == danhMuc)
-                {
-                    formMon.Visible = true;
-                }
-                else
-                {
-                    formMon.Visible = false;
-                }
+                var dto = mon.LayThongTinMon(); // bạn đã xử lý đúng rồi
+                mon.Visible = danhMuc == null || dto.MaDM == danhMuc;
             }
 
             flp_ThucDon.ResumeLayout();
         }
+
         private void KhoiTaoDataGridView()
         {
             dgv_ChiTietHD.AutoGenerateColumns = false;
@@ -170,7 +164,7 @@ namespace GUI
         {
             lb_ThoiGian.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lb_ThuNgan.Text = Session.GetCurrentUserName();
-            lb_MaHD.Text = donHangBUS.GetNextMaDH();
+            lb_MaHD.Text = donHangBUS.GetNextMaDH();           
             CapNhatTongSoLuong();
         }
 
@@ -242,6 +236,7 @@ namespace GUI
                 {
                     lbTongTien.Text = tongTien.ToString("N0") + "VND";
                 }
+                dgv_ChiTietHD.Refresh();
                 CapNhatTongSoLuong();
             }
             catch (Exception ex)

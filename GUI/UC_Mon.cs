@@ -56,13 +56,13 @@ namespace GUI
             {
                 if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
                     return null;
-
+         
                 if (!cache.TryGetValue(path, out var img))
                 {
                     try
                     {
-                        using var ms = new MemoryStream(File.ReadAllBytes(path));
-                        img = Image.FromStream(ms); 
+                        using var original = Image.FromFile(path);
+                        img = (Image)original.Clone(); // clone để tránh lock file
                         cache[path] = img;
                     }
                     catch

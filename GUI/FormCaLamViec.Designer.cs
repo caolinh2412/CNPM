@@ -39,6 +39,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCaLamViec));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             label1 = new Label();
             dtp_NgayLam = new DateTimePicker();
@@ -50,10 +52,10 @@
             col_NgayLam = new DataGridViewTextBoxColumn();
             col_TrangThai = new DataGridViewTextBoxColumn();
             img_xoaCa = new DataGridViewImageColumn();
-            close = new Label();
             btnThemCa = new Guna.UI2.WinForms.Guna2Button();
             label9 = new Label();
             panel1 = new Panel();
+            btn_close = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_CaLam).BeginInit();
             panel1.SuspendLayout();
@@ -135,6 +137,7 @@
             dataGridViewCellStyle1.BackColor = Color.White;
             dgv_CaLam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgv_CaLam.BackgroundColor = Color.FromArgb(248, 247, 239);
+            dgv_CaLam.BorderStyle = BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(63, 29, 18);
             dataGridViewCellStyle2.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -233,18 +236,6 @@
             img_xoaCa.Name = "img_xoaCa";
             img_xoaCa.Width = 60;
             // 
-            // close
-            // 
-            close.AutoSize = true;
-            close.BackColor = Color.FromArgb(63, 29, 18);
-            close.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            close.Location = new Point(417, 12);
-            close.Name = "close";
-            close.Size = new Size(22, 23);
-            close.TabIndex = 39;
-            close.Text = "X";
-            close.Click += close_Click;
-            // 
             // btnThemCa
             // 
             btnThemCa.BorderRadius = 12;
@@ -256,10 +247,10 @@
             btnThemCa.FillColor = Color.Green;
             btnThemCa.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnThemCa.ForeColor = Color.White;
-            btnThemCa.Location = new Point(295, 12);
+            btnThemCa.Location = new Point(284, 6);
             btnThemCa.Name = "btnThemCa";
             btnThemCa.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnThemCa.Size = new Size(86, 23);
+            btnThemCa.Size = new Size(86, 29);
             btnThemCa.TabIndex = 2;
             btnThemCa.Text = "Thêm";
             btnThemCa.Click += btnThemCa_Click;
@@ -278,13 +269,32 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(63, 29, 18);
-            panel1.Controls.Add(close);
+            panel1.Controls.Add(btn_close);
             panel1.Controls.Add(btnThemCa);
             panel1.Controls.Add(label9);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(482, 45);
             panel1.TabIndex = 1;
+            // 
+            // btn_close
+            // 
+            btn_close.BorderRadius = 12;
+            btn_close.CustomizableEdges = customizableEdges7;
+            btn_close.DisabledState.BorderColor = Color.DarkGray;
+            btn_close.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_close.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_close.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_close.FillColor = Color.FromArgb(248, 247, 239);
+            btn_close.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_close.ForeColor = Color.FromArgb(63, 29, 18);
+            btn_close.Location = new Point(383, 6);
+            btn_close.Name = "btn_close";
+            btn_close.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btn_close.Size = new Size(86, 29);
+            btn_close.TabIndex = 40;
+            btn_close.Text = "Thoát";
+            btn_close.Click += btn_close_Click;
             // 
             // FormCaLamViec
             // 
@@ -317,12 +327,12 @@
         private Label label3;
         private Label label1;
         private DateTimePicker dtp_NgayLam;
-        private Label close;
         private Panel panel1;
         private DataGridViewTextBoxColumn col_MaCa;
         private DataGridViewTextBoxColumn col_TenCa;
         private DataGridViewTextBoxColumn col_NgayLam;
         private DataGridViewTextBoxColumn col_TrangThai;
         private DataGridViewImageColumn img_xoaCa;
+        private Guna.UI2.WinForms.Guna2Button btn_close;
     }
 }

@@ -68,6 +68,10 @@
             "System.Net.Http": {
               "target": "Package",
               "version": "[4.3.4, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [
@@ -158,6 +162,10 @@
             "System.Net.Http": {
               "target": "Package",
               "version": "[4.3.4, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [
@@ -240,6 +248,10 @@
             "System.Net.Http": {
               "target": "Package",
               "version": "[4.3.4, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [

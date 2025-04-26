@@ -11,6 +11,15 @@ using DAL;
 using BUS;
 using CoffeeShopManagementSystem.BUS;
 using Guna.Charts.WinForms;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using iText.IO.Font;
+using iText.Kernel.Colors;
+using iText.Kernel.Font;
+
+
 
 namespace GUI
 {
@@ -18,6 +27,11 @@ namespace GUI
     {
         private BUS_DonHang donHangBUS = new BUS_DonHang();
         private BUS_ChiTietDonHang chiTietDonHangBUS = new BUS_ChiTietDonHang();
+        private readonly string ShopName = "Coffee 24/7";
+        private readonly string OwnerName = "Nguyen Văn A";
+        private readonly string ShopAddress = "558/4 Phường 12, Phạm Văn Đồng, TP Hồ Chí Minh";
+       
+
 
         public UC_QuanLyHoaDon()
         {
@@ -188,5 +202,110 @@ namespace GUI
                 MessageBox.Show($"Lỗi khi vẽ biểu đồ top 3 món bán chạy: {ex.Message}");
             }
         }
+
+
+        private void btn_in_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int year = (int)cb_nam.SelectedItem;
+                var doanhThuTheoThang = donHangBUS.GetDoanhThuTheoThang(year);
+                var top3MonBanChay = chiTietDonHangBUS.GetTop3MonBanChay();
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "PDF files (*.pdf)|*.pdf",
+                    Title = "Chọn nơi lưu file báo cáo"
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+
+                    // Initialize the PDF writer and document
+                    using (var writer = new PdfWriter(filePath))
+                    using (var pdf = new PdfDocument(writer))
+                    {
+                        var document = new Document(pdf);
+
+                        // Load font with Vietnamese support
+                        string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Arial.ttf");
+                        var font = PdfFontFactory.CreateFont(fontPath, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
+                        string LogoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logo", "logo.png");
+
+                        // Set font for the entire document
+                        var paragraphFont = font;  // Set the font for all paragraphs
+                        var cellFont = font; // Set the font for all cells
+
+                        // Add logo (if exists)
+                        if (File.Exists(LogoPath))
+                        {
+                            var image = new iText.Layout.Element.Image(iText.IO.Image.ImageDataFactory.Create(LogoPath));
+                            image.ScaleToFit(100f, 100f);
+                            image.SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER);
+                            document.Add(image);
+                        }
+
+                        // Shop info
+                        document.Add(new Paragraph(ShopName)
+                            .SetFont(paragraphFont).SetFontSize(18).SetTextAlignment(TextAlignment.CENTER).SetBold());
+
+                        document.Add(new Paragraph($"Chủ quán: {OwnerName}")
+                            .SetFont(paragraphFont).SetFontSize(10).SetTextAlignment(TextAlignment.CENTER));
+                        document.Add(new Paragraph($"Địa chỉ: {ShopAddress}")
+                            .SetFont(paragraphFont).SetFontSize(10).SetTextAlignment(TextAlignment.CENTER));
+                        document.Add(new Paragraph($"Ngày in báo cáo: {DateTime.Now:dd/MM/yyyy HH:mm:ss}")
+                            .SetFont(paragraphFont).SetFontSize(10).SetTextAlignment(TextAlignment.CENTER).SetMarginBottom(20));
+
+                        // Report title
+                        document.Add(new Paragraph($"BÁO CÁO DOANH THU NĂM {year}")
+                            .SetFont(paragraphFont).SetFontSize(18).SetTextAlignment(TextAlignment.CENTER).SetMarginBottom(20));
+
+                        // Revenue Table
+                        var revenueTable = new Table(2).UseAllAvailableWidth().SetMarginBottom(20);
+                        revenueTable.AddHeaderCell(new Cell().Add(new Paragraph("Tháng").SetBold().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(TextAlignment.CENTER).SetFont(cellFont)));
+                        revenueTable.AddHeaderCell(new Cell().Add(new Paragraph("Doanh thu (VNĐ)").SetBold().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(TextAlignment.CENTER).SetFont(cellFont)));
+
+                        decimal tongDoanhThu = 0;
+                        foreach (var item in doanhThuTheoThang.OrderBy(x => x.Key))
+                        {
+                            revenueTable.AddCell(new Cell().Add(new Paragraph($"Tháng {item.Key}").SetFont(paragraphFont).SetTextAlignment(TextAlignment.CENTER)));
+                            revenueTable.AddCell(new Cell().Add(new Paragraph($"{item.Value:N0}").SetFont(paragraphFont).SetTextAlignment(TextAlignment.RIGHT)));
+                            tongDoanhThu += item.Value;
+                        }
+
+                        revenueTable.AddCell(new Cell().Add(new Paragraph("Tổng cộng").SetBold().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(TextAlignment.CENTER).SetFont(cellFont)));
+                        revenueTable.AddCell(new Cell().Add(new Paragraph($"{tongDoanhThu:N0}").SetBold().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(TextAlignment.RIGHT).SetFont(cellFont)));
+
+                        document.Add(revenueTable);
+
+                        // Top 3 items
+                        document.Add(new Paragraph("TOP 3 MÓN BÁN CHẠY")
+                            .SetFont(paragraphFont).SetFontSize(12).SetBold().SetTextAlignment(TextAlignment.CENTER).SetMarginBottom(10));
+
+                        var topItemsTable = new Table(2).UseAllAvailableWidth();
+                        topItemsTable.AddHeaderCell(new Cell().Add(new Paragraph("Tên món").SetBold().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(TextAlignment.CENTER).SetFont(cellFont)));
+                        topItemsTable.AddHeaderCell(new Cell().Add(new Paragraph("Số lượng (phần)").SetBold().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(TextAlignment.CENTER).SetFont(cellFont)));
+
+                        foreach (var mon in top3MonBanChay)
+                        {
+                            topItemsTable.AddCell(new Cell().Add(new Paragraph(mon.TenMon).SetFont(paragraphFont).SetTextAlignment(TextAlignment.LEFT)));
+                            topItemsTable.AddCell(new Cell().Add(new Paragraph($"{mon.SoLuong}").SetFont(paragraphFont).SetTextAlignment(TextAlignment.RIGHT)));
+                        }
+
+                        document.Add(topItemsTable);
+
+                        // Close the document
+                        document.Close();
+                        MessageBox.Show("Xuất file PDF thành công!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xuất file PDF: {ex.Message}");
+            }
+        }
     }
-}
+} 
+  

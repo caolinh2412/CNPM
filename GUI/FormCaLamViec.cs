@@ -9,7 +9,7 @@ namespace GUI
     public partial class FormCaLamViec : Form
     {
         private string maNV;
-        private BUS_CaLam bus = new BUS_CaLam();      
+        private BUS_CaLam bus = new BUS_CaLam();
         private bool isEditMode = false;
         private int selectedRowIndex = -1;
 
@@ -69,14 +69,14 @@ namespace GUI
                 {
                     DataGridViewRow selectedRow = dgv_CaLam.Rows[e.RowIndex];
                     txt_TenCa.Text = selectedRow.Cells["col_TenCa"].Value.ToString();
-                    dtp_NgayLam.Value = Convert.ToDateTime(selectedRow.Cells["col_NgayLam"].Value);                 
+                    dtp_NgayLam.Value = Convert.ToDateTime(selectedRow.Cells["col_NgayLam"].Value);
                     selectedRowIndex = e.RowIndex;
                     isEditMode = true;
                 }
             }
         }
-   
-       private void btnThemCa_Click(object sender, EventArgs e)
+
+        private void btnThemCa_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_TenCa.Text))
             {
@@ -142,7 +142,7 @@ namespace GUI
             selectedRowIndex = -1;
         }
 
-        private void close_Click(object sender, EventArgs e)
+        private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
