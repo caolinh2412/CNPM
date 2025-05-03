@@ -113,8 +113,7 @@ namespace DAL
                         Direction = ParameterDirection.Output
                     };
                     cmd.Parameters.Add(ketQuaParam);
-
-                    // Thực thi procedure
+                  
                     cmd.ExecuteNonQuery();
 
                     // Lấy kết quả

@@ -18,7 +18,7 @@ namespace CoffeeShopManagementSystem
         private BUS_NhanVien bus = new BUS_NhanVien();
         private BUS_DonHang donHangBUS = new BUS_DonHang();
         private BUS_ThucDon thucDonBUS = new BUS_ThucDon();
-        private BUS_ChiTietDonHang chiTietDonHangBUS = new BUS_ChiTietDonHang();
+        private BUS_ChiTietDonHang chiTietDonHangBUS = new BUS_ChiTietDonHang();       
 
         public UC_TrangChu()
         {
@@ -27,9 +27,11 @@ namespace CoffeeShopManagementSystem
             LoadOrderCount();
             LoadDailyRevenue();
             LoadTotalMenuItemCount();
-            //LoadMonthlyRevenueGunaChart();
-            //LoadTop3MonBanChayPieChart();
+           
+           
         }
+
+
 
         private void LoadEmployeeCount()
         {

@@ -21,7 +21,7 @@ namespace GUI
 {
     public partial class UC_DatHang : UserControl
     {
-        private List<DTO_ThucDon> cachedMenuItems;
+       
         private BUS_ThucDon thucDonBUS;
         private BUS_DanhMuc danhMucBUS;
         private List<UC_Mon> danhSachMon;
@@ -29,8 +29,7 @@ namespace GUI
         private BUS_ChiTietDonHang chiTietBus;
         private BindingList<DTO_ChiTietDonHang> chiTietDonHangs;
         private BUS_CongThuc congThucBUS;
-        private decimal tongTien;
-        public event Action<DTO_ThucDon, int> OnMonDuocChon;
+        private decimal tongTien;       
         private Bitmap memoryimg;
         private PrintDocument printDocument1;
         private PrintPreviewDialog printPreviewDialog1;

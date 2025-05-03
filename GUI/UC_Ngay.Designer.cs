@@ -54,16 +54,17 @@
             // 
             // pnel_Ngay
             // 
+            pnel_Ngay.AutoSize = true;
+            pnel_Ngay.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             pnel_Ngay.BackColor = Color.FromArgb(248, 247, 239);
             pnel_Ngay.BorderStyle = BorderStyle.FixedSingle;
             pnel_Ngay.Controls.Add(lb_ghichu);
             pnel_Ngay.Controls.Add(lb_Ngay);
+            pnel_Ngay.Dock = DockStyle.Fill;
             pnel_Ngay.Location = new Point(0, 0);
             pnel_Ngay.Margin = new Padding(0);
-            pnel_Ngay.MaximumSize = new Size(140, 87);
-            pnel_Ngay.MinimumSize = new Size(140, 87);
             pnel_Ngay.Name = "pnel_Ngay";
-            pnel_Ngay.Size = new Size(140, 87);
+            pnel_Ngay.Size = new Size(141, 87);
             pnel_Ngay.TabIndex = 3;
             // 
             // UC_Ngay
@@ -79,6 +80,7 @@
             pnel_Ngay.ResumeLayout(false);
             pnel_Ngay.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

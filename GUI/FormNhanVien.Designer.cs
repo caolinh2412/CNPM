@@ -226,12 +226,11 @@
             Controls.Add(panelMain);
             Controls.Add(panel1);
             Controls.Add(panel2);
-            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Name = "FormNhanVien";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormNhanVien";
+            Text = "Quán Cafe 24/7";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);

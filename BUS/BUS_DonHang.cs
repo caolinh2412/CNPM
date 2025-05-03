@@ -16,16 +16,17 @@ namespace CoffeeShopManagementSystem.BUS
         {
             _donHangDAL = new DAL_DonHang();
         }
-
+        // Lấy danh sách đơn hàng
         public DataTable LayDanhSachDonHang()
         {
             return _donHangDAL.GetAllDonHangWithTenNV();
         }
+        // Lấy danh sách đơn hàng theo mã nhân viên
         public DTO_DonHang GetDonHangById(string  maDH)
         {
             return _donHangDAL.GetDonHangById(maDH);
         }
-
+        //tạo đơn hàng mới
         public DTO_DonHang TaoDonHang(string maND)
         {
             if (string.IsNullOrEmpty(maND))
@@ -38,6 +39,7 @@ namespace CoffeeShopManagementSystem.BUS
                 TongTien = 0
             };
         }
+        // Thêm đơn hàng và chi tiết đơn hàng
         public bool ThemDonHangVaChiTiet(DTO_DonHang donHang, BindingList<DTO_ChiTietDonHang> chiTietDonHangs, out string maDH)
         {
             if (string.IsNullOrEmpty(donHang.MaNV))
@@ -45,23 +47,29 @@ namespace CoffeeShopManagementSystem.BUS
 
             return _donHangDAL.ThemDonHangVaChiTiet(donHang, chiTietDonHangs, out maDH);
         }
+        // Lấy mã đơn hàng tiếp theo(dùng để tạo mã đơn hàng mới, đảm bảo không trùng lặp)
         public string GetNextMaDH()
         {
             return _donHangDAL.GetNextMaDH();
         }
+        // Cập nhật số lượng tồn kho sau khi tạo đơn hàng có mã là maDH
         public void CapNhatSoLuongTonKho(string maDH)
         {
 
             _donHangDAL.CapNhatSoLuongTonKho(maDH);
         }
+        // Lấy tổng số đơn hàng đã được tạo trong hệ thống
         public int GetTongDH()
         {
             return _donHangDAL.GetTongDH();
         }
+        // Lấy tổng doanh thu trong ngày được truyền vào
         public decimal GetTongDoanhThu(DateTime ngay)
         {
             return _donHangDAL.GetTongDoanhThu(ngay);
         }
+        // Lấy doanh thu của từng tháng trong một năm, trả về Dictionary với:
+        // Key = số tháng (1–12), Value = tổng doanh thu tháng đó
         public Dictionary<int, decimal> GetDoanhThuTheoThang(int nam)
         {          
             return _donHangDAL.GetDoanhThuTheoThang(nam);

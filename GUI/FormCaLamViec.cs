@@ -21,6 +21,7 @@ namespace GUI
             LoadWorkSchedule();
         }
 
+        // Cấu hình DataGridView hiển thị dữ liệu ca làm việc
         private void InitializeDataGridView()
         {
             dgv_CaLam.AutoGenerateColumns = false;
@@ -31,7 +32,7 @@ namespace GUI
             dgv_CaLam.Columns["col_NgayLam"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgv_CaLam.Columns["col_TrangThai"].DataPropertyName = "TrangThai";
 
-            dgv_CaLam.CellClick += dgv_CaLam_CellClick;
+            dgv_CaLam.CellClick += dgv_CaLam_CellClick; // Gắn sự kiện click vào ô
         }
 
         private void LoadWorkSchedule()

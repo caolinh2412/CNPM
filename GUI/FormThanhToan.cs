@@ -195,7 +195,7 @@ namespace GUI
             qr_ThanhToan.Image = qrCode.GetGraphic(5);
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -43,6 +43,15 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin danh mục!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            // Lấy danh sách hiện có để kiểm tra trùng tên
+            List<DTO_DanhMuc> danhMucs = busDanhMuc.LayDanhSachTenDanhMuc();
+            bool tenDaTonTai = danhMucs.Any(dm => dm.TenDM.Equals(tenDM, StringComparison.OrdinalIgnoreCase));
+
+            if (tenDaTonTai)
+            {
+                MessageBox.Show("Tên danh mục đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             try
             {

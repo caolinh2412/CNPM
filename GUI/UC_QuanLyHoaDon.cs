@@ -32,12 +32,10 @@ namespace GUI
         private readonly string ShopAddress = "558/4 Phường 12, Phạm Văn Đồng, TP Hồ Chí Minh";
        
 
-
         public UC_QuanLyHoaDon()
         {
             InitializeComponent();
             KhoiTaoDataGridView();
-            TaiDanhSachHoaDon();
             LoadMonthlyRevenueGunaChart();
             LoadTop3MonBanChayPieChart();
             dgv_DonHang.CellClick += dgv_DonHang_CellClick;
@@ -65,6 +63,8 @@ namespace GUI
             // Thêm sự kiện SelectedIndexChanged
             cb_thang.SelectedIndexChanged += new EventHandler(LocHoaDon);
             cb_nam.SelectedIndexChanged += new EventHandler(LocHoaDon);
+
+            LocHoaDon(null, null);
         }
         private void LocHoaDon(object sender, EventArgs e)
         {
@@ -82,29 +82,21 @@ namespace GUI
                 // Duyệt qua từng hàng và lọc thủ công
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    // Chuyển chuỗi NgayDat thành DateTime với định dạng cụ thể
-                    string ngayDatStr = row["NgayDat"].ToString(); // Chuỗi dạng "4/2/2025 8:46:16 AM"
-                    DateTime ngayDat;
-                    try
+                    string ngayDatStr = row["NgayDat"].ToString();
+                    if (DateTime.TryParse(ngayDatStr, out DateTime ngayDat))
                     {
-                        ngayDat = DateTime.ParseExact(ngayDatStr, "M/d/yyyy h:mm:ss tt", System.Globalization.CultureInfo.InvariantCulture);
                         if (ngayDat.Month == thang && ngayDat.Year == nam)
                         {
                             filteredTable.ImportRow(row);
                         }
                     }
-                    catch (FormatException ex)
-                    {
-                        // Xử lý lỗi nếu chuỗi không đúng định dạng
-                        MessageBox.Show($"Lỗi định dạng ngày tháng: {ngayDatStr}. Chi tiết: {ex.Message}");
-                    }
                 }
 
-                // Gán DataTable đã lọc vào DataGridView
                 dgv_DonHang.DataSource = filteredTable;
                 dgv_CTDH.DataSource = null;
             }
         }
+
         private void KhoiTaoDataGridView()
         {
             dgv_DonHang.AutoGenerateColumns = false;
@@ -121,10 +113,7 @@ namespace GUI
             dgv_CTDH.Columns["col_ThanhTien"].DataPropertyName = "ThanhTien";
         }
 
-        private void TaiDanhSachHoaDon()
-        {
-            dgv_DonHang.DataSource = donHangBUS.LayDanhSachDonHang();
-        }
+        
 
         private void dgv_DonHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -132,7 +121,7 @@ namespace GUI
             {
                 string maDH = dgv_DonHang.Rows[e.RowIndex].Cells["col_MaHD"].Value.ToString();
                 dgv_CTDH.DataSource = chiTietDonHangBUS.LayChiTietDonHangTheoMaDH(maDH);
-            }
+            }         
         }
         private void LoadMonthlyRevenueGunaChart()
         {
@@ -215,7 +204,8 @@ namespace GUI
                 SaveFileDialog saveFileDialog = new SaveFileDialog
                 {
                     Filter = "PDF files (*.pdf)|*.pdf",
-                    Title = "Chọn nơi lưu file báo cáo"
+                    Title = "Chọn nơi lưu file báo cáo",
+                    FileName = $"BaoCaoDoanhThu_{year}.pdf"
                 };
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)

@@ -38,10 +38,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnLogOut = new Button();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -50,12 +50,12 @@
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             btnDanhMuc = new Guna.UI2.WinForms.Guna2Button();
+            btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
             panelMain = new Panel();
             panel2 = new Panel();
             label3 = new Label();
             label2 = new Label();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -238,12 +238,44 @@
             btnDanhMuc.TextOffset = new Point(20, 0);
             btnDanhMuc.Click += btnDanhMuc_Click;
             // 
+            // btnTrangChu
+            // 
+            btnTrangChu.AutoRoundedCorners = true;
+            btnTrangChu.BackColor = Color.FromArgb(63, 29, 18);
+            btnTrangChu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            btnTrangChu.CheckedState.FillColor = Color.Tan;
+            btnTrangChu.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTrangChu.CheckedState.Image = (Image)resources.GetObject("resource.Image4");
+            customizableEdges10.BottomRight = false;
+            customizableEdges10.TopRight = false;
+            btnTrangChu.CustomizableEdges = customizableEdges10;
+            btnTrangChu.DisabledState.BorderColor = Color.DarkGray;
+            btnTrangChu.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnTrangChu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnTrangChu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnTrangChu.FillColor = Color.Transparent;
+            btnTrangChu.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTrangChu.ForeColor = SystemColors.Window;
+            btnTrangChu.Image = (Image)resources.GetObject("btnTrangChu.Image");
+            btnTrangChu.ImageAlign = HorizontalAlignment.Left;
+            btnTrangChu.ImageOffset = new Point(10, 0);
+            btnTrangChu.Location = new Point(6, 208);
+            btnTrangChu.Name = "btnTrangChu";
+            btnTrangChu.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            btnTrangChu.Size = new Size(254, 59);
+            btnTrangChu.TabIndex = 0;
+            btnTrangChu.Text = "Trang Chủ";
+            btnTrangChu.TextAlign = HorizontalAlignment.Left;
+            btnTrangChu.TextOffset = new Point(20, 0);
+            btnTrangChu.Click += btnTrangChu_Click;
+            // 
             // panelMain
             // 
             panelMain.AutoSize = true;
             panelMain.BackColor = SystemColors.ButtonHighlight;
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(260, 64);
+            panelMain.Margin = new Padding(0);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(1088, 733);
             panelMain.TabIndex = 0;
@@ -295,37 +327,6 @@
             guna2PictureBox1.TabIndex = 0;
             guna2PictureBox1.TabStop = false;
             // 
-            // btnTrangChu
-            // 
-            btnTrangChu.AutoRoundedCorners = true;
-            btnTrangChu.BackColor = Color.FromArgb(63, 29, 18);
-            btnTrangChu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btnTrangChu.CheckedState.FillColor = Color.Tan;
-            btnTrangChu.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTrangChu.CheckedState.Image = (Image)resources.GetObject("resource.Image4");
-            customizableEdges10.BottomRight = false;
-            customizableEdges10.TopRight = false;
-            btnTrangChu.CustomizableEdges = customizableEdges10;
-            btnTrangChu.DisabledState.BorderColor = Color.DarkGray;
-            btnTrangChu.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTrangChu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTrangChu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTrangChu.FillColor = Color.Transparent;
-            btnTrangChu.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTrangChu.ForeColor = SystemColors.Window;
-            btnTrangChu.Image = (Image)resources.GetObject("btnTrangChu.Image");
-            btnTrangChu.ImageAlign = HorizontalAlignment.Left;
-            btnTrangChu.ImageOffset = new Point(10, 0);
-            btnTrangChu.Location = new Point(6, 208);
-            btnTrangChu.Name = "btnTrangChu";
-            btnTrangChu.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            btnTrangChu.Size = new Size(254, 59);
-            btnTrangChu.TabIndex = 0;
-            btnTrangChu.Text = "Trang Chủ";
-            btnTrangChu.TextAlign = HorizontalAlignment.Left;
-            btnTrangChu.TextOffset = new Point(20, 0);
-            btnTrangChu.Click += btnTrangChu_Click;
-            // 
             // FormQuanLy
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -335,12 +336,11 @@
             Controls.Add(panelMain);
             Controls.Add(panel1);
             Controls.Add(panel2);
-            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Name = "FormQuanLy";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ManagerForm";
+            Text = "Quán Cafe 24/7";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();

@@ -43,10 +43,11 @@ namespace DAL
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT * FROM DonHang WHERE MaDH = @MaDH";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlCommand cmd = new SqlCommand("sp_GetDonHangById", conn))
                 {
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@MaDH", maDH);
+
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -65,8 +66,6 @@ namespace DAL
             }
             return null;
         }
-
- 
 
         public bool ThemDonHangVaChiTiet(DTO_DonHang donHang, BindingList<DTO_ChiTietDonHang> chiTietDonHangs, out string maDH)
         {

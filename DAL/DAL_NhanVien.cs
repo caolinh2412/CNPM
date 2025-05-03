@@ -19,8 +19,9 @@ namespace DAL
             string maxCode = "NV000";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT MAX(MaNV) FROM NguoiDung";
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand("sp_GetMaNvLonNhat", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
                 connection.Open();
                 var result = command.ExecuteScalar();
                 if (result != DBNull.Value && result != null)
@@ -30,6 +31,7 @@ namespace DAL
             }
             return maxCode;
         }
+
 
         public List<DTO_DangNhap> GetAllEmployees()
         {

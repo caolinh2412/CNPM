@@ -101,6 +101,7 @@
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
             dgv_DanhMuc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgv_DanhMuc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgv_DanhMuc.BackgroundColor = Color.FromArgb(248, 247, 239);
             dgv_DanhMuc.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -193,6 +194,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel1.BackColor = Color.FromArgb(248, 247, 239);
             guna2Panel1.BorderColor = Color.Black;
             guna2Panel1.BorderRadius = 10;
@@ -209,6 +211,7 @@
             // 
             // btn_ThemMon
             // 
+            btn_ThemMon.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_ThemMon.CheckedState.ImageSize = new Size(64, 64);
             btn_ThemMon.HoverState.ImageSize = new Size(64, 64);
             btn_ThemMon.Image = (Image)resources.GetObject("btn_ThemMon.Image");
@@ -224,6 +227,7 @@
             // 
             // btn_ThemDanhMuc
             // 
+            btn_ThemDanhMuc.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_ThemDanhMuc.CheckedState.ImageSize = new Size(64, 64);
             btn_ThemDanhMuc.HoverState.ImageSize = new Size(64, 64);
             btn_ThemDanhMuc.Image = (Image)resources.GetObject("btn_ThemDanhMuc.Image");

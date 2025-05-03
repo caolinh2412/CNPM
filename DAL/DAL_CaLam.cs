@@ -12,15 +12,15 @@ namespace DAL
     public class DAL_CaLam
     {
         private static string connectionString = DBConnection.GetConnectionString();
-
+        // Lay danh sách ca làm việc theo ngày
         public List<DTO_CaLam> GetCaLamTheoNgayVaMaNV(DateTime ngay, string maNV)
         {
             List<DTO_CaLam> list = new List<DTO_CaLam>();
-            string query = "SELECT * FROM LichLamViec WHERE Ngay = @ngay AND MaNV = @maNV";
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand(query, conn);
+                // Gọi stored procedure sp_GetCaLamTheoNgayVaMaNV
+                SqlCommand cmd = new SqlCommand("sp_GetCaLamTheoNgayVaMaNV", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ngay", ngay);
                 cmd.Parameters.AddWithValue("@maNV", maNV);
 
@@ -28,8 +28,9 @@ namespace DAL
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    // Gán dữ liệu đọc được vào đối tượng DTO_CaLam
                     DTO_CaLam caLam = new DTO_CaLam
-                    {
+                    {                    
                         MaLLV = reader["MaLLV"].ToString(),
                         MaNV = reader["MaNV"].ToString(),
                         Ngay = Convert.ToDateTime(reader["Ngay"]),
@@ -42,14 +43,17 @@ namespace DAL
 
             return list;
         }
+        // Lay danh sách ca làm việc theo mã nhân viên
         public List<DTO_CaLam> GetWorkScheduleByEmployeeId(string maNV)
         {
             List<DTO_CaLam> workSchedule = new List<DTO_CaLam>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT MaLLV, MaNV, Ngay, CaLam, TrangThai FROM LichLamViec WHERE MaNV = @MaNV";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaNV", maNV);
+                // Gọi stored procedure
+                SqlCommand command = new SqlCommand("sp_GetWorkScheduleByEmployeeId", connection); 
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@maNV", maNV);
+
                 connection.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -69,16 +73,18 @@ namespace DAL
             }
             return workSchedule;
         }
+        // Insert ca làm việc
         public bool InsertWorkSchedule(DTO_CaLam workSchedule)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    string query = "InsertWorkSchedule";
+                    string query = "InsertWorkSchedule"; // Tên stored procedure
                     SqlCommand command = new SqlCommand(query, connection);
                     command.CommandType = CommandType.StoredProcedure;
 
+                    // Truyền các tham số cho stored procedure
                     command.Parameters.AddWithValue("@MaNV", workSchedule.MaNV);
                     command.Parameters.AddWithValue("@Ngay", workSchedule.Ngay);
                     command.Parameters.AddWithValue("@CaLam", workSchedule.CaLam);
@@ -101,6 +107,7 @@ namespace DAL
                 }
             }
         }
+        // Xóa ca làm việc
         public bool DeleteWorkSchedule(string maLLV)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -109,7 +116,7 @@ namespace DAL
                 {
                     string query = "DeleteWorkSchedule"; // Tên stored procedure
                     SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.CommandType = CommandType.StoredProcedure; // Chỉ định đây là stored procedure
+                    cmd.CommandType = CommandType.StoredProcedure; 
                     cmd.Parameters.AddWithValue("@MaLLV", maLLV);
 
                     conn.Open();
@@ -130,6 +137,7 @@ namespace DAL
                 }
             }
         }
+        // Cập nhật ca làm việc
         public bool UpdateWorkSchedule(DTO_CaLam workSchedule)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -140,6 +148,7 @@ namespace DAL
                     SqlCommand command = new SqlCommand(query, connection);
                     command.CommandType = CommandType.StoredProcedure;
 
+                    // Truyền dữ liệu cần cập nhật
                     command.Parameters.AddWithValue("@MaLLV", workSchedule.MaLLV);
                     command.Parameters.AddWithValue("@MaNV", workSchedule.MaNV);
                     command.Parameters.AddWithValue("@Ngay", workSchedule.Ngay);

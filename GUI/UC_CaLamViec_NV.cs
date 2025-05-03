@@ -12,12 +12,14 @@ namespace GUI
 {
     public partial class uc_CaLamViec_NV : UserControl
     {
-        private int thangHienTai = 4;
-        private int namHienTai = 2025;
+        private int thangHienTai = DateTime.Now.Month; // Current month
+        private int namHienTai = DateTime.Now.Year;
+
         public uc_CaLamViec_NV()
         {
             InitializeComponent();
             DoubleBuffered = true;
+
         }
         private void uc_CaLamViec_NV_Load(object sender, EventArgs e)
         {
@@ -29,16 +31,16 @@ namespace GUI
 
             DateTime firstDay = new DateTime(namHienTai, thangHienTai, 1);
             int soNgay = DateTime.DaysInMonth(namHienTai, thangHienTai);
-            int thuBatDau = ((int)firstDay.DayOfWeek + 6) % 7; 
+            int thuBatDau = ((int)firstDay.DayOfWeek + 6) % 7;
+
 
             for (int i = 0; i < thuBatDau; i++)
             {
                 Panel padding = new Panel
                 {
-                    Width = 135,
-                    Height = 82
+                    Dock = DockStyle.Fill
                 };
-                flp_Lich.Controls.Add(padding);
+                flp_Lich.Controls.Add(padding, i, 0);
             }
 
             for (int d = 1; d <= soNgay; d++)
@@ -46,6 +48,7 @@ namespace GUI
                 DateTime ngay = new DateTime(namHienTai, thangHienTai, d);
                 UC_Ngay ucNgay = new UC_Ngay();
                 ucNgay.SetNgayVaCaLam(ngay);
+                ucNgay.Dock = DockStyle.Fill;
                 flp_Lich.Controls.Add(ucNgay);
             }
             lb_ThangHT.Text = $"Tháng {thangHienTai}";
@@ -72,5 +75,8 @@ namespace GUI
             }
             LoadNgayCuaNhieuThang();
         }
+
     }
 }
+
+  

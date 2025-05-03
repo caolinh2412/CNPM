@@ -21,7 +21,10 @@ namespace GUI
             this.Click += UC_Ngay_Click;
             lb_Ngay.Click += UC_Ngay_Click;
             lb_ghichu.Click += UC_Ngay_Click;
+           
+
         }
+      
         public void SetNgayVaCaLam(DateTime date)
         {
             lb_Ngay.Text = date.Day.ToString();

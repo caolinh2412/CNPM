@@ -106,6 +106,7 @@
             // 
             // flp_ThucDon
             // 
+            flp_ThucDon.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flp_ThucDon.AutoScroll = true;
             flp_ThucDon.BackColor = Color.FromArgb(248, 247, 239);
             flp_ThucDon.BorderStyle = BorderStyle.FixedSingle;
@@ -118,6 +119,7 @@
             // 
             // pnl_HoaDon
             // 
+            pnl_HoaDon.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             pnl_HoaDon.BackColor = Color.White;
             pnl_HoaDon.BorderStyle = BorderStyle.FixedSingle;
             pnl_HoaDon.Controls.Add(lb_MaHD);
@@ -403,6 +405,7 @@
             // 
             // btn_In
             // 
+            btn_In.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btn_In.CustomizableEdges = customizableEdges3;
             btn_In.DisabledState.BorderColor = Color.DarkGray;
             btn_In.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -421,6 +424,7 @@
             // 
             // btn_XoaMon
             // 
+            btn_XoaMon.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_XoaMon.BorderRadius = 12;
             btn_XoaMon.CustomizableEdges = customizableEdges5;
             btn_XoaMon.DisabledState.BorderColor = Color.DarkGray;
@@ -440,6 +444,7 @@
             // 
             // btn_Huy
             // 
+            btn_Huy.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Huy.BorderRadius = 12;
             btn_Huy.CustomizableEdges = customizableEdges7;
             btn_Huy.DisabledState.BorderColor = Color.DarkGray;
@@ -459,6 +464,7 @@
             // 
             // btn_ThanhToan
             // 
+            btn_ThanhToan.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btn_ThanhToan.CustomizableEdges = customizableEdges9;
             btn_ThanhToan.DisabledState.BorderColor = Color.DarkGray;
             btn_ThanhToan.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -501,7 +507,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cb_loaiMon;
         private FlowLayoutPanel flp_ThucDon;
         private Panel pnl_HoaDon;
-        private UC_Mon formMon5;
+        
         private Label label9;
         private Label label2;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_ChiTietHD;

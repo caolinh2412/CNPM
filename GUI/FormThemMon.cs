@@ -35,7 +35,7 @@ namespace GUI
             cb_loaiMon.SelectedIndex = 0;
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }

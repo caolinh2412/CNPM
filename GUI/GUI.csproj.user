@@ -4,6 +4,9 @@
     <Compile Update="frmConfig.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UC_CaLamViec_NV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UC_Mon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -60,9 +63,6 @@
     </Compile>
     <Compile Update="FormNhanVien.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="UC_CaLamViec_NV.cs">
-      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 </Project>

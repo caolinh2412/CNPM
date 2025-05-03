@@ -131,6 +131,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel1.BackColor = Color.FromArgb(248, 247, 239);
             guna2Panel1.BorderColor = Color.Black;
             guna2Panel1.BorderRadius = 10;
@@ -143,15 +144,16 @@
             guna2Panel1.Location = new Point(14, 19);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel1.Size = new Size(644, 596);
+            guna2Panel1.Size = new Size(655, 596);
             guna2Panel1.TabIndex = 2;
             // 
             // dgv_DonHang
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
             dgv_DonHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgv_DonHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dgv_DonHang.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgv_DonHang.BackgroundColor = Color.FromArgb(248, 247, 239);
+            dgv_DonHang.BorderStyle = BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(63, 29, 18);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -172,7 +174,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgv_DonHang.DefaultCellStyle = dataGridViewCellStyle3;
             dgv_DonHang.GridColor = Color.FromArgb(248, 247, 239);
-            dgv_DonHang.Location = new Point(3, 71);
+            dgv_DonHang.Location = new Point(0, 74);
             dgv_DonHang.MultiSelect = false;
             dgv_DonHang.Name = "dgv_DonHang";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -186,7 +188,7 @@
             dgv_DonHang.RowHeadersVisible = false;
             dgv_DonHang.RowHeadersWidth = 51;
             dgv_DonHang.RowTemplate.Height = 29;
-            dgv_DonHang.Size = new Size(639, 522);
+            dgv_DonHang.Size = new Size(655, 522);
             dgv_DonHang.TabIndex = 0;
             dgv_DonHang.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_DonHang.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -212,43 +214,33 @@
             // 
             // col_MaHD
             // 
-            col_MaHD.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             col_MaHD.HeaderText = "Mã hóa đơn";
             col_MaHD.MinimumWidth = 6;
             col_MaHD.Name = "col_MaHD";
-            col_MaHD.Width = 105;
             // 
             // col_NhanVien
             // 
-            col_NhanVien.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             col_NhanVien.HeaderText = "Tên nhân viên";
             col_NhanVien.MinimumWidth = 6;
             col_NhanVien.Name = "col_NhanVien";
-            col_NhanVien.Width = 133;
             // 
             // col_Ngay
             // 
-            col_Ngay.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             col_Ngay.HeaderText = "Ngày thanh toán";
             col_Ngay.MinimumWidth = 6;
             col_Ngay.Name = "col_Ngay";
-            col_Ngay.Width = 145;
             // 
             // col_Tongtien
             // 
-            col_Tongtien.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             col_Tongtien.HeaderText = "Tổng tiền";
             col_Tongtien.MinimumWidth = 6;
             col_Tongtien.Name = "col_Tongtien";
-            col_Tongtien.Width = 135;
             // 
             // col_PhuongThuc
             // 
-            col_PhuongThuc.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             col_PhuongThuc.HeaderText = "Phương thức";
             col_PhuongThuc.MinimumWidth = 6;
             col_PhuongThuc.Name = "col_PhuongThuc";
-            col_PhuongThuc.Width = 120;
             // 
             // cb_thang
             // 
@@ -303,7 +295,9 @@
             // 
             dataGridViewCellStyle5.BackColor = Color.White;
             dgv_CTDH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dgv_CTDH.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgv_CTDH.BackgroundColor = Color.FromArgb(248, 247, 239);
+            dgv_CTDH.BorderStyle = BorderStyle.FixedSingle;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = Color.FromArgb(63, 29, 18);
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -324,13 +318,13 @@
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
             dgv_CTDH.DefaultCellStyle = dataGridViewCellStyle7;
             dgv_CTDH.GridColor = Color.FromArgb(248, 247, 239);
-            dgv_CTDH.Location = new Point(3, 71);
+            dgv_CTDH.Location = new Point(0, 74);
             dgv_CTDH.MultiSelect = false;
             dgv_CTDH.Name = "dgv_CTDH";
             dgv_CTDH.RowHeadersVisible = false;
             dgv_CTDH.RowHeadersWidth = 51;
             dgv_CTDH.RowTemplate.Height = 29;
-            dgv_CTDH.Size = new Size(367, 522);
+            dgv_CTDH.Size = new Size(373, 522);
             dgv_CTDH.TabIndex = 1;
             dgv_CTDH.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgv_CTDH.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -402,9 +396,9 @@
             // 
             // guna2TabControl1
             // 
+            guna2TabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2TabControl1.Controls.Add(tabPage1);
             guna2TabControl1.Controls.Add(tabPage2);
-            guna2TabControl1.Dock = DockStyle.Bottom;
             guna2TabControl1.ItemSize = new Size(180, 40);
             guna2TabControl1.Location = new Point(0, 49);
             guna2TabControl1.Name = "guna2TabControl1";
@@ -444,6 +438,7 @@
             // 
             // guna2Panel2
             // 
+            guna2Panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             guna2Panel2.BackColor = Color.FromArgb(248, 247, 239);
             guna2Panel2.BorderColor = Color.Black;
             guna2Panel2.BorderRadius = 10;
@@ -472,6 +467,7 @@
             // 
             // gunaChart_Mon
             // 
+            gunaChart_Mon.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             gunaChart_Mon.BorderStyle = BorderStyle.FixedSingle;
             chartFont1.FontName = "Arial";
             gunaChart_Mon.Legend.LabelFont = chartFont1;
@@ -512,6 +508,7 @@
             // 
             // gunaChart_dtThang
             // 
+            gunaChart_dtThang.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             gunaChart_dtThang.BorderStyle = BorderStyle.FixedSingle;
             chartFont9.FontName = "Arial";
             gunaChart_dtThang.Legend.LabelFont = chartFont9;
@@ -550,6 +547,7 @@
             // 
             // guna2Panel3
             // 
+            guna2Panel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2Panel3.BackColor = Color.White;
             guna2Panel3.BorderColor = Color.Black;
             guna2Panel3.BorderRadius = 10;
@@ -618,7 +616,7 @@
             Controls.Add(label1);
             Controls.Add(guna2TabControl1);
             Name = "UC_QuanLyHoaDon";
-            Size = new Size(1087, 730);
+            Size = new Size(1090, 733);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_DonHang).EndInit();
@@ -651,11 +649,6 @@
         private Guna.Charts.WinForms.GunaChart gunaChart_Mon;
         private Guna.Charts.WinForms.GunaChart gunaChart_dtThang;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private DataGridViewTextBoxColumn col_MaHD;
-        private DataGridViewTextBoxColumn col_NhanVien;
-        private DataGridViewTextBoxColumn col_Ngay;
-        private DataGridViewTextBoxColumn col_Tongtien;
-        private DataGridViewTextBoxColumn col_PhuongThuc;
         private DataGridViewTextBoxColumn col_TenMon;
         private DataGridViewTextBoxColumn col_SL;
         private DataGridViewTextBoxColumn col_DonGia;
@@ -664,5 +657,10 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Label label3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private DataGridViewTextBoxColumn col_MaHD;
+        private DataGridViewTextBoxColumn col_NhanVien;
+        private DataGridViewTextBoxColumn col_Ngay;
+        private DataGridViewTextBoxColumn col_Tongtien;
+        private DataGridViewTextBoxColumn col_PhuongThuc;
     }
 }

@@ -17,16 +17,14 @@ namespace DAL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = @"INSERT INTO ChiTietDonHang (MaDH, TenMon, SoLuong, Gia) 
-                                   VALUES (@MaDH, @TenMon, @SoLuong, @Gia)";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlCommand cmd = new SqlCommand("sp_ThemChiTietDonHang", conn))
                     {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
                         cmd.Parameters.AddWithValue("@MaDH", chiTietDH.MaDH);
                         cmd.Parameters.AddWithValue("@TenMon", chiTietDH.TenMon);
                         cmd.Parameters.AddWithValue("@SoLuong", chiTietDH.SoLuong);
                         cmd.Parameters.AddWithValue("@Gia", chiTietDH.Gia);
-                       
 
                         return cmd.ExecuteNonQuery() > 0;
                     }

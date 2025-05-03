@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThemMon));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pic_Mon = new PictureBox();
             btn_ChonAnh = new Button();
             label9 = new Label();
@@ -48,7 +48,7 @@
             txt_TenMon = new Guna.UI2.WinForms.Guna2TextBox();
             cb_loaiMon = new Guna.UI2.WinForms.Guna2ComboBox();
             panel1 = new Panel();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btn_close = new Guna.UI2.WinForms.Guna2Button();
             btn_Luu = new Guna.UI2.WinForms.Guna2Button();
             panel2 = new Panel();
             txt_GiaMon = new Guna.UI2.WinForms.Guna2TextBox();
@@ -130,7 +130,7 @@
             // 
             txt_TenMon.BorderColor = Color.FromArgb(63, 29, 18);
             txt_TenMon.BorderRadius = 10;
-            txt_TenMon.CustomizableEdges = customizableEdges1;
+            txt_TenMon.CustomizableEdges = customizableEdges11;
             txt_TenMon.DefaultText = "";
             txt_TenMon.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txt_TenMon.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -145,7 +145,7 @@
             txt_TenMon.Name = "txt_TenMon";
             txt_TenMon.PlaceholderText = "";
             txt_TenMon.SelectedText = "";
-            txt_TenMon.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txt_TenMon.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txt_TenMon.Size = new Size(236, 37);
             txt_TenMon.TabIndex = 0;
             // 
@@ -154,7 +154,7 @@
             cb_loaiMon.BackColor = Color.Transparent;
             cb_loaiMon.BorderColor = Color.FromArgb(63, 29, 18);
             cb_loaiMon.BorderRadius = 10;
-            cb_loaiMon.CustomizableEdges = customizableEdges3;
+            cb_loaiMon.CustomizableEdges = customizableEdges13;
             cb_loaiMon.DrawMode = DrawMode.OwnerDrawFixed;
             cb_loaiMon.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_loaiMon.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -164,14 +164,14 @@
             cb_loaiMon.ItemHeight = 30;
             cb_loaiMon.Location = new Point(31, 260);
             cb_loaiMon.Name = "cb_loaiMon";
-            cb_loaiMon.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            cb_loaiMon.ShadowDecoration.CustomizableEdges = customizableEdges14;
             cb_loaiMon.Size = new Size(236, 36);
             cb_loaiMon.TabIndex = 2;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(63, 29, 18);
-            panel1.Controls.Add(guna2Button1);
+            panel1.Controls.Add(btn_close);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(btn_Luu);
             panel1.Controls.Add(panel2);
@@ -181,29 +181,29 @@
             panel1.Size = new Size(476, 53);
             panel1.TabIndex = 28;
             // 
-            // guna2Button1
+            // btn_close
             // 
-            guna2Button1.BorderRadius = 12;
-            guna2Button1.CustomizableEdges = customizableEdges5;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(248, 247, 239);
-            guna2Button1.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.FromArgb(63, 29, 18);
-            guna2Button1.Location = new Point(378, 12);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button1.Size = new Size(86, 29);
-            guna2Button1.TabIndex = 30;
-            guna2Button1.Text = "Thoát";
-            guna2Button1.Click += guna2Button1_Click;
+            btn_close.BorderRadius = 12;
+            btn_close.CustomizableEdges = customizableEdges15;
+            btn_close.DisabledState.BorderColor = Color.DarkGray;
+            btn_close.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_close.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_close.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_close.FillColor = Color.FromArgb(248, 247, 239);
+            btn_close.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_close.ForeColor = Color.FromArgb(63, 29, 18);
+            btn_close.Location = new Point(378, 12);
+            btn_close.Name = "btn_close";
+            btn_close.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btn_close.Size = new Size(86, 29);
+            btn_close.TabIndex = 30;
+            btn_close.Text = "Thoát";
+            btn_close.Click += btn_close_Click;
             // 
             // btn_Luu
             // 
             btn_Luu.BorderRadius = 12;
-            btn_Luu.CustomizableEdges = customizableEdges7;
+            btn_Luu.CustomizableEdges = customizableEdges17;
             btn_Luu.DisabledState.BorderColor = Color.DarkGray;
             btn_Luu.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_Luu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -213,7 +213,7 @@
             btn_Luu.ForeColor = Color.FromArgb(63, 29, 18);
             btn_Luu.Location = new Point(272, 12);
             btn_Luu.Name = "btn_Luu";
-            btn_Luu.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btn_Luu.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btn_Luu.Size = new Size(86, 29);
             btn_Luu.TabIndex = 4;
             btn_Luu.Text = "Lưu";
@@ -232,7 +232,7 @@
             // 
             txt_GiaMon.BorderColor = Color.FromArgb(63, 29, 18);
             txt_GiaMon.BorderRadius = 10;
-            txt_GiaMon.CustomizableEdges = customizableEdges9;
+            txt_GiaMon.CustomizableEdges = customizableEdges19;
             txt_GiaMon.DefaultText = "";
             txt_GiaMon.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txt_GiaMon.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -247,7 +247,7 @@
             txt_GiaMon.Name = "txt_GiaMon";
             txt_GiaMon.PlaceholderText = "";
             txt_GiaMon.SelectedText = "";
-            txt_GiaMon.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txt_GiaMon.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txt_GiaMon.Size = new Size(236, 37);
             txt_GiaMon.TabIndex = 1;
             // 
@@ -265,7 +265,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 247, 239);
-            CancelButton = guna2Button1;
+            CancelButton = btn_close;
             ClientSize = new Size(476, 322);
             Controls.Add(txt_GiaMon);
             Controls.Add(cb_loaiMon);
@@ -301,7 +301,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cb_loaiMon;
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2TextBox txt_GiaMon;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_close;
         private Guna.UI2.WinForms.Guna2Button btn_Luu;
         private Panel panel2;
         private Panel panel3;

@@ -43,7 +43,6 @@ CREATE TABLE NguyenLieu (
 );
 
 -- Bảng Đơn Hàng
-
 CREATE TABLE DonHang (
     MaDH NVARCHAR(10) PRIMARY KEY, -- Shortened to 10
     NgayDat DATETIME DEFAULT GETDATE(),
@@ -54,7 +53,6 @@ CREATE TABLE DonHang (
 );
 
 -- Bảng Chi Tiết Đơn Hàng
-
 CREATE TABLE ChiTietDonHang (
     MaCTDH NVARCHAR(10) PRIMARY KEY,
     MaDH NVARCHAR(10) NOT NULL,
@@ -119,6 +117,13 @@ AS
 BEGIN
     UPDATE NguoiDung SET Password = @Password WHERE Email = @Email  AND TrangThai = N'Hoạt động'
 END
+
+CREATE PROCEDURE sp_GetMaNvLonNhat
+AS
+BEGIN
+    SELECT MAX(MaNV) AS MaxMaNV FROM NguoiDung
+END
+GO
 
 
 --Lấy thông tin tất cả nhân viên 
@@ -242,6 +247,30 @@ BEGIN
         TrangThai = @TrangThai 
     WHERE MaLLV = @MaLLV;
 END;
+
+-- Thủ tục lấy ca làm việc theo ngày và mã nhân viên
+CREATE PROCEDURE sp_GetCaLamTheoNgayVaMaNV
+    @ngay DATE,
+    @maNV NVARCHAR(50)
+AS
+BEGIN
+    SELECT MaLLV, MaNV, Ngay, CaLam, TrangThai
+    FROM LichLamViec
+    WHERE Ngay = @ngay AND MaNV = @maNV
+END
+GO
+
+-- Thủ tục lấy toàn bộ lịch làm việc theo mã nhân viên
+CREATE PROCEDURE sp_GetWorkScheduleByEmployeeId
+    @maNV NVARCHAR(50)
+AS
+BEGIN
+    SELECT MaLLV, MaNV, Ngay, CaLam, TrangThai
+    FROM LichLamViec
+    WHERE MaNV = @maNV
+END
+GO
+
 
 --Đếm nhân viên
 CREATE PROCEDURE DemNv
@@ -474,6 +503,20 @@ BEGIN
     FROM Menu
 END;
 
+
+CREATE PROCEDURE sp_ThemChiTietDonHang
+    @MaDH NVARCHAR(50),
+    @TenMon NVARCHAR(100),
+    @SoLuong INT,
+    @Gia DECIMAL(18, 2)
+AS
+BEGIN
+    INSERT INTO ChiTietDonHang (MaDH, TenMon, SoLuong, Gia)
+    VALUES (@MaDH, @TenMon, @SoLuong, @Gia)
+END
+GO
+
+
 -- Thêm đơn hàng và chi tiết đơn hàng 
 CREATE TYPE ChiTietDonHangType AS TABLE (	
     MaMon NVARCHAR(10),  
@@ -481,39 +524,45 @@ CREATE TYPE ChiTietDonHangType AS TABLE (
     SoLuong INT,
     Gia DECIMAL(10,2)
 );
-CREATE PROCEDURE sp_ThemDonHangVaChiTiet
+
+CREATE OR ALTER PROCEDURE sp_ThemDonHangVaChiTiet
     @NgayDat DATETIME,
     @MaNV NVARCHAR(10),
     @ChiTietDonHang AS ChiTietDonHangType READONLY,
     @MaDH NVARCHAR(10) OUTPUT,
-	@PhuongThuc NVARCHAR(20) 
+    @PhuongThuc NVARCHAR(20)
 AS
 BEGIN
     SET NOCOUNT ON;
     BEGIN TRY
         BEGIN TRANSACTION;
 
+        -- Tạo MaDH
         DECLARE @NextMaDH INT;
-        SELECT @NextMaDH = ISNULL(MAX(CAST(SUBSTRING(MaDH, 3, LEN(MaDH) - 2) AS INT)), 0) + 1
+        SELECT @NextMaDH = ISNULL(MAX(CAST(SUBSTRING(MaDH, 3, LEN(MaDH)) AS INT)), 0) + 1
         FROM DonHang;
-        SET @MaDH = 'DH' + RIGHT('000' + CAST(@NextMaDH AS NVARCHAR(3)), 3);
+        SET @MaDH = 'DH' + RIGHT('00000000' + CAST(@NextMaDH AS NVARCHAR(8)), 8);
 
-        DECLARE @TongTien DECIMAL(18,0);
+        -- Tính tổng tiền
+        DECLARE @TongTien DECIMAL(18, 0);
         SELECT @TongTien = SUM(SoLuong * Gia)
         FROM @ChiTietDonHang;
 
+        -- Thêm vào bảng DonHang
         INSERT INTO DonHang (MaDH, NgayDat, MaNV, TongTien, PhuongThuc)
         VALUES (@MaDH, @NgayDat, @MaNV, @TongTien, @PhuongThuc);
 
+        -- Tạo MaCTDH
         DECLARE @MaxChiTietID INT;
-        SELECT @MaxChiTietID = ISNULL(MAX(CAST(SUBSTRING(MaCTDH, 3, LEN(MaCTDH) - 2) AS INT)), 0)
+        SELECT @MaxChiTietID = ISNULL(MAX(CAST(SUBSTRING(MaCTDH, 3, LEN(MaCTDH)) AS INT)), 0)
         FROM ChiTietDonHang;
-        INSERT INTO ChiTietDonHang (MaCTDH, MaDH, MaMon,TenMon, SoLuong, Gia)
+
+        INSERT INTO ChiTietDonHang (MaCTDH, MaDH, MaMon, TenMon, SoLuong, Gia)
         SELECT 
-            'CT' + RIGHT('000' + CAST(ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) + @MaxChiTietID AS NVARCHAR(3)), 3),
+            'CT' + RIGHT('00000000' + CAST(ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) + @MaxChiTietID AS NVARCHAR(8)), 8),
             @MaDH,
             MaMon,
-			TenMon,
+            TenMon,
             SoLuong,
             Gia
         FROM @ChiTietDonHang;
@@ -526,8 +575,19 @@ BEGIN
     END CATCH;
 END;
 
+CREATE PROCEDURE sp_GetDonHangById
+    @MaDH NVARCHAR(50)
+AS
+BEGIN
+    SELECT MaDH, NgayDat, MaNV, TongTien, PhuongThuc
+    FROM DonHang
+    WHERE MaDH = @MaDH
+END
+GO
+
+
 --Lấy mã đơn hàng tiếp theo 
-CREATE  PROCEDURE sp_LayMaDonHangTiepTheo
+CREATE OR ALTER PROCEDURE sp_LayMaDonHangTiepTheo
     @MaDH NVARCHAR(10) OUTPUT
 AS
 BEGIN
@@ -536,20 +596,19 @@ BEGIN
     DECLARE @LastMaDH NVARCHAR(10);
     DECLARE @Number INT;
 
+    -- Get the latest MaDH
     SELECT TOP 1 @LastMaDH = MaDH
     FROM DonHang
     ORDER BY MaDH DESC;
 
     IF @LastMaDH IS NULL
-    BEGIN
-        SET @MaDH = 'DH001';
-    END
+        SET @MaDH = 'DH00000001';
     ELSE
     BEGIN
-        SET @Number = CAST(SUBSTRING(@LastMaDH, 3, LEN(@LastMaDH)) AS INT) + 1;
-        SET @MaDH = 'DH' + RIGHT('000' + CAST(@Number AS NVARCHAR(3)), 3);
+        SET @Number = CAST(SUBSTRING(@LastMaDH, 3, LEN(@LastMaDH) - 2) AS INT) + 1;
+        SET @MaDH = 'DH' + RIGHT('00000000' + CAST(@Number AS NVARCHAR(8)), 8);
     END
-END
+END;
 
 
 --Lấy toàn bộ đơn hàng 

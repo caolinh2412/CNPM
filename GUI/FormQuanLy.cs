@@ -42,6 +42,7 @@ namespace CoffeeShopManagementSystem
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             ShowUserControl(new UC_QuanLyNV()); // Hiển thị UserControl UC_QuanLyNV
+
         }
 
         // Sự kiện khi nhấn nút "Đăng xuất"
