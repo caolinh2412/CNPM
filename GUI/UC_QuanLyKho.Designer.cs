@@ -328,7 +328,7 @@
             txt_MaNL.SelectedText = "";
             txt_MaNL.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txt_MaNL.Size = new Size(254, 27);
-            txt_MaNL.TabIndex = 10;
+            txt_MaNL.TabIndex = 20;
             // 
             // label4
             // 
@@ -773,6 +773,7 @@
             // 
             // dgv_CongThuc
             // 
+            dgv_CongThuc.AllowUserToAddRows = false;
             dataGridViewCellStyle7.BackColor = Color.White;
             dgv_CongThuc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             dgv_CongThuc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;

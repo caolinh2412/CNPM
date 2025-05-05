@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>—Pngtree—simple-coffee-shop-logo_16099189.ico</ApplicationIcon>
+    <ApplicationIcon>logo.png.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="—Pngtree—simple-coffee-shop-logo_16099189.ico" />
+    <Content Include="logo.png.ico" />
   </ItemGroup>
 
   <ItemGroup>

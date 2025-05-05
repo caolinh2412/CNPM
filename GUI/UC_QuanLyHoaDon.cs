@@ -27,6 +27,8 @@ namespace GUI
     {
         private BUS_DonHang donHangBUS = new BUS_DonHang();
         private BUS_ChiTietDonHang chiTietDonHangBUS = new BUS_ChiTietDonHang();
+
+        // Thông tin quán cà phê
         private readonly string ShopName = "Coffee 24/7";
         private readonly string OwnerName = "Nguyen Văn A";
         private readonly string ShopAddress = "558/4 Phường 12, Phạm Văn Đồng, TP Hồ Chí Minh";
@@ -34,6 +36,7 @@ namespace GUI
 
         public UC_QuanLyHoaDon()
         {
+            // Khởi tạo các thành phần giao diện
             InitializeComponent();
             KhoiTaoDataGridView();
             LoadMonthlyRevenueGunaChart();
@@ -96,7 +99,7 @@ namespace GUI
                 dgv_CTDH.DataSource = null;
             }
         }
-
+        // Hàm này dùng để khởi tạo DataGridView
         private void KhoiTaoDataGridView()
         {
             dgv_DonHang.AutoGenerateColumns = false;
@@ -113,8 +116,7 @@ namespace GUI
             dgv_CTDH.Columns["col_ThanhTien"].DataPropertyName = "ThanhTien";
         }
 
-        
-
+        // Xử lý sự kiện khi click vào dòng trong DataGridView
         private void dgv_DonHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -123,6 +125,7 @@ namespace GUI
                 dgv_CTDH.DataSource = chiTietDonHangBUS.LayChiTietDonHangTheoMaDH(maDH);
             }         
         }
+        // Hàm này dùng để tải dữ liệu vào GunaChart
         private void LoadMonthlyRevenueGunaChart()
         {
             try
@@ -154,6 +157,7 @@ namespace GUI
                 MessageBox.Show($"Lỗi khi vẽ biểu đồ doanh thu theo tháng: {ex.Message}");
             }
         }
+        // Hàm này dùng để tải dữ liệu vào biểu đồ tròn cho top 3 món bán chạy
         private void LoadTop3MonBanChayPieChart()
         {
             try
@@ -192,7 +196,7 @@ namespace GUI
             }
         }
 
-
+        // Xuất báo cáo doanh thu theo năm ra file PDF
         private void btn_in_Click(object sender, EventArgs e)
         {
             try
@@ -212,22 +216,22 @@ namespace GUI
                 {
                     string filePath = saveFileDialog.FileName;
 
-                    // Initialize the PDF writer and document
+                    // Tạo file PDF
                     using (var writer = new PdfWriter(filePath))
                     using (var pdf = new PdfDocument(writer))
                     {
                         var document = new Document(pdf);
 
-                        // Load font with Vietnamese support
+                        //cài đặt font
                         string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Arial.ttf");
                         var font = PdfFontFactory.CreateFont(fontPath, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
                         string LogoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logo", "logo.png");
 
-                        // Set font for the entire document
-                        var paragraphFont = font;  // Set the font for all paragraphs
-                        var cellFont = font; // Set the font for all cells
+                        //
+                        var paragraphFont = font;  
+                        var cellFont = font;
 
-                        // Add logo (if exists)
+                        //thêm logo
                         if (File.Exists(LogoPath))
                         {
                             var image = new iText.Layout.Element.Image(iText.IO.Image.ImageDataFactory.Create(LogoPath));
@@ -236,7 +240,7 @@ namespace GUI
                             document.Add(image);
                         }
 
-                        // Shop info
+                        //thêm thông tin quán
                         document.Add(new Paragraph(ShopName)
                             .SetFont(paragraphFont).SetFontSize(18).SetTextAlignment(TextAlignment.CENTER).SetBold());
 
@@ -247,11 +251,11 @@ namespace GUI
                         document.Add(new Paragraph($"Ngày in báo cáo: {DateTime.Now:dd/MM/yyyy HH:mm:ss}")
                             .SetFont(paragraphFont).SetFontSize(10).SetTextAlignment(TextAlignment.CENTER).SetMarginBottom(20));
 
-                        // Report title
+                        // Tiêu đề báo cáo
                         document.Add(new Paragraph($"BÁO CÁO DOANH THU NĂM {year}")
                             .SetFont(paragraphFont).SetFontSize(18).SetTextAlignment(TextAlignment.CENTER).SetMarginBottom(20));
 
-                        // Revenue Table
+                        // Doanh thu theo tháng
                         var revenueTable = new Table(2).UseAllAvailableWidth().SetMarginBottom(20);
                         revenueTable.AddHeaderCell(new Cell().Add(new Paragraph("Tháng").SetBold().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(TextAlignment.CENTER).SetFont(cellFont)));
                         revenueTable.AddHeaderCell(new Cell().Add(new Paragraph("Doanh thu (VNĐ)").SetBold().SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetTextAlignment(TextAlignment.CENTER).SetFont(cellFont)));

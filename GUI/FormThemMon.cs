@@ -14,39 +14,44 @@ namespace GUI
 {
     public partial class FormThemMon : Form
     {
+        // Biến dùng để lưu thông tin món đang được chỉnh sửa (nếu có)
         private DTO_ThucDon monDangSua = null;
-        private BUS_DanhMuc bus1 = new BUS_DanhMuc();
-        private string selectedImagePath = "";
 
+        // Đối tượng BUS dùng để xử lý danh mục món ăn
+        private BUS_DanhMuc bus1 = new BUS_DanhMuc();
+
+        // Biến lưu đường dẫn ảnh đã chọn
+        private string selectedImagePath = "";
         public FormThemMon()
         {
             InitializeComponent();
-            LoadLoaiMon();
+            LoadLoaiMon(); // Tải danh sách loại món vào combobox
         }
 
+        // Tải danh sách loại món từ cơ sở dữ liệu và gán vào combobox
         private void LoadLoaiMon()
         {
             List<DTO_DanhMuc> loaiMonList = bus1.LayDanhSachTenDanhMuc();
 
             cb_loaiMon.Items.Clear();
             cb_loaiMon.DataSource = loaiMonList;
-            cb_loaiMon.DisplayMember = "TenDM"; 
-            cb_loaiMon.ValueMember = "MaDM";     
+            cb_loaiMon.DisplayMember = "TenDM"; // Hiển thị tên danh mục
+            cb_loaiMon.ValueMember = "MaDM";    // Lưu mã danh mục     
             cb_loaiMon.SelectedIndex = 0;
         }
-
+        // Đóng form khi nhấn nút close
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        // Xử lý sự kiện khi nhấn nút chọn ảnh
         private void btn_ChonAnh_Click(object sender, EventArgs e)
         {        
             OpenFileDialog ofd = new OpenFileDialog
             {
                 Filter = "Image Files (*.jpg;*.png;*.bmp)|*.jpg;*.png;*.bmp"
             };
-
+            // Hiển thị hộp thoại chọn file ảnh
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 string sourcePath = ofd.FileName;
@@ -65,14 +70,14 @@ namespace GUI
                 selectedImagePath = Path.Combine("img", fileName); // lưu đường dẫn tương đối
             }
         }
-        
-
+        // Xử lý sự kiện khi nhấn nút lưu món
         private void btn_Luu_Click(object sender, EventArgs e)
         {
             string tenMon = txt_TenMon.Text.Trim();
             string maDanhMuc = cb_loaiMon.SelectedValue?.ToString();           
             string hinhAnh = selectedImagePath ?? "";
 
+            // Kiểm tra dữ liệu đầu vào
             if (string.IsNullOrEmpty(tenMon) || string.IsNullOrEmpty(maDanhMuc))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ tên món và loại món!");
@@ -83,9 +88,9 @@ namespace GUI
             {
                 MessageBox.Show("Giá món không hợp lệ!");
                 return;
-            }      
-
-            DTO.DTO_ThucDon thucDon = new DTO.DTO_ThucDon
+            }
+            // Tạo đối tượng món ăn
+            DTO_ThucDon thucDon = new DTO_ThucDon
             {
                 TenMon = tenMon,              
                 Gia = gia,
@@ -108,7 +113,7 @@ namespace GUI
                     MessageBox.Show("Thêm món thất bại!");
                 }
             }
-            else 
+            else // Cập nhật món đang sửa
             {
                 thucDon.MaMon = monDangSua.MaMon;
                 result = bus.UpdateMon(thucDon);
@@ -124,6 +129,7 @@ namespace GUI
                 }
             }
         }
+        // Đặt lại các trường nhập liệu về trạng thái mặc định
         private void ResetFields()
         {
             txt_TenMon.Text = "";
@@ -132,6 +138,7 @@ namespace GUI
             pic_Mon.Image = null;
             selectedImagePath = "";
         }
+        // Xử lý sự kiện khi nhấn nút xóa ảnh
         public void LoadMon(DTO_ThucDon mon)
         {
             try

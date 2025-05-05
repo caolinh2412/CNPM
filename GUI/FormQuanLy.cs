@@ -21,7 +21,7 @@ namespace CoffeeShopManagementSystem
         // Phương thức để hiển thị UserControl trong panelMain
         private void ShowUserControl(UserControl control)
         {
-            
+
             panelMain.Controls.Clear(); // Xóa các điều khiển hiện tại trong panelMain
             control.Dock = DockStyle.Fill;   //Đặt điều khiển mới vào panelMain
             panelMain.Controls.Add(control);    //Thêm điều khiển mới vào panelMain
@@ -48,8 +48,8 @@ namespace CoffeeShopManagementSystem
         // Sự kiện khi nhấn nút "Đăng xuất"
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
-            FormDangNhap signInForm = new FormDangNhap(); 
+            this.Close(); // Đóng form hiện tại
+            FormDangNhap signInForm = new FormDangNhap();
             signInForm.Show(); // Hiển thị form đăng nhập
         }
 

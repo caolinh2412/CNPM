@@ -298,9 +298,11 @@
             // 
             // FormCaLamViec
             // 
+            AcceptButton = btnThemCa;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
+            CancelButton = btn_close;
             ClientSize = new Size(481, 322);
             Controls.Add(panel1);
             Controls.Add(guna2Panel1);

@@ -5759,11 +5759,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\GUI.csproj",
+      "projectUniqueName": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\GUI\\GUI.csproj",
       "projectName": "GUI",
-      "projectPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\GUI.csproj",
+      "projectPath": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\GUI\\GUI.csproj",
       "packagesPath": "C:\\Users\\THUY_LINH\\.nuget\\packages\\",
-      "outputPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\obj\\",
+      "outputPath": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\GUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5784,14 +5784,14 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows7.0",
           "projectReferences": {
-            "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\BUS.csproj": {
-              "projectPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\BUS.csproj"
+            "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\BUS\\BUS.csproj": {
+              "projectPath": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\BUS\\BUS.csproj"
             },
-            "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DAL.csproj"
+            "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\DAL\\DAL.csproj"
             },
-            "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DTO.csproj": {
-              "projectPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DTO.csproj"
+            "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\DTO\\DTO.csproj": {
+              "projectPath": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\DTO\\DTO.csproj"
             }
           }
         }

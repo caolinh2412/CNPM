@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using CoffeeShopManagementSystem.BUS;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -17,6 +18,7 @@ namespace GUI
         public bool DaThanhToan { get; private set; } = false;
         public string PhuongThucThanhToan { get; set; }
 
+        // Constructor, nhận vào form đặt hàng
         public FormThanhToan(UC_DatHang formDatHang)
         {
             InitializeComponent();
@@ -25,13 +27,15 @@ namespace GUI
             donHangBUS = new BUS_DonHang();
             this.formDatHang = formDatHang;
 
-
+            // Hiển thị thông tin hệ thống
             HienThiThongTinHeThong();
             pic_momoLogo.Click += Pic_momoLogo_Click;
             pic_zaloLogo.Click += Pic_zaloLogo_Click;
 
+            // Hiển thị tổng tiền từ form đặt hàng
             lb_Tong.Text = formDatHang.TongTien.ToString("N0") + " VNĐ";
 
+            // Đăng ký sự kiện thay đổi của các radio button
             rdoChuyenKhoan.CheckedChanged += Radio_CheckedChanged;
             rdoTienMat.CheckedChanged += Radio_CheckedChanged;
 
@@ -39,12 +43,13 @@ namespace GUI
             pic_momoLogo.Enabled = false;
             pic_zaloLogo.Enabled = false;
         }
-
+        // Hàm hiển thị thông tin hệ thống (Mã đơn hàng)
         private void HienThiThongTinHeThong()
         {
             lb_MaDH.Text = donHangBUS.GetNextMaDH();
         }
 
+        // Hàm xử lý khi click logo MoMo
         private async void Pic_momoLogo_Click(object sender, EventArgs e)
         {
             string endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
@@ -59,6 +64,7 @@ namespace GUI
             string requestId = Guid.NewGuid().ToString();
             string extraData = "";
 
+            // Tạo chuỗi rawHash để tạo chữ ký
             string rawHash = $"accessKey={accessKey}&amount={amount}&extraData={extraData}&ipnUrl={ipnUrl}" +
                              $"&orderId={orderId}&orderInfo={orderInfo}&partnerCode={partnerCode}" +
                              $"&redirectUrl={redirectUrl}&requestId={requestId}&requestType=captureWallet";
@@ -92,6 +98,7 @@ namespace GUI
 
                 if (!string.IsNullOrEmpty(payUrl))
                 {
+                    // Hiển thị QR code thanh toán
                     ShowQRCode(payUrl);
                 }
                 else
@@ -100,14 +107,15 @@ namespace GUI
                 }
             }
         }
-
+        // Hàm xử lý khi click logo ZaloPay
         private async void Pic_zaloLogo_Click(object sender, EventArgs e)
         {
             try
             {
                 string endpoint = "https://sb-openapi.zalopay.vn/v2/create";
-                string appId = "2553"; // Valid Sandbox AppID
-                string key1 = "PcY4iZIKFCIdgZvA6ueMcMHHUbRLYjPL"; // Valid Sandbox Key1
+                string appId = "2553"; // AppID của ZaloPay (Chỉ dành cho Sandbox)
+                string key1 = "PcY4iZIKFCIdgZvA6ueMcMHHUbRLYjPL"; // Key1 của ZaloPay(Chỉ dành cho Sandbox)
+
 
                 int totalAmount = (int)formDatHang.TongTien;
                 if (totalAmount <= 0)
@@ -125,7 +133,7 @@ namespace GUI
                 string description = $"Thanh toán đơn hàng quán cà phê 24/7 #{appTransId}";
                 string bankCode = "zalopayapp";
 
-                // Create data for HMAC signature
+                // Tạo dữ liệu cho chữ ký HMAC
                 string data = $"{appId}|{appTransId}|{appUser}|{totalAmount}|{appTime}|{JsonConvert.SerializeObject(embedData)}|{JsonConvert.SerializeObject(items)}";
                 string mac = CreateSignature(key1, data);
 
@@ -157,6 +165,7 @@ namespace GUI
                         string qrCodeUrl = json["order_url"]?.ToString();
                         if (!string.IsNullOrEmpty(qrCodeUrl))
                         {
+                            // Hiển thị QR code thanh toán
                             ShowQRCode(qrCodeUrl);
                         }
                         else
@@ -177,7 +186,7 @@ namespace GUI
                 MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        // Hàm tạo chữ ký HMACSHA256
         private string CreateSignature(string key, string data)
         {
             using (var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(key)))
@@ -186,7 +195,7 @@ namespace GUI
                 return BitConverter.ToString(hash).Replace("-", "").ToLower();
             }
         }
-
+        // Hàm hiển thị QR code từ URL
         private void ShowQRCode(string url)
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
@@ -194,11 +203,13 @@ namespace GUI
             QRCode qrCode = new QRCode(qrCodeData);
             qr_ThanhToan.Image = qrCode.GetGraphic(5);
         }
-
+        // Hàm đóng form thanh toán
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        // Hàm xử lý khi thay đổi trạng thái radio button
         private void Radio_CheckedChanged(object sender, EventArgs e)
         {
             if (rdoChuyenKhoan.Checked)
@@ -215,7 +226,7 @@ namespace GUI
             }
         }
 
-
+        // Hàm xử lý khi nhấn nút thanh toán
         private void btn_thanhToan_Click(object sender, EventArgs e)
         {
             if (rdoTienMat.Checked)

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnLogOut = new Button();
             nameUser = new Label();
@@ -110,9 +110,9 @@
             btn_DatHang.CheckedState.FillColor = Color.Tan;
             btn_DatHang.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btn_DatHang.CheckedState.Image = (Image)resources.GetObject("resource.Image");
-            customizableEdges1.BottomRight = false;
-            customizableEdges1.TopRight = false;
-            btn_DatHang.CustomizableEdges = customizableEdges1;
+            customizableEdges7.BottomRight = false;
+            customizableEdges7.TopRight = false;
+            btn_DatHang.CustomizableEdges = customizableEdges7;
             btn_DatHang.DisabledState.BorderColor = Color.DarkGray;
             btn_DatHang.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_DatHang.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -125,7 +125,7 @@
             btn_DatHang.ImageOffset = new Point(10, 0);
             btn_DatHang.Location = new Point(22, 225);
             btn_DatHang.Name = "btn_DatHang";
-            btn_DatHang.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btn_DatHang.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btn_DatHang.Size = new Size(248, 59);
             btn_DatHang.TabIndex = 3;
             btn_DatHang.Text = "Đặt hàng";
@@ -140,9 +140,9 @@
             btn_LLV.CheckedState.FillColor = Color.Tan;
             btn_LLV.CheckedState.Font = new Font("Roboto", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btn_LLV.CheckedState.Image = (Image)resources.GetObject("resource.Image1");
-            customizableEdges3.BottomRight = false;
-            customizableEdges3.TopRight = false;
-            btn_LLV.CustomizableEdges = customizableEdges3;
+            customizableEdges9.BottomRight = false;
+            customizableEdges9.TopRight = false;
+            btn_LLV.CustomizableEdges = customizableEdges9;
             btn_LLV.DisabledState.BorderColor = Color.DarkGray;
             btn_LLV.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_LLV.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -155,7 +155,7 @@
             btn_LLV.ImageOffset = new Point(10, 0);
             btn_LLV.Location = new Point(22, 319);
             btn_LLV.Name = "btn_LLV";
-            btn_LLV.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btn_LLV.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btn_LLV.Size = new Size(248, 59);
             btn_LLV.TabIndex = 2;
             btn_LLV.Text = "Lịch làm việc";
@@ -207,12 +207,12 @@
             // 
             // guna2PictureBox1
             // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges5;
+            guna2PictureBox1.CustomizableEdges = customizableEdges11;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(12, 3);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2PictureBox1.Size = new Size(65, 61);
             guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2PictureBox1.TabIndex = 1;
@@ -231,6 +231,8 @@
             Name = "FormNhanVien";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quán Cafe 24/7";
+           
+          
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);

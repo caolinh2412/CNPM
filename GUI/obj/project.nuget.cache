@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hlc6SnHjToA=",
+  "dgSpecHash": "BPu/rrn+KEE=",
   "success": true,
-  "projectFilePath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\GUI\\GUI.csproj",
+  "projectFilePath": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\GUI\\GUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\THUY_LINH\\.nuget\\packages\\guna.charts.winforms\\1.1.0\\guna.charts.winforms.1.1.0.nupkg.sha512",
     "C:\\Users\\THUY_LINH\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.7\\guna.ui2.winforms.2.0.4.7.nupkg.sha512",

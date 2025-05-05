@@ -21,19 +21,21 @@ namespace GUI
             DoubleBuffered = true;
 
         }
+        // Sự kiện này sẽ được gọi khi điều khiển được tải
         private void uc_CaLamViec_NV_Load(object sender, EventArgs e)
         {
             LoadNgayCuaNhieuThang();
         }
+        // Phương thức này sẽ tải ngày của nhiều tháng vào FlowLayoutPanel
         void LoadNgayCuaNhieuThang()
         {
-            flp_Lich.Controls.Clear();
+            flp_Lich.Controls.Clear(); // Xóa các điều khiển hiện tại trong FlowLayoutPanel
 
-            DateTime firstDay = new DateTime(namHienTai, thangHienTai, 1);
-            int soNgay = DateTime.DaysInMonth(namHienTai, thangHienTai);
-            int thuBatDau = ((int)firstDay.DayOfWeek + 6) % 7;
+            DateTime firstDay = new DateTime(namHienTai, thangHienTai, 1); // Ngày đầu tiên của tháng
+            int soNgay = DateTime.DaysInMonth(namHienTai, thangHienTai);   // Tổng số ngày trong tháng
+            int thuBatDau = ((int)firstDay.DayOfWeek + 6) % 7; // Thứ bắt đầu (chuyển từ Chủ Nhật = 0 sang Thứ Hai = 0)
 
-
+            // Thêm các ô trống (panel padding) để căn chỉnh ngày cho đúng thứ bắt đầu trong tuần
             for (int i = 0; i < thuBatDau; i++)
             {
                 Panel padding = new Panel
@@ -46,14 +48,15 @@ namespace GUI
             for (int d = 1; d <= soNgay; d++)
             {
                 DateTime ngay = new DateTime(namHienTai, thangHienTai, d);
-                UC_Ngay ucNgay = new UC_Ngay();
-                ucNgay.SetNgayVaCaLam(ngay);
+                UC_Ngay ucNgay = new UC_Ngay(); // Tạo user control cho từng ngày
+                ucNgay.SetNgayVaCaLam(ngay);   // Thiết lập ngày và ca làm việc
                 ucNgay.Dock = DockStyle.Fill;
                 flp_Lich.Controls.Add(ucNgay);
             }
             lb_ThangHT.Text = $"Tháng {thangHienTai}";
         }
 
+        // Sự kiện này sẽ được gọi khi người dùng nhấn nút "Tháng trước"
         private void btn_Thangtrc_Click(object sender, EventArgs e)
         {
             thangHienTai--;
@@ -64,7 +67,7 @@ namespace GUI
             }
             LoadNgayCuaNhieuThang();
         }
-
+        // Sự kiện này sẽ được gọi khi người dùng nhấn nút "Tháng sau"
         private void btn_ThangSau_Click(object sender, EventArgs e)
         {
             thangHienTai++;

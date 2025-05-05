@@ -5490,11 +5490,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\BUS.csproj",
+      "projectUniqueName": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\BUS\\BUS.csproj",
       "projectName": "BUS",
-      "projectPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\BUS.csproj",
+      "projectPath": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\BUS\\BUS.csproj",
       "packagesPath": "C:\\Users\\THUY_LINH\\.nuget\\packages\\",
-      "outputPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\BUS\\obj\\",
+      "outputPath": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\BUS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5515,11 +5515,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DAL.csproj"
+            "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\DAL\\DAL.csproj"
             },
-            "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DTO.csproj": {
-              "projectPath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DTO\\DTO.csproj"
+            "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\DTO\\DTO.csproj": {
+              "projectPath": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\DTO\\DTO.csproj"
             }
           }
         }

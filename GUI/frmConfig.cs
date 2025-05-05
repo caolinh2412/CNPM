@@ -52,6 +52,8 @@ namespace GUI
                 sw.WriteLine(txtPass.Text);
             }
             sw.Close();
+            MessageBox.Show("Lưu thành công");
+            this.Close();
         }
 
         private void ckW_CheckedChanged_1(object sender, EventArgs e)

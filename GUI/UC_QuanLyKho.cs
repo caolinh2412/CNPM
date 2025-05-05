@@ -9,23 +9,31 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
+using iText.Layout.Element;
 
 namespace GUI
 {
     public partial class UC_QuanLyKho : UserControl
     {
+        // Khởi tạo các lớp nghiệp vụ
         private BUS_Kho bus = new BUS_Kho();
         private BUS_ThucDon bus1 = new BUS_ThucDon();
-        private bool isEditMode = false;
         private BUS_CongThuc bus2 = new BUS_CongThuc();
+
+        private bool isEditMode = false; // Biến kiểm tra chế độ chỉnh sửa
+        private string currentMaMon = ""; // Lưu mã món hiện tại khi chọn món
+
         public UC_QuanLyKho()
         {
             InitializeComponent();
-            InitializeDataGridView();
-            DanhSachMon();
-            LoadKhoData();
+            InitializeDataGridView(); // Cấu hình DataGridView
+            DanhSachMon(); // Tải danh sách món
+            LoadKhoData(); // Tải dữ liệu kho
+
+            // Gán sự kiện khi chọn dòng trong dgv_Kho
             dgv_Kho.SelectionChanged += dgv_Kho_SelectionChanged;
 
+            // Khóa các TextBox khi khởi động
             txt_Ten.Enabled = false;
             txt_TonKho.Enabled = false;
             txt_DonVi.Enabled = false;
@@ -36,6 +44,7 @@ namespace GUI
             btnSua.Enabled = false;
             btnLuu.Enabled = false;
 
+            // Gắn sự kiện khi người dùng nhập vào textbox
             txt_Ten.Enter += TextBox_Enter;
             txt_TonKho.Enter += TextBox_Enter;
             txt_DonVi.Enter += TextBox_Enter;
@@ -43,6 +52,8 @@ namespace GUI
             dtp_NgayNhap.Enter += TextBox_Enter;
             txt_NCC.Enter += TextBox_Enter;
         }
+
+        // Chặn chỉnh sửa khi chưa bật chế độ sửa
         private void TextBox_Enter(object sender, EventArgs e)
         {
             if (!isEditMode)
@@ -55,14 +66,18 @@ namespace GUI
             }
         }
 
+        // Tải dữ liệu nguyên liệu từ cơ sở dữ liệu
         private void LoadKhoData()
         {
             List<DTO_Kho> nguyenLieu = bus.GetAllNguyenLieu();
             dgv_Kho.DataSource = nguyenLieu;
             dgv_NL.DataSource = nguyenLieu;
         }
+
+        // Cấu hình hiển thị cột trong DataGridView
         private void InitializeDataGridView()
         {
+            // DGV kho
             dgv_Kho.AutoGenerateColumns = false;
             dgv_Kho.Columns["col_MaNL"].DataPropertyName = "MaNL";
             dgv_Kho.Columns["col_TenNL"].DataPropertyName = "TenNL";
@@ -72,14 +87,18 @@ namespace GUI
             dgv_Kho.Columns["col_NCC"].DataPropertyName = "TenNCC";
             dgv_Kho.Columns["col_sdt"].DataPropertyName = "SDT";
 
+            // DGV nguyên liệu thêm vào món
             dgv_NL.AutoGenerateColumns = false;
             dgv_NL.Columns["col_MNL"].DataPropertyName = "MaNL";
             dgv_NL.Columns["col_TNL"].DataPropertyName = "TenNL";
 
+            // Gắn sự kiện click
             dgv_Kho.CellClick += dgv_Kho_CellClick;
             dgv_NL.CellClick += dgv_NL_CellClick;
             dgv_CongThuc.CellClick += dgv_CongThuc_CellClick;
         }
+
+        // Sự kiện khi nhấn nút xóa nguyên liệu trong kho
         private void dgv_Kho_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dgv_Kho.Columns["col_del"].Index && e.RowIndex >= 0)
@@ -102,6 +121,7 @@ namespace GUI
                 }
             }
         }
+        // Hiển thị chi tiết nguyên liệu khi chọn dòng
         private void dgv_Kho_SelectionChanged(object sender, EventArgs e)
         {
             if (dgv_Kho.SelectedRows.Count > 0)
@@ -119,13 +139,14 @@ namespace GUI
                 isEditMode = false;
             }
         }
-
+        // Thêm mới nguyên liệu
         private void btnThem_Click_1(object sender, EventArgs e)
         {
+            // Lấy mã mới tự động
             string newNL = bus.GetNextMaNL();
             txt_MaNL.Text = newNL;
 
-
+            // Bật nhập liệu
             txt_Ten.Enabled = true;
             txt_TonKho.Enabled = true;
             txt_DonVi.Enabled = true;
@@ -133,6 +154,7 @@ namespace GUI
             dtp_NgayNhap.Enabled = true;
             txt_NCC.Enabled = true;
 
+            // Xóa dữ liệu cũ
             txt_Ten.Clear();
             txt_TonKho.Clear();
             txt_DonVi.Clear();
@@ -143,7 +165,7 @@ namespace GUI
             btnLuu.Enabled = true;
             isEditMode = true;
         }
-
+        // Sửa nguyên liệu
         private void btnSua_Click_1(object sender, EventArgs e)
         {
             if (dgv_Kho.SelectedRows.Count > 0)
@@ -160,9 +182,10 @@ namespace GUI
                 isEditMode = true;
             }
         }
-
+        // Lưu nguyên liệu (thêm mới hoặc cập nhật)
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
+            // Kiểm tra dữ liệu đầu vào
             if (string.IsNullOrWhiteSpace(txt_Ten.Text) || string.IsNullOrWhiteSpace(txt_TonKho.Text) || string.IsNullOrWhiteSpace(txt_DonVi.Text) || string.IsNullOrWhiteSpace(txt_sdt.Text) || string.IsNullOrWhiteSpace(txt_NCC.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin nguyên liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -174,7 +197,7 @@ namespace GUI
                 MessageBox.Show("Số lượng tồn không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            // Gán dữ liệu vào DTO
             DTO_Kho nguyeLieu = new DTO_Kho
             {
                 MaNL = txt_MaNL.Text,
@@ -185,6 +208,7 @@ namespace GUI
                 TenNCC = txt_NCC.Text,
                 NgayNhap = dtp_NgayNhap.Value
             };
+            // Gọi phương thức lưu (thêm hoặc cập nhật)
             bool success;
             if (dgv_Kho.SelectedRows.Count > 0 && dgv_Kho.SelectedRows[0].Cells["col_MaNL"].Value.ToString() == txt_MaNL.Text)
             {
@@ -204,7 +228,7 @@ namespace GUI
             {
                 MessageBox.Show("Lưu nguyên liệu thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            // Tắt chế độ nhập
             txt_Ten.Enabled = false;
             txt_TonKho.Enabled = false;
             txt_DonVi.Enabled = false;
@@ -217,6 +241,7 @@ namespace GUI
             isEditMode = false;
         }
 
+        // Hủy chỉnh sửa và làm mới dữ liệu
         private void btnHuy_Click_1(object sender, EventArgs e)
         {
             txt_Ten.Enabled = false;
@@ -238,6 +263,7 @@ namespace GUI
 
             LoadKhoData();
         }
+        // Tải danh sách món ăn
         private void DanhSachMon()
         {
             List<DTO_ThucDon> mon = bus1.GetAllMenuItems();
@@ -248,6 +274,7 @@ namespace GUI
             dgv_TenMon.Columns["col_MaMon"].DataPropertyName = "MaMon";
             dgv_TenMon.SelectionChanged += dgv_TenMon_SelectionChanged;
         }
+        // Khi chọn món, hiển thị nguyên liệu theo công thức của món
         private void dgv_TenMon_SelectionChanged(object sender, EventArgs e)
         {
             if (dgv_TenMon.SelectedRows.Count > 0)
@@ -260,8 +287,10 @@ namespace GUI
                 LoadNguyenLieuCuaMon(maMon);
             }
         }
+        // Hiển thị nguyên liệu sử dụng trong món đã chọn
         private void LoadNguyenLieuCuaMon(string maMon)
         {
+            currentMaMon = maMon; // Lưu lại để dùng sau
             DataTable nguyenLieu = bus2.GetCongThucByMaMon(maMon);
             dgv_CongThuc.AutoGenerateColumns = false;
             dgv_CongThuc.DataSource = nguyenLieu;
@@ -271,6 +300,7 @@ namespace GUI
             dgv_CongThuc.Columns["col_soluong"].DataPropertyName = "SoLuong";
             dgv_CongThuc.Columns["col_donvi"].DataPropertyName = "DonViTinh";
         }
+        // Khi chọn nguyên liệu trong danh sách nguyên liệu
         private void dgv_NL_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && dgv_TenMon.SelectedRows.Count > 0)
@@ -318,6 +348,7 @@ namespace GUI
                 }
             }
         }
+        // Xóa nguyên liệu khỏi công thức món
         private void dgv_CongThuc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dgv_CongThuc.Columns["col_delete"].Index && e.RowIndex >= 0)
@@ -331,7 +362,7 @@ namespace GUI
                     if (bus2.DeleteCongThuc(maCT))
                     {
                         MessageBox.Show("Xóa công thức này thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadNguyenLieuCuaMon(txt_MaNL.Text);
+                        LoadNguyenLieuCuaMon(currentMaMon);
                     }
                     else
                     {

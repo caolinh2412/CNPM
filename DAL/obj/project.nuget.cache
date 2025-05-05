@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a5w7+OFlNn4=",
+  "dgSpecHash": "L1ahicjRZxg=",
   "success": true,
-  "projectFilePath": "D:\\DH\\DoAnCnpm\\CNPM\\CoffeeShopManagementSystem\\DAL\\DAL.csproj",
+  "projectFilePath": "D:\\DH\\DoAnCnpm\\52300217_52300245\\CoffeeShopManagementSystem\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\THUY_LINH\\.nuget\\packages\\itext7\\7.2.2\\itext7.7.2.2.nupkg.sha512",
     "C:\\Users\\THUY_LINH\\.nuget\\packages\\itext7.commons\\7.2.2\\itext7.commons.7.2.2.nupkg.sha512",

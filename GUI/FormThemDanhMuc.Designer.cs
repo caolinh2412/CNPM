@@ -287,8 +287,10 @@
             // 
             // FormThemDanhMuc
             // 
+            AcceptButton = btnThemDM;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = close;
             ClientSize = new Size(459, 360);
             Controls.Add(dgv_DanhMuc);
             Controls.Add(label1);
