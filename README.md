@@ -31,11 +31,21 @@ Phần mềm sử dụng file `.mdf` và `.ldf` để gắn cơ sở dữ liệu
 
 📌 **Tên database sau khi attach:** `CafeShop`
 
----
+## ⚠️ Khắc phục lỗi Mark of the Web (MOTW)
+
+Khi tải project từ Internet (ví dụ: từ GitHub hoặc Google Drive), Windows có thể đánh dấu các tệp là không an toàn bằng Mark of the Web (MOTW), gây ra lỗi khi mở hoặc build project trong Visual Studio — đặc biệt là với các tệp `.resx`.
+
+### 🛠 Cách khắc phục:
+
+Mở **PowerShell** tại thư mục gốc của project và chạy lệnh sau để gỡ chặn toàn bộ các tệp `.resx`:
+
+```powershell
+Get-ChildItem -Recurse -Path . -Filter *.resx | Unblock-File
+
 
 🔌 **Kết nối dữ liệu khi chạy chương trình**
 
-Khi mở phần mềm và chạychạy, người dùng cần **nhập thông tin kết nối SQL Server**, với tên database là:
+Khi mở phần mềm và chạy, người dùng cần **nhập thông tin kết nối SQL Server**, với tên database là:
 
 - **Database name:** `CafeShop`
 
