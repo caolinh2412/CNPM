@@ -10,7 +10,74 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="img\art-rachen-hcPbb8ZlPyQ-unsplash.jpg" />
+    <None Remove="img\c973b4c91e2d0551241d00f91b3cacda.jpg" />
+    <None Remove="img\cach-lam-thit-ban-banh-mi-ngon.jpg" />
+    <None Remove="img\download.jpg" />
+    <None Remove="img\freepik__background__1326.png" />
+    <None Remove="img\jay-gajjar-lGIXXpeERSM-unsplash.jpg" />
+    <None Remove="img\kimia-kazemi-avm661AQilQ-unsplash.jpg" />
+    <None Remove="img\logo.png.png" />
+    <None Remove="img\pariwat-pannium-qdDQ6V7lV9Y-unsplash.jpg" />
+    <None Remove="img\pexels-isabella-mendes-107313-338713.jpg" />
+    <None Remove="img\pexels-marta-dzedyshko-1042863-2067404.jpg" />
+    <None Remove="img\pexels-teresa-jang-6930116-14802987.jpg" />
+    <None Remove="img\Slide1-1.png" />
+    <None Remove="img\Ảnh chụp màn hình 2025-04-08 203337.png" />
+    <None Remove="img\Ảnh chụp màn hình 2025-04-23 233357.png" />
+    <None Remove="logo\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="img\art-rachen-hcPbb8ZlPyQ-unsplash.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\c973b4c91e2d0551241d00f91b3cacda.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\cach-lam-thit-ban-banh-mi-ngon.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\download.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\freepik__background__1326.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\jay-gajjar-lGIXXpeERSM-unsplash.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\kimia-kazemi-avm661AQilQ-unsplash.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\logo.png.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\pariwat-pannium-qdDQ6V7lV9Y-unsplash.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\pexels-isabella-mendes-107313-338713.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\pexels-marta-dzedyshko-1042863-2067404.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\pexels-teresa-jang-6930116-14802987.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\Slide1-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\Ảnh chụp màn hình 2025-04-08 203337.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\Ảnh chụp màn hình 2025-04-23 233357.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="logo.png.ico" />
+    <Content Include="logo\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
