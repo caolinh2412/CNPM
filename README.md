@@ -41,7 +41,7 @@ Mở **PowerShell** tại thư mục gốc của project và chạy lệnh sau �
 
 ```powershell
 Get-ChildItem -Recurse -Path . -Filter *.resx | Unblock-File
-
+```
 
 🔌 **Kết nối dữ liệu khi chạy chương trình**
 
@@ -55,10 +55,10 @@ Phần mềm sẽ dùng thông tin này để thiết lập kết nối đến S
 
 🔐 Tài khoản đăng nhập
 
-| Email              | Mật khẩu     | Vai trò        |
-|--------------------|--------------|----------------|
-| admin@gmail.com    | 1234554321   | Quản lý        |
-| vuthif@gmail.com   | pass1415     | Nhân viên       |
+| Email                     | Mật khẩu     | Vai trò        |
+|---------------------------|--------------|----------------|
+| minhquan5439@gmail.com    | 1234554321   | Quản lý        |
+| vuthif@gmail.com          | pass1415     | Nhân viên      |
 
 ---
 
@@ -75,3 +75,4 @@ Phần mềm sẽ dùng thông tin này để thiết lập kết nối đến S
 - .NET: 7.0
 - Database: SQL Server (file `.mdf` + `.ldf`)
 - CSDL: CafeShop
+
